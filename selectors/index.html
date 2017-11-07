@@ -1,0 +1,1292 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>Selectors: Select This!</title>
+    <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
+<link rel="stylesheet" href="selectors.css"/>
+<style>
+.current * { -webkit-tap-highlight-color: #bada55;}
+.thisSlide.foo {
+  -webkit-tap-highlight-color: #bada55;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.beforeafter:before {
+  content: "before - ";
+  font-weight: bold;
+}
+.beforeafter:after {
+  content: " - after";
+  font-weight: bold;
+  }
+.active {
+  color: red; 
+  font-weight: bold; 
+  background-color: rgba(0,0,0,0.3);
+}
+#presentation {
+  animation: none; 
+}
+</style>
+</head>
+
+<body>
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->
+<div id="info">
+    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+    <div class="slide intro">
+     <header><hgroup>
+      <h1><span class="textmask">Select This!</span><br> CSS Selectors</h1>
+     </hgroup></header>
+     <p><a href="http://estelle.github.com/cssmastery/selectors/" style="color: #000">http://estelle.github.com/cssmastery/selectors/</a></p>
+    </div>
+
+
+<!-- basics -->
+<div class="slide normal">
+  <header><h1>Selectors</h1></header>
+   <section class="content">
+ <pre contenteditable style="font-size:100%; line-height:1.5">selectorA {
+   property1: value1;
+   property2: value2;
+}
+
+selectorB {
+   property1: value3;
+   property2: value4;
+}</pre>
+</section>
+ </div>
+
+
+
+<div class="slide normal">
+  <header><h1>Selectors</h1></header>
+  <section class="content">
+
+ <pre contenteditable style="font-size:100%; line-height:1.5">selector:pseudo-class::pseudo-element {
+    -vendor-property: value;
+}
+
+selector[attribute],
+selector ~ relation {
+    property: -vendor-value;
+    -vendor-property: -vendor-value;
+    -vendor-property: weirdsyntax;
+}</pre>
+
+  </section>
+</div>
+
+<!-- Basic Selectors-->
+<div class="slide normal light" id="slcElement">
+  <header><h1>Basic Selectors</h1></header>
+  <section class="content">
+
+<pre contenteditable style="font-size:100%; line-height:1.5">&lt;ul&gt;
+&lt;li id=&quot;myID&quot; class=&quot;myClass&quot;&gt;item 1&lt;/li&gt;
+&lt;li class=&quot;myClass&quot;&gt;item 2&lt;/li&gt;
+&lt;li&gt;item 3&lt;/li&gt;
+&lt;/ul&gt; </pre>
+
+    <dl class="inline">
+      <dt><b class="imp">#</b>myID</dt>
+      <dd>ID</dd>
+      <dt><b class="imp">.</b>myClass</dt>
+      <dd>class</dd>
+      <dt class="imp">li</dt>
+      <dd>tag name</dd>
+    </dl>
+  </section>
+ </div>
+
+
+<div class="slide object">
+  <header><h1>Play Time</h1></header>
+  <object data="files/00_basics.html"></object>
+  <a href="files/00_basics.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+<div class="slide normal">
+  <header><h1>Selectors API</h1></header>
+  <section class="content">
+    <pre contenteditable>var chil = $('#bar .foo');</pre>
+    <p>Natively</p>
+
+<pre contenteditable>var el   = document.<strong>querySelector</strong>('#bar');
+
+var chil = el.<strong>querySelectorAll</strong>('.foo');</pre>
+
+    <p>or</p>
+    <pre contenteditable>chil = document.<strong>querySelectorAll</strong>('#bar .foo');</pre>
+  </section>
+</div>
+
+
+
+<!-- Relational selectors -->
+<div class="slide normal" id="slcRelational">
+  <header><h1>Relational selectors &amp; Combinators</h1></header>
+  <section class="content">
+    <div class="ex right">
+      <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3
+          <ul>
+            <li>item a</li>
+            <li>item b</li>
+            <li>item c</li>
+          </ul>
+        </li>
+        <li class="hasaclass">hasaclass</li>
+        <li>item 5</li>
+        <li>item 6</li>
+        <li>item 7</li>
+      </ol>
+    </div>
+    <dl>
+      <dt><span onclick="hasaclass('ul li');">ul li</span>, <br><span onclick="hasaclass('ol li');">ol li</span></dt>
+      <dd>descendant selector<br />
+        matches nested &lt;li&gt;s
+      </dd>
+      <dt onclick="hasaclass('ol > li');">ol &gt; li</dt>
+      <dd><em>child selector</em> <br />
+      matches &lt;li&gt;s in &lt;ol&gt; but not nested &lt;ul&gt;</dd>
+      <dt onclick="hasaclass('li.hasaclass + li');">li.hasaclass + li</dt>
+      <dd><em>adjacent sibling</em> </dd>
+      <dt onclick="hasaclass('li.hasaclass ~ li');"><strong class="new">NEW  </strong><span style="background-color:#eee; padding:3px 20px; position:relative; left: 22px; margin-left: -20px;">(IE7+)</span><br />
+      li.hasaclass ~ li</dt>
+      <dd><em>general sibling selector</em><br />
+      matches later siblings, but not nested.</dd>
+    </dl>
+  </section>
+<script defer>
+function hasaclass(selector) {
+  var i = j = 0,
+      elements = document.querySelectorAll('.current .ex li'),
+      update = document.querySelectorAll('.current .ex ' + selector);
+  for (; i < elements.length; i++) {
+    elements[i].classList.remove('active');
+  }
+  for (; j < update.length; j++) {
+    update[j].classList.add('active');
+  }
+}
+</script>
+</div>
+
+
+
+<!-- selectors in CSS1 -->
+<div class="slide">
+  <header><h1>Selectors in CSS Level 1</h1></header>
+  <section class="content">
+    <pre contenteditable style="font-size:100%; line-height:1.5">E
+E F
+.class
+#ID
+:link
+:active</pre>
+  </section>
+</div>
+
+<!-- CSS4: Attribute Selector -->
+<div class="slide">
+  <header>
+    <h1>CSS Selectors 4: Combinators</h1>
+  </header>
+  <section class="content">
+
+    <p>Reference combinator</p>
+    <pre>E /attr/ F</pre>
+    <pre>label /for/ input</pre>
+
+
+    <p>Parent selector</p>
+    <pre><s>E! > F</s></pre>
+    <pre>:has<pre>
+
+    <a href="http://codepen.io/estelle/pen/lEGev" target="_play"></a>
+  </section>
+</div>
+
+<!-- How we did the previous slide -->
+<div class="slide">
+  <header>
+    <h1>In case you were wondering...</h1>
+  </header>
+  <section class="content">
+
+<pre contenteditable>
+function hasaclass(slctr){
+  var i = j = 0,
+      elements = document.<strong>querySelectorAll</strong>('.cur .ex li'),
+      cur = document.<strong>querySelectorAll</strong>('.cur .ex ' + slctr);
+
+  for (; i &lt; elements.length; i++){
+    elements[i].<strong>classList.remove</strong>('active');
+  }
+
+  for (; j &lt; cur.length; j++){
+    cur[j].<strong>classList.add</strong>('active');
+  }
+}      </pre>
+
+  </section>
+</div>
+
+<!-- Play time
+<div class="slide object">
+  <header>
+    <h1>Play Time</h1>
+  </header>
+  <object data="files/00_basic.html"></object>
+  <a href="files/00_basic.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+<!-- Selector list -->
+<div class="slide normal">
+  <header>
+    <h1>Lots 'o Selectors</h1>
+  </header>
+  <section class="content">
+    <ul class="columns">
+      <li style="column-span: all"><h3>CSS Level 1 Selectors</h3></li>
+      <li>E</li>
+      <li>.class</li>
+      <li>#id</li>
+      <li>E F</li>
+      <li>:link</li>
+      <li>:active</li>
+      <li style="column-span: all"><h3>CSS Level 2 Selectors</h3></li>
+      <li>*</li>
+      <li>E &gt; F</li>
+      <li>E + F</li>
+      <li>E[attribute]</li>
+      <li>E[attribute=value]</li>
+      <li>E[attribute~=value]</li>
+      <li>E[attribute|=value]</li>
+      <li>:first-child</li>
+      <li>:lang(en)</li>
+      <li>:focus</li>
+      <li>:hover</li>
+      <li>:visited</li>
+
+      <li>:before</li>
+      <li>:after</li>
+      <li>:first-letter</li>
+      <li>:first-line</li>
+    </ul>
+  </section>
+</div>
+
+
+
+<!-- Selector list -->
+<div class="slide normal">
+  <header>
+    <h1>Lots 'o Selectors</h1>
+  </header>
+  <section class="content">
+    <ul class="columns">
+      <li style="column-span: all"><h3>CSS Selects Level 3</h3></li>
+      <li>::before</li>
+      <li>::after</li>
+      <li>::first-letter</li>
+      <li>::first-line</li>
+
+      <li><br/>E[attribute^=value]</li>
+      <li>E[attribute$=value]</li>
+      <li>E[attribute*=value]</li>
+
+      <li><br/>E ~ F</li>
+      <li>:root</li>
+      <li>:last-child</li>
+      <li>:only-child</li>
+      <li>:nth-child(n)</li>
+      <li>:nth-last-child(n)</li>
+      <li>:first-of-type</li>
+      <li>:last-of-type</li>
+      <li>:only-of-type</li>
+      <li>:nth-of-type(n)</li>
+      <li>:nth-last-of-type(n)</li>
+
+      <li><br/>:empty</li>
+      <li>:not(selector)</li>
+      <li>:target</li>
+
+      <li><h3>UI Selectors</h3>
+      <li><br/>:enabled</li>
+      <li>:disabled</li>
+      <li>:checked</li>
+      <li>:default</li>
+      <li>:valid</li>
+      <li>:invalid</li>
+      <li>:in-range</li>
+      <li>:out-of-range</li>
+      <li>:required</li>
+      <li>:optional</li>
+      <li>:read-only</li>
+      <li>:read-write</li>
+    </ul>
+  </section>
+</div>
+
+
+<div class="slide normal">
+  <header>
+    <h1>Mo' Selectors</h1>
+  </header>
+  <section class="content">
+    <ul class="columns">
+      <li>::selection</li>
+      <li>:indeterminate</li>
+      <li>E:not(s1, s2)</li>
+      <li>E:matches(s1, s2)</li>
+      <li>E:has(rs1, rs2)</li>
+      <li>E[foo="bar" i]</li>
+      <li>E:dir(ltr)</li>
+      <li>E:lang(zh, *-hant)</li>
+      <li>:any-link</li>
+      <li>:scope</li>
+      <li>:current</li>
+      <li>:current(s)</li>
+      <li>:past</li>
+      <li>:future</li>
+      <li>:active-drop</li>
+      <li>:valid-drop</li>
+      <li>:invalid-drop</li>
+      <li>:placeholder-shown</li>
+      <li>:blank</li>
+      <li>F || E</li>
+      <li>:nth-column(n)</li>
+      <li>:nth-last-column(n)</li>
+      <li>:scope</li>
+      <li>:scope-context()</li>
+      <li>:host</li>
+      <li>:host()</li>
+      <li>:host-context()</li>
+      <li>::shadow</li>
+      <li>::content</li>
+      <li>E /deep/ F</li>
+      <li>::region</li>
+    </ul>
+  </section>
+</div>
+
+
+
+ <div class="object slide">
+  <object data="http://specifishity.com/" style="height: 792px;"></object>
+     <header><h1>Specificity (SpeciFISHity)</h1></header>
+  <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
+</div>
+
+
+<!-- Specificity Notes -->
+<div class="slide normal">
+     <header><h1>Specificity: How it works</h1></header>
+     <section class="content">
+      <ul>
+        <li><code contenteditable>1-0-0</code>: ID selector</li>
+        <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
+        <li><code contenteditable>0-0-1</code>: Element Selector</li>
+
+ <p>The * selector, or global selector, has no value.</p>
+ <pre contenteditable>* {} 0-0-0 </pre>
+
+<p>Combinators, like ~, >, and + have no value</p>
+<pre contenteditable>ul li {} 0-0-2
+ul > li {} 0-0-2</pre>
+
+     </section>
+</div>
+
+
+
+
+
+
+
+
+<!-- Attribute selectors-->
+<div class="slide normal">
+  <header>
+    <h1>Attribute selectors</h1>
+  </header>
+  <section class="content">
+  <dl>
+    <dt>element[attribute]</dt>
+    <dd>Select elements containing the named attribute</dd>
+  </dl>
+
+<pre contenteditable style="font-size: 95%;"><strong>img[alt] {}</strong>
+     &lt;img src=&quot;image.jpg&quot; <strong>alt</strong>=&quot;accessible&quot;&gt;
+     <span style="opacity:0.3">&lt;img src=&quot;image.jpg&quot; title=&quot;inaccessible&quot;&gt;</span>
+<strong>form [type] {}</strong>
+     &lt;input <strong>type</strong>=date&gt;
+     <span style="opacity:0.3">&lt;select&gt;</span></pre>  
+  </section>
+</div>
+
+<!-- Older attribute selectors -->
+<div class="slide normal">
+  <header style="position:absolute; top: 20px; right: 20px;">
+    <h1>CSS 2 attribute selectors</h1>
+  </header>
+  <section class="content">
+  <dl>
+    <dt>E[attr]</dt>
+    <dd>Element E that has the attribute attr with any value.</dd>
+    <dt>E[attr=&quot;val&quot;]</dt>
+    <dd>Element E that has the attribute attr with the exact, case-sensitive if attribute is case sensitive, value <em>val</em>.</dd>
+    <dt>E[attr|=val]</dt>
+    <dd>Element E whose attribute <em>attr</em> has a value <em>val</em> or begins with val- (&quot;val&quot; plus &quot;-&quot;).<br />
+
+    <pre contenteditable class="example">p[lang|=&quot;en&quot;]{/* &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
+
+    </dd>
+    <dt>E[attr~=val]</dt>
+    <dd>Element E whose attribute <em>attr</em> has within its value the space-separated full word <em>val</em>.<br />
+    <pre contenteditable  class="example">a[title~=more] {/* &lt;a title=&quot;want more info about this?&quot;&gt;}</pre>
+    </dd>
+  </dl>
+ </section>
+</div>
+
+<!-- CSS3 Attribute Selectors -->
+<div class="slide normal">
+     <header  style="position:absolute; top: 20px; right: 20px;"><h1>Attribute Selectors in CSS Selectors Level 3</h1></header>
+     <section class="content">
+     <dl>
+  <dt>E[attr^=val]</dt>
+  <dd>Element E whose attribute <em>attr</em> starts with the value <em>val</em>.<br />
+    <pre contenteditable class="example">a[href^=mailto] {background-image: url(emailicon.gif);}
+a[href^=http]:after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
+  </dd>
+  <dt>E[attr$=val]</dt>
+  <dd>Element E whose attribute <em>attr</em> ends in <em>val</em> . <br />
+    <pre contenteditable class="example">a[href$=pdf] {background-image: url(pdficon.gif);}
+a[href$=pdf]:after {content: &quot; (PDF)&quot;;}</pre>
+  </dd>
+  <dt>E[attr*=val]</dt>
+  <dd>Element E whose attribute <em>attr </em>matches <em>val</em> anywhere within the attribute. Similar to E[attr~=val] above, except the <em>val</em> can be part of a word.</dd>
+</dl>
+<p>Note: Multiple attributes work! a[title][href]</p>
+     </section>
+ </div>
+
+
+<!-- CSS4: Attribute Selector -->
+<div class="slide">
+  <header>
+    <h1>Attribute Selectors 4: Case Insensitivity</h1>
+  </header>
+  <section class="content">
+
+    <pre contenteditable>E[foo="bar" i]</pre>
+    <pre contenteditable class="example">input[type=checkbox i]</pre>
+
+<p>Only relevant if attribute value is case senstive <br/>(as it is for all attributes in XHTML)</p>
+    <p><a href="http://codepen.io/estelle/pen/lEGev" target="_play">CodePen test page</a>
+      <br/><a href="files/01_attr_caseinsensitiveB.html">Local test page</a>
+  </section>
+</div>
+
+
+
+<!-- selectors css 2 -->
+<div class="slide">
+<header><h1>Selectors in CSS Level 2</h1></header>
+<section class="content" style="line-height: 1.5">
+<pre>*
+:lang(en)
+:hover
+:focus
+E > F
+E + F
+:first-child
+[attribute]
+[attribute="value"]
+[attribute~="value"]
+[attribute|="en"]</pre>
+</section>
+</div>
+
+
+<!-- Attribute Selectors Recap -->
+<div class="slide normal">
+     <header><h1>Attribute Selectors Recap</h1></header>
+     <section class="content">
+     <pre contenteditable style="float:left; width: 45%; margin: 0 20px 0 0;">
+input[placeholder] {
+<b class="notes">/* matches any input with a placeholder */</b>}
+input[type=email] {
+<b class="notes">/* exact match */</b>}
+abbr[title~=unicorn] {
+<b class="notes">/* matches unicorn but not unicorns */</b>}
+abbr[title|=en] {
+<b class="notes">/* matches en-us and en-uk */</b>}
+a[href^=mailto] {
+<b class="notes">/* starts with */</b>}
+a[href$=pdf]{
+<b class="notes">/* ends in */</b>}
+abbr[title*=unicorn] {
+<b class="notes">/* matches unicorn and unicorns */</b>}
+</pre>
+<pre contenteditable style="float:left; width: 40%; margin-top:0;">E:[att] <b class="notes"><br/>/* have the attribute at all */</b>
+
+E:[att=val] <b class="notes"><br/>/* exact */</b>
+
+E:[att~=val] <b class="notes"><br/>/* val is a space separated word */</b>
+
+E:[att|=val] <b class="notes"><br/>/* with a dash */</b>
+
+E:[att^=val] <b class="notes"><br/>/* begins with val */</b>
+
+E:[att$=val]  <b class="notes"><br/>/* ends with val */</b>
+
+E:[att*=val]  <b class="notes"><br/>/* val is anywhere as a substring */</b>
+.</pre>
+<pre contenteditable style="clear:both">
+@media print{
+  abbr[title]:after {
+    content: "(" attr(title) ")";
+  }
+  a[href^=http]:after {
+    content: "(" attr(href) ")";
+  }
+}</pre>
+     </section>
+ </div>
+
+<!-- Using attribute selectors -->
+<div class="slide object">
+<object data="files/01_attr.html"></object>
+     <header><h1>Using attribute selectors</h1></header>
+
+  <a href="files/01_attr.html" target="play" class="objectlink">Attribute Selectors</a>
+  <p><strong>Note:</strong> The top line of the example is editable. The CSS will impact the contents on the rest of the page.</p>
+
+    </div>
+
+
+
+
+<!-- UI pseudo-classes -->
+<div class="slide normal">
+     <header><h1>UI pseudo-classes</h1></header>
+     <section class="content">
+  <p>Based on current state of UI </p>
+  <pre contenteditable>
+  :enabled
+
+  :disabled
+
+  :checked
+
+  :indeterminate (Level 4)</pre>
+<pre contenteditable class="example">input[type=checkbox]:checked + label {
+  color: red;
+}</pre>
+<div style="clear:both;">
+<input type="checkbox" id="test1ck"/> <label  for="test1ck">Check and Uncheck Me</label><br/>
+<input type="checkbox" id="test2ck"/> <label  for="test2ck">Check and uncheck me too!</label></div>   </section>
+<footer>Basic User Interface Module Level 3 (CSS3 UI)</footer></div>
+
+<!--Form related UI pseudo-classes -->
+<div class="slide normal">
+     <header><h1>Form related UI pseudo-classes</h1></header>
+     <section class="content">
+  <pre contenteditable style="font-size: 1.8rem; line-height: 1.4;">:valid
+:invalid
+:required
+:optional
+:in-range
+:out-of-range
+:read-only
+:read-write
+:default</pre>
+  </section>
+</div>
+
+
+
+
+<!--Form related UI pseudo-classes -->
+<div class="slide normal">
+     <header><h1>Form related UI pseudo-classes</h1></header>
+     <section class="content">
+<pre  contenteditable class="example">input:valid { border: 1px solid green;}
+input:invalid { border: 1px solid red;}
+input:required,
+input[aria-required="true"] {border-width: 5px;}
+input:optional {border-width: 10px;}
+input:out-of-range { background-color: pink;}
+input:in-range { background-color:lightgreen;}</pre>
+<div style="clear:both;">
+<input type="number" min="5" max="7" id="test3ck" required/> <label  for="test3ck">Number between 5 and 7</label><br>
+<input type="number" min="0" step="0.1" max="10" id="test4ck"/><label for="test4ck">Number between 0 and 10</label>
+<pre contenteditable class="example">&lt;input type="number" min="5" max="7"
+  required aria-required="true"/&gt;
+
+&lt;input type="number" min="0" step="0.1" max="10"/>
+</pre>
+</div>   </section>
+</div>
+
+<!-- UI selectors -->
+<div class="slide object">
+<object data="files/02_uiselectors.html"></object>
+     <header><h1>UI selectors</h1></header>
+ <a href="files/02_uiselectors.html" target="play">UI Selectors</a></h1>
+  <p>Test them out for yourselves</p>
+  <a class="objectlink" href="files/02_uiselectors.html">Open in new page</a>
+    </div>
+
+<!-- UI selectors -->
+<div class="slide object">
+<object data="files/02_counting.html?hop"></object>
+     <header><h1>UI selectors</h1></header>
+ <a href="files/02_uiselectors.html" target="play">UI Selectors</a></h1>
+  <p>Test them out for yourselves</p>
+  <a class="objectlink" href="files/02_counting.html">Open in new page</a>
+    </div>
+
+
+
+
+
+<!-- List of Structural selectors -->
+<div class="slide normal">
+     <header><h1>Structural selectors</h1></header>
+     <section class="content">
+  <pre contenteditable class="columns2">:nth-child()
+
+:nth-last-child()
+
+:nth-of-type()
+
+:nth-last-of-type()
+
+:first-child<sup style="color:#C61800">*</sup>
+
+:last-child
+
+:first-of-type
+
+:last-of-type
+
+:only-child
+
+:only-of-type
+
+:root
+
+:empty
+
+:not(:empty)
+</pre>
+<ul><li>Target elements on the page based on their relationships to other elements in the DOM.</li>
+<li>Updates dynamically if page updates.</li>
+
+  <li>Reduced need for extra markup, classes and IDs</li>
+</ul>
+<small style="position:absolute; bottom: 10px; right: 10px;"><sup style="color:#C61800">*</sup> CSS2 / IE8 </small>
+     </section>
+    </div>
+
+
+<!--First, last, & only -->
+<div class="slide normal">
+     <header><h1>First, last, &amp; only</h1></header>
+     <section class="content">
+ <pre contenteditable>
+:first-child
+
+:last-child
+
+:first-of-type
+
+:last-of-type
+
+:only-child
+
+:only-of-type
+</pre>
+
+<p>Easier to explain <a href="files/04_firstlastonly.html"  target="play">by example</a></p>
+     </section>
+    </div>
+
+<div class="slide object">
+<object data="files/04_firstlastonly.html"></object><header><h1>First, last, &amp; only</h1></header>
+<a href="files/04_firstlastonly.html" class="objectlink" target="play">First, last and only</a>
+</div>
+
+
+
+
+
+<!--nth pseudo-classes -->
+<div class="slide normal">
+     <header><h1>nth pseudo-classes</h1></header>
+     <section class="content">
+<pre contenteditable class="example">:nth-child(<b>3n</b>)
+
+:nth-last-child(<b>odd</b>)
+
+:nth-of-type(<b>5</b>)
+
+:nth-last-of-type(<b>3n+1</b>) </pre>
+
+<p>Target element or elements based on argument passed to the selector</p>
+<ul class="pre">
+	<li>:nth-of-type(<b>even</b>)</li>
+    <li>:nth-of-type(<b>odd</b>)</li>
+    <li>:nth-of-type(<b>an+b</b>) </li>
+</ul>
+     </section>
+    </div>
+
+<!--Structural Selectors -->
+<div class="slide normal">
+     <header><h1>Structural Selectors</h1></header>
+     <section class="content">
+     <pre contenteditable style="margin-top: 0; float: left;">
+li:<b>first-child</b>,
+li:<b>last-child</b> {
+  font-weight: bold;
+}
+li:<b>first-of-type</b>,
+li:<b>last-of-type</b>{
+  text-decoration:line-through;
+}
+li:<b>nth-child</b>(<b>even</b>) {
+  background-color: #CCC;
+}
+li:nth-child(<b>3</b>) {
+  color: #CCC;
+}
+li:<b>nth-of-type</b>(<b>odd</b>) {
+  background-color: #FFF;
+}
+li:nth-of-type(<b>4n</b>) {
+  color: hsl(205, 87%, 50%);
+}
+li:nth-of-type(<b>3n-1</b>) {
+  text-align: right;
+}
+
+</pre>
+<ul class="structural" style="float: right; width:33%;">
+
+<li>item 1</li>
+<li>item 2</li>
+<li>item 3</li>
+<li>item 4</li>
+<li>item 5</li>
+<li>item 6</li>
+<li>item 7</li>
+<li>item 8</li>
+<li>item 9</li>
+<li>item 10</li>
+</ul>
+     </section>
+ </div>
+
+ <!--Advanced Structural Selectors -->
+<div class="slide normal">
+     <header><h1>Structural Selectors</h1></header>
+     <section class="content">
+     <ul class="count"><li>1</li></ul>
+     <ul class="count"><li>1</li><li>2</li></ul>
+     <ul class="count"><li>1</li><li>2</li><li>3</li></ul>
+     <ul class="count"><li>1</li><li>2</li><li>3</li><li>4</li></ul>
+     <pre  contenteditable class="example"> li:only-of-type{width: 100%;}
+
+ li:nth-of-type(1):nth-last-of-type(2),
+ li:nth-of-type(2):nth-last-of-type(1){width: 50%;}
+
+ li:nth-of-type(1):nth-last-of-type(3),
+ li:nth-of-type(3):nth-last-of-type(1),
+ li:nth-of-type(2):nth-last-of-type(2){width: 33.33%;}
+
+ li:nth-of-type(1):nth-last-of-type(4),
+ li:nth-of-type(2):nth-last-of-type(3),
+ li:nth-of-type(3):nth-last-of-type(2),
+ li:nth-of-type(4):nth-last-of-type(1){width: 25%;}</pre>
+ </section>
+ </div>
+
+
+ <div class="slide object">
+ <object data="files/05_nth.html"></object>
+     <header><h1>Structural Selectors</h1></header>
+ <a href="files/05_nth.html" target="play" class="objectlink">Structural Selectors</a>
+ </div>
+
+ <div class="slide object">
+ <object data="files/05_flag.html#flag"></object>
+     <header><h1>Flag with Structural Selectors</h1></header>
+ <a href="files/05_flag.html" target="play" class="objectlink">USA Flag</a>
+ </div>
+
+
+ <div class="slide object">
+ <object data="files/05_flag2.html#flag"></object>
+     <header><h1>Simpler Flag with Structural Selectors</h1></header>
+ <a href="files/05_flag2.html" target="play" class="objectlink">USA Flag</a>
+ </div>
+
+<div class="slide">
+  <header><h1>Structural Selectors Level 4</h1></header>
+    <section class="content double">
+      <pre contenteditable>E:nth-match(n of selector)
+E:nth-last-match(n of selector)</pre>
+
+      <pre contenteditable class="example">li:nth-match(2n of .foo)
+li:nth-last-match(3n+1 of .bar)</pre>
+    </section>
+</div>
+
+<!-- :not -->
+<div class="slide normal">
+     <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header>
+     <section class="content">
+     <pre contenteditable>E<b contenteditable="false">:not(</b>s1<b contenteditable="false">)</b></pre>
+     <pre contenteditable class=" example">div<b contenteditable="false">:not(</b>.excludeMe<b contenteditable="false">)</b></span></pre>
+     <p class="css4 temphidden">CSS Selectors Level 4</p>
+     <pre contenteditable>E:not(s1, s2)</pre>
+     <pre class="example" contenteditable>li<b contenteditable="false">:not(</b>.foo<b contenteditable="false">,</b> .bar<b contenteditable="false">)</b></pre>
+     <pre  contenteditable>E:matches(s1, s2)</pre>
+     <pre class="example" contenteditable>li<b contenteditable="false">:matches(</b>[title]<b contenteditable="false">,</b> [role]<b contenteditable="false">)</b></pre>
+  </pre>
+     </section>
+    </div>
+
+<div class="slide">
+  <header><h1>Experimental :any</h1></header>
+    <section class="content">
+      <pre  contenteditable>E:matches(s1, s2)</pre>
+      <pre  contenteditable  class="example" >:-webkit-any(article, aside) :-webkit-any(article, aside) h1,
+:-moz-any(article, aside) :-moz-any(article, aside) h1 {
+
+}</pre><pre  contenteditable  class="example" >
+nav a:matches(.foo, .bar, .bam),
+nav a:-webkit-any(.foo, .bar, .bam),
+nav a:-moz-any(.foo, .bar, .bam) {
+
+}</pre><pre  contenteditable  class="example" >
+nav a:not(:matches(.foo, .bar, .bam)),
+nav a:not(:-webkit-any(.foo, .bar, .bam)),
+nav a:not(:-moz-any(.foo, .bar, .bam)),
+nav a:not(.foo, .bar, .bam) {
+
+}
+</pre>
+    </section>
+</div>
+<!--
+ <div class="slide object">
+ <object data="files/06_not.html"></object>
+     <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header>
+ <a href="files/06_not.html" target="play" class="objectlink">Negation Selectors</a>
+ </div>
+-->
+
+
+
+ <!-- :empty pseudo-class -->
+<div class="slide normal">
+     <header><h1>:empty pseudo-class </h1></header>
+     <section class="content">
+  <pre contenteditable>E<b>:empty</b></pre>
+<p>Matches:
+ <pre contenteditable>&lt;E&gt;&lt;/E&gt;
+&lt;E&gt;&lt;!-- this is a comment --&gt;&lt;/E&gt;
+&lt;E title="this is an empty element"/></pre>
+<p class="css4 temphidden">CSS Selectors Level 4</p>
+<pre contenteditable>E<b>:blank</b></pre>
+<p>Also matches:
+ <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre>
+     </section>
+    </div>
+
+
+
+<!-- links-->
+<div class="slide normal">
+     <header><h1>Link Pseudo Classes</h1></header>
+     <section class="content">
+  <pre contenteditable class="double">:link
+:visited</pre>
+  <p class="css4 temphidden">CSS Selectors Level 4</p>
+ <pre contenteditable class="double">:any-link
+:local-link
+:local-link(n)</pre>
+  </section>
+  </div>
+
+
+
+<div class="slide">
+  <header><h1>link levels</h1></header>
+    <section class="content">
+     <pre contenteditable class="example">:local-link {
+  text-decoration: none;
+  color: inherit;
+}</pre>
+<pre contenteditable class="example"><s>a[href^=http],</s>
+a[href^="http://"],
+a[href^="https://"],
+a:not(:local-link(0)){
+  /* external link */
+}
+    </section>
+</div>
+
+
+<!-- lang, target, anchor links-->
+<div class="slide normal">
+     <header><h1>User Action Pseudo Classes</h1></header>
+     <section class="content">
+  <pre contenteditable class="double">:hover
+:active
+:focus</pre>
+  </section>
+  </div>
+
+<!-- lang, target, anchor links-->
+<div class="slide normal">
+     <header><h1>Drag and Drop Pseudo Classes</h1></header>
+     <section class="content">
+
+  <p class="css4 temphidden">CSS Selectors Level 4</p>
+<pre contenteditable class="double">:active-drop
+:valid-drop
+:invalid-drop</p>
+  </section>
+  </div>
+
+
+
+<!-- lang, target, anchor links-->
+<div class="slide normal">
+     <header><h1>Other Pseudo Classes</h1></header>
+     <section class="content">
+  <pre contenteditable class="double">
+:target</pre>
+  <p class="css4 temphidden">CSS Selectors Level 4</p>
+  <pre contenteditable class="double">:scope</pre>
+  </section>
+  </div>
+
+
+  <div class="object slide">
+  <object data="files/07_target.html"></object>
+     <header><h1>:target pseudo-class</h1></header>
+  <a href="files/07_target.html" target="play" class="objectlink">:target example</a>
+
+    </div>
+
+<!-- lang, target, anchor links-->
+<div class="slide normal">
+     <header><h1>Language Pseudo Classes</h1></header>
+     <section class="content">
+  <pre contenteditable class="double">:lang(en)</pre>
+  <p class="css4 temphidden">CSS Selectors Level 4</p>
+  <pre contenteditable class="double">:lang(zh, *-hant)
+:dir(ltr|rtl)</pre>
+  </section>
+  </div>
+
+
+
+<!--root  -->
+<div class="slide normal">
+     <header><h1>:root</h1></header>
+     <section class="content">
+ <pre contenteditable>
+:root
+</pre>
+
+<p>Selects the document root, which is &lt;html&gt;</p>
+<ul><li>Declare <em>font-size</em> on <strong>:root</strong> if using <strong>rem</strong> units</li>
+<li>Style <strong>:root</strong> only if showing <strong>&lt;head&gt;</strong> (as in our exercise files)</li>
+
+  <li>In CSS4, define Defining Variables on root. (see <a href="http://dev.w3.org/csswg/css-variables/"  target="play">Variables module</a>)</li>
+</ul>
+<p><small><a href="files/03_root.html" target="play">example</a></small></p>
+     </section>
+    </div>
+
+ <div class="slide object">
+ <div style="background-image: url(http://www.standardista.com/wp-content/uploads/2012/01/specifishity.gif); background-size: cover; position:absolute; height: 792px; overflow: scroll; top: 0; left: 0; width: 100%"></div>
+     <header><h1>Specificity (SpeciFISHity)</h1></header>
+ <a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" target="play" class="objectlink">Download</a>
+ </div>
+
+
+ <div class="object slide">
+  <object data="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" style="height: 792px;"></object>
+     <header><h1>Specificity (SpeciFISHity)</h1></header>
+  <a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" target="play" class="objectlink"> </a>
+</div>
+
+
+<!-- Specificity Notes -->
+<div class="slide normal">
+     <header><h1>Specificity: The less than obvious</h1></header>
+     <section class="content">
+ <p>The * selector, or global selector, has no value.</p>
+ <pre contenteditable>* {} 0-0-0 </pre>
+
+<p>Combinators, like ~, >, and + have no value</p>
+<pre contenteditable>ul li {} 0-0-2
+ul > li {} 0-0-2</pre>
+
+<p>:not has no value, but parameter selector does</p>
+<pre contenteditable>.myClass:not(p) {} 0-1-1</pre>
+
+<p>Specificity is not inheritance</p>
+     </section>
+</div>
+
+<div class="slide intro"><h1>
+<a href="http://bit.ly/1qLuzDR">Exercise</a>
+<br/>http://bit.ly/1qLuzDR</h1></div>
+<!-- Pseudo elements -->
+<div class="slide intro">
+     <header><h1>Pseudo elements</h1></header>
+ </div>
+
+<!-- Pseudo elements -->
+<div class="slide normal thisSlide">
+     <header><h1>Pseudo elements</h1></header>
+     <section class="content">
+     <pre contenteditable style="font-size: 100%;">
+::first-line
+::first-letter
+::selection (not in specification)
+::before
+::after
+    </pre>
+
+  <p><i class="imp">Pseudo-classes</i> select elements that
+
+already exist.<br>
+
+<i class="imp">Pseudo-elements</i> create "faux" elements you can style.</p>
+
+<p>    Use single colon because of IE</p>
+     </section>
+    </div>
+
+
+<!-- Drop Cap -->
+<div class="slide object ">
+     <header><h1>::first-letter</h1></header>
+     <object data="files/08_dropcap.html">
+     <section class="content">
+
+   <p class="firstletter">You can even pretty drop-caps with :first-letter, but make sure to apply it to p:first-of-type so your site not too ugly. <a href="files/08_dropcap.html" target="play" class="objectlink">Code for drop cap.</a></p>  <pre contenteditable>p:first-of-type::first-letter {
+	position: relative;
+	top: 8px;
+	float: left;
+	font-size: 3em;
+	line-height: 1;
+	color: hsl(205, 87%, 50%);
+	padding: 0 4px 2px 0;
+	font-weight: bold;
+}
+ </pre>
+     </section>
+     </object>
+     <a href="files/08_dropcap.html" target="play" class="objectlink">Drop Cap</a>
+    </div>
+
+
+<!-- ::selection -->
+<div class="slide normal thisSlide">
+     <header><h1>::selection</h1></header>
+     <section class="content">
+
+    <pre contenteditable>.thisSlide *::selection {
+   background-color: #990000;
+   color: #ffffff;
+}
+    </pre>
+    <p class="notes">Prefix with -moz- for Firefox<br>
+    Use single colon because of IE</p>
+     </section>
+    </div>
+
+    <!-- ::selection -->
+<div class="slide normal thisSlide foo">
+     <header><h1>Disabling ::selection</h1></header>
+     <section class="content">
+
+    <pre contenteditable>.thisSlide *::selection {
+   background-color: hsl(205, 87%, 50%);
+   color: #ffffff;
+}</pre>
+<p>For mobile but impacts desktop too:</p>
+<pre class="contenteditable">.thisSlide {
+  -webkit-tap-highlight-color: #bada55;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}</pre>
+
+     </section>
+    </div>
+
+
+
+<!-- :before and :after  -->
+<div class="slide normal">
+     <header><h1>::before and ::after</h1></header>
+
+
+     <section class="content">
+  <pre contenteditable>p:before {
+  content: "before content - ";
+  font-weight: bold;
+}
+p:after{
+  content: " - after content";
+  font-weight: bold;
+}</pre>
+
+<pre contenteditable>&lt;p>the content&lt;/p></pre>
+
+<p class="beforeafter">the content</p>
+<pre contenteditable>&lt;p>
+    &lt;before&gt;before content - &lt;/before>
+        the content
+    &lt;after&gt; - after content&lt;/after>
+&lt;/p></pre>
+<a href="files/31_generatetext.html" target="play" class="objectlink">Try it out</a> </section>
+</div>
+
+<!-- UI selectors -->
+<div class="slide object">
+<object data="files/generatedcontent.html"></object>
+     <header><h1>Generated Content</h1></header>
+ <a href="files/generatedcontent.html" target="play">Generated Content</a></h1>
+  <p>Test them out for yourselves</p>
+    </div>
+
+
+
+<div class="slide">
+  <header><h1>IE10 Specific</h1></header>
+    <section class="content">
+<pre contenteditable style="font-size: 1.9rem">::-ms-browse
+::-ms-value
+::-ms-check
+::-ms-clear
+::-ms-expand
+::-ms-fill
+::-ms-fill-lower
+::-ms-fill-upper
+::-ms-reveal
+::-ms-thumb
+::-ms-ticks-after
+::-ms-ticks-before
+::-ms-tooltip
+::-ms-track</pre>
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1>Shadow DOM</h1></header>
+    <section class="content">
+          <p>Many, many more pseudo-elements with prefixes currently treated as a shadow DOM
+      <ul><li>::-webkit-progress-bar</li>
+         <li>::-webkit-progress-value</li>
+         <li>::-webkit-meter-even-less-good-value
+         </li>
+         <li>::-webkit-inner-spin-button /outer-spin-button
+         </li>
+         <li>::-webkit-validation-bubble / arrow-clipper /arrow /message</li>
+         <li>::-webkit-scrollbar</li>
+         <li>::-webkit-scrollbar-button / thumb / track
+         <li><a href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions#section_22" target="_new">Mozilla Pseudo-elements and pseudo-classes</a></li>
+
+         </ul>
+    </section>
+</div>
+
+
+<!-- selectors tips -->
+<div class="slide normal">
+     <header><h1>Tips</h1></header>
+     <section class="content">
+<ul>
+	<li><a href="http://selectivizr.com/" target="_blank">selectivizr.com</a> + JS Library = JS for backward compatibility</li>
+    <li>jQuery $(selector) == document.querySelectorAll(selector)</li>
+
+    </li>
+
+</ul>
+     </section>
+ </div>
+
+ <div class="slide normal">
+<header><h1>Thanks</h1></header>
+<section class="content">
+<h1 class="textmask">Estelle Weyl</h1>
+<h2><a href="http://www.standardista.com">www.standardista.com</a></h2>
+<h2><a href="http://www.twitter.com/estellevw">@estellevw</a></h2>
+<h2><a href="http://www.twitter.com/standardista">@standardista</a></h2>
+<div style="float:right"><img src="http://akamaicovers.oreilly.com/images/9780980846904/cat.gif" alt="HTML5 and CSS3 for the Real World"><img src="http://akamaicovers.oreilly.com/images/0636920018063/cat.gif" alt="HTML5: The Definitive Guide" style="margin: 0 20px;"/><img src="http://akamaicovers.oreilly.com/images/0636920021711/cat.gif" alt="MObile HTML5" style="margin: 0 20px;"/><img src="http://akamaicovers.oreilly.com/images/0636920025955/cat.gif" alt="Web Performance Daybook"/></div>
+</section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+        <li><a href="../CSS-Workshop/part_02_specificity.html">CSS Workshop Part 2</a></li>
+        <li><a href="../html5mobile/part_02_specificity.html">Mobile HTML5 - CSS Part 2</a></li>
+        <li><a href="../html5training/css_specificity.html">HTML5 Boot Camp - CSS Part 2</a></li>
+        <li><a href="../oscon2012/#slide7">Making a CSS3 Slide Deck</a></li>
+      </ul>
+    </section>
+</div>
+
+
+   </div>
+
+
+</div>
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">&laquo; Back</li>
+            <li class="button done" id="next">Next &raquo; </li>
+        </ul>
+    </nav>
+</header>
+<script src="selectors.js"></script>
+  <!--[if lt IE 9]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({ mode: "overlay" });</script>
+  <![endif]-->
+
+  </body>
+
+</html>
+

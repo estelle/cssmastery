@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>18-1 (live)</title> 
+<style type="text/css">
+
+	div {animation-name:  "change_bgcolor", "bg-shift";
+		animation-duration: 10s, 10s;
+		animation-fill-mode: none;
+		width: 40ch; padding: 5ch; margin: 2em auto;
+		font-weight: bold; text-align: center;
+		border: 1px solid rgba(0,0,0,0.5);}
+	@keyframes "bg-shift" {
+	35% {background-color: orange;}
+	55% {background-color: red;}
+	65% {background-color: yellow;}
+	}
+	@keyframes change_bgcolor {
+	0%, 100% {background-color: black;}
+	45% {background-color: green;}
+	55% {background-color: blue;}
+</style>
+</head>
+<body>
+
+<div>This is a div.</div>
+
+</body>
+</html>

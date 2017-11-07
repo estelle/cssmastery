@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CSS Selector Test: :blank and :empty</title>
+<link rel="stylesheet" href="editme.css"/>
+<style contenteditable id="editme">
+*:empty {border: red solid;}
+</style>
+</head>
+
+<body>
+<p></p>
+<p><!-- this is a comment --></p>
+<input type="button" value="empty" />
+<p>   <!-- has white space -->   </p>
+ 
+<pre>
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- this is a comment --&gt;&lt;/p&gt;
+&lt;input type="button" value="empty" /&gt;
+&lt;p&gt;   &lt;!-- has white space -->   &lt;/p&gt;
+</pre>   
+</body>
+
+</html>
+

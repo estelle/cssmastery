@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Meter Example</title>
+<meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<style type="text/css">
+meter {width:400px;}
+::-webkit-meter-optimum-value {
+    background-image: -webkit-linear-gradient(#000, #7a3);
+}
+
+::-webkit-meter-suboptimum-value{background-image: -webkit-linear-gradient(#f00, #7a3);
+}
+::-webkit-meter-even-less-good-value {background-image: -webkit-linear-gradient(#00f, #7a3);
+}
+</style>
+</head>
+
+<body>
+<meter value=90 min=0 max=100 low=20 high=98 optimum="99" id="fred">75%</meter>
+<input type="range" min="0" max="100" value="90" step="1" onChange="document.getElementById('fred').value = this.value; document.getElementById('op').value = this.value"/><output id="op"></output>
+<p>Min and Max</p>
+<p class="wide"><meter value="0" min="0" max="4">Meter is not supported in your browser</meter></p>
+<p class="wide"><meter value="1" min="0" max="4">Meter is not supported in your browser</meter></p>
+<p class="wide"><meter value="2" min="0" max="4">Meter is not supported in your browser</meter></p>
+<p class="wide"><meter value="3" min="0" max="4">Meter is not supported in your browser</meter></p>
+<p class="wide"><meter value="4" min="0" max="4">Meter is not supported in your browser</meter></p>
+<p>High / Low </p>
+<p class="high"><meter value="1" low="0" high="10">Meter is not supported in your browser</meter></p>
+<p class="high"><meter value="5" low="0" high="10">Meter is not supported in your browser</meter></p>
+<p class="high"><meter value="9" low="0" high="10">Meter is not supported in your browser</meter></p>
+<p>Grade: <meter value="61" min="0" max="100" low="73" high="87" optimum="100" id="foo">D-</meter></p>
+<input type="range" min="0" max="100" value="90" step="1" onChange="document.getElementById('foo').value = this.value; document.getElementById('op2').value = this.value"/><output id="op2"></output>
+
+</body>
+</html>
