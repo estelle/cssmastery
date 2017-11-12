@@ -1,0 +1,456 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Generated Content</title>
+   <link rel="stylesheet" href="../selectors/selectors.css"/><link rel="stylesheet" href="generated.css"/>
+ 
+   <style>
+
+   </style>
+
+  </head>
+  <body>
+  <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+  <div id="topinfo">
+
+  </div>
+
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
+    <span class="key">2</span> for comments. <a href="http://estelle.github.io/cssmastery/generated">estelle.github.io/cssmastery/generated</a>
+    </p>
+  </div>
+
+  <div id="presentation">
+
+   <div id="presentation-counter"></div>
+
+   <div id="slides">
+<!-- slidedeck title -->
+<div class="slide">
+    <header>
+    	<h1>CSS: Generated Content</h1>
+    </header>
+     <section class="content">
+      <h2><a href="http://estelle.github.io/cssmastery/generated">estelle.github.io/cssmastery/generated</a></h2>
+     <p> ◈ Estelle Weyl</p>
+  <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
+     </section>
+    </div>
+
+<!-- title -->
+<div class="slide intro">
+     <header><h1>Generated Content</h1></header>
+</div>
+
+
+<!-- :before and :after  -->
+<div class="slide">
+     <header><h1>::before and ::after</h1></header>
+
+
+     <section class="content">
+  <pre contenteditable>p:before {
+  content: "before content - ";
+  font-weight: bold;
+}
+p:after{
+  content: " - after content";
+  font-weight: bold;
+}</pre>
+
+<pre contenteditable>&lt;p>the content&lt;/p></pre>
+
+<p class="beforeafter">the content</p>
+<pre contenteditable>&lt;p>
+    &lt;before&gt;before content - &lt;/before>
+        the content
+    &lt;after&gt; - after content&lt;/after>
+&lt;/p></pre>
+<a href="files/01_generatedtext.html" target="play" class="objectlink">Try it out</a> </section>
+
+    </div>
+
+
+<div class="slide object">
+<header><h1>Try it out</h1></header>
+<object data="files/01_generatedtext.html"></object>
+<a href="files/01_generatedtext.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+
+<!-- 2 free elements  -->
+<div class="slide intro">
+     <header><h1>Pseudo Elements</h1></header>
+     <section class="content">
+     You get 2 free stylable faux elements for every non-empty element
+     <div class="beforeafterdivcont  d3">
+     	<div class="beforeafterdiv"><i>Content</i></div>
+      </div>
+     </section>
+ </div>
+
+<!-- Pseudoelement Syntax & Support-->
+<div class="slide">
+     <header><h1>Syntax</h1></header>
+     <section class="content">
+     <pre contenteditable>element::before {
+  /* the only 'required' attribute */
+  content: ""; 
+ }
+
+element::after {
+  /* without "content:", you have no content */
+  content: ""; 
+ }</pre>
+     </section>
+ </div>
+
+
+<!-- counters and content -->
+<div class="slide">
+     <header><h1>Values for content:</h1></header>
+     <section class="content">
+     <dl class="deprecated listed">
+  <dt><span title="none"><strong>none</strong></span></a></dt>
+  <dd>Same as no content property declared.</dd>
+  <dt><span title="normal"><strong>normal</strong></span></a></dt>
+  <dd>Same as no content property declared.</dd>
+  <dt><span title="&lt;string&gt;"><strong>string</strong></a></span></dt>
+  <dd>A string of text. Can be combined with URL, counter, attr(x), quotes, etc.</dd>
+  <dt><span title="&lt;uri&gt;"><strong>image</strong></span></dt>
+  <dd>URL of  a resource, usual an image</dd>
+  <dt><span title="&lt;counter&gt;"><strong>counter</strong></a></span></dt>
+  <dd>'counter(name), counter(name, style), 'counters(name, string)' or 'counters(name, string, style)'.  'name' is a string, but not  'none', 'inherit' or 'initial'. </dd>
+  <dt><span title="open-quote"><strong>open-quote</strong></a></span> / <span title="close-quote"><strong>close-quote</strong></a></span><a href="http://www.w3.org/TR/CSS2/generate.html" target="resource">⎘</a></dt>
+  <dd>The appropriate string set in the  <strong>'quotes'</strong></a> property.</dd>
+  <dt><span title="no-open-quote"><strong>no-open-quote</strong></a></span> / <span title="no-close-quote"><strong>no-close-quote</strong></a></span></dt>
+  <dd>Does not include quotes,  but increments  the level of nesting for quotes.</dd>
+  <dt><span title="attr()"><strong>attr(X)</strong></span></a></dt>
+  <dd>Displays the value of the attribute 'X'</dd>
+</dl>
+<pre contenteditable>body {counter-reset: sections;}
+header h1.sectiontitle:before{
+	content: "Part " counter(sections) ": ";
+	counter-increment: sections;
+}</pre>
+<a href="http://www.standardista.com/css3/creating-counters-with-generated-content/" target="resource" class="objectlink">Tutorial</a>
+     </section>
+ </div>
+
+<div class="slide">
+  <header><h1>attr() support, or lack thereof</h1></header>
+    <section class="content">
+      <p>Supported</pre>
+      <pre contenteditable>attr( attrName )</pre>
+      <p>Not yet</p>
+      <ul>
+      <li><code>attr( attrName unit? [ , fallback ]? )</code></li>
+      <li>any use outside of <code>content:</code></li></ul>
+      <dl class="deprecated">
+        <dt>string</dt>
+<dd>contents of a CSS string. Default is the empty string.</dd>
+<dt>color</dt>
+<dd>Must parse as a readable color. Default is ‘currentColor’.</dd>
+<dt>url</dt>
+<dd>Default is ‘about:invalid’. Relative URLs will be made absolute, not relative to the style sheet.</dd>
+<dt>integer</dt>
+<dd>Default is ‘0’</dd>
+<dt>number</dt>
+<dd>Default is ‘0’</dd>
+<dt>length, angle, time or frequency</dt>
+<dd>Default is ‘0’ in the relevant units. If the unit is a relative length, it will be computed to an absolute length.</dd>
+<dt>length or unit token </dt>
+<dd>'em’ ‘ex’ ‘px’ ‘rem’ ‘vw’ ‘vh’ ‘vmin’ ‘vmax’ ‘mm’ ‘cm’ ‘in’ ‘pt’ ‘pc’ ‘deg’ ‘grad’ ‘rad’ ‘ms’ ‘s’ ‘Hz’ ‘kHz’ or ‘%'. If the unit is a relative length, it will be computed to an absolute length.</dd>
+      </dl>
+<pre contenteditable>&lt;p data-count="5">Hi&lt;/p>
+
+width: attr(data-count em, auto);</pre>
+    </section>
+</div>
+
+<div class="slide divider">
+  <header><h1>Generated Content: Quotes</h1></header>
+</div>
+
+
+<div class="slide">
+  <header><h1>Quotes</h1></header>
+<section class="content">
+  <pre>/* Specify pairs of quotes for two levels in two languages */
+:lang(en) > q { quotes: '"' '"' "'" "'" }
+:lang(fr) > q { quotes: "«" "»" "’" "’" }
+
+/* Insert quotes before and after Q element content */
+q::before { content: open-quote }
+q::after  { content: close-quote }
+</pre>
+</div>
+
+
+<div class="slide object">
+  <object data="https://codepen.io/estelle/full/yPbKVW/"></object>
+  <a href="https://codepen.io/estelle/pen/yPbKVW/" target="resource" class="objectlink">Codepen.io</a>
+</div>
+
+<div class="slide object">
+  <header><h1>no-close-quote</h1></header>
+  <object data="https://codepen.io/estelle/full/aVWYyZ"></object>
+  <a href="https://codepen.io/estelle/pen/aVWYyZ" target="resource" class="objectlink">Codepen.io</a>
+</div>
+
+
+<div class="slide divider">
+     <header><h1>Generated Content: Attribute Values</h1></header>
+ </div>
+
+
+<div class="slide divider">
+     <header><h1>Generated Content: Images</h1></header>
+ </div>
+
+
+<div class="slide divider">
+     <header><h1>Generated Content: Strings</h1></header>
+ </div>
+
+
+<!-- Pseudoelement Syntax & Support-->
+<div class="slide">
+     <header><h1>Syntax</h1></header>
+     <section class="content">
+     <pre contenteditable>
+ element:before {
+  content: "REQUIRED";
+ }
+</pre>
+<hr/>
+      <pre contenteditable>
+ element:before {
+    content: '';                  /* empty */
+    content: " (.pdf) ";          /* any text */
+    content: "\2603";             /* unicode */
+    content: " (" attr(href) ")"; /* attributes */
+    content: counter(name);
+        counter-increment: name;  /* counters */
+ }
+ </pre>
+     </section>
+ </div>
+
+
+<div class="slide divider">
+     <header><h1>Special Characters</h1></header>
+ </div>
+
+
+<!-- quotes example -->
+<div class="slide">
+     <header><h1>Decorative Characters</h1></header>
+     <section class="content">
+<pre contenteditable>&lt;blockquote&gt;
+  &lt;p&gt;With generated content you can create text effects.&lt;/p&gt;
+  &lt;p&gt;We'll cover other uses next.&lt;/p&gt;
+&lt;/blockquote&gt;</pre>
+<pre contenteditable style="float: left; position:relative; margin-right: 50px;">
+blockquote p:before,
+blockquote p:after {
+  font-size: 2em;
+  color: #C7573A;
+  line-height: 0;
+  vertical-align: middle;
+}
+blockquote p:first-child:before {
+  content: "\275D";
+  margin: 0 5px 0 -40px;
+}
+blockquote p:last-child:after {
+  content: "\275E";
+  margin: 0 -40px 0 5px;
+}</pre>
+<blockquote class="gc"><p>With generated content you can created text effects.</p><p>We'll cover other uses next.</p></blockquote>
+     </section>
+ </div>
+
+<!-- Generated Content: links icons -->
+<div class="slide">
+     <header><h1>Improved UX</h1></header>
+     <section class="content ba">
+
+     <pre contenteditable style="float: left; margin-right: 30px;">a:before {
+  color: #ffffff;
+  background: #000000;
+  font-size: 120%;
+  padding: 2px 5px;
+  display: inline-block;
+  width: 1.2em;
+  margin-right: 10px;
+  text-align: center;
+}
+a[href^="mailto:"]:before {
+  content: "\2709 ";
+}
+a[href^="tel:"]:before {
+  content: "\2706";
+}
+a[href$="vcs"]:before {
+  content: "\231A";
+}</pre>
+
+<ul>
+	<li><a href="mailto:spam@yahoo.com">spam@yahoo.com</a></li>
+	<li><a href="tel:18005551212">1.800.555.1212</a></li>
+	<li><a href="ical.vcs">Add to Calendar</a></li>
+</ul>
+     </section>
+ </div>
+
+
+
+
+<!--  Special Characters -->
+<div class="slide">
+     <header><h1>Special Character</h1></header>
+     <section class="content">
+     <pre contenteditable id="a2603">
+ element:before {
+  content: "\2603";
+ }
+ </pre>
+ <style>#a2603:after {content: "\2603";}</style>
+<object data="http://evotech.net/articles/testjsentities.html" style="height:300px; width:100%; transform: scale(1.35); transform-origin: top left"></object>
+<p><a href="files/02_generatedtext.html" target="play">Try it out</a><br>
+ <a class="objectlink" href="http://evotech.net/articles/testjsentities.html" target="resource">Calculator</a>
+     </section>
+ </div>
+
+
+
+ <!-- attribute example -->
+ <div class="slide">
+     <header><h1>Attribute Values as content</h1></header>
+     <section class="content attribute">
+     <p>There are <a href="files/02_generatedtext.html" target="play">local examples</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes">Google</a>.</p>
+     <pre contenteditable>a[href^=http]:hover {
+   position: relative;
+}
+a[href^=http]:hover:after {
+   <b>content: attr(href);</b>
+   position: absolute;
+   top: 1em;
+   left: 0;
+   background-color: black;
+   color: white;
+   padding: 3px 5px;
+   line-height:1;
+} </pre>
+     </section>
+ </div>
+
+
+<!-- quote bubble -->
+ <div class="slide">
+     <header><h1>Quotes</h1></header>
+     <section class="content">
+
+     <p class="quote">This is a quote<a href="files/03_bubbles.html" target="play" style="color: inherit">✍</a> </p>
+
+<pre contenteditable>.quote {
+    border-radius: 10px;
+    position:relative;
+    padding: 20px;
+    background-color: red;
+    color: white;
+}
+.quote:after {
+    position:absolute;
+    content: '';
+    width: 0; height:0;
+    border: 20px solid tran&hellip;
+    border-top-color: red;
+    bottom:-39px; left:20px;
+}</pre>
+     </section>
+ </div>
+
+
+
+<div class="slide object">
+  <header><h1>Play</h1></header>
+  <object data="files/03_bubbles.html"></object>
+  <a href="files/03_bubbles.html" target="resource" class="objectlink">Open</a>
+</div>
+
+ <!-- quote bubble -->
+ <div class="slide">
+     <header><h1>Thought bubbles</h1></header>
+     <section class="content">
+
+     <p class="thought">This is a thought bubble <a href="files/34_bubbles.html" target="play" style="color: inherit">✍</a></p>
+
+<pre contenteditable style="font-size: 75%; padding:0">.thought,.thought:before,
+.thought:after  {
+  border-radius: 50%;
+  border: 5px solid blue;
+  background-color: white;
+  position:relative;
+}
+.thought:before,
+.thought:after {
+  content: '';
+  position:absolute;
+  left: 20%; bottom: -30px;
+  height: 40px; width: 40px;
+}
+.thought:after {
+  left: 12%; bottom: -50px;
+  height: 20px; width: 20px;
+}</pre>
+     </section>
+ </div>
+
+<!-- CSS-Tricks shapes -->
+<div class="slide object">
+     <object data="http://css-tricks.com/examples/ShapesOfCSS/" style="width:100%; height: 100%;"></object>
+     <header style="position:absolute; top: 10px; width: 100%; text-align:center; background-color: rgba(255,255,255,0.9);"><h1><a href="http://css-tricks.com/examples/ShapesOfCSS/" target="play">Shapes</a></h1></header>
+     <a class="objectlink" href="http://css-tricks.com/examples/ShapesOfCSS/" target="resource">Visit Site</a>
+ </div>
+
+<!-- CSS-Tricks -->
+<div class="slide object">
+     <object data="http://css-tricks.com/pseudo-element-roundup/" style="width:100%; height: 100%;"></object>
+      <header style="position:absolute; top: 10px; width: 100%; text-align:center; background-color: rgba(255,255,255,0.9);"><h1><a href="http://css-tricks.com/pseudo-element-roundup/" target="play">Other ideas</a></h1></header>
+      <a class="objectlink" href="http://css-tricks.com/pseudo-element-roundup/" target="resource">Visit Site</a>
+ </div>
+
+<!-- Tool Tip Example -->
+<div class="slide">
+     <header><h1>Try it: Tool Tip</h1></header>
+     <section class="content">
+     <p>In this section you have learned the general idea of using generated content to create effects and / or to provide additional information.  Try hovering over me to find out how awesome <i title="Generated Content Rocks my world" data-tooltip="true">generated content</i> can be.</p>
+     <p>Open up a text editor and try creating a <i title="'Cause tool tips are awesome" data-tooltip="true">tooltip</i> without looking at the code. But, if you must, the code is attached, or you can check out your web inspector.</p>
+     <p style="margin-bottom: 50px;">Here is <a title="Don't cheat" data-tooltip="true" href="files/35_tooltip.html" target="play">one solution</a></p>
+     </section>
+</div>
+
+<!--NEXT-->
+<div class="slide intro">
+     <header><h1>Part 4:<br>Media Queries</h1></header>
+     <section class="content">(briefly)</section>
+    <h1><a href="part_04_media.html#slide3">Next ➹</a></h1>
+</div>
+
+  </div>
+  <script src="../selectors/selectors.js"></script>
+  </body>
+</html>
