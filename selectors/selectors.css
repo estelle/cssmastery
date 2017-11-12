@@ -134,6 +134,17 @@ text-shadow: -1px -1px 2px rgba(0,0,0,1);}
 .slide.section,.slide.intro header {
 	font-size: 200%;
 }
+
+.intro p, header, .divider {
+  text-align: center;
+}
+.intro header, .divider {
+  font-size: 200%;
+}
+
+.divider h1 {
+  padding-top: 200px;
+}
 .slide li {
 margin-bottom: 10px;
 }
@@ -351,6 +362,7 @@ background: rgba(255, 255, 255, 0.6);
 border-radius: 8px;
 border: 1px solid #fff;
 }
+code {color: #955;}
 .ex.right {
 float: right;
 width: 200px;

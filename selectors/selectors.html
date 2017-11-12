@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>CSS Selectors</title>
+	<style>
+		dl {
+			display: flex;
+			flex-flow: wrap row;
+			line-height: 2;
+		}
+
+
+		body {
+			columns: 2 22.5em;
+			column-gap: 2em;
+		}
+		code {
+		}
+		dt, dd, dl {margin: 0; padding: 0;}
+		dt {
+			display: inline-block;
+			clear: both;
+			width: 50%;
+			font-family: georgia, serif;
+			break-inside: avoid;
+		}
+		dt.break {clear: left;}
+		h2 {font-family: helvetica, sans-serif; column-span: all}
+		dd {
+			margin: 0; padding: 0;
+			width: 50%;
+			clear: none;
+			display: inline-block;
+			background-color: #dedede;
+			margin-bottom: 0.2em;
+			padding-left: 1em;
+			box-sizing: border-box;
+		}
+		@media print {
+			dl {line-height: 1.2;}
+			body {
+				columns: 2;
+				column-gap: 0.5em;
+			}
+			span {display: none;}
+		}
+	</style>
+</head>
+<body>
+
+<h2>CSS selectors level 4</h2>
+<dl>
+<dt>Case-insensitive attribute selector</dt>
+<dd><code>[attribute='value' i]</code></dd>
+<dt>Blank <span>pseudo-class</span></dt>
+<dd><code>:blank</code></dd>
+<dt>Structural <span>pseudo-class</span></dt>
+<dd><code>:nth-match()</code></dd>
+<dt>Dir <span>pseudo-class</span></dt>
+<dd><code>:dir(ltr)</code></dd>
+<dt>Drop <span>pseudo-class</span>*</dt>
+<dd><code>:drop</code></dd>
+<dt>Hyperlink <span>pseudo-class</span></dt>
+<dd><code>:any-link</code></dd>
+<dt>Lang <span>pseudo-class</span></dt>
+<dd><code>:lang(*-en)</code></dd>
+<dt>Local link <span>pseudo-class</span></dt>
+<dd><code>:local-link</code></dd>
+<dt>Matches-any <span>pseudo-class</span></dt>
+<dd><code>:matches(s1, s2)</code></dd>
+<dt>Mutability* <span>pseudo-class</span></dt>
+<dd><code>:read-only <br/> :read-write</code></dd>
+<dt>Negation <span>pseudo-class</span></dt>
+<dd><code>:not(s1, s2)</code></dd>
+<dt>Optionality <span>pseudo-class</span></dt>
+<dd><code>:required<br/> :optional</code></dd>
+<dt>Placeholder <span>pseudo-class</span></dt>
+<dd><code>:placeholder-shown</code></dd>
+<dt>Indeterminate-value</dt>
+<dd><code>:indeterminate</code></dd>
+<dt>Validity <span>pseudo-classes</span></dt>
+<dd><code>:valid<br/> :invalid</code></dd>
+<dt>Relational <span>pseudo-class</span></dt>
+<dd><code>:has()</code></dd>
+<dt>Scope <span>pseudo-class</span></dt>
+<dd><code>:scope</code></dd>
+<dt>Range <span>pseudo-classes</span></dt>
+<dd><code>:in-range<br/> :out-of-range</code></dd>
+<dt>Grid <span>pseudo-classes</span></dt>
+<dd><code>:column(selector)<br/>
+ :nth-column(n)<br/> 
+ :nth-last-column(n)</code></dd>
+<dt>Time <span>pseudo-class</span></dt>
+<dd><code>:current</code></dd>
+<dt>Default option <span>pseudo-class</span></dt>
+<dd><code>:default</code></dd>
+<dt>Column combinator*</dt>
+<dd><code>E || F</code></dd>
+<dt>Descendant combinator</dt>
+<dd><code>E &gt;&gt; F</code></dd>
+<dt><strike title="deprecated">Reference combinator</dt>
+<dd><code>E /foo/ F</code></strike>
+</dd>
+<dt><strike title="deprecated">Parent combinator</dt>
+<dd><code>E! &gt; F</code></strike></dt>
+    </dl>
+<h2>CSS selectors level 3</h2>
+    <dl>
+<dt>Attribute selectors</dt>
+<dd><code>[attribute^='val']<br/> 
+	[attribute$='lue']<br/> 
+    [attribute*='alu']</code></dd>
+<dt>Target <span>pseudo-class</span></dt>
+<dd><code>:target</code></dd>
+<dt>Negation <span>pseudo-class</span></dt>
+<dd><code>:not(s)</code></dd>
+<dt>General sibling combinator</dt>
+<dd><code>E ~ F</code></dd>
+<dt>Enabled and Disabled <span>pseudo-class</span></dt>
+<dd><code>:enabled<br/> :disabled</code></dd>
+<dt>Selected-option</dt>
+<dd><code>:checked</code></dd>
+<dt>&nbsp;</dt><dd style="background:none">&nbsp;</dd>
+<dt>&nbsp;</dt><dd style="background:none">&nbsp;</dd>
+<dt style="break-before: column">Structural pseudo-classes</dt>
+<dd><code>:root<br/> 
+	:empty<br/> 
+	:last-child<br/> 
+	:only-child<br/> 
+	:first-of-type<br/> 
+	:last-of-type<br/> 
+	:only-of-type<br/> 
+	:nth-child(n)<br/> 
+	:nth-last-child(n)<br/> 
+	:nth-of-type(n)<br/> 
+	:nth-last-of-type(n)</code></dt>
+    </dl>
+    
+<h2>CSS selectors level 2</h2>
+    <dl>
+<dt>Universal selector</dt>
+<dd><code>*</code></dd>
+<dt>Lang <span>pseudo-class</span></dt>
+<dd><code>:lang(en)</code></dd>
+<dt>User action <span>pseudo-class</span></dt>
+<dd><code>:hover<br/> :focus</code></dd>
+<dt>Structural <span>pseudo-class</span></dt>
+<dd><code>:first-child</code></dd>
+<dt>Child combinator</dt>
+<dd><code>E &gt; F</code></dd>
+<dt>Attribute Selectors</dt>
+<dd><code>[attribute]<br/>
+ [attribute='value']<br/> 
+ [attribute~='value']<br/> 
+ [attribute|='en']</code></dd>
+<dt>Adjacent sibling combinator</dt>
+<dd><code>E + F</code></dt>
+    </dl>
+<h2>CSS selectors level 1</h2>
+    <dl>
+<dt>Type selector</dt>
+<dd><code>E</code></dd>
+<dt>Descendant selector</dt>
+<dd><code>E F</code></dd>
+<dt>Class selector</dt>
+<dd><code>.class</code></dd>
+<dt>ID selector</dt>
+<dd><code>#elID</code></dd>
+<dt>Link <span>pseudo-class</span></dt>
+<dd><code>:link</code></dd>
+<dt>User action <span>pseudo-class</span></dt>
+<dd><code>:active</code></dt>
+</dl>
+</body>
+</html>

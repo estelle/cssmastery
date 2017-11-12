@@ -45,9 +45,9 @@
 
     <div class="slide intro">
      <header><hgroup>
-      <h1><span class="textmask">Select This!</span><br> CSS Selectors</h1>
+      <h1><span class="textmask">CSS Selectors</h1>
      </hgroup></header>
-     <p><a href="http://estelle.github.com/cssmastery/selectors/" style="color: #000">http://estelle.github.com/cssmastery/selectors/</a></p>
+     <p><a href="https://estelle.github.io/cssmastery/selectors/" style="color: #000">estelle.github.io/cssmastery/selectors/</a></p>
     </div>
 
 
@@ -116,76 +116,6 @@ selector ~ relation {
   <a href="files/00_basics.html" target="play" class="objectlink">Try it out</a>
 </div>
 
-<div class="slide normal">
-  <header><h1>Selectors API</h1></header>
-  <section class="content">
-    <pre contenteditable>var chil = $('#bar .foo');</pre>
-    <p>Natively</p>
-
-<pre contenteditable>var el   = document.<strong>querySelector</strong>('#bar');
-
-var chil = el.<strong>querySelectorAll</strong>('.foo');</pre>
-
-    <p>or</p>
-    <pre contenteditable>chil = document.<strong>querySelectorAll</strong>('#bar .foo');</pre>
-  </section>
-</div>
-
-
-
-<!-- Relational selectors -->
-<div class="slide normal" id="slcRelational">
-  <header><h1>Relational selectors &amp; Combinators</h1></header>
-  <section class="content">
-    <div class="ex right">
-      <ol>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3
-          <ul>
-            <li>item a</li>
-            <li>item b</li>
-            <li>item c</li>
-          </ul>
-        </li>
-        <li class="hasaclass">hasaclass</li>
-        <li>item 5</li>
-        <li>item 6</li>
-        <li>item 7</li>
-      </ol>
-    </div>
-    <dl>
-      <dt><span onclick="hasaclass('ul li');">ul li</span>, <br><span onclick="hasaclass('ol li');">ol li</span></dt>
-      <dd>descendant selector<br />
-        matches nested &lt;li&gt;s
-      </dd>
-      <dt onclick="hasaclass('ol > li');">ol &gt; li</dt>
-      <dd><em>child selector</em> <br />
-      matches &lt;li&gt;s in &lt;ol&gt; but not nested &lt;ul&gt;</dd>
-      <dt onclick="hasaclass('li.hasaclass + li');">li.hasaclass + li</dt>
-      <dd><em>adjacent sibling</em> </dd>
-      <dt onclick="hasaclass('li.hasaclass ~ li');"><strong class="new">NEW  </strong><span style="background-color:#eee; padding:3px 20px; position:relative; left: 22px; margin-left: -20px;">(IE7+)</span><br />
-      li.hasaclass ~ li</dt>
-      <dd><em>general sibling selector</em><br />
-      matches later siblings, but not nested.</dd>
-    </dl>
-  </section>
-<script defer>
-function hasaclass(selector) {
-  var i = j = 0,
-      elements = document.querySelectorAll('.current .ex li'),
-      update = document.querySelectorAll('.current .ex ' + selector);
-  for (; i < elements.length; i++) {
-    elements[i].classList.remove('active');
-  }
-  for (; j < update.length; j++) {
-    update[j].classList.add('active');
-  }
-}
-</script>
-</div>
-
-
 
 <!-- selectors in CSS1 -->
 <div class="slide">
@@ -200,50 +130,7 @@ E F
   </section>
 </div>
 
-<!-- CSS4: Attribute Selector -->
-<div class="slide">
-  <header>
-    <h1>CSS Selectors 4: Combinators</h1>
-  </header>
-  <section class="content">
 
-    <p>Reference combinator</p>
-    <pre>E /attr/ F</pre>
-    <pre>label /for/ input</pre>
-
-
-    <p>Parent selector</p>
-    <pre><s>E! > F</s></pre>
-    <pre>:has<pre>
-
-    <a href="http://codepen.io/estelle/pen/lEGev" target="_play"></a>
-  </section>
-</div>
-
-<!-- How we did the previous slide -->
-<div class="slide">
-  <header>
-    <h1>In case you were wondering...</h1>
-  </header>
-  <section class="content">
-
-<pre contenteditable>
-function hasaclass(slctr){
-  var i = j = 0,
-      elements = document.<strong>querySelectorAll</strong>('.cur .ex li'),
-      cur = document.<strong>querySelectorAll</strong>('.cur .ex ' + slctr);
-
-  for (; i &lt; elements.length; i++){
-    elements[i].<strong>classList.remove</strong>('active');
-  }
-
-  for (; j &lt; cur.length; j++){
-    cur[j].<strong>classList.add</strong>('active');
-  }
-}      </pre>
-
-  </section>
-</div>
 
 <!-- Play time
 <div class="slide object">
@@ -311,33 +198,33 @@ function hasaclass(slctr){
 
       <li><br/>E ~ F</li>
       <li>:root</li>
-      <li>:last-child</li>
-      <li>:only-child</li>
-      <li>:nth-child(n)</li>
-      <li>:nth-last-child(n)</li>
-      <li>:first-of-type</li>
-      <li>:last-of-type</li>
-      <li>:only-of-type</li>
-      <li>:nth-of-type(n)</li>
-      <li>:nth-last-of-type(n)</li>
+      <li>E:last-child</li>
+      <li>E:only-child</li>
+      <li>E:nth-child(n)</li>
+      <li>E:nth-last-child(n)</li>
+      <li>E:first-of-type</li>
+      <li>E:last-of-type</li>
+      <li>E:only-of-type</li>
+      <li>E:nth-of-type(n)</li>
+      <li>E:nth-last-of-type(n)</li>
 
-      <li><br/>:empty</li>
-      <li>:not(selector)</li>
-      <li>:target</li>
+      <li><br/>E:empty</li>
+      <li>E:not(selector)</li>
+      <li>E:target</li>
 
-      <li><h3>UI Selectors</h3>
-      <li><br/>:enabled</li>
-      <li>:disabled</li>
-      <li>:checked</li>
-      <li>:default</li>
-      <li>:valid</li>
-      <li>:invalid</li>
-      <li>:in-range</li>
-      <li>:out-of-range</li>
-      <li>:required</li>
-      <li>:optional</li>
-      <li>:read-only</li>
-      <li>:read-write</li>
+      <li style="column-span: all"><h3>UI / Selectors #4</h3>
+      <li>E:enabled</li>
+      <li>E:disabled</li>
+      <li>E:checked</li>
+      <li>E:default</li>
+      <li>E:valid</li>
+      <li>E:invalid</li>
+      <li>E:in-range</li>
+      <li>E:out-of-range</li>
+      <li>E:required</li>
+      <li>E:optional</li>
+      <li>E:read-only</li>
+      <li>E:read-write</li>
     </ul>
   </section>
 </div>
@@ -345,46 +232,67 @@ function hasaclass(slctr){
 
 <div class="slide normal">
   <header>
-    <h1>Mo' Selectors</h1>
+    <h1>CSS Selectors Level 4</h1>
   </header>
   <section class="content">
     <ul class="columns">
-      <li>::selection</li>
-      <li>:indeterminate</li>
-      <li>E:not(s1, s2)</li>
-      <li>E:matches(s1, s2)</li>
-      <li>E:has(rs1, rs2)</li>
-      <li>E[foo="bar" i]</li>
-      <li>E:dir(ltr)</li>
-      <li>E:lang(zh, *-hant)</li>
-      <li>:any-link</li>
-      <li>:scope</li>
-      <li>:current</li>
-      <li>:current(s)</li>
-      <li>:past</li>
-      <li>:future</li>
-      <li>:active-drop</li>
-      <li>:valid-drop</li>
-      <li>:invalid-drop</li>
-      <li>:placeholder-shown</li>
-      <li>:blank</li>
-      <li>F || E</li>
+       <li>:blank</li>
+       <li>:indeterminate</li>
+       <li>:placeholder-shown</li>
+       <li>:not(s1, s2)</li>
+       <li>:matches(s1, s2)</li>
+       <li>:has(rs1, rs2)</li>
+       <li>[foo="bar" i]</li>
+       <li>:dir(ltr)</li>
+       <li>:lang(zh, *-hant)</li>
+       <li>:any-link</li>
+       <li>:scope</li>
+       <li>:current</li>
+       <li>:focus-ring</li>
+       <li>:drop</li>
+       <li>:drop(active)</li>
+       <li>:drop(valid)</li>
+       <li>:drop(invalid)</li>
+       <li>:user-error</li>
+       <li>E >> F</li>
+       <li>F || E</li>
+      <li>:column(selector)</li>
       <li>:nth-column(n)</li>
       <li>:nth-last-column(n)</li>
-      <li>:scope</li>
+    </ul>
+    <h3>Maybe</h3>
+    <ul class="columns">
+      <li>::selection</li>
       <li>:scope-context()</li>
+       <li>:current(s)</li>
+       <li>:past</li>
+       <li>:future</li>
       <li>:host</li>
       <li>:host()</li>
       <li>:host-context()</li>
       <li>::shadow</li>
       <li>::content</li>
-      <li>E /deep/ F</li>
-      <li>::region</li>
+       <li><strike>E /foo/ F</strike></li>
+       <li><strike>E! > F</strike></li>
+       <li><s>:local-link</s></li>
+       <li><s>:nth-match()</s></li>
     </ul>
   </section>
 </div>
 
 
+
+ <div class="object slide">
+  <object data="selectors.html"></object>
+     <header><h1>All the selectors</h1></header>
+  <a href="selectors.html" target="play" class="objectlink" aria-label="open all the selectors in new window">Open</a>
+</div>
+
+
+<!-- divider -->
+<div class="slide divider">
+  <h1>Specificity</h1>
+</div>
 
  <div class="object slide">
   <object data="http://specifishity.com/" style="height: 792px;"></object>
@@ -414,8 +322,125 @@ ul > li {} 0-0-2</pre>
 
 
 
+<!-- divider -->
+<div class="slide divider">
+  <h1>Relational selectors &amp; Combinators</h1>
+</div>
 
 
+<!-- Relational selectors -->
+<div class="slide normal" id="slcRelational">
+  <header><h1>Relational selectors &amp; Combinators</h1></header>
+  <section class="content">
+    <div class="ex right">
+      <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3
+          <ul>
+            <li>item a</li>
+            <li>item b</li>
+            <li>item c</li>
+          </ul>
+        </li>
+        <li class="hasaclass">hasaclass</li>
+        <li>item 5</li>
+        <li>item 6</li>
+        <li>item 7</li>
+      </ol>
+    </div>
+    <dl>
+      <dt><span onclick="hasaclass('ul li');">ul li</span>, <br><span onclick="hasaclass('ol li');">ol li</span></dt>
+      <dd>descendant selector<br />
+        matches nested &lt;li&gt;s
+      </dd>
+      <dt onclick="hasaclass('ol > li');">ol &gt; li</dt>
+      <dd><em>child selector</em> <br />
+      matches &lt;li&gt;s in &lt;ol&gt; but not nested &lt;ul&gt;</dd>
+      <dt onclick="hasaclass('li.hasaclass + li');">li.hasaclass + li</dt>
+      <dd><em>adjacent sibling</em> </dd>
+      <dt onclick="hasaclass('li.hasaclass ~ li');"><strong class="new">NEW  </strong><span style="background-color:#eee; padding:3px 20px; position:relative; left: 22px; margin-left: -20px;">(IE7+)</span><br />
+      li.hasaclass ~ li</dt>
+      <dd><em>general sibling selector</em><br />
+      matches later siblings, but not nested.</dd>
+    </dl>
+  </section>
+<script defer>
+function hasaclass(selector) {
+  var i = j = 0,
+      elements = document.querySelectorAll('.current .ex li'),
+      update = document.querySelectorAll('.current .ex ' + selector);
+  for (; i < elements.length; i++) {
+    elements[i].classList.remove('active');
+  }
+  for (; j < update.length; j++) {
+    update[j].classList.add('active');
+  }
+}
+</script>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- divider -->
+<div class="slide divider">
+  <h1>Selectors API</h1>
+</div>
+
+
+<div class="slide normal">
+  <header><h1>Selectors API</h1></header>
+  <section class="content">
+    <pre contenteditable>var chil = $('#bar .foo');</pre>
+    <p>Natively</p>
+
+<pre contenteditable>var el   = document.<strong>querySelector</strong>('#bar');
+
+var chil = el.<strong>querySelectorAll</strong>('.foo');</pre>
+
+    <p>or</p>
+    <pre contenteditable>chil = document.<strong>querySelectorAll</strong>('#bar .foo');</pre>
+  </section>
+</div>
+
+
+<!-- How we did the previous slide -->
+<div class="slide">
+  <header>
+    <h1>In case you were wondering...</h1>
+  </header>
+  <section class="content">
+
+<pre contenteditable>
+function hasaclass(slctr){
+  var i = j = 0,
+      elements = document.<strong>querySelectorAll</strong>('.cur .ex li'),
+      cur = document.<strong>querySelectorAll</strong>('.cur .ex ' + slctr);
+
+  for (; i &lt; elements.length; i++){
+    elements[i].<strong>classList.remove</strong>('active');
+  }
+
+  for (; j &lt; cur.length; j++){
+    cur[j].<strong>classList.add</strong>('active');
+  }
+}      </pre>
+
+  </section>
+</div>
+
+
+
+<!-- divider -->
+<div class="slide divider">
+  <h1>Attribute Selectors</h1>
+</div>
 
 
 
@@ -499,13 +524,18 @@ a[href$=pdf]:after {content: &quot; (PDF)&quot;;}</pre>
 
 <p>Only relevant if attribute value is case senstive <br/>(as it is for all attributes in XHTML)</p>
     <p><a href="http://codepen.io/estelle/pen/lEGev" target="_play">CodePen test page</a>
-      <br/><a href="files/01_attr_caseinsensitiveB.html">Local test page</a>
   </section>
 </div>
 
 
 
-<!-- selectors css 2 -->
+ <div class="object slide">
+  <object data="files/01_attr_caseinsensitiveB.html"></object>
+     <header><h1>Case Sensitivity</h1></header>
+  <a href="files/01_attr_caseinsensitiveB.html" target="play" class="objectlink" aria-label="open all the selectors in new window">Open</a>
+</div>
+
+<!-- selectors css 2 
 <div class="slide">
 <header><h1>Selectors in CSS Level 2</h1></header>
 <section class="content" style="line-height: 1.5">
@@ -522,42 +552,30 @@ E + F
 [attribute|="en"]</pre>
 </section>
 </div>
-
+-->
 
 <!-- Attribute Selectors Recap -->
 <div class="slide normal">
      <header><h1>Attribute Selectors Recap</h1></header>
      <section class="content">
      <pre contenteditable style="float:left; width: 45%; margin: 0 20px 0 0;">
-input[placeholder] {
-<b class="notes">/* matches any input with a placeholder */</b>}
-input[type=email] {
-<b class="notes">/* exact match */</b>}
-abbr[title~=unicorn] {
-<b class="notes">/* matches unicorn but not unicorns */</b>}
-abbr[title|=en] {
-<b class="notes">/* matches en-us and en-uk */</b>}
-a[href^=mailto] {
-<b class="notes">/* starts with */</b>}
-a[href$=pdf]{
-<b class="notes">/* ends in */</b>}
-abbr[title*=unicorn] {
-<b class="notes">/* matches unicorn and unicorns */</b>}
+input[placeholder] {<b class="notes">/* matches any input with a placeholder */</b>}
+input[type=email] {<b class="notes">/* exact match */</b>}
+abbr[title~=unicorn] {<b class="notes">/* matches unicorn but not unicorns */</b>}
+abbr[title|=en] {<b class="notes">/* matches en-us and en-uk */</b>}
+a[href^=mailto] {<b class="notes">/* starts with */</b>}
+a[href$=pdf]{<b class="notes">/* ends in */</b>}
+abbr[title*=unicorn] {<b class="notes">/* matches unicorn and unicorns */</b>}
+abbr[title*=UNICORN i] {<b class="notes">/* matches unicorn and UnIcOrNs */</b>}
 </pre>
-<pre contenteditable style="float:left; width: 40%; margin-top:0;">E:[att] <b class="notes"><br/>/* have the attribute at all */</b>
-
-E:[att=val] <b class="notes"><br/>/* exact */</b>
-
-E:[att~=val] <b class="notes"><br/>/* val is a space separated word */</b>
-
-E:[att|=val] <b class="notes"><br/>/* with a dash */</b>
-
-E:[att^=val] <b class="notes"><br/>/* begins with val */</b>
-
-E:[att$=val]  <b class="notes"><br/>/* ends with val */</b>
-
-E:[att*=val]  <b class="notes"><br/>/* val is anywhere as a substring */</b>
-.</pre>
+<pre contenteditable style="float:left; width: 40%; margin-top:0;">E:[att] <b class="notes">/* have the attribute at all */</b>
+E:[att=val] <b class="notes">/* exact */</b>
+E:[att~=val] <b class="notes">/* val is a space separated word */</b>
+E:[att|=val] <b class="notes">/* with a dash */</b>
+E:[att^=val] <b class="notes">/* begins with val */</b>
+E:[att$=val]  <b class="notes">/* ends with val */</b>
+E:[att*=val]  <b class="notes">/* val is anywhere as a substring */</b>
+E:[att*=VAL i]  <b class="notes">/* anywhere as a case insenstive substring */</b></pre>
 <pre contenteditable style="clear:both">
 @media print{
   abbr[title]:after {
@@ -581,6 +599,10 @@ E:[att*=val]  <b class="notes"><br/>/* val is anywhere as a substring */</b>
     </div>
 
 
+<!-- divider -->
+<div class="slide divider">
+  <h1>UI Pseudo-Class Selectors</h1>
+</div>
 
 
 <!-- UI pseudo-classes -->
@@ -608,15 +630,20 @@ E:[att*=val]  <b class="notes"><br/>/* val is anywhere as a substring */</b>
 <div class="slide normal">
      <header><h1>Form related UI pseudo-classes</h1></header>
      <section class="content">
-  <pre contenteditable style="font-size: 1.8rem; line-height: 1.4;">:valid
+  <pre contenteditable style="font-size: 1.8rem;" class="columns">:default
+:valid
 :invalid
+
 :required
 :optional
+
 :in-range
 :out-of-range
+
 :read-only
 :read-write
-:default</pre>
+
+:placeholder-shown</pre>
   </section>
 </div>
 
@@ -665,37 +692,42 @@ input:in-range { background-color:lightgreen;}</pre>
 
 
 
+<!-- divider -->
+<div class="slide divider">
+  <h1>Structural selectors</h1>
+</div>
 
 
 <!-- List of Structural selectors -->
 <div class="slide normal">
      <header><h1>Structural selectors</h1></header>
      <section class="content">
-  <pre contenteditable class="columns2">:nth-child()
+  <pre contenteditable class="columns2">
+:root
+
+:empty
+
+:blank
+
+:nth-child()
 
 :nth-last-child()
-
-:nth-of-type()
-
-:nth-last-of-type()
 
 :first-child<sup style="color:#C61800">*</sup>
 
 :last-child
 
+:only-child
+
+:nth-of-type()
+
+:nth-last-of-type()
+
 :first-of-type
 
 :last-of-type
 
-:only-child
-
 :only-of-type
-
-:root
-
-:empty
-
-:not(:empty)
 </pre>
 <ul><li>Target elements on the page based on their relationships to other elements in the DOM.</li>
 <li>Updates dynamically if page updates.</li>
@@ -807,8 +839,8 @@ li:nth-of-type(<b>3n-1</b>) {
 
  <!--Advanced Structural Selectors -->
 <div class="slide normal">
-     <header><h1>Structural Selectors</h1></header>
-     <section class="content">
+     <header><h1>Before Flexbox</h1></header>
+     <section class="content" style="height: 80%; overflow: scroll;">
      <ul class="count"><li>1</li></ul>
      <ul class="count"><li>1</li><li>2</li></ul>
      <ul class="count"><li>1</li><li>2</li><li>3</li></ul>
@@ -849,6 +881,8 @@ li:nth-of-type(<b>3n-1</b>) {
  <a href="files/05_flag2.html" target="play" class="objectlink">USA Flag</a>
  </div>
 
+
+<!-- nth-matchnes()
 <div class="slide">
   <header><h1>Structural Selectors Level 4</h1></header>
     <section class="content double">
@@ -859,159 +893,7 @@ E:nth-last-match(n of selector)</pre>
 li:nth-last-match(3n+1 of .bar)</pre>
     </section>
 </div>
-
-<!-- :not -->
-<div class="slide normal">
-     <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header>
-     <section class="content">
-     <pre contenteditable>E<b contenteditable="false">:not(</b>s1<b contenteditable="false">)</b></pre>
-     <pre contenteditable class=" example">div<b contenteditable="false">:not(</b>.excludeMe<b contenteditable="false">)</b></span></pre>
-     <p class="css4 temphidden">CSS Selectors Level 4</p>
-     <pre contenteditable>E:not(s1, s2)</pre>
-     <pre class="example" contenteditable>li<b contenteditable="false">:not(</b>.foo<b contenteditable="false">,</b> .bar<b contenteditable="false">)</b></pre>
-     <pre  contenteditable>E:matches(s1, s2)</pre>
-     <pre class="example" contenteditable>li<b contenteditable="false">:matches(</b>[title]<b contenteditable="false">,</b> [role]<b contenteditable="false">)</b></pre>
-  </pre>
-     </section>
-    </div>
-
-<div class="slide">
-  <header><h1>Experimental :any</h1></header>
-    <section class="content">
-      <pre  contenteditable>E:matches(s1, s2)</pre>
-      <pre  contenteditable  class="example" >:-webkit-any(article, aside) :-webkit-any(article, aside) h1,
-:-moz-any(article, aside) :-moz-any(article, aside) h1 {
-
-}</pre><pre  contenteditable  class="example" >
-nav a:matches(.foo, .bar, .bam),
-nav a:-webkit-any(.foo, .bar, .bam),
-nav a:-moz-any(.foo, .bar, .bam) {
-
-}</pre><pre  contenteditable  class="example" >
-nav a:not(:matches(.foo, .bar, .bam)),
-nav a:not(:-webkit-any(.foo, .bar, .bam)),
-nav a:not(:-moz-any(.foo, .bar, .bam)),
-nav a:not(.foo, .bar, .bam) {
-
-}
-</pre>
-    </section>
-</div>
-<!--
- <div class="slide object">
- <object data="files/06_not.html"></object>
-     <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header>
- <a href="files/06_not.html" target="play" class="objectlink">Negation Selectors</a>
- </div>
 -->
-
-
-
- <!-- :empty pseudo-class -->
-<div class="slide normal">
-     <header><h1>:empty pseudo-class </h1></header>
-     <section class="content">
-  <pre contenteditable>E<b>:empty</b></pre>
-<p>Matches:
- <pre contenteditable>&lt;E&gt;&lt;/E&gt;
-&lt;E&gt;&lt;!-- this is a comment --&gt;&lt;/E&gt;
-&lt;E title="this is an empty element"/></pre>
-<p class="css4 temphidden">CSS Selectors Level 4</p>
-<pre contenteditable>E<b>:blank</b></pre>
-<p>Also matches:
- <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre>
-     </section>
-    </div>
-
-
-
-<!-- links-->
-<div class="slide normal">
-     <header><h1>Link Pseudo Classes</h1></header>
-     <section class="content">
-  <pre contenteditable class="double">:link
-:visited</pre>
-  <p class="css4 temphidden">CSS Selectors Level 4</p>
- <pre contenteditable class="double">:any-link
-:local-link
-:local-link(n)</pre>
-  </section>
-  </div>
-
-
-
-<div class="slide">
-  <header><h1>link levels</h1></header>
-    <section class="content">
-     <pre contenteditable class="example">:local-link {
-  text-decoration: none;
-  color: inherit;
-}</pre>
-<pre contenteditable class="example"><s>a[href^=http],</s>
-a[href^="http://"],
-a[href^="https://"],
-a:not(:local-link(0)){
-  /* external link */
-}
-    </section>
-</div>
-
-
-<!-- lang, target, anchor links-->
-<div class="slide normal">
-     <header><h1>User Action Pseudo Classes</h1></header>
-     <section class="content">
-  <pre contenteditable class="double">:hover
-:active
-:focus</pre>
-  </section>
-  </div>
-
-<!-- lang, target, anchor links-->
-<div class="slide normal">
-     <header><h1>Drag and Drop Pseudo Classes</h1></header>
-     <section class="content">
-
-  <p class="css4 temphidden">CSS Selectors Level 4</p>
-<pre contenteditable class="double">:active-drop
-:valid-drop
-:invalid-drop</p>
-  </section>
-  </div>
-
-
-
-<!-- lang, target, anchor links-->
-<div class="slide normal">
-     <header><h1>Other Pseudo Classes</h1></header>
-     <section class="content">
-  <pre contenteditable class="double">
-:target</pre>
-  <p class="css4 temphidden">CSS Selectors Level 4</p>
-  <pre contenteditable class="double">:scope</pre>
-  </section>
-  </div>
-
-
-  <div class="object slide">
-  <object data="files/07_target.html"></object>
-     <header><h1>:target pseudo-class</h1></header>
-  <a href="files/07_target.html" target="play" class="objectlink">:target example</a>
-
-    </div>
-
-<!-- lang, target, anchor links-->
-<div class="slide normal">
-     <header><h1>Language Pseudo Classes</h1></header>
-     <section class="content">
-  <pre contenteditable class="double">:lang(en)</pre>
-  <p class="css4 temphidden">CSS Selectors Level 4</p>
-  <pre contenteditable class="double">:lang(zh, *-hant)
-:dir(ltr|rtl)</pre>
-  </section>
-  </div>
-
-
 
 <!--root  -->
 <div class="slide normal">
@@ -1030,6 +912,297 @@ a:not(:local-link(0)){
 <p><small><a href="files/03_root.html" target="play">example</a></small></p>
      </section>
     </div>
+
+ <!-- :empty pseudo-class -->
+<div class="slide normal">
+     <header><h1>:empty &amp; :blank pseudo-classes </h1></header>
+     <section class="content">
+  <pre contenteditable>E<b>:empty</b></pre>
+ <pre contenteditable>&lt;E/>
+&lt;E&gt;&lt;/E&gt;
+&lt;E&gt;&lt;!-- this is a comment --&gt;&lt;/E&gt;
+&lt;E title="this is an empty element"/></pre>
+<hr/>
+<p>No browser support...
+<pre contenteditable>E<b>:blank</b></pre>
+ <pre contenteditable>&lt;E&gt;   &lt;!-- has white space -->   &lt;/E&gt;</pre><small>
+ :-moz-whitespace-only</small>
+     </section>
+    </div>
+
+
+
+<!-- divider -->
+<div class="slide divider">
+  <h1>Other Logical Combinations:<br/>
+  Negation, Matching and Parent</h1>
+</div>
+
+
+<!-- :not(s) -->
+<div class="slide normal">
+     <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header>
+     <section class="content">
+     <pre contenteditable>E<b contenteditable="false">:not(</b>s1<b contenteditable="false">)</b></pre>
+     <pre contenteditable class=" example">div<b contenteditable="false">:not(</b>.excludeMe<b contenteditable="false">)</b></span></pre> 
+  <p>Supported everywhere since IE9</p>
+     </section>
+    </div>
+
+
+
+
+<!-- :not(s1, s2) -->
+<div class="slide normal">
+     <header><h1><strong>:not(s1, s2)</strong> </h1></header>
+     <section class="content">
+     <pre contenteditable>E<b contenteditable="false">:not(</b>s1, s2<b contenteditable="false">)</b></pre>
+     <pre contenteditable class=" example">div<b contenteditable="false">:not(</b>.excludeMe, .excuseYou<b contenteditable="false">)</b></span></pre>
+     <p><a href="https://caniuse.com/#feat=css-not-sel-list" target="play">Safari Only</a></p>
+   </section>
+ </div>
+
+
+ <div class="slide object">
+ <object data="files/06_not.html"></object>
+     <header><h1><strong>:not</strong> -  Negation pseudo-class</h1></header>
+ <a href="files/06_not.html" target="play" class="objectlink">Negation Selectors</a>
+ </div>
+
+
+
+
+
+<div class="slide">
+  <header><h1>:matches(s1, s2)</h1></header>
+    <section class="content">
+     <pre  contenteditable>E:matches(s1, s2)</pre><hr/>
+     <pre class="example" contenteditable>li<b contenteditable="false">:matches(</b>[title]<b contenteditable="false">,</b> [role]<b contenteditable="false">) a</b> {}</pre>
+  <pre>li[title] a, 
+li[role] a {}</pre>
+<hr/>
+     <pre class="example" contenteditable><b contenteditable="false">:matches(</b>#home, #contact<b contenteditable="false">)</b> aside :matches(a:active, a:focus){}</pre>
+<pre class="example" contenteditable>#home aside a:active, 
+#contact aside a:active,
+#home aside a:focus, 
+#contact aside a:focus {}</pre>
+<p><a href="https://caniuse.com/#feat=css-matches-pseudo">Safari only</a></p>
+     </section>
+    </div>
+
+<div class="slide">
+  <header><h1>Experimental :any</h1></header>
+    <section class="content">
+      <pre  contenteditable>E:matches(s1, s2)</pre>
+      <pre  contenteditable  class="example" >:-webkit-any(article, aside) :-webkit-any(article, aside) h1,
+:-moz-any(article, aside) :-moz-any(article, aside) h1 {
+}</pre><pre  contenteditable  class="example" >
+a:matches(.foo, .bar, .bam) span,
+a:-webkit-any(.foo, .bar, .bam) span,
+a:-moz-any(.foo, .bar, .bam) span {
+}</pre><pre  contenteditable  class="example" >
+nav a:not(:matches(.foo, .bar, .bam)),
+nav a:not(:-webkit-any(.foo, .bar, .bam)),
+nav a:not(:-moz-any(.foo, .bar, .bam)),
+nav a:not(.foo, .bar, .bam) {
+}
+nav a:not(.foo):not(.bar).not(.bam){
+}
+</pre>
+    </section>
+</div>
+
+
+
+
+<!-- Reference Combinator -->
+<div class="slide">
+  <header>
+    <h1>Removed from the specification</h1>
+  </header>
+  <section class="content">
+
+    <p>Reference combinator</p>
+    <pre>E /attr/ F</pre>
+    <pre>label /for/ input</pre>
+</section>
+</div>
+
+ <!-- Reference Combinator -->
+<div class="slide">
+  <header>
+    <h1>Parent Selector</h1>
+  </header>
+    <p>Parent selector</p>
+    <pre><s>E! > F</s></pre>
+    <pre>:has</pre>
+<p>Contains a header</p>
+    <pre>header:has(h1, h2, h3, h4, h5, h6)</pre>
+<p>Contains no headers</p>
+    <pre>header:not(:has(h1, h2, h3, h4, h5, h6))</pre>
+<p>Contains something that is not a header</p>
+<pre>header:has(:not(h1, h2, h3, h4, h5, h6))</pre>
+    <a href="https://caniuse.com/#feat=css-has">CanIUse.com</a>
+  </section>
+</div>
+
+
+
+
+<!-- divider -->
+<div class="slide divider">
+  <h1>Linguistic Pseudo Classess</h1>
+</div>
+
+<div class="slide normal">
+     <header><h1>Language Pseudo Classes</h1></header>
+     <section class="content">
+
+  <p class="css4 temphidden">CSS 2.1</p>
+  <pre contenteditable class="double">html[lang|="en"]</pre>
+  <pre contenteditable class="double">p:lang(en)</pre>
+  <p class="css4 temphidden">CSS Selectors Level 4</p>
+  <pre contenteditable class="double">:lang(*-ch)</pre>
+
+  <pre contenteditable class="double">
+:dir(ltr|rtl)</pre>
+<small>:dir => FF only, :lang(*-ch) => none </small>
+  </section>
+  </div>
+
+<!-- divider -->
+<div class="slide divider">
+  <h1>Link, location, and user action</h1>
+</div>
+
+<!-- links-->
+<div class="slide normal">
+     <header><h1>Link Pseudo Classes</h1></header>
+     <section class="content">
+      <p><code>a</code> with an <code>href</code> attribute</p> 
+  <pre contenteditable class="double">:link
+:visited</pre>
+  <p class="css4 temphidden">CSS Selectors Level 4</p>
+ <pre contenteditable class="double">:any-link
+<s>:local-link</s>
+<s>:local-link(n)</s></pre>
+<code>:any-link</code> is the same as <code>:matches(:link, :visited)</code>
+  </section>
+  </div>
+
+
+<!--
+<div class="slide">
+  <header><h1>link levels</h1></header>
+    <section class="content">
+     <pre contenteditable class="example">:local-link {
+  text-decoration: none;
+  color: inherit;
+}</pre>
+<pre contenteditable class="example"><s>a[href^=http],</s>
+a[href^="http://"],
+a[href^="https://"],
+a:not(:local-link(0)){
+  /* external link */
+}
+    </section>
+</div>
+-->
+
+<!-- lang, target, anchor links-->
+<div class="slide normal">
+     <header><h1>User Action Pseudo Classes</h1></header>
+     <section class="content">
+  <pre contenteditable class="double">:hover
+:active
+:focus</pre>
+<pre>:focus-ring
+:focus-within</pre>
+
+<pre>:drop
+:drop()</pre>
+  </section>
+  </div>
+
+
+
+<!-- lang, target, anchor links-->
+<div class="slide normal">
+     <header><h1>:hover, :active, :focus</h1></header>
+     <section class="content">
+  <pre contenteditable class="double">:hover
+:active
+:focus</pre>
+
+  <pre contenteditable class="double">a:visited:hover
+button:active:focus</pre>
+ 
+  <p>Never, ever, ever do....</p>
+  <pre contenteditable class="double">*:focus { outline: none; }</pre>
+  </section> <p><a href="https://html.spec.whatwg.org/multipage/semantics-other.html#selector-active" target="play">elements that can be active</a></p>
+  </div>
+
+
+
+
+<!-- lang, target, anchor links-->
+<div class="slide normal">
+     <header><h1>Drag and Drop Pseudo Classes</h1></header>
+     <section class="content">
+<ul>
+<li><code>:drop</code><br/>drop targets while the user is “dragging”.<br/>  Unfortunately, <code>dropzone</code> attribute is not yet supported</li>
+
+<li><code>:drop(active)</code><br/>current drop target for the drag operation. </li>
+
+<li><code>:drop(valid</code><br/>drop target is valid for the object currently being dragged, like correct filetype.</li>
+
+<li><code>:drop(invalid)</code><br/>drop target is invalid for the object currently being dragged, i.e. doesn't except the filetype of object being dragged.</li>
+
+<li><code>:drop(valid active)</code> <br/>matches  active drop target if it’s valid</li>
+</ul>
+
+  </section>
+  </div>
+
+
+
+<!-- lang, target, anchor links-->
+<div class="slide normal">
+     <header><h1>Other Pseudo Classes</h1></header>
+     <section class="content">
+  <pre contenteditable class="double">
+:target</pre>
+ 
+ <pre>myPage.html#anchor
+
+&lt;div id="anchor">ipsum lorem....
+
+div:target::first-line {
+  font-weight: bold;
+}</pre>
+  </section>
+  </div>
+
+
+  <div class="object slide">
+  <object data="files/07_target.html"></object>
+     <header><h1>:target pseudo-class</h1></header>
+  <a href="files/07_target.html" target="play" class="objectlink">:target example</a>
+
+    </div>
+
+<!-- lang, target, anchor links-->
+
+<div class="slide normal">
+     <header><h1>Other Pseudo Classes</h1></header>
+     <section class="content">
+
+  <pre contenteditable class="double">:scope</pre>
+  </section>
+  </div>
+
+
+
 
  <div class="slide object">
  <div style="background-image: url(http://www.standardista.com/wp-content/uploads/2012/01/specifishity.gif); background-size: cover; position:absolute; height: 792px; overflow: scroll; top: 0; left: 0; width: 100%"></div>
