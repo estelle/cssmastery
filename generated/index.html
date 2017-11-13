@@ -215,9 +215,82 @@ q::after  { content: close-quote }
  </div>
 
 
+ <!-- attribute example -->
+ <div class="slide">
+     <header><h1>Attribute Values as content</h1></header>
+     <section class="content attribute">
+     <p>There are <a href="files/02_generatedtext.html" target="play">local examples</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes">Google</a>.</p>
+     <pre contenteditable>a[href^=http]:hover {
+   position: relative;
+}
+a[href^=http]:hover:after {
+   <b>content: attr(href);</b>
+   position: absolute;
+   top: 1em;
+   left: 0;
+   background-color: black;
+   color: white;
+   padding: 3px 5px;
+   line-height:1;
+} </pre>
+     </section>
+ </div>
+
+<div class="slide object">
+  <header><h1>Play</h1></header>
+  <object data="files/00_attr.html"></object>
+  <a href="files/00_attr.html" target="resource" class="objectlink">Open</a>
+</div>
+
+<div class="slide divider">
+     <header><h1>Generated Content: Counters</h1></header>
+ </div>
+<div class="slide object">
+  <header><h1>Counter</h1></header>
+  <object data="files/02_counting.html"></object>
+  <a href="files/02_counting.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+
+
+<div class="slide object">
+  <header><h1>Counter</h1></header>
+  <object data="files/counting.html"></object>
+  <a href="files/counting.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+<div class="slide">
+  <header><h1>Counter for this Deck</h1></header>
+  <section>
+    <style contenteditable style="display:block;">/* CSS Counter */
+body {counter-reset: pagecount;}
+.slide {counter-increment: pagecount;}
+.slide:after {
+  content: counter(pagecount);
+  color: pink;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+}</style></section>
+</div>
+
+
+
+
+
+
+
 <div class="slide divider">
      <header><h1>Generated Content: Images</h1></header>
  </div>
+
+
+<div class="slide object">
+  <header><h1>Play</h1></header>
+  <object data="files/01_images.html"></object>
+  <a href="files/01_images.html" target="resource" class="objectlink">Open</a>
+</div>
 
 
 <div class="slide divider">
@@ -336,28 +409,6 @@ a[href$="vcs"]:before {
 
 
 
- <!-- attribute example -->
- <div class="slide">
-     <header><h1>Attribute Values as content</h1></header>
-     <section class="content attribute">
-     <p>There are <a href="files/02_generatedtext.html" target="play">local examples</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes">Google</a>.</p>
-     <pre contenteditable>a[href^=http]:hover {
-   position: relative;
-}
-a[href^=http]:hover:after {
-   <b>content: attr(href);</b>
-   position: absolute;
-   top: 1em;
-   left: 0;
-   background-color: black;
-   color: white;
-   padding: 3px 5px;
-   line-height:1;
-} </pre>
-     </section>
- </div>
-
-
 <!-- quote bubble -->
  <div class="slide">
      <header><h1>Quotes</h1></header>
@@ -390,6 +441,59 @@ a[href^=http]:hover:after {
   <object data="files/03_bubbles.html"></object>
   <a href="files/03_bubbles.html" target="resource" class="objectlink">Open</a>
 </div>
+
+
+<div class="slide object">
+  <header>
+    <h1>Material Design Icons</h1>
+  </header>
+  <object data="files/icons_list.html"></object>
+  <a href="files/icons_list.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+
+<div class="slide object">
+  <header>
+    <h1>Icon Fonts</h1>
+  </header>
+  <object data="files/icons.html"></object>
+  <a href="files/icons.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+
+<div class="slide object">
+  <header>
+    <h1>Icon Fonts</h1>
+  </header>
+  <object data="files/icons2.html"></object>
+  <a href="files/icons2.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+<div class="slide divider">
+     <header><h1>Accessibility</h1></header>
+ </div>
+
+<div class="slide">
+<header><h1>Accessibility of Generated Content</h1></header>
+<section class="content">
+  <ul>
+    <li>Generated content can enhance but should not change actual content. </li>
+  <li>Separation of concerns: content v. presentation. </li>
+  <li>generated content is factored into element's <a href="http://w3c.github.io/aria/accname-aam/accname-aam.html#mapping_additional_nd_name">accessible name computation</a> </li>
+  <li>All <a href="https://tink.uk/accessibility-support-for-css-generated-content/">browsers except IE exposes generated content</a> </li></ul>
+  <p>Improved Accessibility (future)</p>
+  <pre>content: url(question.svg) / "More Information";</pre>
+<p>Purely decorative</p>
+<pre>content: "\25BA" / "";</pre>
+</section>
+</div>
+<div class="slide divider">
+     <header><h1>Design Elements</h1></header>
+ </div>
+
+
 
  <!-- quote bubble -->
  <div class="slide">
@@ -445,9 +549,9 @@ a[href^=http]:hover:after {
 
 <!--NEXT-->
 <div class="slide intro">
-     <header><h1>Part 4:<br>Media Queries</h1></header>
+     <header><h1>Media Queries</h1></header>
      <section class="content">(briefly)</section>
-    <h1><a href="part_04_media.html#slide3">Next ➹</a></h1>
+    <h1><a href="../media/">Next ➹</a></h1>
 </div>
 
   </div>

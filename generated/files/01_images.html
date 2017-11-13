@@ -11,22 +11,24 @@ ol {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
 li {color: black;}
 li li {color: green;}
 p, pre {font-size: 2em;padding: 20px; background-color: #ccc; border-radius: 15px;}
-p {}
-</style>
-
-<style contenteditable>.quote {
-	border-radius: 10px;
-	position:relative;
+p {
 	padding: 20px;
 	background-color: red;
 	color: white;
-	float: left;
+	display: inline-block;
+	border-radius: 10px;
 }
-.quote:hover::after {
+</style>
+
+<style contenteditable>.showMe {
+	position:relative;
+}
+.showMe:hover::after {
 	position:absolute;
-	content: url(estelle.svg);
+	content: url(attr(data-url)); /* doesn't work */
+	content: url(estelle.svg); /* does work */
 	width: 200px;
-	height:200px;
+	height:200px; color: blue;
 	bottom: -39px;
 	left: 20px;	
 }</style>
@@ -34,7 +36,9 @@ p {}
 </head>
 
 <body>
-<p class="quote">This is a quote</p>
+<p class="showMe" data-url="estelle.svg">Hover over me!</p>
+
+<div></div><small style="clear:all">Content is not parsed, so url(attr()) does not work.</small>
 </body>
 </html>
 

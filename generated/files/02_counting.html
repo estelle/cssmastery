@@ -1,0 +1,35 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="files.css">
+<style>
+ol {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+li {color: black;}
+input {font-size: 2rem;}
+p {font-size: 2rem; color: blue;}
+</style>
+
+<style contenteditable id="editme">body {counter-reset: invalidCount;}
+:invalid {
+  background-color: pink;
+  counter-increment: invalidCount;
+}
+p:before {
+  content: "You have " 
+      counter(invalidCount) " invalid entries";
+}</style>
+<title>CSS UI Selector</title>
+</head>
+
+<body>
+  <ul>
+    <li><input type="number" min=5 max=7> (5,6 or 7)</li>
+    <li><input type="number" min=5 max=7> (5,6 or 7)</li>
+    <li><input type="number" min=5 max=7> (5,6 or 7)</li>
+    <li><input type="email"> (email)</li>
+  </ul>
+  <p></p>
+</body>
+</html>
+

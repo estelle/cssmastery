@@ -199,4 +199,21 @@ p [data-tooltip="true"]:hover:after {
    padding: 3px 5px;
    line-height:1;
 }
+
+style {
+	white-space: pre;
+  margin: 20px;
+  font-family: monospace;
+  -webkit-user-modify: read-write-plaintext-only;
+  -webkit-user-modify: read-write;
+  -moz-user-modify: read-write;
+  user-modify: read-write;  text-align: left;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  line-height: 1.6;
+  tab-size: 2;
+}
 /* brown: C7573A;*/

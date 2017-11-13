@@ -1,0 +1,36 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="files.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">      <style>
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(mi.woff2) format('woff2');
+}
+
+      </style>
+
+<style contenteditable id="editme">[class|='material-icons']:after { 
+  content: "\e84e";
+  content: "accessibility";
+  color: red;
+}
+.material-icons {
+  font-size: 3rem;
+}</style>
+<title>Icon Fonts</title>
+</head>
+
+<body>
+<pre>&lt;p class="material-icons"><strong style="color: white; text-shadow: 3px 3px black;">accessibility</strong>&lt;p></pre>
+<p class="material-icons">accessibility<p>
+<pre>&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></pre>
+</body>
+</html>
+

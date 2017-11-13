@@ -1,0 +1,40 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace;}
+ol {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+li {color: black;}
+li li {color: green;}
+p, pre {font-size: 2em;padding: 20px; background-color: #ccc; border-radius: 15px;}
+small {
+	color: #aaa;
+}
+</style>
+
+<style contenteditable>a[href^=http]:hover {
+   position: relative;
+}
+a[href^=http]:hover:after {
+   content: attr(href);
+   position: absolute;
+   top: 1em;
+   left: 0;
+   background-color: black;
+   color: white;
+   padding: 3px 5px;
+   line-height:1;
+}</style>
+<title>Generate Text</title>
+</head>
+
+<body>
+     <p>There are <a href="00_attr.html" target="play" title="open this file in a new window">local examples</a>, or you can search <a href="http://lmgtfy.com/?q=css+generated+content+attributes" title="search Google for generated content">Google</a>.</p>
+     <small>Links have href and title</small>
+</body>
+</html>
+
