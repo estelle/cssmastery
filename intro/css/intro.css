@@ -512,15 +512,18 @@ li.future {color: #360;}
 .transparent {
 	background: none;
 }
-.intro p, header {
+.intro p, header, .divider {
   text-align: center;
 }
-.intro header {
+.intro header, .divider {
   font-size: 200%;
 }
 
-.slide.intro hgroup {
+.slide.intro hgroup, .divider * {
   margin-top: 200px;
+}
+.divider h1 {
+	font-family: georgia;
 }
 .slide.teach {
   background-color: #fff;

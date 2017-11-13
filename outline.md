@@ -16,7 +16,19 @@
 	a. first letter
 	b. first line
 	c. selection
-	d. before, after, and generated content
-	e. additional pseudo elements
-	f. browser specific pseudo elements
-4. 
+	d. before, after and generated content
+	f. additional pseudo elements
+	g. browser specific pseudo elements
+4. Generated Content
+	a. How before and after work
+	b. How generated content works
+	c. Generated content: quotes
+	d. Generated content: Attribute Values
+	e. Generated content: Counters
+	f. Generated content: Images
+	g. Generated content: Strings
+	h. Special Characters
+	i. Accessibility
+	j. Design Elements
+5. Media Queries
+

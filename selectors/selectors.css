@@ -294,13 +294,6 @@ video {
 div:not(.current).reduced {
 	transform: scale(0.8);
 }
-.no-transitions {
-	transition: none;
-}
-.no-gradients {
-	background: none;
-	background-color: #fff;
-}
 
 /* OBJECT PAGES */
 .object header {
@@ -350,6 +343,19 @@ padding-right: 15px;
 clear: both;
 margin: 0 0 2px 0;
 }
+
+.deprecated dt {margin-bottom: 1rem;
+    }
+.deprecated dd {display: none;}
+.deprecated dt:hover + dd {display:inherit;}
+.appearance dt {margin-bottom:0.5rem;
+    }
+.deprecated.listed dt {margin-bottom:0; margin-top:0.2rem;
+     display:block; width: 50%; padding-left: 5px;
+}
+.deprecated.listed.wide dt{width:100%;}
+
+
 pre b, .pre b, .imp, a {
 font-weight: normal;
 color: #900;
@@ -471,6 +477,8 @@ input:optional {border-width: 10px;}
 input:out-of-range { background-color: pink;}
 input:in-range { background-color:lightgreen;}
 
+
+
 /* brown: C7573A;*/
 
 a {border-bottom: 1px dotted black;}
@@ -504,4 +512,30 @@ a {border-bottom: 1px dotted black;}
 	position: relative;
 	top: 200px;}
 	.slide.current {transform: scale(0.75);}
+}
+
+
+
+.slide .counter {
+  color: #999999;
+  position: absolute;
+  left: 20px;
+  top: 90%;
+  display: block;
+  font-size: 0.7rem;
+}
+.slide.title > .counter,
+.slide.segue > .counter,
+.slide.mainTitle > .counter {
+  display: none;
+}
+/* CSS Counter */
+body {counter-reset: pagecount;}
+.slide {counter-increment: pagecount;}
+.slide:after {
+  content: counter(pagecount);
+  color: lightblue;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
 }

@@ -256,7 +256,6 @@ E F
        <li>:user-error</li>
        <li>E >> F</li>
        <li>F || E</li>
-      <li>:column(selector)</li>
       <li>:nth-column(n)</li>
       <li>:nth-last-column(n)</li>
     </ul>
@@ -272,6 +271,7 @@ E F
       <li>:host-context()</li>
       <li>::shadow</li>
       <li>::content</li>
+      <li><s>:column(selector)</s></li>
        <li><strike>E /foo/ F</strike></li>
        <li><strike>E! > F</strike></li>
        <li><s>:local-link</s></li>
@@ -363,6 +363,8 @@ ul > li {} 0-0-2</pre>
       li.hasaclass ~ li</dt>
       <dd><em>general sibling selector</em><br />
       matches later siblings, but not nested.</dd>
+      <dt>E >> F</dt>
+      <dd>NEW: descendant combinator</dd>
     </dl>
   </section>
 <script defer>
@@ -643,7 +645,9 @@ E:[att*=VAL i]  <b class="notes">/* anywhere as a case insenstive substring */</
 :read-only
 :read-write
 
-:placeholder-shown</pre>
+:placeholder-shown
+
+:user-error or :user-invalid</pre>
   </section>
 </div>
 
@@ -1023,8 +1027,8 @@ nav a:not(.foo):not(.bar).not(.bam){
   <section class="content">
 
     <p>Reference combinator</p>
-    <pre>E /attr/ F</pre>
-    <pre>label /for/ input</pre>
+    <pre><s>E /attr/ F</s></pre>
+    <pre><s>label /for/ input</s></pre>
 </section>
 </div>
 
@@ -1042,7 +1046,7 @@ nav a:not(.foo):not(.bar).not(.bam){
     <pre>header:not(:has(h1, h2, h3, h4, h5, h6))</pre>
 <p>Contains something that is not a header</p>
 <pre>header:has(:not(h1, h2, h3, h4, h5, h6))</pre>
-    <a href="https://caniuse.com/#feat=css-has">CanIUse.com</a>
+    <a href="https://caniuse.com/#feat=css-has" target="play">CanIUse.com</a>
   </section>
 </div>
 
@@ -1166,9 +1170,14 @@ button:active:focus</pre>
 
 
 
+<!-- divider -->
+<div class="slide divider">
+  <h1>Other Pseudo Classes</h1>
+</div>
+
 <!-- lang, target, anchor links-->
 <div class="slide normal">
-     <header><h1>Other Pseudo Classes</h1></header>
+     <header><h1>:target</h1></header>
      <section class="content">
   <pre contenteditable class="double">
 :target</pre>
@@ -1191,41 +1200,109 @@ div:target::first-line {
 
     </div>
 
-<!-- lang, target, anchor links-->
+<!-- scope-->
 
 <div class="slide normal">
-     <header><h1>Other Pseudo Classes</h1></header>
+     <header><h1>:scope</h1></header>
      <section class="content">
 
   <pre contenteditable class="double">:scope</pre>
+<p>Matches elements that are a reference point for selectors to match against.</p>
+
+<pre>/* Selects a scoped element */
+:scope {
+  background-color: blue;
+}</pre>
+<p>In CSS, :scope is the :root, since we don't have scoped CSS yet.</p>
+
+<p>In JS, :scope matches the element returned by querySelector(), querySelectorAll(), matches(), or el.closest()</p>
   </section>
   </div>
 
+<!-- grid-->
+<div class="slide normal">
+     <header><h1>Grid-structural selectors</h1></header>
+     <section class="content">
+<p>Column combinator</p>
+  <pre contenteditable class="double">
+E || F
+</pre>
+
+  <pre contenteditable class="double">col.selected || td {
+  /* matches all cells within the column's scope*/
+}</pre>
+  <pre contenteditable class="double">:nth-column(An+B)
+:nth-last-column(An+B)
+</pre>
+  </section>
+  </div>
+
+<!-- divider -->
+<div class="slide">
+  <header><h1>Time dimensional</h1></header>
+  <section class="content">
+<pre>:current
+:future
+:past</pre>
+  </section>
+</div>
+
+<!-- divider -->
+<div class="slide">
+  <header><h1>Video &amp; Audio</h1></header>
+  <section class="content" >
+<pre>:playing
+:paused</pre></section>
+</div>
+
+<!-- divider -->
+<div class="slide divider">
+  <h1>Specificity</h1>
+</div>
 
 
 
+
+<!-- Specificity -->
  <div class="slide object">
- <div style="background-image: url(http://www.standardista.com/wp-content/uploads/2012/01/specifishity.gif); background-size: cover; position:absolute; height: 792px; overflow: scroll; top: 0; left: 0; width: 100%"></div>
+ <div style="background-image: url(http://specifishity.com/specifishity.png); background-size: cover; position:absolute; height: 792px; overflow: scroll; top: 0; left: 0; width: 100%"></div>
      <header><h1>Specificity (SpeciFISHity)</h1></header>
- <a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" target="play" class="objectlink">Download</a>
+ <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
  </div>
 
 
+<!-- Specificity -->
  <div class="object slide">
-  <object data="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" style="height: 792px;"></object>
+  <object data="http://specifishity.com/specifishity.pdf" style="height: 792px;"></object>
      <header><h1>Specificity (SpeciFISHity)</h1></header>
-  <a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" target="play" class="objectlink"> </a>
+  <a href="http://specifishity.com/specifishity.pdf" target="play" class="objectlink">Download</a>
 </div>
 
 
 <!-- Specificity Notes -->
 <div class="slide normal">
+     <header><h1>Specificity: How it works</h1></header>
+     <section class="content">
+      <ul>
+        <li><code contenteditable>0-0-0</code>: Global selector</li>
+        <li><code contenteditable>1-0-0</code>: ID selector</li>
+        <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
+        <li><code contenteditable>0-0-1</code>: Element Selector</li>
+
+ 
+
+     </section>
+</div>
+
+
+
+<!-- Specificity Notes -->
+<div class="slide">
      <header><h1>Specificity: The less than obvious</h1></header>
      <section class="content">
  <p>The * selector, or global selector, has no value.</p>
- <pre contenteditable>* {} 0-0-0 </pre>
 
-<p>Combinators, like ~, >, and + have no value</p>
+<p>Combinators, like ~, >, >>, space, and + have no value</p>
 <pre contenteditable>ul li {} 0-0-2
 ul > li {} 0-0-2</pre>
 
@@ -1237,10 +1314,9 @@ ul > li {} 0-0-2</pre>
 </div>
 
 <div class="slide intro"><h1>
-<a href="http://bit.ly/1qLuzDR">Exercise</a>
-<br/>http://bit.ly/1qLuzDR</h1></div>
+PRACTICE</h1></div>
 <!-- Pseudo elements -->
-<div class="slide intro">
+<div class="slide divider">
      <header><h1>Pseudo elements</h1></header>
  </div>
 
@@ -1261,8 +1337,6 @@ ul > li {} 0-0-2</pre>
 already exist.<br>
 
 <i class="imp">Pseudo-elements</i> create "faux" elements you can style.</p>
-
-<p>    Use single colon because of IE</p>
      </section>
     </div>
 
@@ -1325,6 +1399,10 @@ already exist.<br>
     </div>
 
 
+<div class="slide divider">
+     <header><h1>Generated Content<br/>
+     with ::before and ::after</h1></header>
+ </div>
 
 <!-- :before and :after  -->
 <div class="slide normal">
@@ -1360,7 +1438,30 @@ p:after{
   <p>Test them out for yourselves</p>
     </div>
 
+<!-- UI selectors -->
+<div class="slide object">
+<object data="files/02_counting.html?hop"></object>
+     <header><h1>Generated Content: UI selectors</h1></header>
+ <a href="files/02_uiselectors.html" target="play">UI Selectors</a></h1>
+  <p>Test them out for yourselves</p>
+  <a class="objectlink" href="files/02_counting.html">Open in new page</a>
+    </div>
 
+<div class="slide">
+     <header><h1>Additional Pseudo-elements</h1></header>
+     <section class="content">
+<p>Highlight Pseudo-elements:</p>
+<pre>::selection
+::inactive-selection
+::spelling-error
+::grammar-error</pre>
+
+<p>Other Pseudo-elements:</p>
+<pre>::marker
+::placeholder
+::content</pre>
+</section>
+</div>
 
 <div class="slide">
   <header><h1>IE10 Specific</h1></header>
@@ -1402,40 +1503,16 @@ p:after{
 </div>
 
 
-<!-- selectors tips -->
-<div class="slide normal">
-     <header><h1>Tips</h1></header>
-     <section class="content">
-<ul>
-	<li><a href="http://selectivizr.com/" target="_blank">selectivizr.com</a> + JS Library = JS for backward compatibility</li>
-    <li>jQuery $(selector) == document.querySelectorAll(selector)</li>
-
-    </li>
-
-</ul>
-     </section>
- </div>
-
- <div class="slide normal">
-<header><h1>Thanks</h1></header>
-<section class="content">
-<h1 class="textmask">Estelle Weyl</h1>
-<h2><a href="http://www.standardista.com">www.standardista.com</a></h2>
-<h2><a href="http://www.twitter.com/estellevw">@estellevw</a></h2>
-<h2><a href="http://www.twitter.com/standardista">@standardista</a></h2>
-<div style="float:right"><img src="http://akamaicovers.oreilly.com/images/9780980846904/cat.gif" alt="HTML5 and CSS3 for the Real World"><img src="http://akamaicovers.oreilly.com/images/0636920018063/cat.gif" alt="HTML5: The Definitive Guide" style="margin: 0 20px;"/><img src="http://akamaicovers.oreilly.com/images/0636920021711/cat.gif" alt="MObile HTML5" style="margin: 0 20px;"/><img src="http://akamaicovers.oreilly.com/images/0636920025955/cat.gif" alt="Web Performance Daybook"/></div>
-</section>
-</div>
 
 
 <div class="slide">
   <header><h1>Links</h1></header>
     <section class="content">
       <ul>
-        <li><a href="../CSS-Workshop/part_02_specificity.html">CSS Workshop Part 2</a></li>
-        <li><a href="../html5mobile/part_02_specificity.html">Mobile HTML5 - CSS Part 2</a></li>
-        <li><a href="../html5training/css_specificity.html">HTML5 Boot Camp - CSS Part 2</a></li>
-        <li><a href="../oscon2012/#slide7">Making a CSS3 Slide Deck</a></li>
+        <li><a href="../../CSS-Workshop/part_02_specificity.html">CSS Workshop Part 2</a></li>
+        <li><a href="../../html5mobile/part_02_specificity.html">Mobile HTML5 - CSS Part 2</a></li>
+        <li><a href="../../html5training/css_specificity.html">HTML5 Boot Camp - CSS Part 2</a></li>
+        <li><a href="../../oscon2012/#slide7">Making a CSS3 Slide Deck</a></li>
       </ul>
     </section>
 </div>

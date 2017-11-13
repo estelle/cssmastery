@@ -118,7 +118,7 @@ var Slide = function(node, idx) {
   if (this._node) {
     addClass(this._node, 'slide distant-slide');
   }
-  this._makeCounter();
+  //this._makeCounter();
   this._makeBuildList();
 };
 
