@@ -1,11 +1,19 @@
+
+[contenteditable] {
+	-webkit-user-modify: read-write-plaintext-only;
+}
+
 head, style {
 	display: block;
 }
 head * {visibility:hidden;}
 
 html, body {margin: 0;}
-
-#editme {
+body {
+	font-size: 1.75em;
+}
+style[id="editme" i],
+style[class="editme" i]  {
 	visibility: visible;
 	padding: 20px; 
 	font-size: 1.5em; 

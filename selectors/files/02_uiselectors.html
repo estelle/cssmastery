@@ -2,18 +2,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+  <link rel="stylesheet" href="editme.css">
 <style>
-head, style {display: block;}
-[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
-style:first-of-type {visibility:hidden;}
-
-style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 80%; font-family:"Courier New", Courier, monospace;}
 ol {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
 li {color: black;}
 input {font-size: 2rem;}
 </style>
 
-<style contenteditable>
+<style contenteditable class="editme">
 input[type=checkbox]:checked + label {color: red;}
 input:valid { border: 1px solid green;}
 input:invalid { border: 1px solid red;}

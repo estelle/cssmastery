@@ -291,10 +291,12 @@ video {
 	width: 100%;
 	text-align: center;
 }
-div:not(.current).reduced {
+.slide:not(.current) {
 	transform: scale(0.8);
 }
-
+.slide.current.current.current.current {
+	transform: scale(0.95);
+}
 /* OBJECT PAGES */
 .object header {
 	position:absolute;
@@ -316,7 +318,8 @@ header .objectlink {}
 .slide.object {
 	padding:0;
 }
-.object object {width: 100%; height: 100%;}
+.object object {width: 100%; height: calc(100% - 2.2em); margin-top: 2em;}
+.object object[data^=http] {height: 100%; margin-top: 0}
 [contenteditable]:focus {
 	box-shadow:none; outline:1px dashed white;}
 .col2 {

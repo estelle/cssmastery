@@ -1300,7 +1300,7 @@ E || F
 <div class="slide">
      <header><h1>Specificity: The less than obvious</h1></header>
      <section class="content">
- <p>The * selector, or global selector, has no value.</p>
+ <p>The * selector, or global selector, has a specifity of 0.</p>
 
 <p>Combinators, like ~, >, >>, space, and + have no value</p>
 <pre contenteditable>ul li {} 0-0-2
@@ -1312,6 +1312,56 @@ ul > li {} 0-0-2</pre>
 <p>Specificity is not inheritance</p>
      </section>
 </div>
+
+
+
+
+<!-- hacking specificity-->
+<div class="slide">
+  <header><h1>Avoid !important</h1></header>
+  <section class="content">
+    <h2>Hacking specificity</h2>
+    <pre contenteditable>.disabled {cursor: default !important;}
+p.btn {cursor: pointer;}</pre>
+<p>v.</p>
+<pre contenteditable>.disabled.disabled.disabled {cursor: default;}
+p.btn {cursor: pointer;}</pre>
+  </section>
+</div>
+
+
+<!-- hacking specifity: id -->
+<div class="slide">
+  <header><h1>Hacking specificity with IDs</h1></header>
+  <section class="content">
+    <pre contenteditable><b>#TheirWidget</b> {background-color: blue <b>!important</b>;}
+#3rdPartyWidget {background-color: white;}</pre>
+v.
+<pre contenteditable><b>#TheirWidget#TheirWidget</b> {background-color: blue ;}
+#3rdPartyWidget {background-color: white;}</pre>
+  </section>
+</div>
+
+
+<!-- Crazy Hack -->
+<div class="slide">
+  <header><h1>Hack in case of emergency</h1></header>
+  <section class="content">
+    <pre contenteditable>a:not(#idDoesNotExist#idDoesNotExist#idDoesNotExist) </pre>
+  </section>
+</div>
+
+
+<!-- Overriding important with animation -->
+<div class="slide object">
+<header><h1>!Even More Important</h1></header>
+  <object data="files/importantanimation.html"></object>
+  <a href="files/importantanimation.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+
+
 
 <div class="slide intro"><h1>
 PRACTICE</h1></div>
