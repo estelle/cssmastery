@@ -1,0 +1,676 @@
+<!doctype HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS Mastery: Media Queries</title>
+    <style></style>
+<link href="../selectors/selectors.css" rel="stylesheet"><style>
+#presentation {
+  background: linear-gradient(to bottom, royalblue, #336)
+}
+pre b, strong, code {
+  color: #336;
+  text-shadow: royalblue 0 0 1px;
+  font-weight: bold;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+.textmask, h1, a {
+    background: linear-gradient(to bottom, royalblue, #336);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: royalblue;
+  }
+
+@media screen and (max-width: 900px){
+  #presentation {
+    background: red;
+  }
+@media screen and (orientation: portrait){
+  #presentation {
+    background: yellow;
+  }</style>
+</head>
+<body>
+<header>
+<nav>
+<ul>
+	<li class="button cancel" id="back">Back</li>
+    <li class="button done" id="next">Next</li>
+</ul>
+<h1>Responsive CSS3</h1>
+</nav>
+</header>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+
+       
+
+                 
+<!--  -->
+<div class="slide intro">
+ <header><h1>Media Queries</h1></header>
+ <section class="content">
+ </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>This section:</h1></header>
+    <section class="content">
+<h1>1. Media Type &amp; Screen Size <br/>
+    2. Screen Resolution<br/>
+    3. <s>Device Capability</s><br/>
+    4. Browser Capability</h1>
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>10 Media Queries (2.1)</h1></header>
+<section class="content">
+<ol style="float:left; margin-right: 20px;">
+    <li>all</li>
+    <li>aural</li>
+    <li>handheld</li>
+    <li>braille</li>
+    <li>embossed</li>
+    <li>print</li>
+    <li>projection</li>
+    <li>screen</li>
+    <li>tty</li>
+    <li>tv</li>
+    </ol>
+    <div style="float:left">
+<pre contenteditable>&lt;link media="screen" ...
+</pre>
+<pre contenteditable>&lt;style media="screen"&gt; 
+     @import "myCSS.css"; ...
+</pre>
+<pre contenteditable>@import url(myCSS.css) screen;
+</pre>
+<pre contenteditable>@media screen {}
+</pre>
+<pre contenteditable>&lt;?xml-stylesheet media="screen" ...
+</pre>
+    </div></section></div>
+
+
+
+
+
+
+<div class="slide normal" style="background-image: url(images/devicesizes.jpg); background-position:bottom;">
+  <header><h1>Varied Screen Sizes</h1></header>
+    <section class="content">
+      <ul style="margin-top: 270px; font-size:1.1em">
+      <li>Wrist Watch</li>
+      <li>Smart Phone</li>
+      <li>Tablet</li>
+      <li>Laptop</li>
+      <li>Monitor</li>
+      <li>TV <br/>&nbsp;</li>
+      
+      <li>portrait? landscape? resolution?</li>
+      </ul>
+    </section>
+</div>
+
+
+<!-- squish the page -->
+<div class="slide">
+  <header><h1>Media Queries</h1></header>
+  <section class="content">
+   
+  <pre contenteditable=""><b>@media screen and (max-width: 600px)</b> {
+  #presentation {
+    background: red;
+  }
+<b>}
+@media screen and (orientation: portrait)</b> {
+  #presentation {
+    background: yellow;
+  }
+</pre>
+<hr/>
+<pre contenteditable><b>@media screen and (orientation: landscape)</b> {
+  a[href^="mailto:"]:before {
+    content: url(icons/email.gif);
+  }
+<b>}</b>
+  </pre>
+
+    </section>
+</div>
+
+
+<!-- media queries: browser support -->
+ <div class="slide normal">
+  <header><h1>media queries</h1></header>
+    <section class="content">
+    <pre contenteditable>&lt;link rel='stylesheet'
+<b>media='screen and (min-width: 320px) and (max-width: 480px)'</b><br/>href='css/smartphone.css' /&gt;</pre>
+  <pre contenteditable><b>@media screen and (max-width: 480px)</b>{
+  selector { /* small screen */
+    property: value;
+  }
+<b>}
+
+@media screen and (orientation: landscape)</b> {
+  selector { /* landscape properties */
+    property: value;
+  }
+<b>}</b>
+
+<b>@media screen and (min-device-pixel-ratio: 1.5)</b> {
+  selector { /* properties for higher resolution screens */
+    property: value;
+  }
+<b>}</b>
+  </pre>
+    </section>
+</div>
+
+
+<!-- Breakpoint images -->
+<div class="slide">
+  <header><h1>Breakpoints</h1></header>
+    <section class="content">
+<img src="images/aspectratio.svg">
+<a href="http://opensignal.com/reports/fragmentation.php">OpenSignal.com</a>
+    </section>
+</div>
+
+
+
+<!-- media queries: v 3 -->
+<div class="slide normal">
+  <header><h1>media query properties</h1></header>
+<section class="content"><ul>
+<li><em>(min/max)-width:</em> viewport width</li>
+<li><em>(min/max)-height:</em> viewport height</li>
+<li><strike><em>(min/max)-device-width:</em> screen width</strike></li>
+<li><strike><em>(min/max)-device-height:</em> screen height</strike></li>
+<li><em>orientation:</em> portrait(h>w) | landscape(w>h)</li>
+<li><em>(min/max)-aspect-ratio:</em> width/height</li>
+<li><strike><em>(min/max)-device-aspect-ratio:</em> device-width/height</strike></li>
+<li><em>(min/max)-resolution:</em> 72dpi | 100dpcm</li>
+</ul>
+<ul style="opacity: 0.3">
+<li><em>(min/max)-color:</em> </li>
+<li><em>(min/max)-color-index:</em> </li>
+<li><em>(min/max)-monochrome:</em> 0 | 1+</li>
+<li><em>scan:</em> progressive | interlace (tv) </li>
+<li><em>grid:</em> 0 | 1 (grids (like tty) or bitmap)</li>
+<li>See <a href="http://www.w3.org/TR/css3-mediaqueries/#media1">Media Queries Spec</a></li>
+</ul>
+<ul style="float: right" class="temphidden">
+  <li>case insensitive</li>
+  <li>unknown media types  == false</li>
+</ul>
+</section>
+
+</div>
+
+
+
+<!--  -->
+<div class="slide object">
+  <header><h1>Media Features</h1></header>
+  <section class="content">
+<dl class="deprecated">
+   <dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width"><code>width</code></a></dt>
+<dd>Width of the viewport</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/height"><code>height</code></a></dt>
+<dd>Height of the viewport</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio"><code>aspect-ratio</code></a></dt>
+<dd>Width-to-height aspect ratio of the viewport</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation"><code>orientation</code></a></dt>
+<dd>Orientation of the viewport</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution"><code>resolution</code></a></dt>
+<dd>Pixel density of the output device</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scan"><code>scan</code></a></dt>
+<dd>Scanning process of the output device</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/grid"><code>grid</code></a></dt>
+<dd>Does the device use a grid or bitmap screen?</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/update-frequency"><code>update</code></a></dt>
+<dd>How frequently the output device can modify the appearance of content. <code>none | slow | fast</code> (Media Queries 4)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-block"><code>overflow-block</code></a></dt>
+<dd>How does the output device handle content that overflows the viewport along the block axis? <code>none | scroll | optional-paged | paged</code> (Media Queries 4)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/overflow-inline"><code>overflow-inline</code></a></dt>
+<dd>Can content that overflows the viewport along the inline axis be scrolled?(Media Queries 4)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color"><code>color</code></a></dt>
+<dd>Number of bits per color component of the output device, or zero if the device isn't color. <code>@media (min-color: 1)</code> means it's a color device</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-gamut"><code>color-gamut</code></a></dt><dd>Approximate range of colors that are supported by the user agent and output device. <code>srgb | p3 | rec2020</code> (Media Queries 4)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/color-index"><code>color-index</code></a></dt>
+<dd>Number of entries in the output device's color lookup table, or zero if the device does not use such a table. <code>@media (color-index) { … }</code> or<code>
+@media (color-index >= 1) { … }</code> or <code>@media (min-color-index: 1) </code> matches color index devices</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/display-mode"><code>display-mode</code></a></dt>
+   <dd>The display mode of the application, as specified in the web app manifest's <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/Manifest#display"><code>display</code></a>&nbsp;member (Defined in the <a href="http://w3c.github.io/manifest/#the-display-mode-media-feature" class="external external-icon">Manifest Spec</a>)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/monochrome"><code>monochrome</code></a></dt>
+<dd>Bits per pixel in the output device's monochrome frame buffer, or 0 if the device isn't monochrome</dd>
+   
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors"><code>inverted-colors</code></a></dt>
+<dd>Is the user agent or underlying OS inverting colors? (Deferred - Media Queries Level 5)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer"><code>pointer</code></a></dt>
+<dd>Is the primary input mechanism a pointing device, and if so, how accurate is it? <code>none | coarse | fine</code> (Media Queries 4)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover"><code>hover</code></a></dt>
+<dd>Does the primary input mechanism allow the user to hover over elements?(Media Queries 4)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer"><code>any-pointer</code></a></dt>
+<dd>Is any available input mechanism a pointing device, and if so, how accurate is it?(Media Queries 4)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover"><code>any-hover</code></a></dt>
+<dd>Does any available input mechanism allow the user to hover over elements? (Media Queries 4)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/light-level"><code>light-level</code></a></dt>
+<dd>Light level of the environment (Deferred - Media Queries Level 5)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/scripting"><code>scripting</code></a></dt>
+<dd>Is scripting (e.g., JavaScript) available? (Deferred - Media Queries Level 5)</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width"><code><strike title="This is an obsolete API and is no longer guaranteed to work.">device-width</strike></code></a></dt>
+<dd>Width of the rendering surface of the output device - Deprecated</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-height"><code><strike title="This is an obsolete API and is no longer guaranteed to work.">device-height</strike></code></a></span></dt>
+<dd>Height of the rendering surface of the output device - Deprecated</dd>
+
+<dt><a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-aspect-ratio"><code><strike title="This is an obsolete API and is no longer guaranteed to work.">device-aspect-ratio</strike></code></a></dt>
+<dd>Width-to-height aspect ratio of the output device - Deprecated</dd></dl>
+  <a target="resource" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features">Media Features on MDN</a></section>
+  
+</div>
+
+
+
+
+
+
+<!-- DPI -->
+<div class="slide">
+  <header><h1>Resolution Units</h1></header>
+  <section class="content">
+    <hr/>
+    <ul>
+      <li><strong>dpi</strong>: dots per inch (72, 96)<br/>&nbsp;</li>
+      <li><strong>dpcm</strong>: dots per centimeter (1dpcm ≈ 2.54dpi)<br/>&nbsp;</li>
+      <li><strong>dppx</strong>: dots per pixel
+<br/>1dppx = 96dpi (default resolution of images)
+</li></ul><hr/>
+<p>Note: 0 is invalid. O is not equal to 0dpi, 0dpcm, or 0dppx.</p>
+  </section>
+</div>
+
+
+
+
+<div class="slide">
+  <header><h1>High Resolution Implementation</h1></header>
+    <section class="content">
+<p>Safari v. Everyone Else</p>
+<pre contenteditable>-webkit-min-device-pixel-ratio: 2
+min-resolution: 2dppx
+min-resolution: 192dpi</pre>
+<p>dppx fallback</p>
+<pre contenteditable>min-resolution: 192dpi</pre>
+<pre>@media (-webkit-min-device-pixel-ratio: 2), /* Safari */
+       (min-resolution: 192dpi) /* Everyone else */ {}</pre>
+<ul>
+  <li>Parentheses around expressions are required</li>
+</ul>
+<pre>const dpi = window.devicePixelRatio;</pre>
+    </section>
+</div>
+
+
+
+
+<div class="slide object">
+  <object data="files/mediaqueries.html"></object>
+  <a href="files/mediaqueries.html" class="objectlink" target="play">Play</a>
+ </div>
+
+
+<!-- media queries: tidbits -->
+<div class="slide">
+  <header><h1>Media Query Syntax/Punctuation</h1></header>
+    <section class="content">
+      <p>"only" leaves out older browsers</p>
+    <pre contenteditable>media="<b>only</b> print and (color)"</pre>
+<p>"and" - both parts must be true</p>
+<pre contenteditable>media="only screen <b>and</b> (orientation: portrait)"
+</pre>
+<p>"not" - if untrue</p>
+<pre contenteditable>media="<b>not</b> screen and (color)"</pre>
+<p>Comma separates selectors - any part can be true</p>
+<pre contenteditable>media="print<b>,</b> screen and (min-width: 480px)"</pre>
+ </section>
+</div>
+
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>range v. discrete v. boolean </h1></header>
+  <section class="content">
+    <article style="display: flex;">
+      <ul style="margin-right: 30px">
+        <li>min- </li>
+        <li>max-</li>
+        <li>>=</li>
+        <li>&gt; &nbsp; &nbsp;  <span style="float: right; border: 1px solid royalblue; border-width: 0 1px; line-height: 4em;margin: -1.5em 0; padding: 0  20px"><b>NEW</b></span></li>
+        <li>&lt;</li>
+      </ul>
+<pre contenteditable style="line-height: 1.75">@media (min-width: 600px) 
+@media (max-width: 600px) 
+@media (width >= 600px) 
+@media (width > 600px)
+@media (width < 600px)
+@media (width: 600px)  </pre>
+</article>
+<ul>
+    <li>(color)</li>
+    <li>(width)</li>
+</ul>
+  </section>
+</div>
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>@supports</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- media queries: tidbits -->
+<div class="slide">
+  <header><h1>Capability Detection</h1></header>
+    <section class="content">
+
+
+<p><strong>@supports</strong></p>
+<pre contenteditable><strong>@supports</strong> (display: flex){
+  /* rules for browsers supporting unprefixed flex box */
+}</pre>
+<hr/>
+<p>Don't use</p>
+<pre contenteditable>
+@media screen and (<b>-webkit-transform-3d</b>) {
+  .transforms {}
+}</pre>
+<hr/>
+<pre contenteditable>
+@media screen and (min-width: 320px) and (max-width: 500px){
+  <strong>@-ms-viewport</strong> { width: device-width;}
+}
+</pre>
+    </section>
+</div>
+
+<div class="slide object">
+  <object data="files/supports.html"></object>
+  <a href="files/supports.html" class="objectlink" target="play">Play</a>
+ </div>
+
+<div class="slide object">
+  <object data="http://codepen.io/estelle/pen/ihsny"></object>
+  <a href="http://codepen.io/estelle/pen/ihsny" class="objectlink" target="play">Visit Site</a>
+ </div>
+
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>viewport</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- media queries: browser support -->
+ <div class="slide normal">
+  <header><h1>Viewport</h1></header>
+    <section class="content">
+    <pre contenteditable>&lt;meta name="<strong>viewport</strong>" content="<strong>width</strong>=device-width,
+            <strong>initial-scale</strong>=1, <strong>maximum-scale</strong>=1"/&gt;</pre>
+    <dl class="deprecated">
+      <dt>width</dt>
+      <dd>Size of the viewport in number of pixels or <code>device-width</code> (width of screen)<dd>
+      <dt>height</dt>
+      <dd>Height of the viewport in number of pixels or <code>device-height</code> (height of screen)<dd>
+      <dt>initial-scale
+      <dd>zoom level when  page is first loaded</dd>
+      <dt>maximum-scale</dt>
+      <dt>minimum-scale</dt>
+      <dt>user-scalable</dt>
+      <dd>Are users  allowed to zoom the page</dd>
+    </dl>
+  <pre contenteditable>@viewport {
+  width: device-width; zoom: 0.5;
+}</pre>
+ <dl class="deprecated">
+  <dt>min-width</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>max-width</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>width</dt>
+  <dt>min-height</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>max-height</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>height</dt>
+  <dt>zoom</dt>
+  <dd>auto, positive number or percentage</dd>
+  <dt>min-zoom</dt>
+  <dd>Minimum zoom factor allowed. auto, positive number or percentage</dd>
+  <dt>max-zoom</dt>
+  <dd>Maximum zoom factor allowed. auto, positive number or percentage</dd>
+  <dt>user-zoom</dt>
+  <dd>zoom or fixed. User can or can't zoom in/out.</dd>
+  <dt>orientation</dt>
+  <dd>auto, portrait or landscape.</dd>
+  </dl>
+  <pre>@media screen and (max-width:400px) {
+  @-ms-viewport { width:320px; // or device-width;}
+}</pre>
+</section>
+</div>
+
+<div class="slide">
+  <header><h1>Viewport Sidenote</h1></header>
+    <section class="content">
+      <p>If &lt;meta&gt; is set to disable zoom, there is no delay on onClick events.<p>
+    </section>
+</div>
+
+
+<!-- mobile specific CSS -->
+<div class="slide">
+  <header><h1>Mobile Specific CSS</h1></header>
+    <section class="content">
+      <p>Tap Highlight Color</p>
+<pre contenteditable> -webkit-tap-highlight-color: #bada55;</pre>
+<p>Prevent Select &amp; Hold dialogue</p>
+<pre contenteditable> -webkit-user-select: none;</pre>
+<p>Prevent Images Dialog</p>
+<pre contenteditable> -webkit-touch-callout: none;</pre>
+<p>Prevent accidental OS popups (panning)</p>
+<pre contenteditable>-ms-touch-action: none;</pre>
+    </section>
+</div>
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>Use Cases</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide object">
+
+  <header><h1>Relative width</h1></header>
+  <object data="files/typowidth.html"></object>
+  <a href="files/typowidth.html" class="objectlink" target="play">Play</a>
+</div>
+
+
+<div class="slide object">
+
+  <header><h1>CSS Hyphenations, &lt;WBR&gt; and &amp;Shy;</h1></header>
+  <object data="files/hyphens.html"></object>
+  <a href="files/hyphens.html" class="objectlink" target="play">Play</a>
+</div>
+
+ <div class="slide" id="columnpage">
+          <header> <h1>Columns</h1></header>
+          <section class="content" style="margin-top:0">
+          <pre contenteditable>
+<u></u>column-count: <span id="colcnt">1</span>;      <input id="columncounts" type="range" min="1" max="10" value="2" onChange="changeColumnNoSlider(event)">
+<u></u>column-width: <span id="colwidth">10</span>em;   <input id="columnwidth" type="range" min="1" max="40" step="1" value="10" onChange="changeColumnNoSlider(event)">
+<u></u>column-rule: 1px solid #bbb;
+<u></u>column-gap: <span id="colgap">2</span>em;      <input id="columngaps" type="range" min="0" max="10" step="0.1" value="2" onChange="changeColumnNoSlider(event)"></pre>
+
+            <div id="columnsslide" class="example">
+              <p>Adipisicing rump nostrud exercitation turkey, bresaola deserunt ullamco beef ribs pork loin ball tip pig pork belly nisi. Cillum sunt officia deserunt, beef aliqua ham ut t-bone sed ut consequat shoulder. Nostrud excepteur biltong non, fatback salami incididunt beef cupidatat occaecat. </p>
+              <p>Reprehenderit ham hock labore tri-tip chuck, excepteur ut. Meatball sint enim beef ribs, mollit laborum flank commodo fatback pariatur tail rump eiusmod spare ribs dolore. Ut minim qui, tongue eu short ribs pancetta excepteur incididunt culpa consequat pastrami magna chuck. Flank sunt sint, occaecat ut adipisicing labore turkey laboris in magna.</p>
+
+<p>Chicken bacon meatloaf minim meatball salami sunt spare ribs.</p><p> Bacon sed tail, pork loin pariatur meatloaf hamburger exercitation corned beef shank ex esse sirloin qui beef ribs. Consectetur anim corned beef, cupidatat ex enim tempor. Pariatur consectetur ad, enim ut quis consequat aliquip exercitation jowl tenderloin ham dolore. </p><p>Fugiat excepteur aliqua, cow dolor swine shoulder elit tri-tip shankle. Irure consectetur cow labore, cupidatat exercitation ea jerky ham officia dolore tongue eu aliqua. Ham hock irure beef ribs non, flank sausage eiusmod ham short loin nostrud.
+</p>
+            </div>
+
+<p>Prefix -webkit &amp; -moz. Supported since IE 10, O 11.1, all webkit, all FF</p>
+          </section>
+
+          <script defer="">
+            function changeColumnNoSlider(event) {
+        var columngaps = roundNumber(document.getElementById('columngaps').value, 1);
+        var columnwidth = document.getElementById('columnwidth').value;
+              var count =  document.getElementById('columncounts').value;
+              document.getElementById('colgap').textContent = columngaps;
+              document.getElementById('colwidth').textContent = columnwidth;
+              document.getElementById('colcnt').textContent = count;
+              var example = document.getElementById('columnsslide');
+              example.style.columnCount = count;
+              example.style.columnGap = columngaps + "em";
+              example.style.columnWidth = columnwidth + "em";
+              example.style.columnRule = "1px solid #bbb";
+            }
+      function roundNumber(num, dec) {
+        var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
+        return result;
+      }
+          </script>
+</div>
+
+
+
+
+
+<div class="slide object">
+  <header><h1>CSS3 Columns</h1></header>
+  <object data="files/columns.html"></object>
+  <a href="files/columns.html" class="objectlink" target="play">Play</a>
+</div>
+
+
+<!-- SVG Media Queries -->
+<div class="slide object">
+  <header><h1>Media Queries in SVG</h1></header>
+  <object data="files/circlesvg.html"></object>
+  <a href="files/circlesvg.html" class="objectlink" target="play">Play</a>
+ </div>
+
+<!-- SVG Media Queries -->
+<div class="slide object">
+  <header><h1>Media Queries in SVG</h1></header>
+  <object data="files/circlesvgimg.html"></object>
+  <a href="files/circlesvgimg.html" class="objectlink" target="play">Play</a>
+ </div>
+
+ <!-- SVG Media Queries -->
+<div class="slide object">
+  <header><h1>Clown Car Technique</h1></header>
+  <object data="files/svgimg.html"></object>
+  <a href="files/svgimg.html" class="objectlink" target="play">Play</a>
+ </div>
+
+  <!-- SVG Media Queries -->
+<div class="slide object">
+  <header><h1>Clown Car Technique</h1></header>
+  <object data="files/adaptiveimages.html"></object>
+  <a href="files/adaptiveimages.html" class="objectlink" target="play">Play</a>
+ </div>
+
+<div class="slide intro">
+  <header><h1>Up Next: </h1></header>
+    <section class="content">
+      <h1><a href="../selectors/30.html">CSS3 Selectors</a></h1>
+
+      <p><a href="../selectors/30.html">short</a> |
+      <a href="../selectors/">longer</a></p>
+
+      <p><br/><a href="index.html#slide12">Main deck</a></p>
+    </section>
+</div>
+
+
+
+
+<!-- Thank you -->
+<div class="slide normal">
+     <header>
+      <h1>Thank you</h1>
+     </header>
+
+       <section>
+            <div style="float:right"><img src="http://akamaicovers.oreilly.com/images/9780980846904/cat.gif" alt="HTML5 and CSS3 for the Real World"><img src="http://akamaicovers.oreilly.com/images/0636920018063/cat.gif" alt="HTML5: The Definitive Guide" style="margin: 0 20px;"/><img src="http://akamaicovers.oreilly.com/images/0636920021711/cat.gif" alt="MObile HTML5" style="margin: 0 20px;"/><img src="http://akamaicovers.oreilly.com/images/0636920025955/cat.gif" alt="Web Performance Daybook"/></div>
+            <ul class="sevenless">
+              <li>Estelle Weyl</li>
+              <li><a href="http://standardista.com">standardista.com</a></li>
+              <li><a href="http://twitter.com/estellevw">@estellevw</a></li>
+            </ul>
+		  </section>
+    </div>
+
+
+
+  </div>
+  </div>
+
+ <footer>
+<p style="float: left;">Press <span class="button">&rarr;</span> key to advance.</p> <p style="float:right"><a href="http://www.twitter.com/estellevw">@estellevw</a> &middot; <a href="http://estelle.github.com/mobilecss/">Estelle.Github.com/mobilecss/</a></p>
+</footer>
+  <script src="../selectors/selectors.js"></script>
+
+
+  </body>
+
+</html>
+

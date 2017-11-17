@@ -1,0 +1,44 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:rgba(0,0,0,0.1); margin: 20px auto; width: 80%; font-family:"Courier New", Courier, monospace;}
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+
+:root {background-color:#fff; height: 100%;}
+
+</style>
+
+<style contenteditable>
+:root {
+  background-image: url(circle.svg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 70%;
+}
+</style>
+<title></title>
+</head>
+
+<body>
+  <p>Grow and shrink the screen</p>
+  <pre style="text-shadow: -1px -1px 1px white;">&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400">
+ &lt;g>
+  &lt;title>Simple SVG + mediaqueries</title>
+   &lt;defs>
+    &lt;style>
+      @media screen and (max-width: 100px) {
+         #circle { fill: #bada55;}
+     }
+    &lt;/style>
+   &lt;/defs>
+  &lt;circle cx="200" cy="200" r="150" id="circle" />
+ &lt;/g>
+&lt;/svg></pre>
+</body>
+</html>
+

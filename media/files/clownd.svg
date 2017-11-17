@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="329">
+ <g>
+  <title>Simple SVG + mediaqueries</title>
+  <defs>
+  <style>
+  .img {display: none;}
+
+  @media screen and (max-width: 400px) {
+    #small {display: block}
+  }
+  @media screen and (min-width: 401px) and (max-width: 700px) {
+      #medium {display: block}
+  }
+    @media screen and (min-width: 701px) and (max-width: 1000px) {
+      #big {display: block}
+  }
+   @media screen and (min-width: 1001px)  {
+    #huge {display: block}
+  }
+  </style>
+</defs>
+  <image y="0" x="0" id="small" class="img" height="329" width="300" xlink:href="../images/clown/small.png" />
+
+  <image y="0" x="0" id="medium" class="img" height="329" width="300" xlink:href="../images/clown/medium.png" />
+
+  <image y="0" x="0" id="big" class="img" height="329" width="300" xlink:href="../images/clown/big.png" />
+
+  <image y="0" x="0" id="huge" class="img" height="329" width="300" xlink:href="../images/clown/huge.png" />
+
+ </g>
+</svg>
