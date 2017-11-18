@@ -18,7 +18,7 @@
        class="img"
        height="200"
        width="300"
-       xlink:href="http://placekitten.com/300/200" />
+       xlink:href="../images/jem.svg" />
 </g>
  <g id="med">
   <title>Simple SVG + mediaqueries</title>
@@ -40,7 +40,7 @@
        class="img"
        height="200"
        width="300"
-       xlink:href="../../generated/files/estelle.svg" />
+       xlink:href="../images/leonie.svg" />
 </g>
 
  <g id="bg">
@@ -65,7 +65,7 @@
        class="img"
        height="200"
        width="300"
-       xlink:href="http://placekitten.com/900/600" />
+       xlink:href="../images/paul.svg" />
 </g>
 
  <g id="lg">
@@ -87,7 +87,7 @@
        class="img"
        height="200"
        width="300"
-       xlink:href="http://placekitten.com/1200/800" />
+       xlink:href="../images/estelle.svg" />
 
  </g>
 </svg>

@@ -1,0 +1,15 @@
+#presentation {
+  background: linear-gradient(to bottom, royalblue, rebeccapurple)
+}
+pre b, strong, code {
+  color: rebeccapurple;
+  text-shadow: royalblue 0 0 1px;
+  font-weight: bold;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+.textmask, h1, a {
+    background: linear-gradient(to bottom, royalblue, rebeccapurple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: rebeccapurple;
+  }
