@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+html {min-height:100%;}
+div {border: 3px solid #11cc11; padding: 3px; line-height: 2rem;}
+div div {border-color: #333;}
+div>div {border-style: dotted;}
+div:nth-of-type(2){border-style: dashed;}
+.a {background-color: #fff;}
+.b {background-color: #ccc;}
+.c {background-color: #999;}
+</style>
+<link rel="stylesheet" href="style.css">
+
+<title>Float</title>
+</head>
+
+<body>
+	<div id="container">
+		<div class="box a"><h1>A</h1><p>One sentence.</p></div>
+		<div class="box b"><h1>B</h1><p>A medium amount of text, but still nothing really interesting to read here. I promise.</div>
+		<div class="box c"><h1>C</h1><p>Yummy ipsum lorem kitten, bacon and mushroom. Rainbows rainbows pigeon wereunicorn app surprise, kittens pegasus delight unicorn wereunicorn rainbows. Pigeon unicorn surprise pony pigeon wereunicorn app app.</p></div>
+	</div>
+<p><small>linear-gradient(to right, #fff 33.33%, #ccc 33.33%, #ccc 66.67%, #aaa 66.67%)</small></p>
+  <style contenteditable style="height: 40vh; overflow: scroll; padding-bottom: 10vh; box-sizing: border-box;">body > div {
+  float: left;
+  width: 100%;
+  background-color: #333
+}
+.a, .b, .c {
+  width: 33.33333%;
+  float: left;
+  box-sizing: border-box;
+}</style>
+</body>
+</html>
+

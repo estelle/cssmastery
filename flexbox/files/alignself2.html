@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+html {min-height:100%;}
+.container {background-color: #11cc11; position: relative}
+.item {border: 1px solid #11cc11; padding: 3px; line-height: 1.6rem; box-sizing: border-box;
+  letter-spacing: 2px;
+ }
+.e:before, .f:before, .k:before,
+.e:after, .f:after, .k:after {
+	position: absolute; width: 300px; left: 0; height: 5px; background-color: rgba(255,255,0,0); content: '';ckground-color: rgba(255,0,0,0);
+box-shadow: 0 -4px 0px 0 yellow;
+}
+
+.e:after, .f:after, .k:after {
+	background-color: rgba(255,0,0,0);
+box-shadow: 0 1.5em 0px 0 red;}
+</style>
+
+<link rel="stylesheet" href="style.css">
+
+<title>Flexbox</title>
+</head>
+
+<body>
+<div class="container">
+  <div class="item a">A</div>
+  <div class="item b">BB<br/>BB</div>
+  <div class="item c">CCC<br/>CCC<br/>CCC</div>
+  <div class="item d">DDDD<br/>DDDD<br/>DDDD<br/>DDDD</div>
+  <div class="item e">EEEEE<br/>EEEEE<br/>EEEEE<br/>EEEEE<br/>EEEEE</div>
+  <div class="item f">FFFFFF<br/>FFFFFF<br/>FFFFFF<br/>FFFFFF<br/>FFFFFF<br/>FFFFFF</div>
+  <div class="item g">GGGGG<br/>GGGGG<br/>GGGGG<br/>GGGGG<br/>GGGGG</div>
+  <div  class="item h" id="HHH">HHHH<br/>HHHH<br/>HHHH<br/>HHHH</div>
+  <div class="item i">III<br/>III<br/>III</div>
+  <div class="item j">JJ<br/>JJ</div>
+  <div class="item k">K</div>
+</div>
+  <code>auto |
+flex-start |
+flex-end |
+center |
+baseline |
+stretch</code>
+  <style contenteditable>.h {
+  align-self: stretch; 
+  background-color: white;
+}
+.container{
+  align-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 500px; width: 300px;
+}
+.item {
+  border: 1px solid;
+}</style>
+<p style="position: absolute; top: 30%; left: 340px; width: 12em; font-size: 2em; font-family: georgia; background-color: yellow; border-radius: 5px; padding: 5px; text-align: center">Example doesn't work for align&#8209;content:&nbsp;stretch</p>
+</body>
+</html>
+

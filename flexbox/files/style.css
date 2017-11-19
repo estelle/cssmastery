@@ -1,0 +1,10 @@
+ style[contenteditable] {
+ 	display: block; 
+ 	white-space: pre; 
+ 	font-size: 2rem; 
+ 	color: #666; 
+ 	font-family: monospace;
+ }
+ body {padding-top: 1.25em; font-family: georgia;}
+ small, style {
+ 	-webkit-user-modify: read-write-plaintext-only; }

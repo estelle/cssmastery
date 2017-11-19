@@ -1,0 +1,651 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS: Flexbox</title>
+   <link rel="stylesheet" href="../selectors/selectors.css"/>
+   <link rel="stylesheet" href="flexbox.css"/>
+   
+
+  </head>
+  <body>
+   <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+<div class="slide divider">
+  <h1>CSS: Flexbox</h1>
+</div>
+
+
+<!-- divider -->
+<div class="slide divider">
+<h1>Why?</h1>
+</div>
+
+<div class="slide object">
+<header><h1>Problem we're trying to solve</h1></header>
+<object data="files/float.html"></object>
+<a href="files/float.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide object">
+<header><h1>Flex Box</h1></header>
+<object data="files/textflex.html"></object>
+<a href="files/textflex.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide  object">
+<header><h1>Flex Box</h1></header>
+<object data="files/homepage.html"></object>
+<a href="files/homepage.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide  object">
+<header><h1>Flex Box</h1></header>
+<object data="files/homepagemobile.html"></object>
+<a href="files/homepagemobile.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide  object">
+<header><h1>Flex Box</h1></header>
+<object data="files/magiclayout.html"></object>
+<a href="files/magiclayout.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide  object">
+<header><h1>Fixed Header and Footer </h1></header>
+<object data="files/fixedfooter.html"></object>
+<a href="files/fixedfooter.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide object">
+<header><h1>Flex Box</h1></header>
+<object data="files/button.html"></object>
+<a href="files/button.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<!-- divider -->
+<div class="slide divider">
+<h1>Browser Support</h1>
+</div>
+
+<!-- General Browser Support -->
+<div class="slide object">
+  <header><h1>Browser support <button onclick="loadCIU(this)">load CANIUSE.com</button></h1></header>
+  
+  <object id="caniuse"></object>
+<a href="http://caniuse.com/#search=flexbox" target="play" class="objectlink">↪</a>
+<script>
+// required because autofocus in caniuse breaks the presentation
+function loadCIU(e){
+  var obj = document.getElementById('caniuse');
+  obj.setAttribute('data', 'http://caniuse.com/#search=flexbox');
+  e.style.display = 'none';
+  return false;
+}
+</script>
+</div>
+
+
+
+
+<div class="slide divider">
+  <header><h1>Flex Box Specification</h1></header>
+    <section class="content">
+      <p>CSS Flexible Box Layout Module Level 1</p>
+      <a href="http://dev.w3.org/csswg/css-flexbox/" target="play2">dev.w3.org/csswg/css-flexbox/</a>
+      <p>Candidate Recommendation: Jan-05-2016</p>
+    </section>
+</div>
+
+
+<div class="slide  object">
+<header><h1>So simple...</h1></header>
+<object data="files/explain.html"></object>
+<a href="files/explain.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide  object">
+<header><h1>Holy Grail Layout</h1></header>
+<object data="files/pagelayout.html"></object>
+<a href="files/pagelayout.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide">
+  <header><h1>Components of Flexbox</h1></header>
+    <section class="content">
+
+<ol>
+<li><strong>Creation</strong>: display</li>
+<li><strong>Direction</strong>: flex-flow (flex-direction, flex-wrap)</li>
+<li><strong>Alignment</strong>: justify-content, align-items, align-self, align-content</li>
+<li><strong>Ordering</strong>: order</li>
+<li><strong>Flexibility</strong>: flex (flex-grow, flex-shrink, flex-basis)</li>
+</ol>
+    </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Flexible Box Properties</h1></header>
+    <section class="content">
+        <dl class="deprecated listed">
+
+          <dt> display</dt>
+          <dd>Values include <code>flex</code> and <code>inline-flex</code>. Used on parent to create the flex container.</dd>
+
+          <dt> align-content</dt>
+          <dd>flex-start | flex-end | center | space-between | space-around | <code>stretch</code> | space-evenly</dd>
+
+          <dt> align-items</dt>
+          <dd>flex-start | flex-end | center | baseline | <code>stretch</code></dd>
+
+          <dt> align-self</dt>
+          <dd><code>auto</code> | flex-start | flex-end | center | baseline | stretch</dd>
+
+          <dt> flex</dt>
+          <dd> Shorthand for <code>[flex-basis  flex-grow, and flex-shrink</code>, or <code>none</code></dd>
+
+          <dt> flex-basis</dt>
+          <dd>The basis by which the flex-items flex. default: auto</dd>
+
+          <dt> flex-direction</dt>
+          <dd> Set the containers axis for its children with <code>row</code>, <code>row-reverse</code>, <code>column</code> or <code>columns-reverse</code> on the parent</dd>
+
+          <dt> flex-flow</dt>
+          <dd>Shorthand for <code>flex-direction</code> and <code>flex-wrap</code> properties.</dd>
+
+          <dt> flex-grow</dt>
+          <dd>Positive number determines how much flex item will grow relative to  other flex items in flex container when positive free space is distributed. default is 1 for container.  0 for children. Positive only</dd>
+
+          <dt> flex-shrink</dt>
+          <dd>Positive number determines how much flex item will shrink relative to  other flex items in flex container when negative free space is distributed. default is 1</dd>
+
+          <dt> flex-wrap</dt>
+          <dd> To determine whether the boxes are single line or wrap, and the direction, use <code>nowrap</code>, <code>wrap</code> or <code>wrap-reverse</code></dd>
+
+          <dt> justify-content</dt>
+          <dd><code>flex-start</code> | flex-end | center | space-between | space-around | space-evenly</dd>
+
+          <dt> min-height</dt>
+          <dd>Default is <code>auto</code>, not <code>0</code></dd>
+
+          <dt> min-width</dt>
+          <dd>Default is <code>auto</code>, not <code>0</code></dd>
+
+          <dt>order</dt>
+          <dd>Integer. Controls order of flex item within flex container</dd>
+        </dl>
+    </section>
+</div>
+
+<!-- divider -->
+<div class="slide divider">
+<h1>The Basics</h1>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Steps</h1></header>
+    <section class="content">
+<ol>
+  <li>Add <code>display: flex;</code> to the parent of the elements to be flexed.</li>
+  <li>Set <code>flex-direction</code> to horizontal or vertical</li>
+  <li>Set <code>flex-wrap</code> to control wrap direction</li>
+</ol>
+    </section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>display</code> property</h1></header>
+    <section class="content">
+      <p><code style="color: inherit">
+          inline | block | list-item | inline-list-item | inline-block | <strong>flex | inline-flex</strong> | grid | inline-grid | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-cell | table-column-group | table-column | table-caption | ruby | ruby-base | ruby-text | ruby-base-container | ruby-text-container | contents | none | flow | flow-root</code>
+     </p>
+
+    </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1><code>display</code> property</h1></header>
+    <section class="content">
+      <p><code style="color: inherit">
+          inline | block | list-item | inline-block | <strong>flex | inline-flex</strong> | grid | inline-grid | table | inline-table |  ruby | none </code>
+     </p>
+
+      <pre><strong>display: flex;</strong></pre>
+      <p>block-level flex container box</p>
+      <pre><strong>display: inline-flex;</strong></pre>
+      <p>inline-level flex container box</p>
+
+    </section>
+</div>
+
+
+
+<div class="slide">
+  <header><h1>Is Flexbox supported in your browser?</h1></header>
+  <figure><iframe height='550' scrolling='no' src='http://codepen.io/estelle/embed/KCzfH/' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%; height: 80vh'>See the Pen <a href='http://codepen.io/estelle/pen/KCzfH/'>Browser @support for Flexbox</a> by Estelle Weyl (<a href='http://codepen.io/estelle'>@estelle</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe></figure>
+  <a href="http://codepen.io/estelle/pen/KCzfH/" class="objectlink" target="_new">Visit Site</a>
+ </div>
+
+
+<div class="slide  object">
+<header><h1><code>display</code> property</h1></header>
+<object data="files/display.html"></object>
+<a href="files/display.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide  object">
+<header><h1>display: inline-flex;</h1></header>
+<object data="files/button.html"></object>
+<a href="files/button.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide">
+<header><h1>What is a flex item</h1></header>
+   <section class="content">
+   <p>Flex items</p>
+   <ol>
+      <li>All non-absolutely positioned child nodes</li>
+      <li>Generated Content</li>
+      <li>anonymous flex items => non-empty text nodes</li>
+   </ol>
+   <p>Not flex items</p>
+   <ol>
+   <li>::first-line &amp; ::first-letter</li>
+   <li>white space</li>
+   </ol>
+   <p>Kind of</p>
+   <ol>
+   <li>absolutely/fixed positioned elements</li></ol>
+</section>
+</div>
+
+<div class="slide">
+<header><h1>Impacted CSS Properties</h1></header>
+   <section class="content">
+   <p>Changed Properties</p>
+   <ol>
+      <li><code>margin</code>: adjacent flex items margins do not collapse</li>
+      <li><code>min-width</code> &amp; <code>min-height</code>: default is auto, not 0</li>
+      <li><code>visibility: collapse;</code></li>
+   </ol>
+   <p>Ignored Properties</p>
+   <ol>
+   <li>column-* properties</li>
+   <li>float</li>
+   <li>clear</li>
+   <li>vertical-align   </li>
+   </ol>
+   </section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>flex-direction</code> property</h1></header>
+    <section class="content">
+      <ul>
+        <li><code><strong>row</strong></code></li>
+        <li><code>row-reverse</code></li>
+        <li><code>column </code></li>
+        <li><code>column-reverse</code></li>
+      </ul>
+    </section>
+</div>
+
+
+<div class="slide object">
+<header><h1><code>flex-direction: ... </code></h1></header>
+<object data="files/direction.html"></object>
+<a href="files/direction.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide object">
+<header><h1>Flex Box</h1></header>
+<object data="files/homepage.html"></object>
+<a href="files/homepage.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide object">
+<header><h1>main-axis</h1></header>
+<object data="files/axes.html"></object>
+<a href="files/axes.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>flex-wrap</code> property</h1></header>
+    <section class="content">
+      <ul>
+        <li><code><strong>nowrap</strong></code></li>
+        <li><code>wrap</code></li> 
+        <li><code>wrap-reverse</code></li>
+      </ul>
+      <p>Purpose: is the whole shebang on one line, or can it wrap if necessary?</p>
+    </section>
+</div>
+
+<div class="slide object">
+<header><h1><code>flex-wrap: ...</code></h1></header>
+<object data="files/flexwrap.html"></object>
+<a href="files/flexwrap.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide object">
+<header><h1>Flex Box></h1></header>
+<object data="files/magiclayout.html"></object>
+<a href="files/magiclayout.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide object">
+  <header><h1><code>flex-flow</code> property</h1></header>
+    <section class="content">
+      <p>Shorthand for <code>flex-direction</code> and <code>flex-wrap</code></p>
+    </section>
+</div>
+
+
+<div class="slide object">
+<header><h1><code>flex-flow: ...</code></h1></header>
+<object data="files/flexflow.html"></object>
+<a href="files/flexflow.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide object">
+<header><h1>flex-flow</h1></header>
+<object data="files/multi.html"></object>
+<a href="files/multi.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide intro">
+  <header><h1>"But wait, there's more!"</h1>
+    <h2>--Ed Valenti</h2></header>
+    <section class="content">
+    </section>
+</div>
+
+<!-- divider -->
+<div class="slide divider">
+<h1>The Flex Container</h1>
+</div>
+
+
+<div class="slide intro">
+  <header>
+    <h1>Controlling Flex Items</h1>
+  </header>
+    <section class="content">
+    From the flex container
+    </section>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>justify-content</code> property</h1></header>
+    <section class="content">
+      <ul>
+        <li><code><strong>flex-start</strong></code></li> 
+        <li><code>flex-end</code></li> 
+        <li><code>center</code></li>
+        <li><code>space-between</code></li>
+        <li><code>space-around</code></li>
+        <li><code>space-evenly</code></li>
+      </ul>
+      <p>aligns flex items along the main axis</p>
+    </section>
+</div>
+
+
+<div class="slide object">
+<header><h1><code>justify-content</code> property</h1></header>
+<object data="files/justify.html"></object>
+<a href="files/justify.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide">
+  <header><h1><code>align-items</code> property</h1></header>
+    <section class="content">
+      <ul>
+        <li><code>flex-start</code></li>
+        <li><code>flex-end</code></li>
+        <li><code>center</code></li>
+        <li><code>baseline</code></li>
+        <li><code><strong>stretch</strong></code></li>
+      </ul>
+      <p>aligns flex items along the cross axis</p>
+    </section>
+</div>
+
+
+<div class="slide object">
+<header><h1><code>align-items</code> property</h1></header>
+<object data="files/align.html"></object>
+<a href="files/align.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide object">
+<header><h1>Impact of <code>visibility: collapse</code></h1></header>
+<object data="files/collapse.html"></object>
+<a href="files/collapse.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide">
+  <header><h1><code>align-content</code> property</h1></header>
+    <section class="content">
+      <ul>
+        <li><code>flex-start</code></li>
+        <li><code>flex-end</code></li>
+        <li><code>center</code></li>
+        <li><code>space-between</code></li>
+        <li><code>space-around</code></li>
+        <li><code><strong>stretch</strong></code></li>
+        <li><code>space-evenly</code></li></ul>
+<p>Only applies to multi-line flex containers.</p>
+    </section>
+</div>
+
+
+<div class="slide object">
+<header><h1><code>align-content</code> property</h1></header>
+<object data="files/aligncontent.html"></object>
+<a href="files/aligncontent.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<!-- divider -->
+<div class="slide divider">
+<h1>Flex Items</h1>
+</div>
+
+
+
+<div class="slide intro">
+  <header>
+    <h1>Controlling Flex Items</h1>
+  </header>
+    <section class="content">
+    From the flex items themselves
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1><code>align-self</code> property</h1></header>
+    <section class="content">
+      <ul>
+        <li><code><strong>auto</strong></code></li>
+        <li><code>flex-start</code></li>
+        <li><code>flex-end</code></li>
+        <li><code>center</code></li>
+        <li><code>baseline</code></li>
+        <li><code>stretch</code></li>
+     </ul>
+<p>Override the <code>align-items</code> on a per flex item basis</p>
+    </section>
+</div>
+
+<div class="slide object">
+<header><h1><code>align-self</code> property</h1></header>
+<object data="files/alignself.html"></object>
+<a href="files/alignself.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide object">
+<header><h1><code>align-self</code> property</h1></header>
+<object data="files/alignself2.html"></object>
+<a href="files/alignself2.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide">
+  <header><h1><code>order</code> property</h1></header>
+    <section class="content">
+      <pre>div:nth-of-type(3n) {
+   order: -1;
+}</pre>
+<p>The default value is 0. Anything lower will come before those without set values. Anything above will come after.</p>
+    </section>
+</div>
+
+
+<div class="slide object">
+<header><h1><code>order: ...</code></h1></header>
+<object data="files/order.html"></object>
+<a href="files/order.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide object">
+<header><h1>Source Order</h1></header>
+<object data="files/homepage.html"></object>
+<a href="files/homepage.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide object">
+<header><h1>&lt;nav> comes after &lt;main></h1></header>
+<object data="files/homepagemobile2.html"></object>
+<a href="files/homepagemobile.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide">
+  <header><h1>Accessibility</h1></header>
+    <section class="content">
+
+<ol>
+<li>Source Order</li>
+<li>Tab order</li>
+<li>Right to Left languages</li>
+</ol>
+    </section>
+</div>
+
+
+<!-- divider -->
+<div class="slide divider">
+<h1>Flexibility</h1>
+</div>
+
+
+
+
+<div class="slide">
+  <header><h1><code>flex</code> shorthand</h1></header>
+    <section class="content def">
+      <p><code>flex-grow</code>:
+How to divide the extra space. Non-negative number. default: 1.</p>
+
+<p><code>flex-shrink</code>:
+How to shrink if there's not enough room.  Non-negative number. default: 1. </p>
+
+<p><code>flex-basis</code>:
+the
+starting size
+before free
+space is
+distributed. length value, content or <code>auto</code> . If set to <code>auto</code>, sets to flex item’s main size property. </p>
+    </section>
+</div>
+
+<div class="slide object">
+<header><h1><code>flex</code> shorthand property</h1></header>
+<object data="files/flex.html"></object>
+<a href="files/flex.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide object">
+<header><h1><code>flex</code> relative numbers</h1></header>
+<object data="files/flex3.html"></object>
+<a href="files/flex3.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide">
+<header><h1><code>flex-basis</code> </h1></header>
+<div style="text-align: center;"><img style="margin-top: 100px;" src="images/flexbasis.png" alt="explanation of the difference between auto and 0 for flex basis"></div>
+</div>
+
+<div class="slide object">
+<header><h1><code>flex-basis</code> </h1></header>
+<object data="files/basis.html"></object>
+<a href="files/basis.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+
+
+<div class="slide object">
+<header><h1>Flex Box</h1></header>
+<object data="files/finalflex.html"></object>
+<a href="files/finalflex.html" target="play" class="objectlink">↪</a>
+</div>
+
+
+<div class="slide object">
+<header><h1>Flex Box</h1></header>
+<object data="files/notmagic.html"></object>
+<a href="files/notmagic.html" target="play" class="objectlink">↪</a>
+</div>
+
+<div class="slide divider">
+     <header><h1></h1></header>
+    <h1><a href="">Next ➹</a></h1>
+    </div>
+
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
+</div>
+  </div></div>
+  <script src="../selectors/selectors.js"></script>
+  </body>
+</html>
