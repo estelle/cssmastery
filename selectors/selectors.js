@@ -348,7 +348,7 @@ SlideShow.prototype = {
 
     handleKeys: function(e) {
       // disable keys for these elements
-      if (/^(input|textarea|pre|object)$/i.test(e.target.nodeName)) return;
+      if (/^(input|textarea|pre|object|style)$/i.test(e.target.nodeName)) return;
 
 
       switch (e.keyCode) {

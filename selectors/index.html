@@ -5,13 +5,9 @@
     <title>Selectors: Select This!</title>
     <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
 <link rel="stylesheet" href="selectors.css"/>
+<link rel="stylesheet" href="files/editme.css"/>
 <style>
 .current * { -webkit-tap-highlight-color: #bada55;}
-.thisSlide.foo {
-  -webkit-tap-highlight-color: #bada55;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
 .beforeafter:before {
   content: "before - ";
   font-weight: bold;
@@ -44,9 +40,9 @@
    <div id="slides">
 
     <div class="slide intro">
-     <header><hgroup>
-      <h1><span class="textmask">CSS Selectors</h1>
-     </hgroup></header>
+     <header>
+      <h1>CSS Selectors</h1>
+     </header>
      <p><a href="https://estelle.github.io/cssmastery/selectors/" style="color: #000">estelle.github.io/cssmastery/selectors/</a></p>
     </div>
 
@@ -211,7 +207,17 @@ E F
       <li><br/>E:empty</li>
       <li>E:not(selector)</li>
       <li>E:target</li>
+    </ul></section></div>
 
+
+
+<!-- Selector list -->
+<div class="slide normal">
+  <header>
+    <h1>Lots 'o Selectors</h1>
+  </header>
+  <section class="content">
+    <ul class="columns">
       <li style="column-span: all"><h3>UI / Selectors #4</h3>
       <li>E:enabled</li>
       <li>E:disabled</li>
@@ -259,6 +265,17 @@ E F
       <li>:nth-column(n)</li>
       <li>:nth-last-column(n)</li>
     </ul>
+  </section></div>
+
+
+
+
+<!-- Selector list -->
+<div class="slide normal">
+  <header>
+    <h1>More... </h1>
+  </header>
+  <section class="content">
     <h3>Maybe</h3>
     <ul class="columns">
       <li>::selection</li>
@@ -1368,7 +1385,7 @@ v.
 PRACTICE</h1></div>
 <!-- Pseudo elements -->
 <div class="slide divider">
-     <header><h1>Pseudo elements</h1></header>
+     <h1>Pseudo elements</h1>
  </div>
 
 <!-- Pseudo elements -->
@@ -1416,7 +1433,7 @@ already exist.<br>
 
 
 <!-- ::selection -->
-<div class="slide normal thisSlide">
+<div class="slide thisSlide">
      <header><h1>::selection</h1></header>
      <section class="content">
 
@@ -1425,34 +1442,16 @@ already exist.<br>
    color: #ffffff;
 }
     </pre>
-    <p class="notes">Prefix with -moz- for Firefox<br>
-    Use single colon because of IE</p>
      </section>
     </div>
-
-    <!-- ::selection -->
-<div class="slide normal thisSlide foo">
-     <header><h1>Disabling ::selection</h1></header>
-     <section class="content">
-
-    <pre contenteditable>.thisSlide *::selection {
-   background-color: hsl(205, 87%, 50%);
-   color: #ffffff;
-}</pre>
-<p>For mobile but impacts desktop too:</p>
-<pre class="contenteditable">.thisSlide {
-  -webkit-tap-highlight-color: #bada55;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}</pre>
 
      </section>
     </div>
 
 
 <div class="slide divider">
-     <header><h1>Generated Content<br/>
-     with ::before and ::after</h1></header>
+     <h1>Generated Content<br/>
+     with ::before and ::after</h1>
  </div>
 
 <!-- :before and :after  -->
@@ -1514,6 +1513,47 @@ p:after{
 </section>
 </div>
 
+<!-- divider -->
+<div class="slide divider">
+  <h1>::selection</h1>
+</div>
+
+
+<div class="slide thisSlide">
+     <header><h1>::selection</h1></header>
+     <section class="content">
+
+    <pre contenteditable="">.thisSlide *::selection {
+   background-color: #F63;
+}</pre>
+     </section>
+</div>
+
+<div class="slide normal thisSlide foo">
+     <header><h1>Disabling ::selection</h1></header>
+     <section class="content">
+<p>For mobile but impacts desktop too:</p>
+<pre class="contenteditable">.thisSlide {
+  -webkit-tap-highlight-color: #bada55;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}</pre>
+<style class="editme" contenteditable style="font-size: 20px">.thisSlide.foo {
+  -webkit-tap-highlight-color: #bada55;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}</style>
+</section>
+</div>
+
+
+<!--  -->
+<div class="slide divider">
+ <h1>Other pseudo-elements</h1>
+</div>
+
+
+
 <div class="slide">
   <header><h1>IE10 Specific</h1></header>
     <section class="content">
@@ -1554,16 +1594,46 @@ p:after{
 </div>
 
 
+<!-- Example Slider -->
+<div class="slide">
+  <header><h1>Pseudo Elements</h1></header>
+  <section class="content  scrollbar">
+    <style style="height: 70vh; font-size: 20px; width: calc(100% - 60px); overflow: scroll" class="editme" contenteditable>.scrollbar ::-webkit-scrollbar {
+  margin-right: 5px;
+  background-color: #f36;
+  border-radius: 6px;
+  width: 12px;
+}
+.scrollbar ::-webkit-scrollbar-track {
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+.scrollbar ::-webkit-scrollbar-thumb {
+  border: 1px #eee solid;
+  border-radius: 12px;
+  background: #f63;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+  transition: all .3s ease-out;
+}
+.scrollbar ::-webkit-scrollbar-thumb:window-inactive {
+  background: #bbb;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+}
+.scrollbar ::-webkit-scrollbar-thumb:hover {
+  background: royalblue; 
+}
+.scrollbar pre {
+  width: 700px;
+  height: 200px;
+  overflow:auto;
+}</style>  </section>
+</div>
 
 
+<!-- TOC -->
 <div class="slide">
   <header><h1>Links</h1></header>
     <section class="content">
       <ul>
-        <li><a href="../../CSS-Workshop/part_02_specificity.html">CSS Workshop Part 2</a></li>
-        <li><a href="../../html5mobile/part_02_specificity.html">Mobile HTML5 - CSS Part 2</a></li>
-        <li><a href="../../html5training/css_specificity.html">HTML5 Boot Camp - CSS Part 2</a></li>
-        <li><a href="../../oscon2012/#slide7">Making a CSS3 Slide Deck</a></li>
       </ul>
     </section>
 </div>

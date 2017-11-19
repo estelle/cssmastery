@@ -5,6 +5,7 @@
     <title>CSS Mastery: Colors &amp; Transparency</title>
    <link rel="stylesheet" href="../selectors/selectors.css"/>
    <link rel="stylesheet" href="color.css"/>
+   <link rel="stylesheet" href="files/files.css"/>
    <style>
 
 /* COLORS */
@@ -42,7 +43,7 @@ height: 20px;
 					rgba(255, 255, 255, 0) 75%,
 					rgba(255, 255, 255, 0) 100%
 	  				);
-			background-color: rebecca;
+			background-color: #FF8C00;
 			background-size: 40px 40px;
 			background-repeat:repeat;
 }
@@ -112,6 +113,12 @@ height: 20px;
 
 <div class="slide intro">
      <header><h1>Colors &amp; Appearance</h1></header>
+</div>
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>Colors</h1></header>
+
 </div>
 
 
@@ -285,6 +292,84 @@ height: 20px;
      </section>
 </div>
 
+
+
+<!-- currentColor -->
+<div class="slide">
+  <header><h1>currentColor</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>Deprecated Color Names</h1></header>
+    <section class="content">
+    <dl class="deprecated">
+  <dt>ActiveBorder</dt>
+  <dd>Active window border.</dd>
+  <dt>ActiveCaption</dt>
+  <dd>Active window caption.</dd>
+  <dt>AppWorkspace</dt>
+  <dd>Background color of multiple document interface.</dd>
+  <dt>Background</dt>
+  <dd>Desktop background.</dd>
+  <dt>ButtonFace</dt>
+  <dd>The face background color for 3-D elements that appear 3-D due to one layer of surrounding border.</dd>
+  <dt>ButtonHighlight</dt>
+  <dd>The color of the border facing the light source for 3-D elements that appear 3-D due to one layer of surrounding border.</dd>
+  <dt>ButtonShadow</dt>
+  <dd>The color of the border away from the light source for 3-D elements that appear 3-D due to one layer of surrounding border.</dd>
+  <dt>ButtonText</dt>
+  <dd>Text on push buttons.</dd>
+  <dt>CaptionText</dt>
+  <dd>Text in caption, size box, and scrollbar arrow box.</dd>
+  <dt>GrayText</dt>
+  <dd>Grayed (disabled) text. This color is set to #000 if the current display driver does not support a solid gray color.</dd>
+  <dt>Highlight</dt>
+  <dd>Item(s) selected in a control.</dd>
+  <dt>HighlightText</dt>
+  <dd>Text of item(s) selected in a control.</dd>
+  <dt>InactiveBorder</dt>
+  <dd>Inactive window border.</dd>
+  <dt>InactiveCaption</dt>
+  <dd>Inactive window caption.</dd>
+  <dt>InactiveCaptionText</dt>
+  <dd>Color of text in an inactive caption.</dd>
+  <dt>InfoBackground</dt>
+  <dd>Background color for tooltip controls.</dd>
+  <dt>InfoText</dt>
+  <dd>Text color for tooltip controls.</dd>
+  <dt>Menu</dt>
+  <dd>Menu background.</dd>
+  <dt>MenuText</dt>
+  <dd>Text in menus.</dd>
+  <dt>Scrollbar</dt>
+  <dd>Scroll bar gray area.</dd>
+  <dt>ThreeDDarkShadow</dt>
+  <dd>The color of the darker (generally outer) of the two borders away from the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
+  <dt>ThreeDFace</dt>
+  <dd>The face background color for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
+  <dt>ThreeDHighlight</dt>
+  <dd>The color of the lighter (generally outer) of the two borders facing the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
+  <dt>ThreeDLightShadow</dt>
+  <dd>The color of the darker (generally inner) of the two borders facing the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
+  <dt>ThreeDShadow</dt>
+  <dd>The color of the lighter (generally inner) of the two borders away from the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
+  <dt>Window</dt>
+  <dd>Window background.</dd>
+  <dt>WindowFrame</dt>
+  <dd>Window frame.</dd>
+  <dt>WindowText</dt>
+  <dd>Text in windows.</dd>
+</dl>
+    </section>
+</div>
+
+
+
+
+
 <!-- RGB /RGBA -->
 <div class="slide">
      <header><h1>RGB / RGBA</h1></header>
@@ -435,17 +520,41 @@ height: 20px;
     <a href="https://caniuse.com/#feat=css-rrggbbaa">CanIUse.com</a>
   </section>
 </div>
+
+
+
+<!-- colors: try it out -->
+<div class="slide object">
+  <object data="files/colors.html"></object>
+  <a href="files/colors.html" class="objectlink" target="play">Play</a>
+ </div>
+
+
+<!-- Color Tips -->
+<div class="slide">
+  <header>
+     <h1>Color Tips</h1>
+  </header>
+  <section class="content">
+  <ul>
+  <li><b class="imp">transparent</b> == rgba(0, 0, 0, 0);</li>
+  <li><b class="imp">CurrentColor</b> == current Text color</li>
+  <li>Accessibility:  Color is NOT the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.</li>
+  <li><b class="imp">appearance:</b> Changes the appearance of buttons and other controls to resemble native controls.
+  </ul>
+  </section>
+</div>
+
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>Opacity v. Alphatransparency</h1></header>
+</div>
+
 <!-- Opacity-->
 <div class="slide">
      <header><h1>Opacity</h1></header>
      <section class="content">
-  <ul class="icons" style="clear: both; float:right; width: 120px;">
-         <li class="chrome">Chrome 1</li>
-         <li class="safari">Safari 1.2</li>
-         <li class="firefox">Firefox 0.9</li>
-         <li class="opera">Opera 9</li>
-         <li class="ie">IE 4* / IE 9</li>
-     </ul>
      <div class="opacity" style="width: 400px;">
 
          <div style="opacity:1;">
@@ -517,13 +626,6 @@ height: 20px;
          <i></i>
          </div>
      </div>
-     <ul class="icons" style="clear: both;">
-         <li class="chrome">Chrome 1</li>
-         <li class="safari">Safari 1.2</li>
-         <li class="firefox">Firefox 0.9</li>
-         <li class="opera">Opera 9</li>
-         <li class="ie ">IE 9</li>
-     </ul>
      </section>
  </div>
 
@@ -555,162 +657,155 @@ hsla(216, 49%, 45%, 0.5);
 </div>
 
 
-<!-- Color Tips -->
-<div class="slide">
-  <header>
-     <h1>Color Tips</h1>
-  </header>
+<!-- play -->
+<div class="slide object">
+  <object data="files/colors.html"></object>
+  <a href="files/colors.html" class="objectlink" target="play">Play</a>
+ </div>
+
+
+
+
+
+<!-- Divider: appearace -->
+<div class="slide divider">
+  <header><h1>Appearance</h1></header>
   <section class="content">
-  <ul>
-  <li><b class="imp">transparent</b> == rgba(0, 0, 0, 0);</li>
-  <li><b class="imp">CurrentColor</b> == current Text color</li>
-  <li>Accessibility:  Color is NOT the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.</li>
-  <li><b class="imp">appearance:</b> Changes the appearance of buttons and other controls to resemble native controls.
-  </ul>
   </section>
 </div>
 
+
+<!--  -->
 <div class="slide">
-	<header><h1>Deprecated Color Names</h1></header>
-    <section class="content">
-    <dl class="deprecated">
-  <dt>ActiveBorder</dt>
-  <dd>Active window border.</dd>
-  <dt>ActiveCaption</dt>
-  <dd>Active window caption.</dd>
-  <dt>AppWorkspace</dt>
-  <dd>Background color of multiple document interface.</dd>
-  <dt>Background</dt>
-  <dd>Desktop background.</dd>
-  <dt>ButtonFace</dt>
-  <dd>The face background color for 3-D elements that appear 3-D due to one layer of surrounding border.</dd>
-  <dt>ButtonHighlight</dt>
-  <dd>The color of the border facing the light source for 3-D elements that appear 3-D due to one layer of surrounding border.</dd>
-  <dt>ButtonShadow</dt>
-  <dd>The color of the border away from the light source for 3-D elements that appear 3-D due to one layer of surrounding border.</dd>
-  <dt>ButtonText</dt>
-  <dd>Text on push buttons.</dd>
-  <dt>CaptionText</dt>
-  <dd>Text in caption, size box, and scrollbar arrow box.</dd>
-  <dt>GrayText</dt>
-  <dd>Grayed (disabled) text. This color is set to #000 if the current display driver does not support a solid gray color.</dd>
-  <dt>Highlight</dt>
-  <dd>Item(s) selected in a control.</dd>
-  <dt>HighlightText</dt>
-  <dd>Text of item(s) selected in a control.</dd>
-  <dt>InactiveBorder</dt>
-  <dd>Inactive window border.</dd>
-  <dt>InactiveCaption</dt>
-  <dd>Inactive window caption.</dd>
-  <dt>InactiveCaptionText</dt>
-  <dd>Color of text in an inactive caption.</dd>
-  <dt>InfoBackground</dt>
-  <dd>Background color for tooltip controls.</dd>
-  <dt>InfoText</dt>
-  <dd>Text color for tooltip controls.</dd>
-  <dt>Menu</dt>
-  <dd>Menu background.</dd>
-  <dt>MenuText</dt>
-  <dd>Text in menus.</dd>
-  <dt>Scrollbar</dt>
-  <dd>Scroll bar gray area.</dd>
-  <dt>ThreeDDarkShadow</dt>
-  <dd>The color of the darker (generally outer) of the two borders away from the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
-  <dt>ThreeDFace</dt>
-  <dd>The face background color for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
-  <dt>ThreeDHighlight</dt>
-  <dd>The color of the lighter (generally outer) of the two borders facing the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
-  <dt>ThreeDLightShadow</dt>
-  <dd>The color of the darker (generally inner) of the two borders facing the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
-  <dt>ThreeDShadow</dt>
-  <dd>The color of the lighter (generally inner) of the two borders away from the light source for 3-D elements that appear 3-D due to two concentric layers of surrounding border.</dd>
-  <dt>Window</dt>
-  <dd>Window background.</dd>
-  <dt>WindowFrame</dt>
-  <dd>Window frame.</dd>
-  <dt>WindowText</dt>
-  <dd>Text in windows.</dd>
-</dl>
-    </section>
+  <header><h1>-moz-appearance</h1></header>
+  <section class="content" style="height: 80vh; overflow-y: scroll">
+      <dl class="appearance deprecated">
+<dt>none</dt> 
+<dt>button</dt> 
+<dt>button-arrow-down</dt> 
+<dt>button-arrow-next</dt> 
+<dt>button-arrow-previous</dt> 
+<dt>button-arrow-up</dt> 
+<dt>button-bevel</dt> 
+<dt>button-focus</dt> 
+<dt>caret</dt> 
+<dt>checkbox</dt> 
+<dt>checkbox-container</dt> 
+<dt>checkbox-label</dt> 
+<dt>checkmenuitem</dt> 
+<dt>dualbutton</dt> 
+<dt>groupbox</dt> 
+<dt>listbox</dt> 
+<dt>listitem</dt> 
+<dt>menuarrow</dt> 
+<dt>menubar</dt> 
+<dt>menucheckbox</dt> 
+<dt>menuimage</dt> 
+<dt>menuitem</dt> 
+<dt>menuitemtext</dt> 
+<dt>menulist</dt> 
+<dt>menulist-button</dt> 
+<dt>menulist-text</dt> 
+<dt>menulist-textfield</dt> 
+<dt>menupopup</dt> 
+<dt>menuradio</dt> 
+<dt>menuseparator</dt> 
+<dt>meterbar</dt> 
+<dt>meterchunk</dt> 
+<dt>progressbar</dt> 
+<dt>progressbar-vertical</dt> 
+<dt>progresschunk</dt> 
+<dt>progresschunk-vertical</dt> 
+<dt>radio</dt> 
+<dt>radio-container</dt> 
+<dt>radio-label</dt> 
+<dt>radiomenuitem</dt> 
+<dt>range</dt> 
+<dt>range-thumb</dt> 
+<dt>resizer</dt> 
+<dt>resizerpanel</dt> 
+<dt>scale-horizontal</dt> 
+<dt>scalethumbend</dt> 
+<dt>scalethumb-horizontal</dt> 
+<dt>scalethumbstart</dt> 
+<dt>scalethumbtick</dt> 
+<dt>scalethumb-vertical</dt> 
+<dt>scale-vertical</dt> 
+<dt>scrollbarbutton-down</dt> 
+<dt>scrollbarbutton-left</dt> 
+<dt>scrollbarbutton-right</dt> 
+<dt>scrollbarbutton-up</dt> 
+<dt>scrollbarthumb-horizontal</dt> 
+<dt>scrollbarthumb-vertical</dt> 
+<dt>scrollbartrack-horizontal</dt> 
+<dt>scrollbartrack-vertical</dt> 
+<dt>searchfield</dt> 
+<dt>separator</dt> 
+<dt>sheet</dt> 
+<dt>spinner</dt> 
+<dt>spinner-downbutton</dt> 
+<dt>spinner-textfield</dt> 
+<dt>spinner-upbutton</dt> 
+<dt>splitter</dt> 
+<dt>statusbar</dt> 
+<dt>statusbarpanel</dt> 
+<dt>tab</dt> 
+<dt>tabpanel</dt> 
+<dt>tabpanels</dt> 
+<dt>tab-scroll-arrow-back</dt> 
+<dt>tab-scroll-arrow-forward</dt> 
+<dt>textfield</dt> 
+<dt>textfield-multiline</dt> 
+<dt>toolbar</dt> 
+<dt>toolbarbutton</dt> 
+<dt>toolbarbutton-dropdown</dt> 
+<dt>toolbargripper</dt> 
+<dt>toolbox</dt> 
+<dt>tooltip</dt> 
+<dt>treeheader</dt> 
+<dt>treeheadercell</dt> 
+<dt>treeheadersortarrow</dt> 
+<dt>treeitem</dt> 
+<dt>treeline</dt> 
+<dt>treetwisty</dt> 
+<dt>treetwistyopen</dt> 
+<dt>treeview</dt> </dl>
+  </section>
 </div>
+
+
 
 <div class="slide">
      <header><h1>-moz-appearance:</h1></header>
-     <section class="content">
-  <dl class="appearance deprecated">
-     <dt>none</dt>
-  <dd>No special styling is applied. (Default)</dd>
-  <dt>button</dt>
-  <dd>The element is drawn like a button.</dd>
-  <dt>checkbox</dt>
-  <dd>The element is drawn like a checkbox, including only the actual &quot;checkbox&quot; portion.</dd>
-  <dt>checkbox-container</dt>
-  <dd>The element is drawn like a container for a checkbox, which may include a prelighting background effect under certain platforms. Normally a would contain a label and a checkbox.</dd>
-  <dt>checkbox-small</dt>
-  <dd> <span title="(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0) ">Obsolete since Gecko 1.9.1</span></dd>
-  <dt>dialog</dt>
-  <dd>The element is styled like a dialog box, which includes background color and other properties.</dd>
-  <dt>listbox</dt>
-  <dt>menuitem</dt>
-  <dd>The element is styled as menu item, item is highlighted when hovered.</dd>
-  <dt>menulist</dt>
-  <dt>menulist-button</dt>
-  <dd>The element is styled as a button that would indicate a menulist can be opened.</dd>
-  <dt>menulist-textfield</dt>
-  <dd>The element is styled as the text field for a menulist. (Not implemented for the Windows platform)</dd>
-  <dt>menupopup</dt>
-  <dt>progressbar</dt>
-  <dd>The element is styled like a progress bar.</dd>
-  <dt>radio</dt>
-  <dd>The element is drawn like a radio button, including only the actual &quot;radio button&quot; portion.</dd>
-  <dt>radio-container</dt>
-  <dd>The element is drawn like a container for a radio button, which may include a prelighting background effect under certain platforms. Normally would contain a label and a radio button.</dd>
-  <dt>radio-small</dt>
-  <dd>Obsolete since Gecko 1.9.1</dd>
-  <dt>resizer</dt>
-  <dt>scrollbar</dt>
-  <dt>scrollbarbutton-down</dt>
-  <dt>scrollbarbutton-left</dt>
-  <dt>scrollbarbutton-right</dt>
-  <dt>scrollbarbutton-up</dt>
-  <dt>scrollbartrack-horizontal</dt>
-  <dt>scrollbartrack-vertical</dt>
-  <dt>separator</dt>
-  <dt>statusbar</dt>
-  <dt>tab</dt>
-  <dt>tab-left-edge</dt>
-  <dd> <span title="">Obsolete</span></dd>
-  <dt>tabpanels</dt>
-  <dt>textfield</dt>
-  <dt>textfield-multiline</dt>
-  <dt>toolbar</dt>
-  <dt>toolbarbutton</dt>
-  <dt>toolbox</dt>
-  <dt>tooltip</dt>
-  <dt>treeheadercell</dt>
-  <dt>treeheadersortarrow</dt>
-  <dt>treeitem</dt>
-  <dt>treetwisty</dt>
-  <dt>treetwistyopen</dt>
-  <dt>treeview</dt>
-  <dt>window</dt>
+     <section class="content" style="height: 80vh; overflow-y: scroll">
 
-  <dt>mac-unified-toolbar </dt><dd>New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3.5_for_developers">Firefox 3.5</a>
-  Mac OS X only. This causes the toolbar and title bar to render using the unified toolbar style common to Mac OS X 10.4 and later applications.</dd>
-  <dt>win-borderless-glass</dt>
-  <dd> New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_4.0_for_developers">Firefox 4.0</a>Used for Windows Vista and later. This style applies the Aero Glass effect -- but without a border -- to the element.</dd>
-  <dt>win-browsertabbar-toolbox</dt>
-  <dd> New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3_for_developers">Firefox 3</a>Windows Vista and later. This toolbox style is meant to be used for the tab bar in a browser.</dd>
-  <dt>win-communications-toolbox</dt>
-  <dd> New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3_for_developers">Firefox 3</a>Windows Vista and later. This toolbox style is meant to be used in communications and productivity applications. Corresponding foreground color is -moz-win-communicationstext.</dd>
-  <dt>win-glass</dt>
-  <dd>New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3.5_for_developers">Firefox 3.5</a>
-  Windows Vista and later. This style applies the Aero Glass effect to the element.</dd>
-  <dt>win-media-toolbox</dt>
-  <dd> New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3_for_developers">Firefox 3</a>Windows Vista and later. This toolbox style is meant to be used in applications that manage media objects. Corresponding foreground color is -moz-win-mediatext.</dd>
+      <dl class="appearance deprecated">
+<dt>-moz-mac-unified-toolbar</dt> 
+<dt>-moz-win-borderless-glass</dt> 
+<dt>-moz-win-browsertabbar-toolbox</dt> 
+<dt>-moz-win-communicationstext</dt> 
+<dt>-moz-win-communications-toolbox</dt> 
+<dt>-moz-win-exclude-glass</dt> 
+<dt>-moz-win-glass</dt> 
+<dt>-moz-win-mediatext</dt> 
+<dt>-moz-win-media-toolbox</dt> 
+<dt>-moz-window-button-box</dt> 
+<dt>-moz-window-button-box-maximized</dt> 
+<dt>-moz-window-button-close</dt> 
+<dt>-moz-window-button-maximize</dt> 
+<dt>-moz-window-button-minimize</dt> 
+<dt>-moz-window-button-restore</dt> 
+<dt>-moz-window-frame-bottom</dt> 
+<dt>-moz-window-frame-left</dt> 
+<dt>-moz-window-frame-right</dt> 
+<dt>-moz-window-titlebar</dt> 
+<dt>-moz-window-titlebar-maximized</dt>
 </dl>
      </section>
  </div>
+
+
+
 <div class="slide">
      <header><h1>-webkit-appearance: <input type="checkbox"/></h1></header>
      <section class="content">
@@ -760,12 +855,66 @@ hsla(216, 49%, 45%, 0.5);
 <li>scrollbartrack-vertical</li></ul>
      </section>
  </div>
-<div class="slide intro">
-     <header><h1>Part 7: Fonts, Shadows &amp; Text Effects</h1></header>
-    <h1><a href="part_07_fonts.html#slide3">Next ➹</a></h1>
+
+
+<!-- webkit-appearance: media -->
+<div class="slide object">
+  <header><h1>-webkit-appearance: media values</h1></header>
+<object data="https://opensource.apple.com/source/WebCore/WebCore-1889.1/css/mediaControls.css.auto.html"><a href="https://opensource.apple.com/source/WebCore/WebCore-1889.1/css/mediaControls.css.auto.html" target="resource">https://opensource.apple.com/source/WebCore/WebCore-1889.1/css/mediaControls.css.auto.html</a></object><a href="https://opensource.apple.com/source/WebCore/WebCore-1889.1/css/mediaControls.css.auto.html" class="objectlink" target="resource">media values</a>
+</div>
+
+
+
+<!-- Example Slider -->
+<div class="slide">
+  <header><h1>Pseudo Elements</h1></header>
+  <section class="content  scrollbar">
+    <style style="height: 80vh; overflow: scroll" class="editme" contenteditable>
+/* shadow dom */
+.scrollbar ::-webkit-scrollbar {
+    margin-right: 5px;
+    background-color: royalblue;
+  border-radius: 6px;
+    width: 12px;
+}
+.scrollbar ::-webkit-scrollbar-track {
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+.scrollbar ::-webkit-scrollbar-thumb {
+    border: 1px #eee solid;
+    border-radius: 12px;
+    background: rebeccapurple;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+    transition: all .3s ease-out;
+}
+.scrollbar 
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: #bbb;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+}
+.scrollbar 
+   ::-webkit-scrollbar-thumb:hover {
+  background: orange; }
+.scrollbar pre {
+  width: 700px;
+  height: 200px;
+  overflow:auto;
+}</style>  </section>
+</div>
+
+<div class="slide divider">
+     <header><h1></h1></header>
+    <h1><a href="">Next ➹</a></h1>
     </div>
 
-
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
+</div>
 
 
   </div>

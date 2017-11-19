@@ -7,7 +7,7 @@
 	e. Attribute Selectors
 	f. UI Pseudo Class Selectors
 	g. Structural selectors
-	h. Negation
+	h. Other Logical Combinations: Negation, Matching and Parent
 	i. Language based selectors
 	j. Link, location & user action pseudo-classes
 	k. Additional Pseudo Classes
@@ -17,6 +17,7 @@
 	b. first line
 	c. selection
 	d. before, after and generated content
+	e. selection
 	f. additional pseudo elements
 	g. browser specific pseudo elements
 4. Generated Content
@@ -31,4 +32,22 @@
 	i. Accessibility
 	j. Design Elements
 5. Media Queries
+	a. Media Type, Screen Size, Resolution
+    b. Browser Capability @supports
+    c. viewport
+    d. use cases: Hyphenations, columns, svg
+6. Colors & Appearance
+	a. colors
+	b. Opacity v. Alphatransparency
+	c. appearance
+	d. additional pseudo elements
+7. Flexbox
+	a. Purpose and goal of flexbox
+	b. browser support and specification
+	c. Overview
+	d. The basics
+	e. Flex container properties
+	f. Flex item properties
+	g. Flexibility
+
 
