@@ -35,9 +35,9 @@
 	1. Design Elements
 5. [Media Queries](media/)
 	1. Media Type, Screen Size, Resolution
-    b. Browser Capability @supports
-    c. viewport
-    d. use cases: Hyphenations, columns, svg
+    1. Browser Capability @supports
+    1. viewport
+    1. use cases: Hyphenations, columns, svg
 6. [Colors & Appearance](colors/)
 	1. colors
 	1. Opacity v. Alphatransparency
