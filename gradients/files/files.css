@@ -1,0 +1,28 @@
+head {
+	display: block;
+	height: 100vh;
+}
+.editme {
+	display: block;
+	-webkit-user-modify: read-write-plaintext-only;
+	padding: 20px; 
+	font-size: 1.5em; 
+	white-space: pre; 
+	border-radius: 10px; 
+	border: 3px solid #aaa; 
+	background-color:rgba(255,255,255,0.7); 
+	position: absolute;
+	top: 100px;
+	left: 10%;
+	width: 80%; 
+	z-index: 2; max-height: 80vh; overflow-y: scroll;
+	font-family:"Courier New", Courier, monospace; 
+}
+:root {
+	height: 100%; 
+	width: 100%; 
+	position: relative; 
+	z-index: 1;
+	margin: 0;
+}
+body {position: absolute; bottom: 0; font-family: Lato, Tahoma, Geneva, sans-serif}

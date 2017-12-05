@@ -1,0 +1,1203 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS Gradients </title>
+<!--
+
+Author: Estelle Weyl
+Contact: firstName @ lastName dot ORG
+Twitter: @estellevw
+
+-->
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="screen.css" media="projection, screen"/>
+   <link rel="stylesheet" href="religion.css" media="all"/>
+ <style>
+ .ex_rgba_stripes{
+ background:
+ 	linear-gradient(135deg,
+		rgba(255, 255, 255, 0.2) 25%,
+		rgba(255, 255, 255, 0) 25%,
+		rgba(255, 255, 255, 0) 50%,
+		rgba(255, 255, 255, 0.2) 50%,
+		rgba(255, 255, 255, 0.2) 75%,
+		rgba(255, 255, 255, 0) 75%,
+		rgba(255, 255, 255, 0) 100% ) 40px 40px  #BDD9D5  repeat;
+background-size: 40px 40px;
+
+ }
+
+ .whatisborderimage {
+	margin: auto;
+	height: 200px;
+	width: 200px;
+	background-image:
+		linear-gradient(gold 5px, transparent 5px, transparent 145px, palegoldenrod 145px),
+		linear-gradient(left, palegoldenrod 5px, transparent 5px, transparent 145px, palegoldenrod 145px),
+		linear-gradient(#BDD9D5, palegoldenrod, #BDD9D5);
+	background-size: 200px 150px, 150px 200px, 150px 150px;
+	background-position: center;
+	background-position: no-repeat;
+}
+.medexampleshell {width: 600px; margin:auto;}
+ .medexample { height: 200px; width: 200px; margin: 0 30px 30px; float: left; text-align: center;
+   padding: 60px 0; box-sizing:border-box; text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;}
+
+    .multiplebg {
+	background-image: linear-gradient(gold, palegoldenrod), linear-gradient(#BDD9D5,#BDD9D5);
+	background-size: 180px 180px;
+	background-repeat: no-repeat;
+	background-position: 0 0, 20px 20px;
+
+ }
+ .bgimage {
+	background-image: radial-gradient(50% 50%, circle closest-side, transparent 70%, palegoldenrod 70%,gold 85%,transparent  85% );
+	background-size: 190px 190px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+
+
+ }
+ .linear {
+background-image:
+		linear-gradient(to left,
+			rgba(0,0,0,0.5) 8%,
+			rgba(0,0,0,0.1) 24%);
+}
+ .linrepeat {
+background-image:
+		repeating-linear-gradient(to left,
+			rgba(0,0,0,0.5) 8%,
+			rgba(0,0,0,0.1) 24%);
+}
+  .radial {
+background-image:
+		radial-gradient(circle 200px at 20% 20%,
+			rgba(0,0,0,0.9),
+			rgba(0,0,0,0.1) 8%,
+			rgba(0,0,0,0.5) 16%);
+}
+ .radrepeat {
+background-image:
+		repeating-radial-gradient(circle at 40px 40px,
+			rgba(0,0,0,0.9),
+			rgba(0,0,0,0.1) 8%,
+			rgba(0,0,0,0.5) 16%);
+}
+ .grad {
+	width: 250px;
+	height: 180px;
+	margin: 0 20px 20px 0px;
+	float: left;
+	border-radius: 150px;
+	background-repeat: repeat;
+ }
+ .grad1 {
+	 background-repeat: repeat;
+ }
+ .grad1 header {background-color: rgba(255,255,255,0.8);}
+
+ .basiclinear {
+	 background: linear-gradient(rebeccapurple, palegoldenrod);
+ }
+.linear45 {
+   background: linear-gradient(rebeccapurple 45%, palegoldenrod 55%);
+ }
+.linear50 {
+   background: linear-gradient(rebeccapurple 50%, palegoldenrod 50%);
+ }
+ .basiclinearnoprefix {
+   background: linear-gradient(to bottom, rebeccapurple, palegoldenrod);
+}
+.dark header{
+	background-color: rgba(255,255,255,0.5);
+ }
+
+ .angle {
+	position: absolute;
+	padding: 50px 50px 30px 50px;
+	color: rgba(255,255,255,0.01);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.01);
+	text-align: center;
+
+ }
+.angle:hover {
+
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+		color: white;
+ }
+#basiclinear:after,
+#slide_basiclinearangles:after,
+#slide_anglevkeyterm:after {
+	content: "";
+	background-color: black;
+	top: 49%;
+	left: 49%;
+	bottom: 49%;
+	right: 49%;
+	position:absolute;
+	border-radius: 50%;
+ }
+
+.comparegrad {
+	height: 300px;
+	display: inline-block;
+	width: 300px;
+	border: 5px solid #BDD9D5;
+	margin-right: 10px;
+	position:relative;
+}
+.comparegradkeyterm  {
+	background: linear-gradient(to top right,palegoldenrod, rebeccapurple, palegoldenrod, rebeccapurple, palegoldenrod, rebeccapurple, palegoldenrod, rebeccapurple, palegoldenrod);
+}
+.comparegradkeyterm div{
+	background: linear-gradient(to top right, transparent 49.95%, black 49.95%, black 50%, transparent 50%);
+	transform: rotate(90deg) scale(3);
+}
+
+.comparegradangle {
+	background: linear-gradient(45deg, palegoldenrod, rebeccapurple, palegoldenrod, rebeccapurple, palegoldenrod, rebeccapurple, palegoldenrod, rebeccapurple, palegoldenrod);
+}
+.comparegradangle div{
+	background: linear-gradient(45deg, transparent 49.5%, black 49.5%, black 50%, transparent 50%);
+}
+.rainbow {
+	background: linear-gradient(to bottom, red, orange, yellow, green, blue, purple);
+}
+.rainbow2 {
+  background-image:
+    linear-gradient(to bottom,
+      red 20%,
+      orange 20%,
+      orange 40%,
+      yellow 40%,
+      yellow 60%,
+      green 60%,
+      green 80%,
+      blue 80%
+    );
+	}
+#rainbow5{
+	background-image:
+	repeating-linear-gradient(145deg,
+      red 0,
+	  red 20px,
+      orange 20px,
+      orange 40px,
+      yellow 40px,
+      yellow 60px,
+      green 60px,
+      green 80px,
+      blue 80px,
+	  blue 100px,
+	  purple 100px,
+	  purple 120px);
+}
+#rainbow5b {
+	background-image: linear-gradient(90deg,
+  palegoldenrod 40%,
+  #BDD9D5 60%);
+}
+
+#angledStripes {
+	background-color: rebeccapurple;
+	background-image:
+			linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 25%,
+					rgba(255, 255, 255, 0) 25%,
+					rgba(255, 255, 255, 0) 50%,
+					rgba(255, 255, 255, 0.2) 50%,
+					rgba(255, 255, 255, 0.2) 75%,
+					rgba(255, 255, 255, 0) 75%,
+					rgba(255, 255, 255, 0) 100%
+	  				);
+	background-size: 100px 100px;
+	background-repeat: repeat;
+}
+#tablecloth, #ancientgrad {
+background-color: rebeccapurple;
+background-image:
+    linear-gradient(
+    	rgba(255, 255, 255, 0.2) 50%,
+    	rgba(255, 255, 255, 0) 50%),
+    linear-gradient(to right,
+    	rgba(255, 255, 255, 0.2) 50%,
+    	rgba(255, 255, 255, 0) 50%);
+	background-size: 100px 100px;
+	background-repeat: repeat;
+}
+
+
+#radial01 {
+background-image:
+  radial-gradient(
+  palegoldenrod,
+  #BDD9D5);
+}
+#radial02 {
+background-image:
+  radial-gradient(at 25% 35%,
+  palegoldenrod,
+  #BDD9D5);
+}
+#radial03 {
+background-image:
+  radial-gradient(at 25% 35%,
+  palegoldenrod 20%,
+  #BDD9D5 20%);
+}
+#radial04 {
+background-image:
+  radial-gradient(circle at 75% 75%,
+  palegoldenrod 20%,
+  #BDD9D5 20%);
+}
+#radial05 {
+
+  background-image: radial-gradient(farthest-corner at 40px 50px, palegoldenrod 298px,
+  #BDD9D5 300px);
+}
+
+#radial06 {
+background-image:radial-gradient(
+     circle,
+      #BDD9D5 50%,
+      palegoldenrod 50%);
+background-size: 50px 50px;
+background-repeat:repeat;
+background-color: red;
+}
+input[type=range] {width: 360px;}
+.gradientpoop {position: absolute; top:0; right:0; left:0; bottom:0; pointer-events: none;
+	transform:rotate(90deg);
+}
+/* color: rebeccapurple;
+BDD9D5*/
+ </style>
+  </head>
+  <body> <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+  <div id="presentation">
+
+   <div id="presentation-counter"></div>
+
+   <div id="slides">
+
+
+
+
+
+<!-- library examples -->
+
+<div class="slide intro">
+     <header><h1>CSS Gradients </h1></header>
+     <section class="content">
+   
+     </section>
+ </div>
+
+
+
+
+
+<!-- library examples -->
+<div class="slide normal greenbean grad1" id="slide1">
+     <header><h1>Plaid</h1></header>
+     <section class="content">
+     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide1').style.backgroundColor = this.value;">
+     </section>
+ </div>
+
+
+<!-- library examples -->
+<div class="slide normal metal grad1"  id="slide2">
+     <header><h1>Metal Grid</h1></header>
+     <section class="content">
+     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide2').style.backgroundColor = this.value;">
+     </section>
+ </div>
+
+
+<!-- library examples -->
+<div class="slide normal classic grad1"  id="slide3">
+     <header><h1>Classic</h1></header>
+     <section class="content">
+     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide3').style.backgroundColor = this.value;">
+     </section>
+ </div>
+
+
+<!-- library examples -->
+<div class="slide normal inverse1 grad1"  id="slide4">
+     <header><h1>Disco Ball</h1></header>
+     <section class="content">
+     <input type="range" min="5" max="50" onChange="document.getElementById('slide4').style.backgroundSize = this.value + 'px,' + this.value + 'px,100%';">
+     </section>
+ </div>
+
+<!-- library examples -->
+<div class="slide normal tiltdavid grad1"  id="slide5">
+     <header><h1>Star of David</h1></header>
+     <section class="content">
+     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide5').style.backgroundColor = this.value;">
+     </section>
+ </div>
+
+ <!-- library examples -->
+<div class="slide normal retro67 grad1"  id="slide6">
+     <header><h1>Retro 1967</h1></header>
+     <section class="content">
+     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide6').style.backgroundColor = this.value;">
+     </section>
+ </div>
+
+ <!-- library examples -->
+<div class="slide normal blurry grad1"  id="slide7">
+     <header><h1>Seat Cushion</h1></header>
+     <section class="content">
+     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide7').style.backgroundColor = this.value;">
+     </section>
+ </div>
+ <!-- library examples -->
+<div class="slide normal bradybunch grad1"  id="slide9">
+     <header><h1>Brady Brunch</h1></header>
+     <section class="content">
+     <input type="color" pattern="#[a-fA-F0-9]{6}"   onChange="document.getElementById('slide9').style.backgroundColor = this.value;">
+     <input type="range" min="10" max="210" step="10" onChange="alter(this.value)">
+     <script>
+	 function alter(sz) {
+		 sz2 = sz +"px "
+		 	document.getElementById('slide9').style.backgroundSize = sz2 + sz2;
+			document.getElementById('slide9').style.backgroundPosition = "0 0, " + sz/2 + 'px ' + sz/2 + 'px';
+	 }
+	 </script>
+     </section>
+ </div>
+
+<!-- 4 kind of radients -->
+<div class="slide">
+     <header><h1>Gradients</h1></header>
+     <section class="content">
+     <ul>
+     <li>Anywhere an image can be used (theoretically)
+     	<ul><li>background-image, list-style-type, border-image, content, cursor</li></ul>
+     </li>
+     <li>4 Gradient Types
+     <ul class="medexampleshell" id="lgresize">
+     	<li class="medexample linear">linear-gradient();</li>
+     	<li class="medexample radial">radial-gradient();</li>
+     	<li class="medexample linrepeat">repeating-linear-gradient()</li>
+     	<li class="medexample radrepeat">repeating-radial-gradient()</li>
+     </ul>
+     </li>
+     </ul>
+     </section>
+ </div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>conical gradient</h1></header>
+  <section class="content">
+    <ul class="medexampleshell" id="lgresize">
+      <li class="medexample" style="background: conic-gradient(from 45deg, white, black, white);">conic-gradient()</li>
+    <li class="medexample" style="background: conic-gradient(red, magenta, blue, aqua, lime, yellow, red); border-radius: 50%;">conic-gradient()</li>
+      <li class="medexample" style="
+    background: repeating-conic-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));">repeating-conic-gradient()</li>
+      <li class="medexample" style="
+    background: repeating-conic-gradient(rgba(0,0,0,0.5) 0deg 25%, rgba(0,0,0,0.1) 0deg 50%);">repeating-conic-gradient()</li>
+      <li class="medexample" style="
+    background: repeating-conic-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1) 20deg );">repeating-conic-gradient()</li>
+  </ul>
+  </section>
+</div>
+
+<div class="slide figure">
+<figure><object data="http://caniuse.com/#search=gradient"></object></figure>
+  <a href="http://caniuse.com/#search=gradient" target="play" title="open resource in new window">➹</a>
+
+</div>
+
+
+
+
+
+
+ <!-- W3C syntax -->
+ <div class="slide">
+     <header><h1>Linear Gradient Syntax</h1></header>
+     <section class="content">
+     <pre contenteditable>linear-gradient([<em>&lt;angle&gt;</em>| to <em>&lt;side-or-corner&gt;</em>,]? 
+   [<em>&lt;color-stop&gt;</em>[, <em>&lt;color-hint&gt;</em>]?, ]# <em>&lt;color-stop&gt;</em>)</pre>
+     <p>Things to remember:</p>
+     <ol>
+      <li>Use 'to' with keyterms</li>
+      <li>Angles go counter clockwise</li>
+      <li>0deg is from left </li>
+     </ol>
+     </section>
+ </div>
+
+
+<!--  -->
+<div class="slide object">
+  <header><h1>Basic Gradient</h1></header>
+
+  <object data="files/base.html"></object>
+  <a href="files/base.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
+ <!-- W3C syntax -->
+ <div class="slide">
+     <header><h1>Radial Gradient Syntax</h1></header>
+     <section class="content">
+     <pre contenteditable>radial-gradient([<em>&lt;shape&gt;</em>|| <em>&lt;size&gt;</em> at &lt;position&gt;]? 
+   [<em>&lt;color-stop&gt;</em>[, <em>&lt;color-hint&gt;</em>]?, ]# <em>&lt;color-stop&gt;</em>)</pre>
+     <p>Things to remember:</p>
+     <ol>
+      <li>Use 'at' with position</li>
+      <li>Angles go counter clockwise</li>
+      <li>0deg is from left </li>
+     </ol>
+     </section>
+ </div>
+
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>Color Stops</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- color-stop details -->
+<div class="slide">
+  <header><h1>color-stop</h1></header>
+  <section class="content">
+    <pre contenteditable>&lt;color&gt; [&lt;length> || &lt;percentage>]?</pre>
+    <ul>
+      <li>Color? See <a href="../colors/index.html#slide14">Colors</a></li>
+      <li>Length? Any length unit</li>
+      <li>Percent? relative to gradient line which is relative to image size</li>
+      <li>Omitted? 0%, 100%, or evenly distibuted in between</li>
+      <li>Duplicate? Hard color stop</li>
+      <li>Out of Order? previous declared value</ul>
+  </section>
+</div>
+
+
+<!-- Length Units -->
+<div class="slide object">
+  <header><h1>Length Units</h1></header>
+
+  <object data="files/colorstop1.html"></object>
+  <a href="files/colorstop1.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+<!-- Percentages-->
+<div class="slide object">
+  <header><h1>Percentages</h1></header>
+
+  <object data="files/colorstop2.html"></object>
+  <a href="files/colorstop2.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
+<!-- No 0% of 100% -->
+<div class="slide object">
+  <header><h1>End points: No 0% of 100%</h1></header>
+
+  <object data="files/colorstop3.html"></object>
+  <a href="files/colorstop3.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
+<!-- Overlapping -->
+<div class="slide object">
+  <header><h1>Duplicate / Hard stops</h1></header>
+
+  <object data="files/colorstop4.html"></object>
+  <a href="files/colorstop4.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+<!-- Duplicate values -->
+<div class="slide object">
+  <header><h1>Duplicate / Hard stops</h1></header>
+
+  <object data="files/colorstop5.html"></object>
+  <a href="files/colorstop5.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
+
+<!-- Color stops that overlap -->
+<div class="slide object">
+  <header><h1>Should be Sequential</h1></header>
+
+  <object data="files/colorstop6.html"></object>
+  <a href="files/colorstop6.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+<!-- Negative value for color stops -->
+<div class="slide object">
+  <header><h1>Negative Values</h1></header>
+
+  <object data="files/colorstop8.html"></object>
+  <a href="files/colorstop8.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>Color Hints</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<!-- Color Hints Explained -->
+<div class="slide">
+  <header><h1>color-hint</h1></header>
+  <section class="content">
+  
+    <ul>  <li>Midpoint of transition between 2 stops</li>
+      <li>Length? Any length unit</li>
+      <li>Percent? relative to gradient line which is relative to image size</li>
+      <li>Hard Stop? Use 0%</li>
+      <li>Point is relative to the 0 (zero) mark, not from the previous color stop</li>
+    </ul>
+  </section>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>color-hint</h1></header>
+  <section class="content">
+    <pre style="background: linear-gradient(to right, rebeccapurple, palegoldenrod); line-height: 3;">linear-gradient(rebeccapurple, palegoldenrod);</pre>
+    <pre style="background: linear-gradient(to right, rebeccapurple, 50%, palegoldenrod);line-height: 3">linear-gradient(rebeccapurple, 50%, palegoldenrod);</pre>
+    <pre style="background: linear-gradient(to right, rebeccapurple, 20%, palegoldenrod);line-height: 3">linear-gradient(rebeccapurple, 20%, palegoldenrod);</pre>
+
+    <pre style="background: linear-gradient(to right, rebeccapurple, 80%, palegoldenrod);line-height: 3">linear-gradient(rebeccapurple, 80%, palegoldenrod);</pre>
+  </section>
+</div>
+
+
+
+<!-- Overlapping -->
+<div class="slide object">
+  <header><h1>Color Hint</h1></header>
+
+  <object data="files/colorhint1.html"></object>
+  <a href="files/colorhint1.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>Direction</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>to &lt;side-or-corner&gt;</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- Corners and sides -->
+<div class="slide">
+  <header><h1>Keyterm Directions</h1></header>
+  <section class="content">
+    <pre contenteditable>linear-gradient([&lt;angle&gt;| to <em>&lt;side-or-corner&gt;</em>,]? 
+   [&lt;color-stop&gt;[, &lt;color-hint&gt;]?, ]# &lt;color-stop&gt;)</pre>
+   <p>Gradient progresses toward the declared side or corner.</code></p>
+   <pre>to [left | right] || [top | bottom]</pre>
+   <pre style="float: left" contenteditable>  to top
+  <em>to bottom</em>
+  to left
+  to right
+  to top left
+  to top right
+  to bottom left
+  to bottom right</pre>
+  </section>
+</div>
+
+
+ <!-- keyterm values -->
+ <div class="slide dark object linear45" id="basiclinear">
+     <header><h1>Linear Gradient: Gradient Directions</h1></header>
+     <section class="content" style="margin-top:100px;">
+     
+      <select style="font-size: 1em; border-radius: 0; background-color: palegoldenrod" onChange="basicGradientChange();" id="slct_basicgradient">
+   		<option value=""></option>
+        <option value="to top">to top</option>
+        <option value="to bottom">to bottom</option>
+        <option valut="to left">to left</option>
+        <option value="to right">to right</option>
+        <option value="to top left">to top left</option>
+        <option value="to top right">to top right</option>
+        <option value="to bottom left">to bottom left</option>
+        <option value="to bottom right">to bottom right</option>
+   </select>
+   <pre contenteditable>
+
+background: linear-gradient(<span id="basicgradient"></span> rebeccapurple 47%, palegoldenrod 53%);
+     </pre>
+
+   		<pre style="float: left" contenteditable>&lt;side-or-corner&gt;
+  to top
+  <em>to bottom</em>
+  to left
+  to right
+  to top left
+  to top right
+  to bottom left
+  to bottom right</pre>
+
+        
+     <script defer="">
+			function basicGradientChange(event) {
+				var value = document.getElementById('slct_basicgradient').value, invertvalue;
+				console.log(value);
+				switch (value) {
+					case "top":
+					case "bottom":
+						 invertvalue = 'to left';
+						 break;
+
+					case "left":
+					case "right":
+						 invertvalue = 'to top';
+						 break;
+					case "top left":
+					case "bottom right":
+						 invertvalue = 'to bottom left';
+						 break;
+
+					case "bottom left":
+					case "top right":
+						 invertvalue = 'to bottom right';
+						 break;
+					default: invertvalue = '';
+				}
+                document.getElementsByClassName('basiclinearslide')[0].style.background =
+                     'linear-gradient(' + value + ', transparent 49.95%, black 49.95%, black 50%, transparent 50%)';
+				document.getElementById('basiclinear').style.background =
+					 'linear-gradient(' + value + ', rebeccapurple 47%, palegoldenrod 53%)';
+
+				if(value) {
+                	document.getElementById('basicgradient').innerHTML = value + ", ";
+				} else {
+					document.getElementById('basicgradient').innerHTML = "";
+				}
+              }
+	</script>
+     </section>
+     <div class="basiclinearslide gradientpoop"></div>
+ </div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>Magic Corners</h1></header>
+  <section class="content">
+  <svg style="width: 600px; height: 600px"><defs>
+      <linearGradient id="Gradient1" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(0)">
+        <stop offset="48%" stop-color="palegoldenrod"/>
+        <stop offset="52%" stop-color="rebeccapurple"/>
+      </linearGradient>
+</defs>
+  <rect
+     stroke="black"
+     fill="url(#Gradient1)"
+     width="450"
+     height="250"
+     x="100"
+     y="100" />
+  <circle
+     cx="325"
+     cy="225"
+     r="3" />
+  <g transform="matrix(0.22561138,-0.97421738,0.97421738,0.22561138,39.550239,495.54834)">
+    <line
+       x1="521"
+       y1="101"
+       x2="387"
+       y2="-45"
+       style="stroke:#000000;stroke-width:2" />
+    <line
+       x1="297"
+       y1="514"
+       x2="119"
+       y2="316"
+       style="stroke:#000000;stroke-width:2" />
+    <line
+       x1="164"
+       y1="370"
+       x2="490"
+       y2="65"
+       style="stroke:#000000;stroke-width:4" />
+  </g>  
+</svg>
+  </section>
+</div>
+
+ <div class="slide object">
+  <object data="files/sidecorner1.html"></object>
+  <a href="files/sidecorner1.html" class="objectlink" target="_new">Try it out</a>
+ </div>
+
+
+
+ <!-- angle values
+ <div class="slide dark object basiclinear" id="slide_basiclinearangles">
+     <header><h1>Linear Gradient Angles</h1></header>
+     <section class="content" style="margin-top:100px;">
+     <pre contenteditable>
+
+background: linear-gradient(<span id="basiclinearangles"></span>rebeccapurple, palegoldenrod);
+
+     </pre>
+   <input type="range" min="0" max="360" onChange="angleGradientChange();" id="slct_basiclinearangles" />
+
+<a href="../html5mobile/files/91_basic.html" class="objectlink" target="play">Try it</a>
+
+     <script defer="">
+			function angleGradientChange(event) {
+				var value = document.getElementById('slct_basiclinearangles').value || 270;
+				var degvalue = value + "deg";
+				var invertvalue = value - 90;
+
+                document.getElementsByClassName('slide_basiclinearangles')[0].style.background =
+                    window.cssPrefix + 'linear-gradient(' + value + 'deg, transparent 49.75%, black 49.75%, black 50%, transparent 50%)'
+				document.getElementById('slide_basiclinearangles').style.background =
+					window.cssPrefix + 'linear-gradient(' + degvalue + ', rebeccapurple 45%, palegoldenrod 55%)';
+
+				if(value) {
+                	document.getElementById('basiclinearangles').innerHTML = "<b>" + degvalue + "</b>, ";
+				} else {
+					document.getElementById('basiclinearangles').innerHTML = "";
+				}
+              }
+	</script>
+     </section>
+     <div class="slide_basiclinearangles gradientpoop"></div>
+ </div>
+ -->
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>Angles</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- Corners and sides -->
+<div class="slide">
+  <header><h1>Keyterm Directions</h1></header>
+  <section class="content">
+    <pre contenteditable>linear-gradient([<em>&lt;angle&gt;</em>| to &lt;side-or-corner&gt;,]? 
+   [&lt;color-stop&gt;[, &lt;color-hint&gt;]?, ]# &lt;color-stop&gt;)</pre>
+   <ul>
+   <li>Gradient progresses the declared angle.</li>
+   <li>Degrees go clockwise, starting at 12:00
+      <ul>
+        <li>top: 0%;</li>
+        <li>right: 90%;</li>
+        <li>bottom: 180%;</li>
+        <li>left: 270%;</li>
+      </ul>
+    </li>
+   <li>0deg is the same as <code>to top</code></li>
+    <li><code>45%</code> is NOT the same as <code>to top right</code>
+    <li><code>deg</code> is required</li>
+  </ul>
+
+   
+
+  </section>
+</div>
+<!-- angle values -->
+ <div class="slide dark object linear50" id="slide_basiclinearangles2">
+     <header><h1>W3C Linear Gradient Angles</h1></header>
+     <section class="content" style="margin-top:100px;">
+     <pre contenteditable>
+
+background: linear-gradient(<span id="basiclinearangles2"></span>
+             rebeccapurple 50%, palegoldenrod 50%);
+
+     </pre>
+   <input type="range" min="0" max="360" onChange="angleGradientChange2();" id="slct_basiclinearangles2" />
+
+     <script defer="">
+      function angleGradientChange2(event) {
+        var value = document.getElementById('slct_basiclinearangles2').value || 270;
+        var degvalue = value + "deg";
+        var invertvalue = value - 90;
+
+                document.getElementsByClassName('slide_basiclinearangles2')[0].style.background =
+                    'linear-gradient(' + value + 'deg, transparent 49.85%, black 49.85%, black 50%, transparent 50%)'
+        document.getElementById('slide_basiclinearangles2').style.background =
+          'linear-gradient(' + degvalue + ', rebeccapurple 50%, palegoldenrod 50%)';
+
+        if(value) {
+                  document.getElementById('basiclinearangles2').innerHTML = "<b>" + degvalue + "</b>, ";
+        } else {
+          document.getElementById('basiclinearangles2').innerHTML = "";
+        }
+              }
+  </script>
+     </section>
+     <div class="slide_basiclinearangles2 gradientpoop"></div>
+ </div>
+
+
+
+
+
+ <!-- angels != keyterms -->
+ <div class="slide dark object linear45" id="slide_anglevkeyterm">
+     <header><h1>Angles ≠ Keyterms</h1></header>
+     <section class="content" style="margin-top:100px;">
+     <pre contenteditable>
+
+background: linear-gradient(<span id="anglevkeyterm"></span>rebeccapurple 45%, palegoldenrod 55%);
+
+     </pre>
+   <button onClick="angleNotEqual('45deg')">45deg</button> <button onClick="angleNotEqual('to top right')"> to top right</button>
+
+
+     <script defer="">
+			function angleNotEqual(angle) {
+
+                document.getElementsByClassName('slide_anglevkeyterm')[0].style.background =
+                    'linear-gradient(' + angle + ', transparent 49.75%, black 49.75%, black 50%, transparent 50%)';
+				document.getElementById('slide_anglevkeyterm').style.background =
+					'linear-gradient(' + angle + ', rebeccapurple 45%, palegoldenrod 55%)';
+                document.getElementById('anglevkeyterm').innerHTML = "<b>" + angle + "</b>, ";
+              }
+	</script>
+     </section>
+ <div class="slide_anglevkeyterm gradientpoop"></div></div>
+
+<!-- angels != keyterms 2 -->
+<div class="slide">
+     <header><h1>Angles ≠ Keyterms</h1></header>
+     <section class="content">
+     <div class="comparegrad comparegradkeyterm" id="comparegrad1"><span class="button">to top right</span>
+     	<div class="comparegrad1 gradientpoop"></div>
+     </div>
+     <div class="comparegrad comparegradangle" id="comparegrad2"><span class="button">45deg</span>
+     	<div class="comparegrad2 gradientpoop"></div>
+     </div>
+     <input type="range" onChange="heightChange(this);" min="100" max="450" style="transform: rotate(90deg); position:absolute; right:10px; top: 200px;">
+     </section>
+
+     <script defer>
+	 function heightChange(val){
+		var height = val.value + 'px';
+		var divs = document.querySelectorAll('.comparegrad');
+		for(var i=0, count = divs.length; count > i; i++){
+			divs[i].style.height = height;
+		}
+	 }
+	 </script>
+ </div>
+
+ <!-- DIVIDER -->
+ <div class="slide divider">
+   <header><h1>Examples</h1></header>
+   <section class="content">
+   </section>
+ </div>
+
+
+<!-- table cloth -->
+ <div class="slide object angledStripes" id="tablecloth">
+     <header><h1>Multiple with background-size</h1></header>
+     <section class="content">&nbsp;<br/>&nbsp;
+<pre style="background-color: rgba(255,255,255,0.7)">background-color: <span id="feature04" style="color: white; background: rebeccapurple; padding: 0 5px" onKeyUp="changeFeature('backgroundColor', 'feature04', 'tablecloth')" contenteditable>rebeccapurple</span>;
+
+background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 50%),
+    linear-gradient(to right,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 50%);
+background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', 'feature05', 'tablecloth')" contenteditable>100px 100px, 100px 100px</span>;
+</pre>
+<small>Change the color above</small>
+     </section>
+ </div>
+
+
+<!-- color me instructions -->
+<div class="slide">
+     <header><h1>Edit the backgrounds</h1></header>
+     <section class="content">
+     <p style="text-align:center">In the next slide edit the code to<br>
+     make really ugly rainbows</p>
+     <ul>
+      <li>don't vendor-prefix (unless you want poor mobile performance)</li>
+      <li>create effects with color stops at same location</li>
+        <li>create effects by adding multiple gradients, playing with position and size</li>
+        <li>learn from others: <a href="http://leaverou.me/css3patterns/">Lea Verou's Gradients</a>, <a href="http://www.standardista.com/cssgradients">Estelle Weyl's Gradients</a>, and <a href="http://www.standardista.com/CSS3gradients/flags.html">Estelle's Flags</a></li>
+        <li>Use tools: <a href="http://westciv.com/tools/gradientsnustyle/">John Allsopp's tool</a>, <a href="http://gradients.glrzad.com/">Damian Galarza's tool</a>, <a href="http://www.colorzilla.com/gradient-editor/">Colorzilla</a></li>
+     </ul>
+     </section>
+ </div>
+
+<!-- play time -->
+<div class="slide object">
+  <header><h1>Play Time</h1></header>
+ <object data="files/play1.html"></object>
+  <a href="files/play1.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
+<!-- angled stripes -->
+<div class="slide object angledStripes" id="angledStripes">
+     <header><h1>Stripes with background-size</h1></header>
+     <section class="content">
+<pre style="background-color: rgba(255,255,255,0.7)">background-color: <span id="feature01" onKeyUp="changeFeature('backgroundColor', 'feature01', 'angledStripes')" contenteditable>gold</span>;
+background-image:
+   <span contenteditable id="colorme6"  onKeyUp="changeBackgroundGradient('angledStripes','#colorme6')">linear-gradient(135deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 100%
+)</span>;
+background-size: <span id="feature02" onKeyUp="changeFeature('backgroundSize', 'feature02', 'angledStripes')" contenteditable>100px 100px</span>;
+background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat', 'feature03', 'angledStripes')" contenteditable>repeat</span>;
+</pre>
+     </section>
+ </div>
+
+<div class="slide object rainbow2" id="rainbow5">
+     <header><h1>Stripes</h1></header>
+     <section class="content">
+<pre style="background-color: rgba(255,255,255,0.7)">.rainbow {
+  background-image:
+    <span contenteditable="" id="colorme5" onkeyup="changeBackgroundGradient('rainbow5','#colorme5')">repeating-linear-gradient(145deg,
+      red 0,
+      red 20px,
+      orange 20px,
+      orange 40px,
+      yellow 40px,
+      yellow 60px,
+      green 60px,
+      green 80px,
+      blue 80px,
+      blue 100px,
+      purple 100px,
+      purple 120px
+    )</span>;
+}</pre>
+     </section></div>
+
+<!-- DIVIDER -->
+<div class="slide">
+  <header><h1>Repeating Linear Gradients</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<div class="slide object rainbow2 current" id="rainbow5">
+     <header><h1>Stripes</h1></header>
+     <section class="content">
+<pre style="background-color: rgba(255,255,255,0.7)">.rainbow {
+  background-image:
+    <span contenteditable="" id="colorme5" onkeyup="changeBackgroundGradient('rainbow5','#colorme5')">repeating-linear-gradient(145deg,
+      red 0,
+      red 20px,
+      orange 20px,
+      orange 40px,
+      yellow 40px,
+      yellow 60px,
+      green 60px,
+      green 80px,
+      blue 80px,
+      blue 100px,
+      purple 100px,
+      purple 120px
+    )</span>;
+}</pre>
+     </section>
+ <span class="counter">28</span></div>
+
+ <!-- radial gradients title-->
+ <div class="slide intro">
+     <header><h1>Radial Gradients</h1></header>
+ </div>
+
+
+
+ <!-- radial gradients -->
+ <div class="slide object" id="radial01">
+     <header><h1>Radial Gradients</h1></header>
+     <section class="content">
+     <pre contenteditable>.thisSlide {
+  background-image:
+    <span contenteditable id="radialfeature01" onKeyUp="changeBackgroundGradient('radial01','#radialfeature01')">radial-gradient(
+      palegoldenrod,
+      #BDD9D5)</span>;
+}</pre>
+     </section>
+ </div>
+
+
+ <!-- radial gradients -->
+ <div class="slide object" id="radial02">
+     <header><h1>Radial Gradients</h1></header>
+     <section class="content">
+     <pre contenteditable>.thisSlide {
+  background-image:
+    <span contenteditable data-function="changebg" id="radialfeature02" data-function="changeBackgroundGradient('radial02','#radialfeature02')">radial-gradient(at 25% 35%,
+      palegoldenrod,
+      #BDD9D5)</span>;
+}</pre>
+     </section>
+ </div>
+
+
+ <!-- radial gradients -->
+ <div class="slide object" id="radial03">
+     <header><h1>Radial Gradients</h1></header>
+     <section class="content">
+     <pre contenteditable>.thisSlide {
+  background-image:
+    <span id="radialfeature03" onkeyup="changeBackgroundGradient('radial03','#radialfeature03')"  contenteditable>radial-gradient(at 25% 35%,
+      palegoldenrod 20%,
+      #BDD9D5 20%)</span>;
+}</pre>
+     </section>
+ </div>
+
+<!-- radial shape -->
+ <div class="slide object" id="radial04">
+     <header><h1>Shape</h1></header>
+     <section class="content">
+     <pre contenteditable>.thisSlide {
+  background-image:
+    <span contenteditable id="radialfeature04" onKeyUp="changeBackgroundGradient('radial04','#radialfeature04')">radial-gradient(circle at 75% 75%,
+      palegoldenrod 20%,
+      #BDD9D5 20%)</span>;
+}</pre>
+<ul>
+	<li>circle</li>
+    <li class="imp">ellipse</li>
+</ul>
+     </section>
+ </div>
+
+<!-- radial size -->
+  <div class="slide object" id="radial05">
+     <header><h1>Size</h1></header>
+     <section class="content">
+     <pre contenteditable>.thisSlide {
+  background-image:
+    <span contenteditable id="radialfeature05" onKeyUp="console.log('foo'); changeBackgroundGradient('radial05','#radialfeature05')">radial-gradient(farthest-corner at 40px 50px, palegoldenrod 298px,
+  #BDD9D5 300px)</span>;
+}</pre>
+<ul>
+	<li>closest-side</li>
+<li>closest-corner</li>
+<li>farthest-side</li>
+<li class="imp">farthest-corner</li>
+<li>contain (same as closest-side)</li>
+<li>cover (same as farthest-corner)</li>
+</ul>
+     </section>
+ </div>
+
+<!-- effects1 -->
+   <div class="slide object" id="radial06">
+     <header><h1>with Background size</h1></header>
+     <section class="content">
+     <pre style="background-color: rgba(255,255,255,0.9)">.thisSlide {
+  background-image:
+    <span contenteditable id="radialfeature06" onKeyUp="changeBackgroundGradient('radial06','#radialfeature06')">radial-gradient(
+     circle,
+      #BDD9D5 50%,
+      palegoldenrod 50%)</span>;
+  background-size: <span id="radialfeature06b" onKeyUp="changeFeature('backgroundSize', 'radialfeature06b', 'radial06')" contenteditable>100px 100px</span>;
+  background-repeat: <span id="radialfeature06c" onKeyUp="changeFeature('backgroundRepeat', 'radialfeature06c', 'radial06')" contenteditable>repeat</span>;
+  background-color: <span id="radialfeature06d" onKeyUp="changeFeature('backgroundColor', 'radialfeature06d', 'radial06')" contenteditable>red</span>;
+}</pre>
+
+     </section>
+ </div>
+
+ <div class="slide" id="">
+      <header><h1>Estelle Weyl</header>
+      <section class="content">
+      <ul>
+          <li>@estellevw</li>
+          <li>@standardista</li>
+          <li>http://www.standardista.com</li>
+      </ul>
+
+
+      <p>CSS Deep Dive</p>
+       <ul>
+        <li><a href="index.html">TOC</a></li>
+        <li><a href="selectors.html">Selectors</a></li>
+        <li><a href="transforms.html">Transforms</a></li>
+        <li><a href="animation.html">Transition &amp; Animation</a></li>
+        <li><a href="flexbox.html">Flexbox</a></li>
+        <li><a href="/gradients/">Gradients</a></li>
+        <li><a href="/snow/">Summary</a></li>
+        <li><a href="/doyouknowcss/">CSS? WTF!</a></li>
+
+
+             </ul>
+      <p>
+        <li>CSS Workshop -> <a href="../CSS-Workshop/part_10_transforms.html">Transforms</a></li>
+      </p>
+
+      </section>
+  </div>
+
+
+  </div>
+  </div>
+  <script src="slide.js"></script>
+  <script>
+   function changeFeature(changestyle, content, slide) {
+	   document.getElementById(slide).style[changestyle] = document.getElementById(content).innerHTML;
+   }
+
+
+
+   function changeBackgroundGradient (pageID, changedText) {
+      document.getElementById(pageID).style.backgroundImage = document.querySelector(changedText).innerHTML;
+   }
+
+   var els = document.querySelectorAll('[data-function=changebg]');
+   for(var i = 0; i < els.count; i++) {
+      els[i].addEventListener('keyup', function (e) {
+        console.log(e.target);
+      });
+   }
+   </script>
+
+  </body>
+</html>

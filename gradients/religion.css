@@ -1,0 +1,192 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.tiltdavid {
+    background-color: #394C5F;
+    background-image:
+                linear-gradient(135deg,
+                    #16293B 0%,
+                    #16293B 25%,
+                    rgba(255, 255, 255, 0.0) 25%,
+                    rgba(255, 255, 255, 0.0) 75%,
+                    #16293B 75%,
+                    #16293B 100%
+                      );
+    background-size: 50px 50px;
+}
+
+.greenbean {
+	background-color: #4C5F39;
+	background-image:
+            linear-gradient(-135deg,
+                    #293B16 0%,
+                    #293B16 20%,
+                    transparent 20%,
+                    transparent 48%,
+                    #76AA41 49%,
+                    #76AA41 51%,
+                    transparent 52%,
+                    transparent 80%,
+                    #293B16 80%,
+                    #293B16 100%
+                      ),
+             linear-gradient(135deg,
+                    #293B16 0%,
+                    #293B16 20%,
+                    transparent 20%,
+                    transparent 48%,
+                    #76AA41 49%,
+                    #76AA41 51%,
+                    transparent 52%,
+                    transparent 80%,
+                    #293B16 80%,
+                    #293B16 100%
+                      );
+    background-size: 25px 25px;
+    background-position: 0 0, 100px 0px;
+}
+
+.blurry {
+    background-color: #7F596C;
+    background-image:
+         radial-gradient(
+                    #3B1629 20%,
+                    transparent 20%
+                      ),
+         radial-gradient(
+                    #3B1629 20%,
+                    transparent 20%
+                      ),
+        linear-gradient(135deg,
+                    transparent 48%,
+                    #9A3166 49%,
+                    #9A3166 51%,
+                    transparent 52%
+                      ),
+        linear-gradient(-135deg,
+                    transparent 48%,
+                    #9A3166 49%,
+                    #9A3166 51%,
+                    transparent 52%
+                      );
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px, 0 0, 0 0;
+}
+
+.classic {
+	 background-color: GOLD;
+        background-image:
+         linear-gradient(-135deg,
+            transparent 20%,
+            rgba(0,0,0,0.1) 20%,
+            rgba(0,0,0,0.1) 30%,
+            transparent 30%,
+            transparent 70%,
+            rgba(0,0,0,0.1) 70%,
+            rgba(0,0,0,0.1) 80%,
+            transparent 80%),
+        linear-gradient(135deg,
+            transparent 20%,
+            rgba(0,0,0,0.4) 20%,
+            rgba(0,0,0,0.4) 30%,
+            rgba(0,0,0,0.1) 30%,
+            rgba(0,0,0,0.1) 40%,
+            transparent 40%,
+            transparent 70%,
+            rgba(0,0,0,0.4) 70%,
+            rgba(0,0,0,0.4) 80%,
+            rgba(0,0,0,0.1) 80%,
+            rgba(0,0,0,0.1) 90%,
+            transparent 90%)
+        ;
+    background-size: 6px 6px;
+}
+.inverse1 {
+
+		background-image:
+	  	radial-gradient(circle,
+			rgba(0,0,0,0) 60%,
+			#000000 61%),
+		radial-gradient(circle,
+			rgba(0,0,220,0) 55%,
+			rgba(0,0,220,0.4) 56%),
+	  	radial-gradient(circle,
+			#FF0080 0%,
+			#ECB7FC 60%,
+			#f09 100%);
+
+		background-size: 15px 15px, 15px 15px,160%, 160%;
+		background-position: 0 0, 0 3px, 00;
+}
+.metal {
+	   background-image:
+		radial-gradient(circle closest-side,
+			transparent 70%,
+			#000000 100%),
+		radial-gradient(circle closest-side,
+			transparent 70%,
+			#000000 100%);
+
+    background-color: #AAAAAA;
+    background-size: 30px 30px, 30px 30px;
+    background-position: 0 0pt, 15px 15px;
+}
+.retro67, .circlestripes {
+
+background-image:
+		radial-gradient(circle closest-side, transparent 96%, rgba(0, 0, 0, 0.3) 100%),
+		radial-gradient(circle closest-side, transparent 96%, rgba(0, 0, 0, 0.3) 100%);
+}
+.circlestripes {
+    background-position: 0 0pt, 15px 15px;
+     background-size: 30px 10px, 30px 8px;
+}
+.retro67 {
+    background-image:
+        radial-gradient(circle closest-side, transparent 96%, rgba(0, 0, 0, 0.3) 100%),
+        radial-gradient(circle closest-side, transparent 96%, rgba(0, 0, 0, 0.3) 100%);
+
+    background-position: 15px 0pt, 15px 15px;
+    background-size: 30px 15px, 30px 30px;
+    background-color: #993300;
+}
+.bradybunch {
+	background-image:
+		radial-gradient(circle closest-side,
+			transparent 0%,
+			transparent 75%,
+			rgba(255, 255, 255, 0.3) 76%,
+			rgba(255, 255, 255, 0.3) 85%,
+			rgba(255, 255, 255, 0.9) 86%,
+			rgba(255, 255, 255, 0.9) 94%,
+			#FFFFFF 95%,
+			#FFFFFF 103%,
+			rgba(255, 255, 255, 0.5) 104%,
+			rgba(255, 255, 255, 0.5) 112%,
+			rgba(0, 0, 0, 0.2) 113%,
+			rgba(0, 0, 0, 0.2) 121%,
+			#FFFFFF 122%,
+			#FFFFFF 130%,
+			rgba(255, 255, 255, 0.4) 131%,
+			rgba(255, 255, 255, 0.4) 140%),
+		radial-gradient(circle closest-side,
+			transparent 0%,
+			transparent 75%,
+			rgba(255, 255, 255, 0.3) 76%,
+			rgba(255, 255, 255, 0.3) 85%,
+			rgba(255, 255, 255, 0.9) 86%,
+			rgba(255, 255, 255, 0.9) 94%,
+			#FFFFFF 95%,
+			#FFFFFF 103%,
+			rgba(255, 255, 255, 0.5) 104%,
+			rgba(255, 255, 255, 0.5) 112%,
+			rgba(0, 0, 0, 0.2) 113%,
+			rgba(0, 0, 0, 0.2) 121%,
+			#FFFFFF 122%,
+			#FFFFFF 130%,
+			rgba(255, 255, 255, 0.4) 131%,
+			rgba(255, 255, 255, 0.4) 140%);
+	background-size: 80px 80px;
+	background-color: #384F89;
+	background-position: 0 0, 40px 40px;
+}

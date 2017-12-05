@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Image Loader</title>
+</head>
+<body>
+<input type="search" id="search">
+<input type="button" value="Mo' Images" id="submit">
+<script>
+
+
+
+var flickr =  {
+
+  init : function () {
+    document.getElementById('submit').addEventListener('click', function (e) {
+      console.log('bar');
+      flickr.flickrSearch();
+      return false;
+    });
+  },
+
+  flickrSearch : function () {
+    var flickrResponse = new XMLHttpRequest(),
+    searchTerm = "cat",
+    url = "https://api.flickr.com/services/feeds/photos_public.gne?tags=" + searchTerm + "&format=json";
+
+    flickrResponse.open("GET", url, true);
+    flickrResponse.onreadystatechange = flickr.processResponse;
+    flickrResponse.send();
+  },
+
+  processResponse : function () {
+    console.log('foo');
+  }
+}
+flickr.init();
+</script>
+</body>
+</html>
