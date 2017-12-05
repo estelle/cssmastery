@@ -286,8 +286,16 @@ pre, .ex, .pre, .codelike {
 pre b, .pre b, .imp {
   font-weight: normal;
   color: rebeccapurple;
-  text-shadow: #c61800 0 0 1px;
+  text-shadow: palegoldenrod 0 0 1px;
   /*letter-spacing: -1px;*/
+}
+
+.invert {
+  float: left;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: rebeccapurple;
+  background: palegoldenrod;
 }
 
 pre em {
@@ -332,7 +340,7 @@ div:not(.current).reduced {
 dt {
 	font-weight: bold;
 	margin-top: 0.5em;
-	background-color: rebeccapurple;;
+	background-color: palegoldenrod;
 	display:inline-block;
 	margin-bottom: 2px;
 	clear: both;

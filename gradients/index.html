@@ -1117,9 +1117,11 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
   <header><h1>position</h1></header>
   <section class="content">
     <ul>
-      <li>position is the center of the gradient</li>
       <li>same values as <code>background-position</code></li>
       <li>include 'at'</li>
+
+      <li>location of gradient center point</li>
+      <li>Gradient ray, no angled gradient line</li>
     </ul>
   </section>
 </div>
@@ -1133,72 +1135,135 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
 
 
  <!-- radial gradients -->
- <div class="slide object" id="radial03">
-     <header><h1>Radial Gradients</h1></header>
-     <section class="content">
-     <pre contenteditable>.thisSlide {
-  background-image:
-    <span id="radialfeature03" onkeyup="changeBackgroundGradient('radial03','#radialfeature03')"  contenteditable>radial-gradient(at 25% 35%,
-      palegoldenrod 20%,
-      rebeccapurple 20%)</span>;
-}</pre>
-     </section>
- </div>
+ <div class="slide object">
+     <header><h1>Radial Gradients: position</h1></header>
+ <object data="files/radial3.html"></object>
+  <a href="files/radial3.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>Radial Gradient: <br/>Shape &amp; Size</h1></header>
+  <section class="content">
+  </section>
+</div>
 
 <!-- radial shape -->
- <div class="slide object" id="radial04">
-     <header><h1>Shape</h1></header>
+ <div class="slide">
+     <header><h1>Shapes</h1></header>
      <section class="content">
-     <pre contenteditable>.thisSlide {
-  background-image:
-    <span contenteditable id="radialfeature04" onKeyUp="changeBackgroundGradient('radial04','#radialfeature04')">radial-gradient(circle at 75% 75%,
-      palegoldenrod 20%,
-      rebeccapurple 20%)</span>;
-}</pre>
+<p>Two options: </p>
 <ul>
 	<li>circle</li>
-    <li class="imp">ellipse</li>
+  <li class="imp">ellipse</li>
+</ul>
+<p>declared explicitly, or implied via size declaration</p>
+<ul>
+  <li>circle: single length value: radius</li>
+  <li>ellipse: two length values: width height</li>
+  <li>percentage size only for ellipses</li>
 </ul>
      </section>
  </div>
 
+
+ <!-- radial gradients -->
+ <div class="slide object">
+     <header><h1>Radial Gradients: shape keyterms</h1></header>
+ <object data="files/radial4.html"></object>
+  <a href="files/radial4.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+ <!-- radial gradients -->
+ <div class="slide object">
+     <header><h1>Radial Gradients: shape with lengths</h1></header>
+ <object data="files/radial5.html"></object>
+  <a href="files/radial5.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
+ <!-- radial gradients -->
+ <div class="slide object">
+     <header><h1>Percentage only works for ellipses</h1></header>
+ <object data="files/radial6.html"></object>
+  <a href="files/radial6.html" class="objectlink" target="play">Try it out</a>
+</div>
+
 <!-- radial size -->
   <div class="slide object" id="radial05">
-     <header><h1>Size</h1></header>
+     <header><h1>Sizing With Keywords</h1></header>
      <section class="content">
-     <pre contenteditable>.thisSlide {
-  background-image:
-    <span contenteditable id="radialfeature05" onKeyUp="console.log('foo'); changeBackgroundGradient('radial05','#radialfeature05')">radial-gradient(farthest-corner at 40px 50px, palegoldenrod 298px,
-  rebeccapurple 300px)</span>;
-}</pre>
 <ul>
 	<li>closest-side</li>
 <li>closest-corner</li>
 <li>farthest-side</li>
 <li class="imp">farthest-corner</li>
-<li>contain (same as closest-side)</li>
-<li>cover (same as farthest-corner)</li>
+<li><strike>contain (same as closest-side)</strike></li>
+<li><strike>cover (same as farthest-corner)</strike></li>
 </ul>
      </section>
  </div>
 
-<!-- effects1 -->
-   <div class="slide object" id="radial06">
-     <header><h1>with Background size</h1></header>
-     <section class="content">
-     <pre style="background-color: rgba(255,255,255,0.9)">.thisSlide {
-  background-image:
-    <span contenteditable id="radialfeature06" onKeyUp="changeBackgroundGradient('radial06','#radialfeature06')">radial-gradient(
-     circle,
-      rebeccapurple 50%,
-      palegoldenrod 50%)</span>;
-  background-size: <span id="radialfeature06b" onKeyUp="changeFeature('backgroundSize', 'radialfeature06b', 'radial06')" contenteditable>100px 100px</span>;
-  background-repeat: <span id="radialfeature06c" onKeyUp="changeFeature('backgroundRepeat', 'radialfeature06c', 'radial06')" contenteditable>repeat</span>;
-  background-color: <span id="radialfeature06d" onKeyUp="changeFeature('backgroundColor', 'radialfeature06d', 'radial06')" contenteditable>red</span>;
-}</pre>
 
-     </section>
+
+ <!-- radial gradients -->
+ <div class="slide object">
+     <header><h1>Size with KeyTerms</h1></header>
+ <object data="files/radial7.html"></object>
+  <a href="files/radial7.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>Keyterms</h1></header>
+  <section class="content">
+    <dl style="height: 75vh; overflow-y: scroll">
+      <dt>closest-side</dt>
+      <dd>circle: gradient ray end touches closest side.<br/>ellipse: vertical ray touches closest of top or bottom edge. horizontal ray touchest closest of right or left side.</dd>
+      <dt>farthest-side</dt>
+      <dd>circle: gradient ray end touches furthest side.<br/>ellipse: vertical ray touches furthest of top or bottom edge. horizontal ray touchest furthest of right or left side.</dd>
+      <dt>closest-corner</dt>
+      <dd>circle: radius is length from center of circle (position) to closest corner.<br/>ellipse: gradient ray touches corner closest to center while maintaining aspect ratio.</dd>
+      <dt class="imp">farthest-corner</dt>
+      <dd>Default!<br/>circle: radius is length from center of circle (position) to furthest corner.<br/>ellipse: gradient ray touches corner furthest from center while maintaining aspect ratio.</dd>
+    </dl>
+  </section>
+</div>
+
+<!-- effects1 -->
+   <div class="slide object">
+     <header><h1>with Background size</h1></header>
+<object data="files/radial8.html"></object>
+  <a href="files/radial8.html" class="objectlink" target="play">Try it out</a>
  </div>
+
+<!--  -->
+<div class="slide divider">
+  <header><h1>Radial Gradients:<br/>color-stops &amp; color-hints</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+ <!-- effects1 -->
+   <div class="slide object">
+     <header><h1>Try it out</h1></header>
+<object data="files/radial9.html"></object>
+  <a href="files/radial9.html" class="objectlink" target="play">Try it out</a>
+ </div>
+
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>Repeating Radial Gradient</h1></header>
+</div>
+
+<!-- DIVIDER -->
+<div class="slide">
+  <header><h1>repeating-radial-gradient()</h1></header>
+</div>
+
+
 
  <div class="slide" id="">
       <header><h1>Estelle Weyl</header>
