@@ -178,7 +178,7 @@ background-image:
       blue 80%
     );
 	}
-#rainbow5{
+#rainbow5, #lg2{
 	background-image:
 	repeating-linear-gradient(145deg,
       red 0,
@@ -440,8 +440,8 @@ BDD9D5*/
      <p>Things to remember:</p>
      <ol>
       <li>Use 'to' with keyterms</li>
-      <li>Angles go counter clockwise</li>
-      <li>0deg is from left </li>
+      <li>0deg is to top </li>
+      <li>Angles go clockwise</li>
      </ol>
      </section>
  </div>
@@ -974,7 +974,7 @@ background-size: <span id="feature05" onKeyUp="changeFeature('backgroundSize', '
 <div class="slide object angledStripes" id="angledStripes">
      <header><h1>Stripes with background-size</h1></header>
      <section class="content">
-<pre style="background-color: rgba(255,255,255,0.7)">background-color: <span id="feature01" onKeyUp="changeFeature('backgroundColor', 'feature01', 'angledStripes')" contenteditable>gold</span>;
+<pre style="background-color: rgba(255,255,255,0.7)">background-color: <span id="feature01" onKeyUp="changeFeature('backgroundColor', 'feature01', 'angledStripes')" contenteditable style="color: white; background: rebeccapurple; padding: 0 5px">rebeccapurple</span>;
 background-image:
    <span contenteditable id="colorme6"  onKeyUp="changeBackgroundGradient('angledStripes','#colorme6')">linear-gradient(135deg,
     rgba(255, 255, 255, 0.2) 25%,
@@ -1014,18 +1014,18 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
      </section></div>
 
 <!-- DIVIDER -->
-<div class="slide">
+<div class="slide divider">
   <header><h1>Repeating Linear Gradients</h1></header>
   <section class="content">
   </section>
 </div>
 
-<div class="slide object rainbow2 current" id="rainbow5">
+<div class="slide object" id="lg2">
      <header><h1>Stripes</h1></header>
      <section class="content">
 <pre style="background-color: rgba(255,255,255,0.7)">.rainbow {
   background-image:
-    <span contenteditable="" id="colorme5" onkeyup="changeBackgroundGradient('rainbow5','#colorme5')">repeating-linear-gradient(145deg,
+    <span contenteditable id="lg2b" onkeyup="changeBackgroundGradient('lg2','#lg2b')">repeating-linear-gradient(145deg,
       red 0,
       red 20px,
       orange 20px,
@@ -1040,8 +1040,36 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
       purple 120px
     )</span>;
 }</pre>
+     </section></div>
+
+
+
+ <!-- W3C syntax -->
+ <div class="slide">
+     <header><h1>Repeating Linear Gradient Syntax</h1></header>
+     <section class="content">
+     <pre contenteditable>repeating-linear-gradient([<em>&lt;angle&gt;</em>| to <em>&lt;side-or-corner&gt;</em>,]? 
+   [<em>&lt;color-stop&gt;</em>[, <em>&lt;color-hint&gt;</em>]?, ]# <em>&lt;color-stop&gt;</em>)</pre>
+     <p>Things to remember:</p>
+     <ol>
+      <li>Use 'to' with keyterms</li>
+      <li>Angles go counter clockwise</li>
+      <li>0deg is from left </li>
+      <li>Width is last specified color-stop's position minus the first specified color-stop's position</li>
+      <li>Color stops repeat indefinitely</li>
+      <li>border color-stops will create hard transitions if gradient doesn't start and end with the same color.</li>
+     </ol>
      </section>
- <span class="counter">28</span></div>
+ </div>
+
+<!-- play time -->
+<div class="slide object">
+  <header><h1>Repeating Linear Gradients</h1></header>
+ <object data="files/repeat1.html"></object>
+  <a href="files/repeat1.html" class="objectlink" target="play">Try it out</a>
+</div>
+
+
 
  <!-- radial gradients title-->
  <div class="slide intro">
