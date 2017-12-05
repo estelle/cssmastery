@@ -23,7 +23,7 @@ Twitter: @estellevw
 		rgba(255, 255, 255, 0.2) 50%,
 		rgba(255, 255, 255, 0.2) 75%,
 		rgba(255, 255, 255, 0) 75%,
-		rgba(255, 255, 255, 0) 100% ) 40px 40px  #BDD9D5  repeat;
+		rgba(255, 255, 255, 0) 100% ) 40px 40px  rebeccapurple  repeat;
 background-size: 40px 40px;
 
  }
@@ -35,7 +35,7 @@ background-size: 40px 40px;
 	background-image:
 		linear-gradient(gold 5px, transparent 5px, transparent 145px, palegoldenrod 145px),
 		linear-gradient(left, palegoldenrod 5px, transparent 5px, transparent 145px, palegoldenrod 145px),
-		linear-gradient(#BDD9D5, palegoldenrod, #BDD9D5);
+		linear-gradient(rebeccapurple, palegoldenrod, rebeccapurple);
 	background-size: 200px 150px, 150px 200px, 150px 150px;
 	background-position: center;
 	background-position: no-repeat;
@@ -45,7 +45,7 @@ background-size: 40px 40px;
    padding: 60px 0; box-sizing:border-box; text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;}
 
     .multiplebg {
-	background-image: linear-gradient(gold, palegoldenrod), linear-gradient(#BDD9D5,#BDD9D5);
+	background-image: linear-gradient(gold, palegoldenrod), linear-gradient(rebeccapurple,rebeccapurple);
 	background-size: 180px 180px;
 	background-repeat: no-repeat;
 	background-position: 0 0, 20px 20px;
@@ -144,7 +144,7 @@ background-image:
 	height: 300px;
 	display: inline-block;
 	width: 300px;
-	border: 5px solid #BDD9D5;
+	border: 5px solid rebeccapurple;
 	margin-right: 10px;
 	position:relative;
 }
@@ -197,7 +197,7 @@ background-image:
 #rainbow5b {
 	background-image: linear-gradient(90deg,
   palegoldenrod 40%,
-  #BDD9D5 60%);
+  rebeccapurple 60%);
 }
 
 #angledStripes {
@@ -233,41 +233,51 @@ background-image:
 background-image:
   radial-gradient(
   palegoldenrod,
-  #BDD9D5);
+  rebeccapurple);
 }
 #radial02 {
 background-image:
   radial-gradient(at 25% 35%,
   palegoldenrod,
-  #BDD9D5);
+  rebeccapurple);
 }
 #radial03 {
 background-image:
   radial-gradient(at 25% 35%,
   palegoldenrod 20%,
-  #BDD9D5 20%);
+  rebeccapurple 20%);
 }
 #radial04 {
 background-image:
   radial-gradient(circle at 75% 75%,
   palegoldenrod 20%,
-  #BDD9D5 20%);
+  rebeccapurple 20%);
 }
 #radial05 {
 
   background-image: radial-gradient(farthest-corner at 40px 50px, palegoldenrod 298px,
-  #BDD9D5 300px);
+  rebeccapurple 300px);
 }
 
 #radial06 {
 background-image:radial-gradient(
      circle,
-      #BDD9D5 50%,
+      rebeccapurple 50%,
       palegoldenrod 50%);
 background-size: 50px 50px;
 background-repeat:repeat;
 background-color: red;
 }
+
+#radial07 {
+  background-image:
+    radial-gradient(ellipse at center, 
+      palegoldenrod 0%,
+      rebeccapurple 100%);
+}
+
+
+
 input[type=range] {width: 360px;}
 .gradientpoop {position: absolute; top:0; right:0; left:0; bottom:0; pointer-events: none;
 	transform:rotate(90deg);
@@ -460,13 +470,14 @@ BDD9D5*/
  <div class="slide">
      <header><h1>Radial Gradient Syntax</h1></header>
      <section class="content">
-     <pre contenteditable>radial-gradient([<em>&lt;shape&gt;</em>|| <em>&lt;size&gt;</em> at &lt;position&gt;]? 
+     <pre contenteditable>radial-gradient([<em>&lt;shape&gt;</em>|| <em>&lt;size&gt;</em> at <em>&lt;position&gt;</em>]? 
    [<em>&lt;color-stop&gt;</em>[, <em>&lt;color-hint&gt;</em>]?, ]# <em>&lt;color-stop&gt;</em>)</pre>
      <p>Things to remember:</p>
      <ol>
       <li>Use 'at' with position</li>
-      <li>Angles go counter clockwise</li>
-      <li>0deg is from left </li>
+      <li>position is center of gradient</li>
+      <li>If shape is specified as circle or omitted, the size can be a length/percent</li>
+      
      </ol>
      </section>
  </div>
@@ -1072,38 +1083,53 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
 
 
  <!-- radial gradients title-->
- <div class="slide intro">
+ <div class="slide divider">
      <header><h1>Radial Gradients</h1></header>
+ </div>
+
+
+ <!-- W3C syntax -->
+ <div class="slide">
+     <header><h1>Radial Gradient Syntax</h1></header>
+     <section class="content">
+     <pre contenteditable>radial-gradient([<em>&lt;shape&gt;</em>|| <em>&lt;size&gt;</em> at <em>&lt;position&gt;</em>]? 
+   [<em>&lt;color-stop&gt;</em>[, <em>&lt;color-hint&gt;</em>]?, ]# <em>&lt;color-stop&gt;</em>)</pre>
+     <p>Things to remember:</p>
+     <ol><li>Use 'at' with position</li>
+      <li>position is center of gradient</li>
+      <li>If shape is specified as circle or omitted, the size can be a length/percent</li>
+     </ol>
+     </section>
  </div>
 
 
 
  <!-- radial gradients -->
- <div class="slide object" id="radial01">
+ <div class="slide object">
      <header><h1>Radial Gradients</h1></header>
-     <section class="content">
-     <pre contenteditable>.thisSlide {
-  background-image:
-    <span contenteditable id="radialfeature01" onKeyUp="changeBackgroundGradient('radial01','#radialfeature01')">radial-gradient(
-      palegoldenrod,
-      #BDD9D5)</span>;
-}</pre>
-     </section>
- </div>
+ <object data="files/radial1.html"></object>
+  <a href="files/radial1.html" class="objectlink" target="play">Try it out</a>
+</div>
 
+
+<!-- position -->
+<div class="slide">
+  <header><h1>position</h1></header>
+  <section class="content">
+    <ul>
+      <li>position is the center of the gradient</li>
+      <li>same values as <code>background-position</code></li>
+      <li>include 'at'</li>
+    </ul>
+  </section>
+</div>
 
  <!-- radial gradients -->
- <div class="slide object" id="radial02">
-     <header><h1>Radial Gradients</h1></header>
-     <section class="content">
-     <pre contenteditable>.thisSlide {
-  background-image:
-    <span contenteditable data-function="changebg" id="radialfeature02" data-function="changeBackgroundGradient('radial02','#radialfeature02')">radial-gradient(at 25% 35%,
-      palegoldenrod,
-      #BDD9D5)</span>;
-}</pre>
-     </section>
- </div>
+ <div class="slide object">
+     <header><h1>Radial Gradients: position</h1></header>
+ <object data="files/radial2.html"></object>
+  <a href="files/radial2.html" class="objectlink" target="play">Try it out</a>
+</div>
 
 
  <!-- radial gradients -->
@@ -1114,7 +1140,7 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
   background-image:
     <span id="radialfeature03" onkeyup="changeBackgroundGradient('radial03','#radialfeature03')"  contenteditable>radial-gradient(at 25% 35%,
       palegoldenrod 20%,
-      #BDD9D5 20%)</span>;
+      rebeccapurple 20%)</span>;
 }</pre>
      </section>
  </div>
@@ -1127,7 +1153,7 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
   background-image:
     <span contenteditable id="radialfeature04" onKeyUp="changeBackgroundGradient('radial04','#radialfeature04')">radial-gradient(circle at 75% 75%,
       palegoldenrod 20%,
-      #BDD9D5 20%)</span>;
+      rebeccapurple 20%)</span>;
 }</pre>
 <ul>
 	<li>circle</li>
@@ -1143,7 +1169,7 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
      <pre contenteditable>.thisSlide {
   background-image:
     <span contenteditable id="radialfeature05" onKeyUp="console.log('foo'); changeBackgroundGradient('radial05','#radialfeature05')">radial-gradient(farthest-corner at 40px 50px, palegoldenrod 298px,
-  #BDD9D5 300px)</span>;
+  rebeccapurple 300px)</span>;
 }</pre>
 <ul>
 	<li>closest-side</li>
@@ -1164,7 +1190,7 @@ background-repeat: <span id="feature03" onKeyUp="changeFeature('backgroundRepeat
   background-image:
     <span contenteditable id="radialfeature06" onKeyUp="changeBackgroundGradient('radial06','#radialfeature06')">radial-gradient(
      circle,
-      #BDD9D5 50%,
+      rebeccapurple 50%,
       palegoldenrod 50%)</span>;
   background-size: <span id="radialfeature06b" onKeyUp="changeFeature('backgroundSize', 'radialfeature06b', 'radial06')" contenteditable>100px 100px</span>;
   background-repeat: <span id="radialfeature06c" onKeyUp="changeFeature('backgroundRepeat', 'radialfeature06c', 'radial06')" contenteditable>repeat</span>;
