@@ -1,0 +1,26 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<link rel="stylesheet" href="files.css">
+
+<style contenteditable>
+.box {perspective: 1000px;} 
+.box:after {
+  transform: 
+    rotate3d(130,110,80,25deg)
+    perspective(200); 
+  transform-origin: bottom right;
+}
+
+</style>
+<title>Transform origin</title>
+</head>
+
+<body>
+	<div class="box"></div>
+	<p>Apply perspective to parent element. smaller # = closer; larger # = farther</p>
+</body>
+</html>
+

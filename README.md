@@ -51,3 +51,20 @@
 	1. Flex container properties
 	1. Flex item properties
 	1. Flexibility
+11. [Gradients](gradients/)
+	1. Overview
+	1. Syntax
+	1. Color Stops
+	1. Color Hints
+	1. Directions
+	   1. Keyterms
+	   2. Angles
+	1. Examples & exercise
+	1. Repeating Linear Gradients
+	1. Radial Gradients
+	1. Position
+	1. Size & Shape
+	1. Radial Gradients: color-stops & color-hints
+	1. Repeating Radial Gradient
+	
+

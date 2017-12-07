@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Transforms || CSS Mastery</title>
+     <!--link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'-->
+   <link rel="stylesheet" href="screen.css"/>
+   <link rel="stylesheet" href="transforms.css"/>
+  <style id="tempstyle">
+  </style>
+  </head>
+  <body>
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+  <div id="topinfo">
+
+  </div>
+
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
+    <span class="key">2</span> for comments. <a href="http://estelle.github.com/cssmastery">estelle.github.com/cssmastery</a>
+    </p>
+  </div>
+
+  <div id="presentation">
+
+   <div id="presentation-counter"></div>
+
+   <div id="slides">
+
+<!-- Title Slide -->
+<div class="slide intro">
+     <header><h1>Transforms</h1></header>
+     <b class="bug">✈</b>
+</div>
+
+<!-- Title Slide -->
+<div class="slide normal">
+     <header><h1>Tranforming Elements</h1></header>
+     <section class="content"><b class="plane plane_01">✈</b>
+     <pre contenteditable>.plane {
+transform:
+ <span  contenteditable onmouseout="setTempStyle('plane_01', this.innerText)">translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg)</span>;
+}</pre>
+<pre contenteditable>selector {
+	transform: none | &lt;transFunc()&gt; [&lt;transFunc()&gt;];
+}</pre>
+     </section>
+</div>
+
+<div class="slide normal">
+     <header><h1>2D Transform Functions</h1></header>
+     <section class="content">
+   <dl class="deprecated listed wide">
+
+  <dt><strong>translate</strong>(&lt;length&gt;[, &lt;length&gt;])</dt>
+  <dd>specifies a 2D translation by the vector [x, y], where x is the  translation-value parameter for the x axis and y  is the optional translation value along the y axis. parameter. If <em>y</em> is not provided, y==0.</dd>
+  <dt><strong>translateX</strong>(&lt;length&gt;)</dt>
+  <dd>specifies a translation by the given amount in the X direction.</dd>
+  <dt><strong>translateY</strong>(&lt;length&gt;)</dt>
+  <dd>specifies a translation by the given amount in the Y direction.</dd>
+  <dt><strong>scale</strong>(&lt;number&gt;[, &lt;number&gt;])</dt>
+  <dd>specifies 2D scaling operation by the [sx,sy]. If sy  is not provided, sy will equal sx (growsing or shrinking with the same scale). Scale(1, 1)  or scale(1) leaves an element in it's default state. Scale(2, 2) or scale(2)  causes the element to appear twice as wide and twice as tall as its default size, taking up 4-times the original area.</dd>
+  <dt><strong>scaleX</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [sx, 1] scaling vector, where sx is given as the parameter.</dd>
+  <dt><strong>scaleY</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [1, sy] scaling vector, where sy is given as the parameter.</dd>
+  <dt><strong>rotate</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property. For example, rotate(90deg) would cause elements to appear rotated one-quarter of a turn in the clockwise direction.</dd>
+  <dt><strong>skewX</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the X axis by the given angle.</dd>
+  <dt><strong>skewY</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the Y axis by the given angle.</dd>
+    <dt><strong>matrix</strong>(&lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;)</dt>
+  <dd>Generally machine generated, specifies a 2D transformation in the form of a transformation matrix of six values. matrix(a,b,c,d,e,f) is equivalent to applying the transformation matrix <strong>[a b c d e f]</strong>.</dd>
+</dl>
+     </section>
+ </div>
+
+
+<div class="slide normal">
+     <header><h1>Transform Function: Translate</h1></header>
+     <b class="plane plane_02" data-style="transform">✈</b>
+     <section class="content">
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_02', this.innerText);">translate(100px, 100px)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_02', this.innerText)">translateX(100px)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_02', this.innerText)">translateY(100px)</span>;</pre>
+
+     </section>
+ </div>
+
+ <div class="slide normal">
+     <header><h1>Transform Function: Rotate</h1></header>
+     <section class="content"> <b class="plane plane_03" data-style="transform">✈</b>
+
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_03', this.innerText)">rotate(90deg)</span>;</pre>
+    <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_03', this.innerText)">rotateX(45deg)</span>;</pre>
+    <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_03', this.innerText)">rotateY(45deg)</span>;</pre>
+
+
+     </section>
+ </div>
+
+<div class="slide normal">
+     <header><h1>Transform Function: Scale</h1></header>
+     <section class="content"><b class="plane plane_04" data-style="transform">✈</b>
+
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scale(0.25, 0.75)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scale(0.75)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scaleX(0.25)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scaleY(0.75)</span>;</pre>
+     </section>
+ </div>
+
+
+<div class="slide normal">
+     <header><h1>Transform Function: Skew</h1></header>
+     <section class="content">
+     <b class="plane plane_05" data-style="transform">✈</b>
+
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skewX(5deg)</span>;</pre>
+     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skewX(5deg) skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skew(5deg,5deg)</span>;</pre>
+
+     </section>
+ </div>
+
+
+<div class="slide" id="gencontentlink">
+<header><h1>Multiple Tranforms</h1></header>
+<section class="content transform"><b class="plane plane_06" data-style="transform">✈</b>
+
+<ul id="ABTrasform">
+<li><b class="y">translate</b> <pre class="x">transform: <span contenteditable id="Atranslate" onmouseout="setTempStyle('plane_06', this.innerText)">translate(-80px, 200px);</span></pre></li>
+<li><b class="y">rotate</b> <pre class="x">transform: <span contenteditable id="Arotate"  onmouseout="setTempStyle('plane_06', this.innerText)">rotate(15deg);</span></pre></li>
+<li><b class="y">scale</b> <pre class="x">transform: <span contenteditable id="Ascale"  onmouseout="setTempStyle('plane_06', this.innerText)">scale(1.5, 2);</span></pre></li>
+<li><b class="y">skew</b> <pre class="x">transform: <span contenteditable id="Askew"  onmouseout="setTempStyle('plane_06', this.innerText)">skewX(-8deg);</span></pre></li>
+<li>multiple transforms <pre>transform: <b  onmouseout="setTempStyle('plane_06', this.innerText)"><span contenteditable id="Btranslate">translate(-80px, 200px)</span>
+  <span contenteditable id="Brotate">rotate(-15deg)</span> <span contenteditable id="Bscale">scale(2, 1.5)</span> <span contenteditable id="Bskew">skewX(8deg)</span></span>;</pre></li>
+</ul>
+</section>
+</div>
+  <script>
+
+
+ function setTempStyle(thisclass, change){
+   var temporaryStyleSheet = document.getElementById('tempstyle');
+	 temporaryStyleSheet.innerHTML = '.slide .' + thisclass + '::after  {transform: '+ change +';}';
+   console.dir(temporaryStyleSheet);
+ }
+
+ </script>
+
+
+
+
+<div class="slide">
+<header><h1>transforms</h1></header>
+<section class="content">
+<ul>
+<li>Transforms create a new stacking context</li>
+<li>Take advantage of transform-origin</li>
+<li>Multiple values are SPACE separated (no commas)</li>
+<li><a href="http://westciv.com/tools/3Dtransforms/index.html">3D transforms</a> are hardware accelerated</li>
+<li>Play with <a href="http://westciv.com/tools/transforms/index.html">Westciv's Transform Tool</a></li>
+<li><a href="http://meyerweb.com/eric/tools/matrix/">Matrix</a> is another syntax</li>
+<li>More about <a href="http://www.standardista.com/css3/css3-transform-property-and-the-various-transform-functions">transforms</a></li>
+</section>
+</div>
+
+<!-- Play Time -->
+<div class="slide object">
+<header><h1>Play Time</h1>
+<object data="files/100_simpletransforms.html"></object>
+<a href="files/100_simpletransforms.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+<div class="slide">
+  <header><h1>transform-origin property</h1></header>
+    <section class="content">
+
+<p>Specifies the x and y position of the origin, relative to the transform object.</p>
+
+<ul>
+    <li>Keyword positions: left, right, bottom, top, center</li>
+    <li>Length values</li>
+    <li>Percentage values </li>
+    <li>default is 50% 50% (or center center)</li>
+    <li>Supported in all browsers that support transform. Prefixed if transform is prefixed</li>
+    </section>
+</div>
+
+<!-- Play Time -->
+<div class="slide object">
+<header><h1>Play Time</h1>
+<object data="files/101_transformorigin.html"></object>
+<a href="files/101_transformorigin.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+<!-- 3d Transforms -->
+<div class="slide normal">
+     <header style="position:absolute;left: 0; transform: rotate(-90deg) translate(-240px, -100px);"><h1>3d Transforms</h1></header>
+     <section class="content" style="padding-top:0; margin-top:-20px">
+     <dl  class="deprecated listed wide">
+
+  <dt><strong>translate</strong>(&lt;x-length&gt;[, &lt;y-length&gt;])</dt>
+  <dd>specifies a 2D translation by the vector [tx, ty], where tx is the first translation-value parameter and ty is the optional second translation-value parameter. If <em>&lt;ty&gt;</em> is not provided, ty has zero as a value.</dd>
+  <dt><strong class="imp">translate3d</strong>(&lt;x&gt;, &lt;y&gt;, &lt;z&gt;)</dt>
+  <dd>specifies a 3D translation by the vector [tx,ty,tz], with tx, ty and tz being the first, second and third translation-value parameters respectively.</dd>
+  <dt><strong>translateX</strong>(&lt;x-length&gt;), <strong>translateY</strong>(&lt;y-length&gt;) </dt>
+  <dd>specifies a translation by the given amount in the X or Y direction.</dd>
+  <dt><strong class="imp">translateZ</strong>(&lt;z-value&gt;)</dt>
+  <dd>specifies a translation by the given amount in the Z direction. Note that percentage values are not allowed in the translateZ translation-value, and if present are evaluated as 0.</dd>
+  <dt><strong>scale</strong>(&lt;number&gt;[, &lt;number&gt;])</dt>
+  <dd>specifies a 2D scale operation by the [sx,sy] scaling vector described by the 2 parameters. If the second parameter is not provided, it is takes a value equal to the first.</dd>
+  <dt><strong class="imp">scale3d</strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;)</dt>
+  <dd>specifies a 3D scale operation by the [sx,sy,sz] scaling vector described by the 3 parameters.</dd>
+  <dt><strong>scaleX</strong>(&lt;number&gt;), <strong>scaleY</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [sx,1,1] or [1,sy,1] scaling vector, where sx or sy is given as the parameter respectively.</dd>
+  <dt><strong class="imp">scaleZ</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [1,1,sz] scaling vector, where sz is given as the parameter.</dd>
+  <dt><strong>rotate</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property.</dd>
+  <dt><strong class="imp">rotate3d</strong>(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;angle&gt;)</dt>
+  <dd>specifies a clockwise 3D rotation by the angle specified in last parameter about the [x,y,z] direction vector described by the first 3 parameters. If the direction vector is not of unit length, it will be normalized. A direction vector that cannot be normalized, such as [0, 0, 0], will cause the rotation to not be applied. This function is equivalent to matrix3d(1 + (1-cos(angle))*(x*x-1), -z*sin(angle)+(1-cos(angle))*x*y, y*sin(angle)+(1-cos(angle))*x*z, 0, z*sin(angle)+(1-cos(angle))*x*y, 1 + (1-cos(angle))*(y*y-1), -x*sin(angle)+(1-cos(angle))*y*z, 0, -y*sin(angle)+(1-cos(angle))*x*z, x*sin(angle)+(1-cos(angle))*y*z, 1 + (1-cos(angle))*(z*z-1), 0, 0, 0, 0, 1).</dd>
+  <dt><strong>rotateX</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a clockwise rotation by the given angle about the X axis.</dd>
+  <dt><strong>rotateY</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a clockwise rotation by the given angle about the Y axis.</dd>
+  <dt><strong class="imp">rotateZ</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a clockwise rotation by the given angle about the Z axis.</dd>
+  <dt><strong>skewX</strong>(&lt;angle&gt;),<strong>skewY</strong>(&lt;angle&gt;) </dt>
+  <dd>specifies a skew transformation along the X axis or Y axis by the given angle.</dd>
+  <dt></dt>
+  <dt><strong>skew</strong>(&lt;angle&gt; [, &lt;angle&gt;])</dt>
+  <dd>specifies a skew transformation along the X and Y axes. The first angle parameter specifies the skew on the X axis. The second angle parameter specifies the skew on the Y axis. If the second parameter is not given then a value of 0 is used for the Y angle (ie. no skew on the Y axis).</dd>
+    <dt><strong>matrix</strong>(&lt;number&gt;{6})</dt>
+  <dd>specifies a 2D transformation in the form of a transformation matrix of six  comma separated values. matrix(a,b,c,d,e,f) is equivalent to matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, e, f, 0, 1).</dd>
+  <dt><strong class="imp">matrix3d</strong>(&lt;number&gt;{15})</dt>
+  <dd>specifies a 3D transformation as a 4x4 homogeneous matrix of 16 comma separated values in column-major order.</dd>
+  <dt><strong class="imp">perspective</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a perspective projection matrix. This matrix maps a <em>viewing cube</em> onto a pyramid whose base is infinitely far away from the viewer and whose peak represents the viewer's position. The viewable area is the region bounded by the four edges of the viewport (the portion of the browser window used for rendering the webpage between the viewer's position and a point at a distance of infinity from the viewer). The <em>depth</em>, given as the parameter to the function, represents the distance of the z=0 plane from the viewer. Lower values give a more flattened pyramid and therefore a more pronounced perspective effect. The value is given in pixels, so a value of 1000 gives a moderate amount of foreshortening and a value of 200 gives an extreme amount. The matrix is computed by starting with an identity matrix and replacing the value at row 3, column 4 with the value -1/depth. The value for depth must be greater than zero, otherwise the function is invalid.</dd>
+</dl>
+     </section>
+ </div>
+
+
+<div class="slide normal">
+     <header><h1>Transform Function: perspective</h1></header>
+     <b class="plane plane_07" data-style="transform">✈</b>
+     <section class="content">
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('plane_07', this.innerText)">translate3d(0px, 0px, 0px) perspective(0)</span>;</pre>
+     <p>Only relevant to 3D transformations</p>
+     </section>
+ </div>
+
+
+
+<div class="slide normal">
+     <header><h1>perspective-origin property</h1></header>
+     <b class="plane plane_07" data-style="perspective-origin">✈</b>
+     <section class="content">
+     <pre contenteditable>perspective-origin: <span contenteditable onmouseout="setTempStyle('plane_07b', this.innerText)">left</span>;</pre>
+     <p>Sets a horizon point at the given coordinates on the parent element. Changes the perceived vantage point at which the user appears to be looking at child elements.</p>
+     <ul>
+        <li>Keyword positions: left, right, bottom, top, center</li>
+        <li>Length values</li>
+        <li>Percentage values (default = 50% 50%)</li>
+     </ul>
+     </section>
+ </div>
+
+
+ <div class="slide normal">
+     <header><h1>Other Transform related Properties</h1></header>
+     <section class="content">
+<dl>
+	<dt>transform-origin: length | keyterm {1,3}</dt>
+    <dd>The centerpoint of the transform
+	<dt>transform-style: flat | preserve-3s</dt>
+    <dd>How to handle nested elements are rendered in 3D space.</dd>
+    <dt>perspective: none | length</dt>
+    <dd>Same as <code>transforms: perspective(value)</code>  except it applies to the positioned or transformed children of the element, not  the element itself.</dd>
+    <dt>perspective-origin: pos relative to parent</dt>
+    <dd>Defines the origin for the perspective property. It effectively sets the X and Y position at which the viewer appears to be looking at the children of the element.
+	<dt>backface-visibility: visible | hidden</dt>
+    <dd>When an element is flipped, is the content that is flipped away from user visible or not.</dd>
+</dl>
+     </section>
+ </div>
+
+<!-- Play Time -->
+<div class="slide object">
+<header><h1>Play Time</h1>
+<object data="files/101_transform3dhtml.html"></object>
+<a href="files/101_transform3dhtml.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+<div class="slide normal" id="BackfaceVisibility"><div>
+
+      <header>
+        <h1><code>backface-visibility</code></h1>
+      </header>
+      <section style="height: 600px;">
+            <p><code>hidden</code> or <code>visible</code></p>
+            <div class="backfacedemo">
+                  <div class="uncube" id="backfacecube">
+                    <figure class="front">1</figure>
+                    <figure class="back">2</figure>
+                    <figure class="right">3</figure>
+                    <figure class="left">4</figure>
+                    <figure class="top">5</figure>
+                    <figure class="bottom">6</figure>
+                  </div>
+            </div>
+
+           <button type="button" id="backfacetrigger"
+           onclick="toggleSides();">Toggle backfaces</button>
+<footer>borrowed from <a href="http://www.twitter.com/webinista">@webinista</a></footer>
+      </section>
+  </div></div>
+  <script>
+  function toggleSides() {
+          var cube = document.getElementById('backfacecube');
+           cube.classList.toggle('uncube');
+           cube.classList.toggle('cube');
+         //  var sides = cube.getElementsByTagName('figure');
+         //  console.log('boo' + sides.length);
+         //  for (var i = 0; i < sides.length; i++) {
+         //     sides[i].classList.toggle('.bf');
+         //   }
+}
+
+  </script>
+
+<!-- NEXT -->
+<div class="slide intro">
+     <header><h1>Part 11: Transitions &amp; Animation</h1></header>
+    <h1><a href="part_11_animations.html">Next ➹</a></h1>
+</div>
+
+
+
+
+  </div>
+
+
+  </div>
+  <script src="slides.js"></script>
+  <script>
+document.addEventListener('keydown',
+        function(e) { if(e.keyCode == 39){
+          var nextSlide = document.getElementsByClassName('future')[0];
+          var temporaryStyleSheet = document.getElementById('tempstyle');
+          var styles = nextSlide.getElementsByClassName('plane')[0].classList;
+          console.dir(styles);
+        } }, false);
+  </script>
+  </body>
+</html>
