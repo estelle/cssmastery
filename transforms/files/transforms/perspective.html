@@ -1,0 +1,34 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+
+<link rel="stylesheet" href="files.css">
+<style>
+div:after {content: none}
+b {	position: absolute; top: 0; left: 0;
+	width: 100%; height: 100%;
+	box-shadow: 5px 5px 0 5px #7b9894;
+	opacity: 0.9;
+	margin: 0;
+	color: #FA8072;
+	background-color: #D6BB72;
+	pointer-events: none;
+}</style>
+
+<style contenteditable id="editme">.child {
+  transform: rotateX(10deg);
+}
+.parent {
+   perspective: 40px;
+}</style>
+<title>perspective-origin</title>
+</head>
+
+<body>
+<section>
+<div class="one parent">RSVP<b class="child">RSVP</b></div></section>
+</body>
+</html>
+

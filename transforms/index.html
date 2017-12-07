@@ -1,15 +1,15 @@
 <!doctype html>
 <html>
   <head>
+
     <meta charset="utf-8" />
-    <title>Transforms || CSS Mastery</title>
-     <!--link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'-->
+    <title>Transforms || CSS Deep Dive</title>
    <link rel="stylesheet" href="screen.css"/>
    <link rel="stylesheet" href="transforms.css"/>
-  <style id="tempstyle">
-  </style>
+  <style id="tempstyle"></style>
   </head>
-  <body>
+<body>
+
 <header>
     <nav>
         <ul>
@@ -18,42 +18,48 @@
         </ul>
     </nav>
 </header>
-  <div id="topinfo">
 
-  </div>
+<div id="presentation">
+<div id="presentation-counter"></div>
 
-  <div id="info">
-    <p>
-    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
-    <span class="key">2</span> for comments. <a href="http://estelle.github.com/cssmastery">estelle.github.com/cssmastery</a>
-    </p>
-  </div>
+<div id="slides">
 
-  <div id="presentation">
-
-   <div id="presentation-counter"></div>
-
-   <div id="slides">
 
 <!-- Title Slide -->
 <div class="slide intro">
      <header><h1>Transforms</h1></header>
-     <b class="bug">✈</b>
 </div>
 
 <!-- Title Slide -->
 <div class="slide normal">
-     <header><h1>Tranforming Elements</h1></header>
-     <section class="content"><b class="plane plane_01">✈</b>
-     <pre contenteditable>.plane {
+     <header><h1>Transforming Elements</h1></header>
+     <section class="content"><b class="letters letters_01">RSVP</b>
+     <pre>.letters {
 transform:
- <span  contenteditable onmouseout="setTempStyle('plane_01', this.innerText)">translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg)</span>;
+ translate(-90px, 300px) rotate(50deg) scale(.7, .9) skew(15deg);
 }</pre>
-<pre contenteditable>selector {
+<pre>selector {
 	transform: none | &lt;transFunc()&gt; [&lt;transFunc()&gt;];
 }</pre>
      </section>
 </div>
+
+
+<div class="slide figure">
+<figure><object data="http://caniuse.com/#search=transforms"></object></figure>
+  <a href="http://caniuse.com/#search=transforms" target="play" title="open resource in new window">➹</a>
+
+</div>
+
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>2D Transform Functions</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
 
 <div class="slide normal">
      <header><h1>2D Transform Functions</h1></header>
@@ -87,35 +93,31 @@ transform:
 
 <div class="slide normal">
      <header><h1>Transform Function: Translate</h1></header>
-     <b class="plane plane_02" data-style="transform">✈</b>
+     <b class="letters letters_02">RSVP</b>
      <section class="content">
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_02', this.innerText);">translate(100px, 100px)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_02', this.innerText)">translateX(100px)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_02', this.innerText)">translateY(100px)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_02', this.innerHTML)">translate(100px, 100px)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_02', this.innerHTML)">translateX(100px)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_02', this.innerHTML)">translateY(100px)</span>;</pre>
 
      </section>
  </div>
 
  <div class="slide normal">
      <header><h1>Transform Function: Rotate</h1></header>
-     <section class="content"> <b class="plane plane_03" data-style="transform">✈</b>
+     <section class="content"> <b class="letters letters_03">RSVP</b>
 
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_03', this.innerText)">rotate(90deg)</span>;</pre>
-    <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_03', this.innerText)">rotateX(45deg)</span>;</pre>
-    <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_03', this.innerText)">rotateY(45deg)</span>;</pre>
-
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_03', this.innerHTML)">rotate(90deg)</span>;</pre>
 
      </section>
  </div>
 
 <div class="slide normal">
      <header><h1>Transform Function: Scale</h1></header>
-     <section class="content"><b class="plane plane_04" data-style="transform">✈</b>
+     <section class="content"><b class="letters letters_04">RSVP</b>
 
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scale(0.25, 0.75)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scale(0.75)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scaleX(0.25)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_04', this.innerText)">scaleY(0.75)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_04', this.innerHTML)">scale(0.25, 0.75)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_04', this.innerHTML)">scale(0.75)</span>;</pre> <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_04', this.innerHTML)">scaleX(0.25)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_04', this.innerHTML)">scaleY(0.75)</span>;</pre>
      </section>
  </div>
 
@@ -123,10 +125,10 @@ transform:
 <div class="slide normal">
      <header><h1>Transform Function: Skew</h1></header>
      <section class="content">
-     <b class="plane plane_05" data-style="transform">✈</b>
+     <b class="letters letters_05">RSVP</b>
 
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skewX(5deg)</span>;</pre>
-     <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skewX(5deg) skewY(5deg)</span>;</pre> <pre contenteditable>transform: <span contenteditable onmouseout="setTempStyle('plane_05', this.innerText)">skew(5deg,5deg)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05', this.innerHTML)">skewX(5deg)</span>;</pre>
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05', this.innerHTML)">skewY(5deg)</span>;</pre> <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05', this.innerHTML)">skewX(5deg) skewY(5deg)</span>;</pre> <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_05', this.innerHTML)">skew(5deg,5deg)</span>;</pre>
 
      </section>
  </div>
@@ -134,27 +136,33 @@ transform:
 
 <div class="slide" id="gencontentlink">
 <header><h1>Multiple Tranforms</h1></header>
-<section class="content transform"><b class="plane plane_06" data-style="transform">✈</b>
+<section class="content transform"><b class="letters letters_06">RSVP</b>
 
 <ul id="ABTrasform">
-<li><b class="y">translate</b> <pre class="x">transform: <span contenteditable id="Atranslate" onmouseout="setTempStyle('plane_06', this.innerText)">translate(-80px, 200px);</span></pre></li>
-<li><b class="y">rotate</b> <pre class="x">transform: <span contenteditable id="Arotate"  onmouseout="setTempStyle('plane_06', this.innerText)">rotate(15deg);</span></pre></li>
-<li><b class="y">scale</b> <pre class="x">transform: <span contenteditable id="Ascale"  onmouseout="setTempStyle('plane_06', this.innerText)">scale(1.5, 2);</span></pre></li>
-<li><b class="y">skew</b> <pre class="x">transform: <span contenteditable id="Askew"  onmouseout="setTempStyle('plane_06', this.innerText)">skewX(-8deg);</span></pre></li>
-<li>multiple transforms <pre>transform: <b  onmouseout="setTempStyle('plane_06', this.innerText)"><span contenteditable id="Btranslate">translate(-80px, 200px)</span>
-  <span contenteditable id="Brotate">rotate(-15deg)</span> <span contenteditable id="Bscale">scale(2, 1.5)</span> <span contenteditable id="Bskew">skewX(8deg)</span></span>;</pre></li>
+<li><b class="y">translate</b> <pre class="x">transform: <span contenteditable id="Atranslate">translate(-80px, 200px);</span></pre></li>
+<li><b class="y">rotate</b> <pre class="x">transform: <span contenteditable id="Arotate">rotate(15deg);</span></pre></li>
+<li><b class="y">scale</b> <pre class="x">transform: <span contenteditable id="Ascale">scale(1.5, 2);</span></pre></li>
+<li><b class="y">skew</b> <pre class="x">transform: <span contenteditable id="Askew">skewX(-8deg);</span></pre></li>
+<li>multiple transforms <pre>transform: <span contenteditable id="Btranslate">translate(-80px, 200px)</span>
+  <span contenteditable id="Brotate">rotate(-15deg)</span> <span contenteditable id="Bscale">scale(2, 1.5)</span> <span contenteditable id="Bskew">skewX(8deg)</span>;</pre></li>
 </ul>
 </section>
 </div>
   <script>
 
+ var temporaryStyleSheet = document.getElementById('tempstyle');
+
+
+
 
  function setTempStyle(thisclass, change){
    var temporaryStyleSheet = document.getElementById('tempstyle');
-	 temporaryStyleSheet.innerHTML = '.slide .' + thisclass + '::after  {transform: '+ change +';}';
+   temporaryStyleSheet.innerHTML = '.slide .' + thisclass + '::after  {transform: '+ change +';}';
    console.dir(temporaryStyleSheet);
  }
 
+
+ var transformSpans = document.getElementById('ABTrasform').getElementsByTagName('span');
  </script>
 
 
@@ -163,10 +171,11 @@ transform:
 <div class="slide">
 <header><h1>transforms</h1></header>
 <section class="content">
-<ul>
-<li>Transforms create a new stacking context</li>
-<li>Take advantage of transform-origin</li>
+
+        
+<li>Take advantage of <code>transform-origin</code></li>
 <li>Multiple values are SPACE separated (no commas)</li>
+<li>The order of the values matters</li>
 <li><a href="http://westciv.com/tools/3Dtransforms/index.html">3D transforms</a> are hardware accelerated</li>
 <li>Play with <a href="http://westciv.com/tools/transforms/index.html">Westciv's Transform Tool</a></li>
 <li><a href="http://meyerweb.com/eric/tools/matrix/">Matrix</a> is another syntax</li>
@@ -174,34 +183,41 @@ transform:
 </section>
 </div>
 
-<!-- Play Time -->
-<div class="slide object">
-<header><h1>Play Time</h1>
-<object data="files/100_simpletransforms.html"></object>
-<a href="files/100_simpletransforms.html" target="play" class="objectlink">Try it out</a>
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>function order</h1></header>
+  <section class="content">
+  </section>
 </div>
 
+
 <div class="slide">
-  <header><h1>transform-origin property</h1></header>
+  <header><h1>Transform Order</h1></header>
     <section class="content">
+      <p>Order of transform functions matters: if you rotate first, your translate direction will be on the rotated axis!</p>
 
-<p>Specifies the x and y position of the origin, relative to the transform object.</p>
-
-<ul>
-    <li>Keyword positions: left, right, bottom, top, center</li>
-    <li>Length values</li>
-    <li>Percentage values </li>
-    <li>default is 50% 50% (or center center)</li>
-    <li>Supported in all browsers that support transform. Prefixed if transform is prefixed</li>
+      <div id="transformorder"><b class="line1"></b><b class="line2"></b></div>
+      <code style="position: absolute; bottom: 20px">translateX(200px)<br>rotate(135deg)</code>
     </section>
 </div>
 
-<!-- Play Time -->
-<div class="slide object">
-<header><h1>Play Time</h1>
-<object data="files/101_transformorigin.html"></object>
-<a href="files/101_transformorigin.html" target="play" class="objectlink">Try it out</a>
+
+<div class="slide figure">
+  <header><h1>Funtion Order</h1></header>
+<figure><object data="files/transforms/tOrder.html"></object></figure>
+  <a href="files/transforms/tOrder.html" target="play" title="open resource in reused window">➹</a>
+
 </div>
+
+
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>3D Transform Functions</h1></header>
+  <section class="content">
+  </section>
+</div>
+
 
 <!-- 3d Transforms -->
 <div class="slide normal">
@@ -245,48 +261,38 @@ transform:
   <dt><strong class="imp">matrix3d</strong>(&lt;number&gt;{15})</dt>
   <dd>specifies a 3D transformation as a 4x4 homogeneous matrix of 16 comma separated values in column-major order.</dd>
   <dt><strong class="imp">perspective</strong>(&lt;number&gt;)</dt>
-  <dd>specifies a perspective projection matrix. This matrix maps a <em>viewing cube</em> onto a pyramid whose base is infinitely far away from the viewer and whose peak represents the viewer's position. The viewable area is the region bounded by the four edges of the viewport (the portion of the browser window used for rendering the webpage between the viewer's position and a point at a distance of infinity from the viewer). The <em>depth</em>, given as the parameter to the function, represents the distance of the z=0 plane from the viewer. Lower values give a more flattened pyramid and therefore a more pronounced perspective effect. The value is given in pixels, so a value of 1000 gives a moderate amount of foreshortening and a value of 200 gives an extreme amount. The matrix is computed by starting with an identity matrix and replacing the value at row 3, column 4 with the value -1/depth. The value for depth must be greater than zero, otherwise the function is invalid.</dd>
+  <dd>specifies a perspective projection matrix. This matrix maps a <em>viewing cube</em> onto a pyramid whose base is infinitely far away from the viewer and whose peak represents the viewer's position. The viewable area is the region bounded by the four edges of the viewport (the portion of the browser window used for rendering the webpage between the viewer's position and a point at a distance of infinity from the viewer). The <em>depth</em>, given as the parameter to the function, represents the distance of the z=0 letters from the viewer. Lower values give a more flattened pyramid and therefore a more pronounced perspective effect. The value is given in pixels, so a value of 1000 gives a moderate amount of foreshortening and a value of 200 gives an extreme amount. The matrix is computed by starting with an identity matrix and replacing the value at row 3, column 4 with the value -1/depth. The value for depth must be greater than zero, otherwise the function is invalid.</dd>
 </dl>
      </section>
  </div>
 
 
-<div class="slide normal">
-     <header><h1>Transform Function: perspective</h1></header>
-     <b class="plane plane_07" data-style="transform">✈</b>
-     <section class="content">
-     <pre>transform: <span contenteditable onmouseout="setTempStyle('plane_07', this.innerText)">translate3d(0px, 0px, 0px) perspective(0)</span>;</pre>
-     <p>Only relevant to 3D transformations</p>
-     </section>
- </div>
+
+<div class="slide figure">
+<figure><object data="http://caniuse.com/#search=3d%20transforms"></object></figure>
+  <a href="http://caniuse.com/#search=3d%20transforms" target="play" title="open resource in new window">➹</a>
+
+</div>
 
 
-
-<div class="slide normal">
-     <header><h1>perspective-origin property</h1></header>
-     <b class="plane plane_07" data-style="perspective-origin">✈</b>
-     <section class="content">
-     <pre contenteditable>perspective-origin: <span contenteditable onmouseout="setTempStyle('plane_07b', this.innerText)">left</span>;</pre>
-     <p>Sets a horizon point at the given coordinates on the parent element. Changes the perceived vantage point at which the user appears to be looking at child elements.</p>
-     <ul>
-        <li>Keyword positions: left, right, bottom, top, center</li>
-        <li>Length values</li>
-        <li>Percentage values (default = 50% 50%)</li>
-     </ul>
-     </section>
- </div>
+<!-- DIVIDER -->
+<div class="slide divider">
+  <header><h1>3D Transform Related Properties</h1></header>
+  <section class="content">
+  </section>
+</div>
 
 
  <div class="slide normal">
-     <header><h1>Other Transform related Properties</h1></header>
+     <header><h1>3D Transform related Properties</h1></header>
      <section class="content">
-<dl>
-	<dt>transform-origin: length | keyterm {1,3}</dt>
-    <dd>The centerpoint of the transform
-	<dt>transform-style: flat | preserve-3s</dt>
-    <dd>How to handle nested elements are rendered in 3D space.</dd>
+<dl  class="deprecated listed wide">
     <dt>perspective: none | length</dt>
     <dd>Same as <code>transforms: perspective(value)</code>  except it applies to the positioned or transformed children of the element, not  the element itself.</dd>
+	<dt>transform-origin: length | keyterm {1,3}</dt>
+    <dd>The centerpoint of the transform
+	<dt>transform-style: flat | preserve-3d</dt>
+    <dd>How to handle nested elements are rendered in 3D space.</dd>
     <dt>perspective-origin: pos relative to parent</dt>
     <dd>Defines the origin for the perspective property. It effectively sets the X and Y position at which the viewer appears to be looking at the children of the element.
 	<dt>backface-visibility: visible | hidden</dt>
@@ -295,73 +301,654 @@ transform:
      </section>
  </div>
 
-<!-- Play Time -->
-<div class="slide object">
-<header><h1>Play Time</h1>
-<object data="files/101_transform3dhtml.html"></object>
-<a href="files/101_transform3dhtml.html" target="play" class="objectlink">Try it out</a>
+
+<!-- Perspective -->
+<div class="slide divider">
+  <header><h1>Perspective</h1></header>
+  <section class="content">
+  </section>
 </div>
 
 
-<div class="slide normal" id="BackfaceVisibility"><div>
+<!-- 3D -->
+<div class="slide">
+  <header><h1>Perspective</h1></header>
+  <section class="content">
+Screens are flat. 3D requires perspective. 
 
-      <header>
-        <h1><code>backface-visibility</code></h1>
-      </header>
-      <section style="height: 600px;">
-            <p><code>hidden</code> or <code>visible</code></p>
-            <div class="backfacedemo">
-                  <div class="uncube" id="backfacecube">
-                    <figure class="front">1</figure>
-                    <figure class="back">2</figure>
-                    <figure class="right">3</figure>
-                    <figure class="left">4</figure>
-                    <figure class="top">5</figure>
-                    <figure class="bottom">6</figure>
-                  </div>
-            </div>
+<ol>
+  <li><code>transform: perspective(100) ...</code></li>
+  <li><code>perspective: 100</code>
+  </li>
+</ol>
+<p>Difference: with the parent property, all the transformed elements share the same perspective. with the function, each transformed element has it's own perspective.
+  </section>
+</div>
 
-           <button type="button" id="backfacetrigger"
-           onclick="toggleSides();">Toggle backfaces</button>
-<footer>borrowed from <a href="http://www.twitter.com/webinista">@webinista</a></footer>
-      </section>
-  </div></div>
-  <script>
-  function toggleSides() {
-          var cube = document.getElementById('backfacecube');
-           cube.classList.toggle('uncube');
-           cube.classList.toggle('cube');
-         //  var sides = cube.getElementsByTagName('figure');
-         //  console.log('boo' + sides.length);
-         //  for (var i = 0; i < sides.length; i++) {
-         //     sides[i].classList.toggle('.bf');
-         //   }
-}
+<div class="slide normal">
+     <header><h1>Transform Function: <code>perspective()</code></h1></header>
+     <b class="letters letters_07">RSVP</b>
+     <section class="content">
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_07', this.innerHTML)"> perspective(40px) rotateX(10deg)</span>;</pre>
+     <p>The <code>perspective()</code> function must come first</p>
+     <p>Smaller numbers have a bigger impact</p>
+     </section>
+ </div>
 
-  </script>
+<div class="slide object">
+  <header><h1><code>perspective</code> Property</h1></header>
+  <object data="files/transforms/perspective.html"></object>
+  <a href="files/transforms/perspective.html" target="play" title="open resource in reused window">➹</a>
+    </section>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <style>
+    .perspective article {display: flex; justify-content: center;}
+    .perspective article div {
+      width: 150px; height: 150px; display: inline-block; line-height: 150px; font-size: 50px; background-color:palegoldenrod; margin: 10px; 
+        color: #A9403A;
+        border: 1px dashed; 
+        text-align: center;
+        transform: perspective(400px) rotatex(25deg);
+    }
+
+    .perspective article:last-of-type div {
+        transform: rotatex(25deg);
+    }
+    .perspective article:last-of-type {
+      perspective: 400px;
+    }
+    .pOrigin article {
+      perspective-origin: 0 0;
+    }
+  </style>
+  <header><h1><code>transform: perspective(400px)</code> v. <code>perspective: 400px</code></h1></header>
+  <section class="content perspective">
+    <p><code>transform: perspective(400px)</code> on children</p>
+    <article><div>1</div><div>2</div><div>3</div></article>
+    <p><code>perspective: 400px</code> on parent</p>
+    <article><div>1</div><div>2</div><div>3</div></article>
+
+  </section>
+</div>
+
+
+
+<!-- Perspective -->
+<div class="slide divider">
+  <header><h1>transform-style</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>transform-style</h1></header>
+  <section class="content">
+    <dl>
+    <dt>transform-style: flat | preserve-3d</dt>
+    <dd>How to handle nested elements are rendered in 3D space.</dd>
+  </dl>
+  <ul>
+      <li>Default is flat</li>
+      <li>Set on parent element</li>
+      <li>Only works if the following are set to their default values:
+        <ul><li>overflow</li>
+          <li>clip</li>
+          <li>clip-path</li>
+          <li>filter</li>
+          <li>mask-border-source</li>
+          <li>mask-image</li>
+          <li>mix-blend-mode</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1><code>transform-style</code> Property</h1></header>
+  <object data="files/transforms/tStyle1.html"></object>
+  <a href="files/transforms/tStyle1.html" target="play" title="open resource in reused window">➹</a>
+    </section>
+</div>
+
+
+
+
+
+<!-- Perspective -->
+<div class="slide divider">
+  <header><h1>perspective-origin</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>perspective-origin</h1></header>
+  <section class="content"><p><code>perspective-origin: x y</code></p>
+   <ul>
+    <li>Property on parent element</li>
+    <li>Positions the perspective relative to parent, defining the origin for the <code>perspective</code> property. </li>
+    <li>Sets the X and Y position at which the viewer appears to be looking at the children of the element.
+  </section>
+</div>
+
+
+
+<div class="slide object">
+  <header><h1>perspective-origin Property</h1></header>
+    <object data="files/transforms/pOrigin.html"></object>
+<a href="files/transforms/pOrigin.html" target="play" class="objectlink">➹</a>
+</div>
+
+<div class="slide perspective pOrigin">
+<header><h1><code>perspective-origin</code> with <code>perspective: 400px</code></h1></header>
+  <section class="content perspective">
+    <p><code>perspective-origin: 0 0</code> on parent</p>
+    <article><div>1</div><div>2</div><div>3</div></article>
+    <article><div>1</div><div>2</div><div>3</div></article>
+<p>only works if <code>perspective</code> is on that parent!</p>
+  </section>
+</div>
+
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>transform-origin</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>transform-origin property</h1></header>
+    <section class="content">
+      <b class="letters letters_07b">RSVP</b>
+     <section class="content">
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_07b', this.innerHTML, 'transform')">perspective(40px) rotateX(10deg)</span>;
+transform-origin: <span contenteditable onmouseout="setTempStyle('letters_07b', this.innerHTML, 'transform-origin')"> top left</span>;</pre>
+
+<p style="font-size: 2rem">Specifies the x and y position of the origin, relative to the transform object.</p>
+</section>
+</div>
+<div class="slide">
+  <header><h1>transform-origin property</h1></header>
+
+      <b class="letters letters_07c">RSVP</b>
+     <section class="content">
+     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_07c', this.innerHTML)">rotate(90deg);
+transform-origin:  top left</span>;</pre>
+<ul style="font-size: 1.7rem">
+    <li>Keyword positions: left, right, bottom, top, center</li>
+    <li>Length values</li>
+    <li>Percentage values </li>
+    <li>default is 50% 50% (or center center)</li>
+    <li>Supported in all browsers that support transform. Prefixed if transform is prefixed</li>
+    </section>
+</div>
+
+<div class="slide object">
+  <header><h1>transform-style Property</h1></header>
+    <object data="files/transforms/tStyle.html"></object>
+<a href="files/transforms/tStyle.html" target="play" class="objectlink">➹</a>
+</div>
+
+<div class="slide object">
+  <header><h1>backface-visibility Property</h1></header>
+    <object data="files/transforms/backfacevisibility.html"></object>
+<a href="files/transforms/backfacevisibility.html" target="play" class="objectlink">➹</a>
+</div>
+
+<!-- transform box -->
+<div class="slide">
+  <header><h1>transform-box property</h1></header>
+  <section class="content">
+    <p>Future: Defines the layout box, to which the <code>transform</code> and <code>transform-origin</code> properties relate to. <small>(FF, Ch 64, O 51)</small></p>
+    <dl>
+ <dt><code>border-box</code></dt>
+ <dd>border box as reference box.</dd>
+ <dt><code>fill-box</code></dt>
+ <dd>Uses the object bounding box as reference box.</dd>
+ <dt><code>view-box</code></dt>
+ <dd>Nearest SVG viewport as reference box. If <code>viewBox</code> attribute exists, the reference box is at the <code>viewBox</code> 0 0, and the width and height are those of the <code>viewBox</code> attribute.</dd>
+</dl>
+  </section>
+</div>
+
+
 
 <!-- NEXT -->
 <div class="slide intro">
-     <header><h1>Part 11: Transitions &amp; Animation</h1></header>
-    <h1><a href="part_11_animations.html">Next ➹</a></h1>
+     <header><h1>Transitions &amp; Animation</h1></header>
+    <h1><a href="animation.html">Next ➹</a></h1>
 </div>
 
 
-
-
   </div>
 
 
   </div>
-  <script src="slides.js"></script>
   <script>
-document.addEventListener('keydown',
-        function(e) { if(e.keyCode == 39){
-          var nextSlide = document.getElementsByClassName('future')[0];
-          var temporaryStyleSheet = document.getElementById('tempstyle');
-          var styles = nextSlide.getElementsByClassName('plane')[0].classList;
-          console.dir(styles);
-        } }, false);
-  </script>
+
+(function() {
+  var doc = document,
+      disableBuilds = true,
+    ctr = 0,
+    spaces = /\s+/,
+    a1 = [''],
+      toArray = function(list) {
+      return Array.prototype.slice.call(list || [], 0);
+  },
+    byId = function(id) {
+    if (typeof id == 'string') { return doc.getElementById(id); }
+    return id;
+  },
+
+  query = function(query, root) {
+    if (!query) { return []; }
+    if (typeof query != 'string') { return toArray(query); }
+    if (typeof root == 'string') {
+      root = byId(root);
+      if(!root){ return []; }
+      }
+        root = root || document;
+      var rootIsDoc = (root.nodeType == 9);
+      var doc = rootIsDoc ? root : (root.ownerDocument || document);
+
+    // rewrite the query to be ID rooted
+    if (!rootIsDoc || ('>~+'.indexOf(query.charAt(0)) >= 0)) {
+      root.id = root.id || ('qUnique' + (ctr++));
+      query = '#' + root.id + ' ' + query;
+    }
+
+    // don't choke on something like ".yada.yada >"
+    if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
+    return toArray(doc.querySelectorAll(query));
+  },
+
+  strToArray = function(s) {
+    if (typeof s == 'string' || s instanceof String) {
+      if (s.indexOf(' ') < 0) {
+        a1[0] = s;
+        return a1;
+      }
+      else {
+          return s.split(spaces);
+      }
+    }
+    return s;
+    },
+
+    addClass = function(node, classStr) {
+    classStr = strToArray(classStr);
+    var cls = ' ' + node.className + ' ';
+    for (var i = 0, len = classStr.length, c; i < len; ++i) {
+    c = classStr[i];
+    if (c && cls.indexOf(' ' + c + ' ') < 0) {
+      cls += c + ' ';
+    }
+    }
+    node.className = cls.trim();
+  },
+
+  removeClass = function(node, classStr) {
+      var cls;
+      if (classStr !== undefined) {
+      classStr = strToArray(classStr);
+      cls = ' ' + node.className + ' ';
+      for (var i = 0, len = classStr.length; i < len; ++i) {
+        cls = cls.replace(' ' + classStr[i] + ' ', ' ');
+      }
+        cls = cls.trim();
+      } else {
+      cls = '';
+      }
+
+      if (node.className != cls) {
+      node.className = cls;
+      }
+
+    },
+
+    toggleClass = function(node, classStr) {
+      var cls = ' ' + node.className + ' ';
+      if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
+      removeClass(node, classStr);
+      } else {
+      addClass(node, classStr);
+      }
+    },
+
+
+
+      ua = navigator.userAgent,
+    isFF = parseFloat(ua.split('Firefox/')[1]) || undefined,
+    isWK = parseFloat(ua.split('WebKit/')[1]) || undefined,
+    isOpera = parseFloat(ua.split('Opera/')[1]) || undefined,
+
+
+
+      canTransition = (function() {
+      var ver = parseFloat(ua.split('Version/')[1]) || undefined;
+      // test to determine if this browser can handle CSS transitions.
+      var cachedCanTransition =
+
+      (isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
+      return function() { return cachedCanTransition; }
+
+      }
+  )();
+
+
+//-----------------------------------------------------------------//
+
+var Slide = function(node, idx) {
+  this._node = node;
+  if (idx >= 0) {
+    this._count = idx + 1;
+  }
+  if (this._node) {
+    addClass(this._node, 'slide distant-slide');
+  }
+  this._makeCounter();
+  this._makeBuildList();
+};
+
+
+
+Slide.prototype = {
+    _node: null,
+    _count: 0,
+    _buildList: [],
+    _visited: false,
+    _currentState: '',
+    _states: [ 'distant-slide', 'far-past',
+               'past', 'current', 'future',
+               'far-future', 'distant-slide' ],
+    setState: function(state) {
+    if (typeof state != 'string') {
+      state = this._states[state];
+    }
+
+    if (state == 'current' && !this._visited) {
+      this._visited = true;
+      this._makeBuildList();
+    }
+
+    removeClass(this._node, this._states);
+    addClass(this._node, state);
+    this._currentState = state;
+
+
+
+  var _t = this;
+    setTimeout(function(){ _t._runAutos(); } , 400);
+  },
+
+    _makeCounter: function() {
+    if(!this._count || !this._node) { return; }
+
+      var c = doc.createElement('span');
+    c.innerHTML = this._count;
+    c.className = 'counter';
+    this._node.appendChild(c);
+  },
+
+    _makeBuildList: function() {
+    this._buildList = [];
+    if (disableBuilds) { return; }
+
+      if (this._node) {
+      this._buildList = query('[data-build] > *', this._node);
+    }
+
+      this._buildList.forEach(function(el) {
+      addClass(el, 'to-build');
+    });
+  },
+
+    _runAutos: function() {
+    if (this._currentState != 'current') {
+      return;
+    }
+
+      // find the next auto, slice it out of the list, and run it
+
+      var idx = -1;
+    this._buildList.some(function(n, i) {
+      if (n.hasAttribute('data-auto')) {
+        idx = i;
+        return true;
+      }
+
+        return false;
+    });
+    if (idx >= 0) {
+      var elem = this._buildList.splice(idx, 1)[0];
+      var transitionEnd = isWK ? 'webkitTransitionEnd' : (isFF ? 'mozTransitionEnd' : 'oTransitionEnd');
+      var _t = this;
+      if (canTransition()) {
+        var l = function(evt) {
+          elem.parentNode.removeEventListener(transitionEnd, l, false);
+          _t._runAutos();
+        };
+        elem.parentNode.addEventListener(transitionEnd, l, false);
+        removeClass(elem, 'to-build');
+      } else {
+        setTimeout(function() {
+          removeClass(elem, 'to-build');
+          _t._runAutos();
+        }, 400);
+      }
+
+      }
+
+    },
+
+    buildNext: function() {
+    if (!this._buildList.length) {
+      return false;
+    }
+
+      removeClass(this._buildList.shift(), 'to-build');
+    return true;
+  },
+
+  };
+
+
+
+  //
+  // SlideShow class
+  //
+
+  var SlideShow = function(slides) {
+  this._slides = (slides || []).map(function(el, idx) {
+    return new Slide(el, idx);
+  });
+
+
+
+  var h = window.location.hash;
+  try {
+    this.current = parseInt(h.split('#slide')[1], 10);
+  } catch (e) { /* squeltch */ }
+
+  this.current = isNaN(this.current) ? 1 : this.current;
+  var _t = this;
+  doc.addEventListener('keydown', function(e) { _t.handleKeys(e); }, false);
+  doc.addEventListener('mousewheel', function(e) { _t.handleWheel(e); }, false);
+  doc.addEventListener('DOMMouseScroll', function(e) { _t.handleWheel(e); }, false);
+  doc.addEventListener('touchstart',  function(e) { _t.handleTouchStart(e); }, false);
+  doc.addEventListener('touchend', function(e) { _t.handleTouchEnd(e); }, false);
+  window.addEventListener('popstate', function(e) { _t.go(e.state); }, false);
+  doc.getElementById('back').addEventListener('click', function(e) {_t.prev();}, false);
+  doc.getElementById('next').addEventListener('click', function(e) {_t.next();}, false);
+  this._update();
+};
+
+
+
+SlideShow.prototype = {
+  _slides: [],
+
+    _update: function(dontPush) {
+    document.querySelector('#presentation-counter').innerText = this.current;
+    if (history.pushState) {
+      if (!dontPush) {
+      history.pushState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+        }
+    } else {
+      window.location.hash = 'flopslide' + this.current;
+    }
+      for (var x = this.current-1; x < this.current + 7; x++) {
+        if (this._slides[x-4]) {
+        this._slides[x-4].setState(Math.max(0, x-this.current));
+        }
+      }
+    },
+
+    current: 0,
+
+    next: function() {
+    if (!this._slides[this.current-1].buildNext()) {
+      this.current = Math.min(this.current + 1, this._slides.length);
+      this._update();
+    }
+   },
+  prev: function() {
+  this.current = Math.max(this.current-1, 1);
+  this._update();
+  },
+
+   go: function(num) {
+    if (!num) return;
+    if (history.pushState && this.current != num) {
+      history.replaceState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+    }
+    this.current = num;
+    this._update(true);
+    },
+
+
+
+  _notesOn: false,
+
+ showNotes: function() {
+    var isOn = this._notesOn = !this._notesOn;
+    query('.notes').forEach(function(el) {
+      el.style.display = (isOn) ? '' : 'none';
+    });
+  },
+
+
+    handleWheel: function(e) {
+    var delta = 0;
+    if (e.wheelDelta) {
+      delta = e.wheelDelta/120;
+      if (isOpera) {
+      delta = -delta;
+      }
+      }
+    else if (e.detail) {
+        delta = -e.detail/3;
+      }
+
+      if (delta > 0 ) {
+      this.prev();
+      return;
+    }
+      if (delta < 0 ) {
+      this.next();
+      return;
+    }
+    },
+
+  addNotes: function(){
+    if(document.querySelector('.current textarea.mynotes')) {
+      document.querySelector('.current textarea.mynotes').classList.toggle('temphidden');
+      return;
+    }
+    var ta = document.createElement('textarea'),
+         currentSlide = document.querySelector('.current section'),
+       path = window.location.pathname,
+       A = path.lastIndexOf('/') + 1,
+       B = path.lastIndexOf('.'),
+       firstPartOfKey, key;
+    if(B && B > A){
+        firstPartOfKey = path.substring(A, B);
+    } else {
+        firstPartOfKey = path.substring(1, path.length-1) || 'home';
+    }
+    //console.log(firstPartOfKey);
+    key = firstPartOfKey +  window.location.hash;
+    ta.value = window.localStorage.getItem(key) || '';
+    ta.className = 'mynotes';
+
+    ta.addEventListener('keyup', function(){
+      //console.log(key + ' ' + ta.value)
+        window.localStorage.setItem(key,ta.value);
+    });
+    currentSlide.appendChild(ta);
+  },
+
+
+  removeHidingClass: function(){
+    var paragraphToShow = document.querySelector('.current .temphidden');
+    if(paragraphToShow) {paragraphToShow.classList.remove('temphidden');}
+
+  },
+
+    handleKeys: function(e) {
+      // disable keys for these elements
+      if (/^(input|textarea|pre|object)$/i.test(e.target.nodeName)) return;
+
+
+      switch (e.keyCode) {
+      case 37: // left arrow
+      case 33: // left clicker
+       this.prev(); break;
+      case 39: // right arrow
+      case 32: // space
+      case 34: // clicker right
+       this.next(); break;
+      case 50: // 2
+      case 190: // 2
+       this.showNotes();
+       this.removeHidingClass();
+       break;
+        case 52: // 4 (for taking notes with local storage (students)
+         this.addNotes(); break;
+         break;
+      }
+    },
+
+    _touchStartX: 0,
+    handleTouchStart: function(e) {
+    this._touchStartX = e.touches[0].pageX;
+  },
+
+    handleTouchEnd: function(e) {
+    var delta = this._touchStartX - e.changedTouches[0].pageX;
+    var SWIPE_SIZE = 150;
+    if (delta > SWIPE_SIZE) {
+      this.next();
+    } else if (delta< -SWIPE_SIZE) {
+       this.prev();
+     }
+    },
+  };
+
+  // Initialize
+  var slideshow = new SlideShow(query('.slide'));
+})();
+</script>
+
   </body>
 </html>

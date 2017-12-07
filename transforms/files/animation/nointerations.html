@@ -1,0 +1,113 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+#editme {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 90%; font-family:"Courier New", Courier, monospace;}
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+
+div {
+  padding: 20px;
+  border: 5px black solid !important;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+@-webkit-keyframes red {
+  from, 30%{
+    background-color: #f00;
+  }
+  to {
+    background-color: #f33;
+  }
+}
+@keyframes red {
+  from, 30%{
+    background-color: #f00;
+  }
+  to {
+    background-color: #f33;
+  }
+}
+
+  @-webkit-keyframes green {
+  from, 30%{
+    background-color: #030;
+  }
+  to {
+    background-color: #393;
+  }
+}
+@keyframes green {
+  from, 30%{
+    background-color: #030;
+  }
+  to {
+    background-color: #393;
+  }
+}
+
+  @-webkit-keyframes blue {
+  from, 30%{
+    background-color: #0000ff;
+  }
+  to {
+    background-color: #3333ff;
+  }
+}
+@keyframes blue {
+  from, 30%{
+    background-color: #0000ff;
+  }
+  to {
+    background-color: #33f;
+  }
+}
+</style>
+
+<style contenteditable id="editme">div {
+  -webkit-animation-name: red, green, blue;
+  // -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 0;
+  -webkit-animation-delay: 10s;
+  animation-name: red, green, blue;
+  // animation-fill-mode: forwards;
+  animation-iteration-count: 0;
+  animation-delay: 10s;
+}</style>
+<title></title>
+</head>
+
+<body>
+<div id="blue"><p>Does the animation even happen?</p></div>
+<script>
+  var foo = document.getElementById('blue');
+  foo.addEventListener( 'webkitAnimationEnd',
+    function( event ) {
+        console.log('animation end');
+    },
+    false );
+  foo.addEventListener( 'webkitAnimationStart',
+    function( event ) {
+        console.log('animation start');
+    },
+    false );
+    foo.addEventListener( 'animationend',
+    function( event ) {
+        console.log('animation end');
+    },
+    false );
+  foo.addEventListener( 'animationstart',
+    function( event ) {
+        console.log('animation start');
+    },
+    false );
+</script>
+</body>
+</html>
+

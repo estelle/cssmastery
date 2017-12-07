@@ -1,0 +1,46 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block; background-color: #dedede;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.1em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 80%; font-family:"Courier New", Courier, monospace; }
+li {font-size: 30px; font-family: arial, helvetica, san-serif; position: relative; line-height: 40px; display: block;}
+.box span {
+position: absolute;
+left: 0;
+top: 20px;
+width: 50px;
+height: 50px;
+background-color: red;
+-webkit-animation: showme 5s linear 5s 1;
+color: white;
+text-align: center;
+}
+</style>
+
+<style contenteditable>
+.box span {-webkit-animation: showme 5s linear 5s 1;}
+@-webkit-keyframes showme {
+  0% {left: 200px; background-color:blue;-webkit-transform: scale(1) rotate(45deg);}
+  50% {background-color:green;}
+  100% {left: 600px; background-color: yellow;-webkit-transform: scale(2) rotate(315deg);}
+}
+</style>
+<title>Try it out</title>
+</head>
+
+<body>
+  <ul>
+  <li class="box">animation-fill-mode: none; <span style="-webkit-animation-fill-mode: none;">1</span></li>
+  <li class="box">animation-fill-mode: forwards;<span style="-webkit-animation-fill-mode: forwards">2</span></li>
+  <li class="box">animation-fill-mode: backwards;<span style="-webkit-animation-fill-mode: backwards">3</span></li>
+    <li class="box">animation-fill-mode: both;<span
+      style="-webkit-animation-fill-mode: both;">4</span></li>
+  </li>
+</body>
+</html>
+
+

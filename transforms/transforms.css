@@ -1,77 +1,121 @@
- .bug,.plane, .plane:after {
-	position:relative;
-	font-size: 100px;
- 	color:#C7573A;
-  	display:block;
-	height: 140px;
-	width: 140px;
-	border-radius: 7px;
-	line-height: 140px;
-	box-shadow: 5px 5px 0 5px rgba(0,0,0,0.2);
-	background-color: #fff;
-	margin:10px auto;
-	text-align:center;
-	font-size: 140px;
+a[target=play] {
+position: absolute;
+top: 10px;
+left: 90%;
+background: #000;
+color: #FFF;
+height: 40px;
+width: 40px;
+line-height: 45px;
+text-align: center;
+border-radius: 50%;
 }
-.plane:after {
-	content:'✈';
-	position:absolute; top: 0; left:0;
-	box-shadow: 5px 5px 0 5px #BDD9D5;
-	opacity: 0.9;
-	margin: 0;
-	pointer-events: none;
+.letters, .letters:after {
+  position:relative;
+  font-size: 100px;
+  color:#A9403A;
+    display:block;
+  height: 140px;
+  width: 3em;
+  line-height: 140px;
+  box-shadow: 5px 5px 0 5px rgba(0,0,0,0.2);
+  background-color: #fff;
+  margin:10px auto;
+  text-align:center;
+  font-size: 140px;
+  outline: 1px solid;
 }
-.plane_01:after {
+.letters:after {
+  content:'RSVP';
+  position:absolute; top: 0; left:0;
+  box-shadow: 5px 5px 0 5px #7b9894;
+  opacity: 0.85;
+  margin: 0;
+  pointer-events: none;
+  background-color: #D6BB72;
+}
+.letters_01:after {
    transform:
-     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
+     translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(15deg);
 }
 
-.plane_02:after {
+.letters_02:after {
    transform:
      translate(100px, 100px);
 }
 
-.plane_03:after {
+.letters_03:after {
    transform:
      rotate(90deg);
-  content: 'QB';
-  background: palegoldenrod;
 }
 
-.plane_04:after {
+.letters_04:after {
    transform:
      scale(0.25, 0.75);
 }
-.plane_05,
-.plane_05:after {
+.letters_05,
+.letters_05:after {
    border-radius: 0;
    border: 1px solid #666;
 }
-.plane_05:after {
+.letters_05:after {
    transform:
      skewX(15deg);
 }
 
-.plane_06:after {
+.letters_06:after {
    transform:
      translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }
 
-.plane_07:after {
-   transform: none;
+.letters_07:after {
+   transform: perspective(40px) rotateX(10deg);
 }
 
-.plane_08:after {
+.letters_07b:after {
+   transform: perspective(100px) rotatex(20deg);
+   transform-origin: top left;
+}
+
+.letters_07c:after {
+  transform: rotate(90deg);
+  transform-origin:  top left;
+}
+
+.letters_07d {
+  perspective: 40px;
+}
+
+.letters_07d:after {
+   transform: rotateX(10deg);
+ }
+
+.letters_07e {
+    transform: rotate3d(20deg);
+    transform-style: flat;
+}
+.letters_07e:after {
+  transform: rotate(10deg);
+}
+.letters_07f {
+    transform: rotate3d(20deg);
+    transform-style: preserve-3d;
+}
+.letters_07f:after {
+  transform: rotate(10deg);
+}
+
+.letters_08:after {
    transform:
      translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }
 
-.plane_09:after {
+.letters_09:after {
    transform:
      translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }
 
-.plane_10:after {
+.letters_10:after {
    transform:
      translate(-90px,300px) rotate(50deg) scale(.7,.9) skew(5deg);
 }
@@ -79,81 +123,49 @@ section {padding-top: 20px;}
 .x {width: 75%; float:right; margin:0; position:relative;}
 .y {float: left; line-height:1.62em;}
 #ABTrasform li {float: left; clear:both; list-style-type:none; width:100%;}
- </style>
-  <style id="tempstyle"></style>
-
-  <style id="forBackfaceVisibility">
-  .backfacedemo{
-            perspective: 1000;
+.deprecated dt {margin-bottom: 1rem; background-color: #ccc;
+    }
+.deprecated dd {display: none;}
+.deprecated dt:hover + dd {display:inherit;}
+.appearance dt {margin-bottom:0.5rem;
+    }
+.deprecated.listed dt {margin-bottom:0; margin-top:0.2rem;
+     display:block; width: 50%; padding-left: 5px;
 }
+.deprecated.listed.wide dt{width:100%;}
 
-#backfacecube {
-  margin: 2rem 0 0 30%;
-  width: 100%;
-  height: 100%;
-          transform-style: preserve-3d;
-}
+#transformorder {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 200px auto;
+  border: 5px dotted purple;
+  position: relative; }
+  #transformorder:before, #transformorder:after {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 5px dashed magenta;
+    content: "";
+    position: absolute; }
+  #transformorder:before {
+    -webkit-transform: rotate(135deg) translateX(200px);
+    transform: rotate(135deg) translateX(200px); }
+  #transformorder:after {
+    -webkit-transform: translateX(200px) rotate(135deg);
+    transform: translateX(200px) rotate(135deg);
+    border-color: teal; }
+  #transformorder .line1, #transformorder .line2 {
+    height: 1px;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: -150px;
+    border-bottom: 1px solid; }
+  #transformorder .line2 {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    left: -230px;
+    top: 130px; }
 
-
-
-#backfacecube figure{
-  display: block;
-  position: absolute;
-  width: 196px;
-  height: 196px;
-  border: 1px solid #333;
-  line-height: 196px;
-  font-size: 120px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-
-}
-
-.cube figure{
-
-         backface-visibility: hidden;
-
-}
-
-#backfacecube .front{background: hsla(248, 100%, 50%, .5);}
-#backfacecube .back{background: hsla(315, 100%, 40%, .5);}
-#backfacecube .right{background: hsla( 48, 100%, 50%, .5);}
-#backfacecube .left{background: hsla(125, 100%, 40%, .5);}
-#backfacecube .top{background: hsla( 24, 100%, 50%, .5);}
-#backfacecube .bottom{background: hsla(187,  87%, 50%, .5);}
-
-#backfacecube .front {
-          transform: rotateY(   0deg ) translateZ( 100px );
-}
-
-#backfacecube .back {
-          transform: rotateX( 180deg ) translateZ( 100px );
-}
-
-#backfacecube .right {
-          transform: rotateY(  90deg ) translateZ( 100px );
-}
-
-#backfacecube .left {
-          transform: rotateY( -90deg ) translateZ( 100px );
-}
-
-#backfacecube .top {
-          transform: rotateX(  90deg ) translateZ( 100px );
-}
-
-#backfacecube .bottom {
-          transform: rotateX( -90deg ) translateZ( 100px );
-}
-
-
-
-
-.backfacedemo {
-perspective-origin: 50% -100px;
-perspective: 500px;
-}
-.backfacedemo {
-perspective: 1000;
-}
+section {min-height: 80vh}

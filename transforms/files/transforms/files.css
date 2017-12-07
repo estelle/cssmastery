@@ -1,0 +1,48 @@
+head, style {
+	display: block;
+}
+style:not(#editme) {
+	visibility:hidden;
+}
+#editme {
+	-webkit-user-modify: read-write-plaintext-only;
+	padding: 20px; 
+	font-size: 1.5em; 
+	white-space: pre; 
+	font-family: monospace; 
+	white-space:pre; 
+	border-radius: 10px; 
+	background-color:#fefefe; 
+	margin: 20px;  margin-top: 50px;
+	font-family:"Courier New", Courier, monospace; 
+}
+body {
+	font-family:Verdana, Geneva, sans-serif; 
+	font-size:1.2em;
+}
+div {
+	position: relative;
+	font-size: 100px;
+	color: #A9403A;
+	display: block;
+	height: 140px;
+	width: 3em;
+	line-height: 140px;
+	box-shadow: 5px 5px 0 5px rgba(0, 0, 0, 0.2);
+	background-color: #FFF;
+	margin: 10px auto;
+	text-align: center;
+	font-size: 140px;
+}
+div:after {
+	content: 'RSVP';
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-shadow: 5px 5px 0 5px #7b9894;
+	opacity: 0.9;
+	margin: 0;
+	color: #FA8072;
+	background-color: #D6BB72;
+	pointer-events: none;
+}

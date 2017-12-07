@@ -1,0 +1,59 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+#editme {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 65%; font-family:"Courier New", Courier, monospace; float: left;}
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+
+div {
+  float: right;
+  width: 20%;
+  margin-right: 20px;
+  padding: 20px;}
+</style>
+
+<style contenteditable id="editme">
+#blue {
+  background-color: #9999ff;
+}
+div {
+  border: 5px black solid !important;
+  background-color: black !important;
+  -webkit-animation: grey infinite 1s;
+  animation: grey infinite 3s alternate;
+}
+
+@-webkit-keyframes grey {
+  from {
+    background-color: #999;
+    border: 5px red dashed;
+  }
+  to {
+    background-color: #ccc;
+    border: 5px yellow dashed;
+  }
+}
+@keyframes grey {
+  from {
+    background-color: #999;
+    border: 5px red dashed;
+  }
+  to {
+    background-color: #ccc;
+    border: 5px yellow dashed;
+  }
+}
+</style>
+<title></title>
+</head>
+
+<body>
+<div id="blue"><p>Based on ID, I should be black, but because an animation is attached, I am grey.</p>
+<p>based on !important my border should be black, but some browsers override !important (currrently erroneously, but spec is likely changing).</div>
+</body>
+</html>
+

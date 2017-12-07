@@ -1,0 +1,82 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+style:last-of-type {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 80%; font-family:"Courier New", Courier, monospace; position: absolute; top: 150px;
+  height: 450px; overflow: scroll; left: 20px;}
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+
+:root {background-color:#ccc;}
+
+</style>
+
+<style contenteditable>
+ul, li  {  margin: 0; padding: 0;}
+nav ul li {
+  background-color: red; color: white;
+  margin:0; padding: 3px 5px;
+  border: 1px solid #fff;
+}
+nav > ul > li {
+  position:relative;
+  min-width: 120px;
+  display: inline-block;
+  position:relative;
+}
+nav ul ul {
+  -webkit-transform: scale(1,0);
+  -webkit-transform-origin: top center;
+  -webkit-transition:0.2s linear 50ms;
+  position:absolute;
+  top: 100%;
+}
+nav li:hover ul {
+  -webkit-transform: scale(1,1);
+}
+</style>
+<title></title>
+</head>
+
+<body>
+
+<nav>
+  <ul>
+      <li>Bad
+        <ul>
+            <li>Me</li>
+            <li>You</li>
+            <li>Them</li>
+            <li>Nobody</li>
+       </ul>
+        </li>
+        <li>User
+        <ul>
+            <li>Door Post</li>
+            <li>Wall hanging</li>
+            <li>Stair Banister</li>
+            <li>Washington</li>
+       </ul></li>
+        <li>Experience
+        <ul>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>HTML5</li>
+            <li>SEO</li>
+       </ul></li>
+        <li>Design
+        <ul>
+            <li>Party</li>
+            <li>Dinner</li>
+            <li>Hike</li>
+            <li>Foo Camp</li>
+       </ul></li>
+   </ul>
+</nav>
+</body>
+</html>
+

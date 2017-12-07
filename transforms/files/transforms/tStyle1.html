@@ -1,0 +1,35 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<link rel="stylesheet" href="files.css">
+<style>
+.parent {width: 50vw; height: 50vh;}
+.parent, .child {
+	font-size: 50px;
+	color: #A9403A;
+	box-shadow: 5px 5px 0 5px rgba(0, 0, 0, 0.2);
+	border: 1px solid #aeaeae;
+	background-color: #FFF;
+	margin: 10px auto; opacity: 0.9;
+}
+.child {width: 4em;}
+</style>
+
+<style contenteditable id="editme">.parent {
+    transform: perspective(400px) rotateX(15deg) rotateY(-15deg);
+    transform-style: preserve-3d;
+}
+.child {
+    transform: perspective(400px) translateZ(90px) rotate(20deg); 
+}</style>
+<title>transform-style</title>
+</head>
+
+<body>
+<section class="parent">Parent <p class="child">Child</p></section>
+</body>
+</html>
+

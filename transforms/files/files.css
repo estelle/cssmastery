@@ -1,10 +1,32 @@
-head, style {display: block;}
-style{visibility:hidden;}
-style[contenteditable] {
-	visibility:visible; -webkit-user-modify: read-write-plaintext-only; padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; background-color: rgba(255,255,255,0.5);}
-html {min-height:100%;}
-.box, .box:after {margin: auto; height: 100px; width: 100px; background-color: indianred; }
+head, 
+style {
+	display: block;
+}
+style:not(#editme){
+	visibility:hidden; 
+	position: absolute;
+}
+#editme {
+	visibility:visible; 
+	-webkit-user-modify: read-write-plaintext-only; 
+	padding: 20px; 
+	font-size: 1.5em; 
+	white-space: pre; 
+	font-family: monospace; 
+	background-color: rgba(255,255,255,0.5);
+}
+html {
+	min-height:100%;
+}
+.box, 
 .box:after {
-  background-color: goldenrod; content: ''; display: block;
+	margin: auto; 
+	height: 100px; 
+	width: 100px; 
+	background-color: indianred; 
+}
+.box:after {
+  background-color: goldenrod; 
+  content: ''; display: block;
 }
 p {font-family: helvetica, arial, sans-serif; text-align: center;}
