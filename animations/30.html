@@ -1,0 +1,2138 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+    <title>Transitions &amp; Animations</title>
+<!--
+
+Author: Estelle Weyl
+Contact: estelle @ weyl dot ORG
+Twitter: @estellevw
+Repo: http://estelle.github.io
+
+-->
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="static/screen.css" media="projection, screen"/>
+   <style>
+
+.deprecated dt {
+font-weight: bold;
+margin-top: 0.5rem;
+outline: red solid 1px;
+background-color: rgba(255,255,255,0.9);
+display: inline-block;
+clear: both;
+
+}
+.deprecated.listed.wide dt {
+width: 100%;
+}
+.deprecated.listed dt {
+margin-bottom: 0;
+margin-top: 0.5rem;
+display: block;
+width: 50%;
+padding-left: 5px;
+}
+.deprecated dd {
+font-weight: normal;
+margin: 0 0 2px 0;
+}
+.deprecated dd {display: none;}
+
+.deprecated dt:hover + dd {display: inherit;}
+
+/* Transform example */
+#ABTrasform li {
+float: left;
+clear: both;
+list-style-type: none;
+width: 100%;
+}
+.y {
+float: left;
+line-height: 1.62em;
+}
+.x {
+width: 75%;
+float: right;
+margin: 0;
+position: relative;
+}
+
+.objectlink {padding-right: 30px;}
+
+
+   .h1 {font-size: 80px;}
+   .hoverme 		{color: red; text-decoration:underline;}
+.hoverme:hover {color: yellow;}
+.simptrans {transition:1s;}
+/*.simptrans:hover {transition:10s}*/
+
+.code {
+   color: black;
+   font-size: 85%;
+   background-color: rgba(255,255,255,0.4);
+   transition: all 2s ease-in 50ms;
+}
+.code:hover {
+   color: red;
+   background-color: rgba(255,255,255,0.9);
+}
+.code:not(.code2):hover {
+   font-size: 120%;
+}
+.code2:hover {
+	transform: scale(1.4);
+	transform-origin: top left;
+
+}
+.yes, .no {
+	position: relative;
+}
+.yes:after, .no:after {
+	content: '✓';
+	color:green;
+	font-size:60px;
+	position:absolute;
+	top: 5px;
+	right: 5px;
+}
+.no:after {
+	content: 'X';
+	color: red;
+	font-family: "Comic Sans MS", cursive;
+}
+
+.columns {column-count:3;
+column-gap: 0.1em;}
+.spinbox, .pencil {
+	position:relative;
+	font-size: 100px;
+ 	color:red;
+  	display:block;
+	height: 140px;
+	width: 140px;
+	margin:10px auto;
+	font-size: 140px;
+	text-align:center;
+}
+.pencil, .pencil2 {
+	display: block;
+	text-align: left;
+	margin: 10px 0;
+	line-height: 140px;
+	position: absolute;
+	top: 0; left: 0;
+	transition: all 1s ease-in 50ms;
+    transform-origin: 100px 123px;
+}
+.outlined:hover {outline: 5px solid green;}
+.spinbox .dot {
+	position: absolute;
+	top: 123px;
+	left: 100px;
+	height:5px; width: 5px;
+	border-radius: 0.5em}
+.spinbox:hover .dot {
+	background-color:green;
+}
+.spin:hover {
+	transform: rotate(360deg) scale(2);
+}
+
+.pencil_01 {animation: writing 3s infinite 1s; animation-play-state:paused;}
+.pencil_03 {animation: writingDangerously 3s infinite linear; animation-play-state:paused;}
+.pencil_04 {animation: W 3s infinite linear; animation-play-state:paused;}
+.pencil_05 {animation: gettingThePencil 3s infinite; animation-play-state:paused;}
+.to {transform-origin: left 300px;}
+.slide:hover .pencil_01,
+.slide:hover .pencil_03,
+.slide:hover .pencil_04,
+.slide:hover .pencil_05,
+.slide:hover .pencil_06,
+.slide:hover .pencil_07,
+.slide:hover .pencilanim_01
+ {animation-play-state:running;}
+ .pencil_pausing {
+	left: 350px;
+	transform-origin: center 300px;
+	animation: writingInCircles 3s linear infinite;
+
+ }
+  .pencil_pausing:hover {
+	animation-play-state:paused;
+
+ }
+@keyframes writingInCircles {
+
+  100% {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+@keyframes writing {
+	0% {
+      left: 0;
+    }
+
+    100% {
+      left: 100%;
+    }
+}
+@keyframes writingDangerously {
+0% {
+      left: 0;
+    }
+
+    10% {
+      left: 45%;
+    }
+
+    90% {
+      left: 55%;
+    }
+
+    100% {
+      left: 100%;
+    }
+}
+
+@keyframes W {
+
+   0% {
+      left: 0;
+	  top: 0;
+          }
+
+    25% {
+      top: 400px;
+    }
+
+    50% {
+      top: 50px;
+    }
+
+    75% {
+      top: 400px;
+    }
+
+    100% {
+      left: 80%;
+      top: 0;
+    }
+
+}
+
+
+@keyframes gettingThePencil {
+  0%{
+    transform:
+      translate3d(0, 0, 0) rotate(0deg) scale(0.5, 0.5);
+  }
+
+  100% {
+    transform:
+      translate3d(600px, 400px, 0) rotate(80deg) scale(1.2, 1.2);
+  }
+}
+
+@keyframes drawALine {
+  0%{
+    width:0;
+	  color:green;
+  }
+
+  100% {
+    width: 100%;
+	  color:blue;
+  }
+}
+.slide nav {
+	float: left; width: 100%; margin-bottom: 20px;
+}
+.slide nav ul,.slide nav ul li  {margin: 0; padding: 0;}
+.slide nav + pre {clear: both; margin-top: 100px;}
+.slide nav ul li {list-style-type: none; background-color: red; color: white; margin:0; padding: 3px 5px; border: 1px solid #fff;}
+nav > ul > li {display: inline-block; position:relative; float: left; min-width: 120px;}
+nav ul ul {
+  transform: scale(1,0);
+  transform-origin: top center;
+  transition:0.2s linear 50ms;
+  position: absolute;
+  top: 100%; left: 0;
+  min-width: 100%;
+}
+nav li:hover ul {transform: scale(1,1);}
+
+.pencilanim {
+     width:100px;
+     border-bottom: 10px red solid;
+	 overflow: hidden;
+	 position: relative;
+}
+.pencilanim::after {
+	content: '✎';
+	position: absolute;
+	bottom: -20px;
+	right: -10px;
+}
+.pencilanim_01 {
+  transform-origin: left 300px;
+  animation-name: drawALine;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 3;
+  animation-play-state: paused;
+}
+pre u {text-decoration:none; font-weight:bold;}
+
+.card, .carda {
+	width: 200px;
+	height: 300px;
+	border-radius: 10px;
+	margin: auto;
+	position: absolute;
+	font-size: .8em;
+	perspective: 600px;
+}
+.card:hover,
+.carda {transition: 1s ease;}
+.card .front,
+.carda .front {
+
+float: none;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 900;
+width: inherit;
+height: inherit;
+	border-radius: 10px;
+	border: 10px solid #fff;
+text-align: center;
+box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+transform: rotateX(0deg) rotateY(0deg);
+transform-style: preserve-3d;
+backface-visibility: hidden;
+transition: all .4s ease-in-out;
+background:
+linear-gradient(-45deg, white 25%, transparent 25%, transparent 75%, red 75%, red) 0 0,
+linear-gradient(-45deg, red 25%, transparent 25%, transparent 75%, white 75%, white) 1em 1em,
+linear-gradient(45deg, red 17%, transparent 17%, transparent 25%, red 25%, red 36%, transparent 36%, transparent 64%, red 64%, red 75%, transparent 75%, transparent 83%, red 83%) 1em 1em;
+background-color: white;
+background-size: 2em 2em;
+background-position: -1em -1em;
+
+}
+.card:hover .front {
+	z-index: 900;;
+	transform: rotateY(180deg);
+	box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+}
+.card .back,
+.carda .back {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 800;
+	width: inherit;
+	height: inherit;
+	background: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+	transform: rotateY(-180deg);
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	transition: all .4s ease-in-out;
+	border-radius: 10px;
+	border: 10px solid #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+}
+.card:hover .back {
+	z-index: 1000;
+	transform: rotateY(0);
+}
+.card:first-of-type,
+.carda:first-of-type {transform: rotate(-5deg);}
+.card:nth-of-type(2):hover,
+.carda.flipped:nth-of-type(2){transform: rotate(0) translatex(120px);}
+.card:last-of-type,
+.carda:last-of-type {transform: rotate(5deg);}
+.card:first-of-type:hover{transform: rotate(10deg) translatey(180px);}
+.carda.flipped:first-of-type{transform: rotate(-5deg) translate(240px, 25px);}
+
+.carda.flipped .front,
+.carda.unflipped .back {animation: flipme 1s linear forwards;}
+.carda.unflipped .front,
+.carda.flipped .back {animation: unflipme 1s linear both;}
+/*
+.carda.flipped:first-of-type  {animation: flipme 1s linear forwards;}
+.carda.flipped:nth-of-type(2){animation: flipme 1s linear forwards;}
+.carda.flipped:last-of-type  {animation: flipme 1s linear forwards;}
+.carda.unflipped:first-of-type {animation: flipme 1s linear -1s alternate;}
+.carda.unflipped:nth-of-type(2){animation: flipme 1s linear -1s alternate;}
+.carda.unflipped:last-of-type  {animation: flipme 1s linear -1s alternate;}
+*/
+@keyframes flipme {
+	0% {transform: rotatey(0deg)}
+	100% {transform: rotateY(-180deg);}
+}
+@keyframes unflipme {
+	0% {transform: rotatey(180deg)}
+	100% {transform: rotateY(0deg);}
+}
+
+
+
+
+.card .back, .carda .back {color:red; font-size: 50px; line-height: 300px; text-align:center;}
+.card .back:after,
+.carda .back:after  {content: 'A'; position:absolute; top: 10px; left: 10px; line-height:20px;}
+.card .back:before,
+.carda .back:before {content: 'A'; position:absolute; bottom: 10px; right: 10px; line-height:20px;}
+@keyframes showme {
+	0% {background-color:blue; transform: rotate(0deg) translate(200px, 0)}
+	50% {background-color:green;transform: rotate(22deg) translate(350px, -150px)}
+	100% {background-color: yellow; transform: rotate(45deg) translate(500px, -540px)}
+}
+@keyframes showme {
+	0% {background-color:green; transform: rotate(0deg) scale(1); left: 200px;}
+	100% {background-color: blue; transform: rotate(45deg) scale(1.5); left: 600px;}
+}
+.box {
+  padding:20px 50px;
+  position:relative;
+}
+.box span {
+  position: absolute;
+  left: 0;
+  top:20px;
+  width: 50px;
+  height:50px;
+  background-color: red;
+  animation: showme 5s linear 5s 1;
+  animation-play-state:paused;
+  transform-origin: 50% 100%;
+}
+.current:hover .box span {
+	animation-play-state: running;
+}
+span.afmforwards {
+	animation-fill-mode:forwards;
+}
+span.afmbackwards {
+	animation-fill-mode:backwards;
+}
+span.afmboth {
+	animation-fill-mode:both;
+}
+</style>
+
+  </head>
+  <body> <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+  <div id="presentation">
+
+   <div id="presentation-counter"></div>
+
+   <div id="slides">
+
+
+
+<!-- Title Slide -->
+<div class="slide intro">
+     <header>
+     	<h1>Transforms, Transitions &amp; Animations</h1>
+     	<h2><a href="http://estelle.github.io/animation/30.html">estelle.github.io/animation/30.html</a></h2>
+     </header>
+</div>
+
+<!-- Transitions -->
+<div class="slide normal">
+     <header><h1>2D Transform Functions</h1></header>
+     <section class="content">
+   <dl class="deprecated listed wide">
+
+  <dt><strong>translate</strong>(&lt;length&gt;[, &lt;length&gt;])</dt>
+  <dd>specifies a 2D translation by the vector [x, y], where x is the  translation-value parameter for the x axis and y  is the optional translation value along the y axis. parameter. If <em>y</em> is not provided, y==0.</dd>
+  <dt><strong>translateX</strong>(&lt;length&gt;)</dt>
+  <dd>specifies a translation by the given amount in the X direction.</dd>
+  <dt><strong>translateY</strong>(&lt;length&gt;)</dt>
+  <dd>specifies a translation by the given amount in the Y direction.</dd>
+  <dt><strong>scale</strong>(&lt;number&gt;[, &lt;number&gt;])</dt>
+  <dd>specifies 2D scaling operation by the [sx,sy]. If sy  is not provided, sy will equal sx (growsing or shrinking with the same scale). Scale(1, 1)  or scale(1) leaves an element in it's default state. Scale(2, 2) or scale(2)  causes the element to appear twice as wide and twice as tall as its default size, taking up 4-times the original area.</dd>
+  <dt><strong>scaleX</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [sx, 1] scaling vector, where sx is given as the parameter.</dd>
+  <dt><strong>scaleY</strong>(&lt;number&gt;)</dt>
+  <dd>specifies a scale operation using the [1, sy] scaling vector, where sy is given as the parameter.</dd>
+  <dt><strong>rotate</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a 2D rotation by the angle specified in the parameter about the origin of the element, as defined by the <em>transform-origin</em> property. For example, rotate(90deg) would cause elements to appear rotated one-quarter of a turn in the clockwise direction.</dd>
+  <dt><strong>skewX</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the X axis by the given angle.</dd>
+  <dt><strong>skewY</strong>(&lt;angle&gt;)</dt>
+  <dd>specifies a skew transformation along the Y axis by the given angle.</dd>
+    <dt><strong>matrix</strong>(&lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;, &lt;num&gt;)</dt>
+  <dd>Generally machine generated, specifies a 2D transformation in the form of a transformation matrix of six values. matrix(a,b,c,d,e,f) is equivalent to applying the transformation matrix <strong>[a b c d e f]</strong>.</dd>
+</dl>
+     </section>
+ </div>
+
+
+<!-- example transform -->
+<div class="slide" id="gencontentlink">
+<header><h1>Multiple Tranforms</h1></header>
+<section class="content"
+<ul id="ABTrasform">
+<li><b class="y">translate</b> <pre class="x">transform: <span contenteditable="" id="Atranslate">translate(-80px, 200px);</span></pre></li>
+<li><b class="y">rotate</b> <pre class="x">transform: <span contenteditable="" id="Arotate">rotate(15deg);</span></pre></li>
+<li><b class="y">scale</b> <pre class="x">transform: <span contenteditable="" id="Ascale">scale(1.5, 2);</span></pre></li>
+<li><b class="y">skew</b> <pre class="x">transform: <span contenteditable="" id="Askew">skewX(-8deg);</span></pre></li>
+<li>multiple transforms <pre>transform: <span contenteditable="" id="Btranslate">translate(-80px, 200px)</span>
+  <span contenteditable="" id="Brotate">rotate(-15deg)</span> <span contenteditable="" id="Bscale">scale(2, 1.5)</span> <span contenteditable="" id="Bskew">skewX(8deg)</span>;</pre></li>
+</ul>
+</section>
+</div>
+
+<div class="slide">
+  <header><h1>transform-origin property</h1></header>
+    <section class="content">
+
+<p>Specifies the x and y position of the origin, relative to the transform object.</p>
+
+<ul>
+    <li>Keyword positions: left, right, bottom, top, center</li>
+    <li>Length values</li>
+    <li>Percentage values </li>
+    <li>default is 50% 50% (or center center)</li>
+    <li>Supported in all browsers that support transform. Prefixed if transform is prefixed</li>
+    </section>
+</div>
+
+<div class="slide object">
+  <header><h1>Transforms</h1></header>
+  <object data="files/transform.html"></object>
+  <a href="files/transform.html" class="objectlink" target="play">Play</a>
+ </div>
+
+
+<!-- Simplest Transition -->
+<div class="slide normal">
+     <header><h1>Simplest Transition</h1></header>
+     <section class="content">
+
+     <pre style="font-size:140%;">a {
+  color: red;
+}
+a:hover {
+  color: yellow;
+}</pre>
+     <p class="hoverme h1">Hover Over Me</p>
+     </section>
+ </div>
+
+
+<!-- CSS3 Transition -->
+ <div class="slide normal">
+     <header><h1>CSS3 Transition</h1></header>
+     <section class="content">
+     <pre style="font-size:140%;">a {
+  color: red;
+  transition: 1s;
+}
+a:hover {
+  color: yellow;
+}</pre>
+     <p class="hoverme h1 simptrans">Hover Over Me</p>
+     </section>
+ </div>
+
+
+ <!-- property overview -->
+<div class="slide">
+<header><h1>transitions</h1></header>
+<section class="content">
+<p>Enables the transition of properties from one state to the next over a defined length of time</p>
+<ul>
+<li><em>transition-property:</em> properties (or 'all') that transition</li>
+<li><em>transition-duration:</em> s or ms it takes to transition</li>
+<li><em>transition-timing-function:</em> bezier curve of transition</li>
+<li><em>transition-delay:</em> s or ms before transition starts</li>
+<li><em>transition:</em> shorthand for 4  transition properties</li>
+</ul>
+<ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox 4/16</li>
+         <li class="opera">Opera 10.5</li>
+         <li class="ie new">IE 10</li>
+         <li class="txt">  &nbsp; With vendor prefix. No prefix FF16 &amp; IE10. Not OperaMini or Win&#9990;</li>
+     </ul>
+</section>
+</div>
+
+<!-- font transition example -->
+<div class="slide">
+<header><h1>transitions</h1></header>
+<section class="content">
+<pre contenteditable class="code">code {
+   color: black;
+   font-size: 85%;
+   background-color: rgba(255,255,255,0.9);
+   transition: all 2s ease-in 50ms;
+}
+code:hover {
+   color: red;
+   font-size: 120%;
+   background-color: rgba(255,255,255,0.8);
+}
+</pre>
+<pre contenteditable>code {
+   transition:
+      color, font-size, background-color 2s ease-in 50ms;
+}</pre>
+</section>
+</div>
+
+
+<!-- font transition example -->
+<div class="slide">
+<header><h1>transitions</h1></header>
+<section class="content">
+<pre contenteditable class="code code2">code {
+   color: black;
+   font-size: 85%;
+   background-color: rgba(255,255,255,0.9);
+   transition: all 2s ease-in 50ms;
+}
+code:hover {
+   color: red;
+   transform: scale(1.4);
+   transform-origin: 0 0;
+   background-color: rgba(255,255,255,0.8);
+}
+</pre>
+<pre contenteditable>code {
+   transition:
+      transform 2s ease-in 50ms;
+}</pre>
+</section>
+</div>
+
+
+
+<!-- what can be transitioned? -->
+<div class="slide normal">
+     <header><h1>What can be transitioned?</h1></header>
+     <section class="content">
+     <p>Anything that has intermediate values</p>
+     <pre style="width: 40%; float:left;" class="yes">code {
+  opacity: 1;
+}
+code:halfway {
+  opacity: 0.5;
+}
+code:hover {
+  opacity: 0;
+}</pre>
+     <pre style="width: 40%; float:right;" class="no">code {
+  display: block;
+}
+code:halfway {
+  display: ???
+}
+code:hover {
+  display: none;
+}</pre>
+
+
+     </section>
+ </div>
+
+
+
+
+<!-- what can be transitioned2? -->
+ <div class="slide normal">
+     <header><h1>What can be transitioned?</h1></header>
+     <section class="content">
+     <p>2 values that have REAL intermediary values</p>
+     <pre style="width: 40%; float:left;" class="yes">code {
+  font-size: 100%;
+}
+code:halfway {
+  font-size: 110%;
+}
+code:hover {
+  font-size: 120%;
+}</pre>
+     <pre style="width: 40%; float:right;" class="no">code {
+  height: auto;
+}
+code:halfway {
+  height: ???
+}
+code:hover {
+  height: 1000px;
+}</pre>
+
+     </section>
+ </div>
+
+<!-- list of tranisitionable properties -->
+ <div class="slide normal">
+     <header><h1>Transitionable Properties</h1></header>
+     <section class="content">
+     <ul class="columns">
+     <li>background-color</li>
+<li>background-position</li>
+<li>border-color</li>
+<li>border-width</li>
+<li>border-spacing</li>
+<li>bottom</li>
+<li>clip</li>
+<li>color</li>
+<li>crop</li>
+<li>font-size</li>
+<li>font-weight</li>
+<li>height</li>
+<li>left</li>
+<li>letter-spacing</li>
+<li>line-height</li>
+<li>margin</li>
+<li>max-height</li>
+<li>max-width</li>
+<li>min-height</li>
+<li>min-width</li>
+<li>opacity</li>
+<li>outline-color</li>
+<li>outline-offset</li>
+<li>outline-width</li>
+<li>padding</li>
+<li>right</li>
+<li>text-indent</li>
+<li>text-shadow</li>
+<li>top</li>
+<li>vertical-align</li>
+<li>visibility</li>
+<li>width</li>
+<li>word-spacing</li>
+<li>z-index</li>
+     </ul>
+     </section>
+ </div>
+
+<!-- transitioning transforms -->
+  <div class="slide normal">
+     <header><h1>Transitioning Transforms</h1></header>
+     <em class="spinbox"><i class="dot"></i><b class="pencil2 spin">✎</b></em>
+     <section class="content">
+<pre contenteditable>
+.pencil {
+    transition: all 1s ease-in 50ms;
+    transform-origin: 100px 123px;
+}
+.pencil:hover {
+    transform: rotate(360deg) scale(2);
+}</pre>
+
+
+
+     </section>
+ </div>
+
+
+
+<!-- Tranform Features (or Limitations) -->
+  <div class="slide normal">
+     <header><h1>Transition Features (or Limitations)</h1></header>
+     <section class="content">
+<ul>
+	<li>Single Iteration</li>
+    <li>Reverse goes to initial state</li>
+    <li>No granular control</li>
+    <li>Limited methods of initiation</li>
+    <li>Can't force them to finish</li>
+</ul>
+     </section>
+ </div>
+
+
+<!-- Useful example -->
+<div class="slide normal">
+     <header><h1>Putting it together in the Real World</h1></header>
+     <section class="content" style="min-height: 400px;">
+
+<nav>
+	<ul>
+    	<li>Bad
+        <ul>
+            <li>Me</li>
+            <li>You</li>
+            <li>Them</li>
+            <li>Nobody</li>
+       </ul>
+        </li>
+        <li>User
+        <ul>
+            <li>Door Post</li>
+            <li>Wall hanging</li>
+            <li>Stair Banister</li>
+            <li>Washington</li>
+       </ul></li>
+        <li>Experience
+        <ul>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>HTML5</li>
+            <li>SEO</li>
+       </ul></li>
+        <li>Design
+        <ul>
+            <li>Party</li>
+            <li>Dinner</li>
+            <li>Hike</li>
+            <li>Foo Camp</li>
+       </ul></li>
+   </ul>
+</nav>
+ <pre contenteditable>nav ul li {
+  list-style-type: none;
+}
+nav > ul > li {
+  display: inline-block;
+  position:relative;
+}
+nav ul ul {
+  transform: scale(1,0);
+  transform-origin: top center;
+  transition:0.2s linear 50ms;
+  position:absolute;
+  top: 100%;
+}
+nav li:hover ul {
+  transform: scale(1,1);
+}</pre>
+     </section>
+ </div>
+
+
+<div class="slide object">
+  <header><h1>Grok it</h1></header>
+  <object data="files/navbar.html"></object>
+  <a href="files/navbar.html" class="objectlink" target="play">Play</a>
+ </div>
+
+
+
+
+ <!-- card flip -->
+ <div class="slide normal">
+<header><h1>Pick a card</h1></header>
+<section class="content">
+    <div class="card">
+        <div class="front"></div>
+        <div class="back">♥</div>
+    </div>
+    <div class="card">
+        <div class="front"></div>
+        <div class="back" style="color: black">♣</div>
+    </div>
+    <div class="card">
+        <div class="front"></div>
+        <div class="back">♦</div>
+    </div>
+    <pre contenteditable style="height:500px; overflow:scroll; float: right;">.card {
+  position: absolute;
+  perspective: 600px;
+}
+.card:hover {
+  transition: 1s ease;
+}
+.card .front {
+  transform: rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: all .4s ease-in-out;
+}
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+.card .back {
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: all .4s ease-in-out;
+}
+.card:hover .back {
+  transform: rotateY(0);
+}
+.card:first-of-type {
+  transform: rotate(-5deg);
+}
+.card:nth-of-type(2):hover {
+  transform: rotate(0) translatex(120px);
+}
+.card:last-of-type {
+  transform: rotate(5deg);
+}
+.card:first-of-type:hover {
+  transform: rotate(10deg) translatey(180px);
+}
+</pre>
+</section>
+</div>
+
+
+
+
+ <div class="slide intro">
+     <header><h1>Animations</h1></header>
+     <section class="content">
+     <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox 5/16</li>
+         <li class="opera new">Opera 12</li>
+         <li class="ie new">IE 10</li>
+         <li class="txt">  &nbsp; With vendor prefix. No prefix FF16 &amp; IE10. Not OperaMini or Win&#9990;</li>
+     </ul>
+     </section>
+ </div>
+
+
+
+
+ <div class="slide normal">
+     <header><h1>Animation Features (or limitations)</h1></header>
+     <section class="content">
+ <ul>
+	<li>Single, many or infinite iterations</li>
+	<li>Single or bi-directional</li>
+    <li>Granular control</li>
+    <li>Can be initiated on page load</li>
+    <li>Has more robust JS Hooks</li>
+    <li>Can be paused</li>
+    <li>Lowest priority in UI Thread</li>
+</ul>
+     </section>
+ </div>
+
+
+ <div class="slide normal">
+ <header>
+    <h1>Animation Essentials</h1>
+ </header>
+ <section class="content">
+     <ul class="imp">
+        <li>@keyframes</li>
+        <li>animation-name</li>
+        <li>animation-duration</li>
+        <li>animation-timing-function</li>
+        <li>animation-iteration-count</li>
+        <li>animation-direction</li>
+        <li>animation-play-state</li>
+        <li>animation-delay</li>
+        <li>animation-fill-mode</li>
+        <li>animation (shorthand)</li>
+      </ul>
+ </section>
+</div>
+
+<!--
+ <div class="slide intro">
+     <header><h1>@Keyframes</h1></header>
+     <section class="content">
+     </section>
+ </div>
+
+
+<div class="slide">
+     <header><h1>Keyframes</h1></header>
+     <section class="content">
+     <b class="pencil pencil_01">✎</b>
+     <pre contenteditable><b>@keyframes</b> <b>writing</b> {
+
+    <b>from</b> {
+      left: 0;
+    }
+
+    <b>to</b> {
+      left: 100%;
+    }
+}</pre>
+</section>
+</div>
+-->
+
+
+
+<!--
+<div class="slide">
+    <header><h1>Keyframes</h1></header>
+    <section class="content">
+     <b class="pencil pencil_01">✎</b>
+    <pre contenteditable>@keyframes writing {
+
+    <b>0%</b> {
+      left: 0;
+    }
+
+    <b>100%</b> {
+      left: 100%;
+    }
+
+}</pre>
+
+	<p>Don't forget the <b class="imp" style="border-bottom:double 3px;">%</b></p>
+    <p>Don't quote the animation name</p>
+     </section>
+</div>
+
+-->
+<!-- writing while tired
+<div class="slide">
+    <header>
+    	<h1>Granular animation control</h1>
+    </header>
+    <section class="content">
+     <b class="pencil pencil_03">✎</b>
+    <pre contenteditable>@keyframes writingWhileTired {
+
+    <b>0%</b> {
+      left: 0;
+    }
+
+    <b>10%</b> {
+      left: 45%;
+    }
+
+    <b>90%</b> {
+      left: 55%;
+    }
+
+    <b>100%</b> {
+      left: 100%;
+    }
+
+}
+</pre>
+</section>
+</div>
+
+-->
+
+<!-- making a W -->
+<div class="slide">
+     <header>
+     	<h1>Animating multiple properties</h1>
+     </header>
+     <section class="content">
+     <b class="pencil pencil_04">✎</b>
+     <pre contenteditable>@keyframes <b>W</b> {
+    0% {
+      <b>left:</b> 0;
+      <b>top:</b> 0;
+    }
+    25% {
+      <b>top:</b> 400px;
+    }
+    50% {
+      <b>top:</b> 50px;
+    }
+    75% {
+      <b>top:</b> 400px;
+    }
+    100% {
+      <b>left:</b> 80%;
+      <b>top:</b> 0;
+    }
+}</pre>
+     </section>
+</div>
+
+
+
+<!-- 3d transofmr
+<div class="slide" id="acsst">
+    <header>
+    	<h1>Animating CSS Transforms</h1>
+    </header>
+    <section class="content">
+     <b class="pencil pencil_05">✎</b>
+    <pre contenteditable>@<u></u>keyframes gettingThePencil {
+  0%{
+    <u></u>transform:
+      translate3d(0, 0, 0)
+      rotate(0deg)
+      scale(0.5, 0.5);
+  }
+
+  100% {
+    <u></u>transform:
+      translate3d(600px, 400px, 0)
+      rotate(80deg)
+      scale(1.2, 1.2);
+  }
+}
+</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'acsst')">-webkit-</span><span onClick="vendorPrefix('r', 'acsst')"> | </span> <span onClick="vendorPrefix('m', 'acsst')">-moz-</span> | <span onClick="vendorPrefix('o', 'acsst')">-o-</span> </p>
+
+</section>
+</div>
+
+-->
+
+
+<!-- HEADING SLIDE
+ <div class="slide intro">
+     <header><h1>But nothing is <br>
+animated yet!</h1></header>
+     <section class="content">
+     </section>
+ </div>
+ -->
+
+
+<!-- base CSS -->
+ <div class="slide normal">
+     <header><h1>Base CSS</h1></header>
+     <section class="content"><div class="pencilanim pencil" style="position: absolute;"></div>
+     <pre contenteditable><b>.pencil {
+     width:100px;
+     text-align: right;
+     border-bottom: 10px solid;
+   }
+ .pencil::after {
+	content: '✎';
+	position: absolute;
+	bottom: -20px;
+	right: -10px;
+   }
+</b></pre>
+<pre contenteditable>@keyframes drawALine {
+  0%{
+    width:0;
+    color:green;
+  }
+  100% {
+    width: 100%;
+    color:blue;
+  }
+}</pre>
+
+     </section>
+ </div>
+
+
+
+
+
+
+<!-- Name and duration -->
+ <div class="slide" id="animdur">
+
+	<header>
+     	<h1>animation name and duration</h1>
+    </header>
+    <section class="content"><div id="animationduration" class="pencil pencilanim"></div>
+	<pre contenteditable>.pencil { <input type="range" value="3" min="1" max="15" step="1" id="speedrange" onChange="changeDuration();"/>
+   <b><u></u>animation-name: drawALine;
+<u></u>animation-duration: <span class="changer">3</span>s;</b>
+  }</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animdur')">-webkit-</span><span onClick="vendorPrefix('r', 'animdur')"> | </span> <span onClick="vendorPrefix('m', 'animdur')">-moz-</span>  |  <span onClick="vendorPrefix('o', 'animdur')">-o-</span> </p>
+</section>
+
+<script defer>
+ function changeDuration(){
+	 var speed = document.getElementById('speedrange').value;
+	 var el = document.getElementById('animationduration');
+	 el.style.webkitAnimation =
+		el.style.mozAnimation =
+		el.style.oAnimation =
+		el.style.msAnimation =
+		el.style.animation =  'drawALine ' + speed + 's';
+	 var seconds = document.querySelectorAll("#animdur span.changer");
+	 for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+	 }
+ }
+</script>
+</div>
+
+
+
+
+
+
+ <!-- count -->
+ <div class="slide" id="animic">
+
+    <header style="position:absolute; width: 100%;">
+    	<h1>&lsquo;animation-iteration-count&rsquo;</h1>
+    </header>
+    <section class="content">
+
+  	<div class="pencil pencilanim pencilanim_01"></div>
+    <pre contenteditable>
+.pencil {
+  ...
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 3s;
+  <b><u></u>animation-iteration-count: 3;</b>
+}</pre>
+<p>&lsquo;infinite&rsquo; or number. Default is &lsquo;1&rsquo;.</p>
+<pre contenteditable><b>-webkit-animation-iteration-count: 3;</b>
+<b>-moz-animation-iteration-count: 3;</b>
+<b>-ms-animation-iteration-count: 3;</b></pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animic')">-webkit-</span><span onClick="vendorPrefix('r', 'animic')"> | </span> <span onClick="vendorPrefix('m', 'animic')">-moz-</span><span onClick="vendorPrefix('r', 'animic')"> | </span> <span onClick="vendorPrefix('o', 'animic')">-o-</span> </p>
+
+</section>
+</div>
+
+
+
+<!-- animation delay -->
+ <div class="slide" id="animdelay">
+    <header style="position:absolute; width:100%;">
+    	<h1>&lsquo;animation-delay&rsquo;</h1>
+    </header>
+    <section class="content">  <b id="animationdelayi" class="pencil pencilanim"></b>
+    <pre contenteditable>.pencil { <input type="range" value="2" min="-10" max="10" step="0.5" id="delayrange" onChange="changeTime()" /><input type="button" onClick="changeDelay();" value="Start">
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 8s;
+  <u></u>animation-iteration-count: 2;
+  <b><u></u>animation-delay: <span class="changer">2</span>s;</b>
+}</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animdelay')">-webkit-</span><span onClick="vendorPrefix('r', 'animdelay')"> | </span> <span onClick="vendorPrefix('m', 'animdelay')">-moz-</span> <span onClick="vendorPrefix('r', 'animdelay')"> | </span> <span onClick="vendorPrefix('o', 'animdelay')">-o-</span></p>
+
+</section><script defer>
+ function changeTime(){
+	 var speed = (document.getElementById('delayrange').value * 1).toFixed(1);
+	 var seconds = document.querySelectorAll("#animdelay span.changer");
+	  for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+	 }
+ }
+ function changeDelay(){
+	 var speed = (document.getElementById('delayrange').value * 1).toFixed(1);
+	 var el = document.getElementById('animationdelayi');
+	    el.style.webkitAnimation =
+		el.style.mozAnimation =
+		el.style.oAnimation =
+		el.style.msAnimation =
+		el.style.animation  = "drawALine 8s  " + speed + 's 2';
+	 console.log(speed);
+	 var seconds = document.querySelectorAll("#animdelay span.changer");
+	 for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+	 }
+ }
+</script>
+</div>
+
+
+
+
+
+<!-- animation direction -->
+<div class="slide" id="animdir"> <i></i>
+
+    <header>
+    	<h1>&lsquo;animation-direction&rsquo;</h1>
+    </header>
+    <b id="animationdir" class="pencil pencilanim"></b>
+    <section class="content">
+    <pre contenteditable>.pencil {
+  ...
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 5s;
+  <u></u>animation-iteration-count: 5;
+  <b><u></u>animation-direction: <span onClick="changeDirection('normal');" class="linky">normal</span></b>
+}</pre>
+<p>Two possible values: normal | alternate;</p>
+<pre contenteditable><b><u></u>animation-direction: <span onClick="changeDirection('alternate');" class="linky">alternate</span>;</b></pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animdir')">-webkit-</span><span onClick="vendorPrefix('r', 'animdir')"> | </span> <span onClick="vendorPrefix('m', 'animdir')">-moz-</span><span onClick="vendorPrefix('r', 'animdir')"> | </span> <span onClick="vendorPrefix('o', 'animdir')">-o-</span> </p>
+
+</section>
+<script>
+function changeDirection(direction){
+	var el = document.getElementById('animationdir');
+	el.style.webkitAnimation =
+	el.style.mozAnimation =
+	el.style.oAnimation =
+	el.style.msAnimation =
+	el.style.animation = "drawALine 5s 0.1s 5 "+ direction;
+}
+
+</script>
+</div>
+
+
+
+
+ <!-- timing function -->
+ <div class="slide" id="animtf">
+    <b id="animationtimingfunc" class="pencil pencilanim"></b>
+    <header style="position:absolute; width: 100%;">
+      <h1>&lsquo;animation-timing-function&rsquo;</h1>
+    </header>
+    <section class="content">
+    <pre contenteditable>.pencil { <select  onChange="changeTimingFunction(event)"><option value="linear">linear</option><option value="ease">ease</option><option value="ease-in">ease-in</option><option value="ease-out">ease-out</option><option value="ease-in-out" selected>ease-in-out</option><option value="step-start">step-start</option><option value="step-end">step-end</option><option value="steps(5, start)">steps(5, start)</option><option value="steps(5, end)">steps(5, end)</option></select>
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 5s;
+  <b><u></u>animation-timing-function: <span class="changer">ease-in-out</span>;</b>
+}</pre>
+
+<pre contenteditable><strong>ease</strong>           linear
+ease-in        ease-out
+ease-in-out    cubic-bezier(x1, y1, x2, y2)
+step-start <span class="notes">/* same as steps(1, start) */</span>
+step-end <span class="notes">/* same as steps(1, end) */</span>
+steps( X, start|<strong>end</strong>) <span class="notes">/* X = # of steps + when change of value occurs */</span>
+</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animtf')">-webkit-</span><span onClick="vendorPrefix('r', 'animtf')"> | </span> <span onClick="vendorPrefix('m', 'animtf')">-moz-</span> <span onClick="vendorPrefix('r', 'animtf')"> | </span> <span onClick="vendorPrefix('o', 'animtf')">-o-</span> </p>
+</section>
+
+<script defer>
+ function changeTimingFunction(event){
+   var speed = event.target.value;
+   console.log(speed)
+   var seconds = document.querySelectorAll("#animtf span.changer");
+   for(var i = 0, j = seconds.length; i < j; i++){
+     seconds[i].innerHTML = speed;
+   }
+   var el = document.getElementById('animationtimingfunc')
+   el.style.webkitAnimation =
+    el.style.mozAnimation =
+    el.style.oAnimation =
+    el.style.msAnimation =
+    el.style.animation = 'drawALine 5s ' + speed;
+  // document.getElementById('animationtimingfunc').style.webkitAnimationName = 'drawALine';
+  // document.getElementById('animationtimingfunc').style.webkitAnimationTimingFunction = speed;
+ }
+</script>
+    </div>
+
+<div class="slide object">
+  <header><h1>Gangnam Style: Sprite Animation</h1></header>
+    <object data="files/file_steps.html"></object>
+<a href="files/file_steps.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+
+
+
+
+<!-- shorthand -->
+<div class="slide" id="animsh">
+    <header>
+    	<h1>&lsquo;animation&rsquo; (shorthand)</h1>
+    </header>
+    <section class="content">
+   <pre contenteditable>.pencil {
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 5s;
+  <u></u>animation-delay: 100ms;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: 5;
+  <del><u></u>animation-direction: normal;</del>
+}</pre>
+<p>. . . can also be written as . . .</p>
+<pre contenteditable>
+.pencil {
+  <b><u></u>animation: drawALine 5s ease-in-out 100ms 5</b>;
+}</pre>
+<p style="text-align:center">
+	<span onClick="vendorPrefix('w', 'animsh')">-webkit-</span>
+    <span onClick="vendorPrefix('r', 'animsh')"> | </span>
+    <span onClick="vendorPrefix('m', 'animsh')">-moz-</span>
+    <span onClick="vendorPrefix('r', 'animsh')"> | </span>
+    <span onClick="vendorPrefix('o', 'animsh')">-o-</span>
+ </p>
+
+</section>
+</div>
+
+
+
+
+ <!-- card flip -->
+ <div class="slide normal">
+<header><h1><!--<select onChange="changeOrigin(this.value,'.carda .front, .carda .back')">
+    	<option value="0 50%">Top left</option>
+    	<option value="50% 50%">center</option>
+    	<option value="100% 50%">bottom right</option>
+    </select>-->Pick a card </h1></header>
+<section class="content">
+    <div class="carda">
+        <div class="front"></div>
+        <div class="back">♥</div>
+    </div>
+    <div class="carda">
+        <div class="front"></div>
+        <div class="back" style="color: black">♣</div>
+    </div>
+    <div class="carda">
+        <div class="front"></div>
+        <div class="back">♦</div>
+    </div>
+
+    <pre contenteditable style="height:500px; overflow:scroll; float: right;">.carda.flipped .front,
+.carda.unflipped .back {
+  animation: flipme 1s linear forwards;
+}
+.carda.unflipped .front,
+.carda.flipped .back {
+  animation: unflipme 1s linear both;
+}
+.card.flipped:nth-of-type(2){
+  transform:
+    rotate(0)
+    translatex(120px);
+}
+.carda.flipped:first-of-type{
+  transform:
+    rotate(-5deg)
+    translate(240px, 25px);
+}
+@keyframes flipme {
+  0% {transform: rotatey(0deg)}
+  100% {transform: rotateY(-180deg);}
+}
+@keyframes unflipme {
+  0% {transform: rotatey(180deg)}
+  100% {transform: rotateY(0deg);}
+}</pre>
+</section>
+</div>
+<script defer>
+  var cardas = document.querySelectorAll('.carda');
+  for (var q=0; q<cardas.length; q++){
+	cardas[q].addEventListener('click', function(){
+		if(this.classList.contains('flipped')){
+			this.classList.remove('flipped');
+			this.classList.add('unflipped');
+		} else {
+			this.classList.remove('unflipped');
+			this.classList.add('flipped');
+		}
+     });
+  }
+
+  var changeOrigin = function(origin, els){
+	  var elements = document.querySelectorAll(els);
+	  console.dir(elements)
+	  for(var i = 0; i < elements.length; i++){
+		elements[i].style.webkitTransformOrigin =
+		elements[i].style.mozTransformOrigin =
+		elements[i].style.oTransformOrigin =
+		elements[i].style.msTransformOrigin =
+		elements[i].style.transformOrigin  = origin;
+	  }
+
+
+  }
+</script>
+
+
+
+
+
+
+
+
+<div class="slide" id="animfm">
+<header  style="position:absolute; width:100%;"><h1>&lsquo;animation-fill-mode&rsquo;</h1></header>
+<b id="animationfm" class="pencil pencilanim"></b>
+<section class="content">
+<pre contenteditable onMouseDown="document.getElementById('animationfm').style.webkitAnimation = 'none';">values: <span onClick="changeFillMode(this.innerHTML)">none</span> | <span onClick="changeFillMode(this.innerHTML)">forwards</span> | <span onClick="changeFillMode(this.innerHTML)">backwards</span> | <span onClick="changeFillMode(this.innerHTML)">both</span></pre>
+<pre contenteditable>.pencil {
+  <u></u>animation-name: gettingThePencil;
+  <u></u>animation-duration: 3s;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: <span contenteditable id="fmitcount" onchange="document.getElementById('fmitcountres').innerHTML = this.innerHTML" style="background-color:#eee;">1</span>;
+  <u></u>animation-delay: 2s;
+ <b><u></u>animation-fill-mode: none;</b>
+}</pre>
+<p>. . . or . . .
+<span style="float: right; font-size: 80%">
+	<span onClick="vendorPrefix('w', 'animfm')">-webkit-</span>
+    <span onClick="vendorPrefix('r', 'animfm')"> | </span>
+    <span onClick="vendorPrefix('m', 'animfm')">-moz-</span>
+    <span onClick="vendorPrefix('r', 'animfm')"> | </span>
+    <span onClick="vendorPrefix('o', 'animfm')">-o-</span>
+</span>
+</p>
+<pre contenteditable>
+.pencil {
+<u></u>animation: gettingThePencil 3s ease-in-out 1s <b id="fmitcountres"></b>  <b id="fmsh">forwards</b>;
+}</pre>
+
+</section>
+<script>
+	function changeFillMode(fillMode){
+		var iteration = document.getElementById('fmitcount').innerHTML;
+		console.log(iteration);
+		document.getElementById('fmsh').innerHTML = fillMode;
+
+		var el = document.getElementById('animationfm');
+		el.style.webkitAnimation =
+		el.style.mozAnimation =
+		el.style.oAnimation =
+		el.style.msAnimation =
+		el.style.animation = "drawALine 5s ease-in-out 2s " + iteration + "  "+ fillMode;
+	}
+
+</script>
+</div>
+
+
+
+<div class="slide" id="animfillmodeall4" onClick="this.classList.toggle('animationon');">
+<header><h1>Animation Fill Mode (again)</h1></header>
+<section class="content">
+	<div class="box">animation-fill-mode: none; <span class="afmnone"></span></div>
+	<div class="box">animation-fill-mode: forwards;<span class="afmforwards"></span></div>
+	<div class="box">animation-fill-mode: backwards;<span class="afmbackwards"></span></div>
+    <div class="box">animation-fill-mode: both;<span class="afmboth"></span></div>
+    <pre>.box { animation: showme 5s linear 5s 1;}
+@keyframes showme {
+	0% {left: 200px; background-color:blue;}
+	50% {background-color:green;}
+	100% {left: 600px; background-color: yellow;}
+}</pre>
+<p><a href="file_fillmode.html">Test page</a></p>
+</section>
+</div>
+
+<div class="slide">
+  <header><h1>That's all we're covering here</h1></header>
+    <section class="content">
+      <p>We have a lot to cover. If you want to dig deeper, you can continue on with this deck. For an even deeper dive, checkout how <a href="../CSS-Workshop/part_10_transforms.html#slide4">CSS3 Transforms</a> and a longer <a href="index.html">CSS3 Transitions &amp; Animations</a> deck.</p>
+      <p>Continue: <a href="../snow/">Recap of all (almost) we've learned</a></p>
+      <p>Continue: <a href="../mobilecss/index.html#slide16">Mobile CSS3: Main Deck</a></p>
+      <p>Continue: <a href="../mobilecss/index2.html">Mobile CSS3: Performance Considerations</a>
+      <p>Dive deeper: <a href="../CSS-Workshop/part_10_transforms.html#slide4"> Transforms</a> | <a href="index.html">Transitions &amp; Animations</a> or right arrow.
+    </section>
+</div>
+<!--
+<div class="slide object">
+  <header><h1>Animation Fill Mode</h1></header>
+    <object data="file_fillmode.html"></object>
+<a href="file_fillmode.html" target="play" class="objectlink">Try it out!</a>
+</div>-->
+
+ <div class="slide">
+<header><h1>Can you stop an animation?</h1></header>
+<section class="content">
+
+</section>
+</div>
+
+
+
+
+
+<div class="slide" id="animps">
+<header><h1>&lsquo;animation-play-state&rsquo;</h1></header>
+<section class="content">
+<b class="pencil pencil_pausing">✎</b>
+
+<pre contenteditable><u></u>animation-play-state: paused | running</pre>
+<pre contenteditable>.pencil {
+	<u></u>transform-origin: center 300px;
+	<u></u>animation: writingInCircles 3s linear infinite;
+ }
+.pencil:hover {
+	<u></u>animation-play-state:paused;
+ }</pre>
+
+<pre contenteditable>@<u></u>keyframes writingInCircles {
+  100% {
+    <u></u>transform:
+      rotate(360deg);
+  }
+}</pre>
+
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'animps')">-webkit-</span><span onClick="vendorPrefix('r', 'animps')"> | </span> <span onClick="vendorPrefix('m', 'animps')">-moz-</span><span onClick="vendorPrefix('r', 'animps')"> | </span> <span onClick="vendorPrefix('o', 'animps')">-o-</span> </p>
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1>&lsquo;animation-play-state&rsquo;</h1></header>
+<section class="content">
+<b class="pencil pencil_pausing outlined">✎</b>
+<pre contenteditable>animation-play-state: paused | running</pre>
+<pre contenteditable>.pencil<b>:hover</b> {
+  <b>-webkit-animation-play-state: paused;</b>
+  <b>-moz-animation-play-state: paused;</b>
+  <b>-o-animation-play-state: paused;</b>
+  <b>animation-play-state: paused;</b>
+  }</pre>
+</section>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<header><h1>What happens at animation end?</h1></header>
+<section class="content">
+<ul>
+	<li>animationstart</li>
+	<li>animationend</li>
+	<li>animationiteration</li>
+</ul>
+<pre contenteditable>
+el.addEventListener( <b>'webkitAnimationEnd'</b>,
+    function( event ) {
+        console.log('Animation Ended');
+    }, false );
+</pre>
+<ul>
+	<li>webkitAnimationStart | mozAnimationStart | oAnimationStart</li>
+	<li>webkitAnimationEnd | mozAnimationEnd | oAnimationEnd</li>
+	<li>webkitAnimationIteration | mozAnimationIteration | oAnimationIteration</li>
+</ul>
+</section>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<header><h1>Starting next animation at end of previous</h1></header>
+<section class="content">
+
+<pre contenteditable>el.addEventListener( <b>'webkitAnimationEnd'</b>,
+    function( event ) {
+        el.removeClassName('newClass');
+        setTimeout("el.addClassName('newClass')", 100ms)
+    },
+    false );
+</pre>
+
+<pre contenteditable>
+webkitAnimationEnd
+mozAnimationEnd
+oAnimationEnd
+animationEnd
+</pre>
+</section>
+</div>
+
+
+<!-- Thank you -->
+<div class="slide normal">
+<header><h1>Thanks</h1></header>
+<section class="content">
+<h1 class="textmask">Estelle Weyl</h1>
+<h2><a href="http://www.standardista.com">www.standardista.com</a></h2>
+<h2><a href="http://www.twitter.com/estellevw">@estellevw</a></h2>
+<h2><a href="http://www.twitter.com/standardista">@standardista</a></h2>
+<div style="float:right"><img src="http://akamaicovers.oreilly.com/images/9780980846904/cat.gif" alt="HTML5 and CSS3 for the Real World"><img src="http://akamaicovers.oreilly.com/images/0636920018063/cat.gif" alt="HTML5: The Definitive Guide" style="margin: 0 20px;"/><img src="http://akamaicovers.oreilly.com/images/0636920021711/cat.gif" alt="MObile HTML5" style="margin: 0 20px;"/><img src="http://akamaicovers.oreilly.com/images/0636920025955/cat.gif" alt="Web Performance Daybook"/></div>
+</section>
+</div>
+
+
+<!-- Thank you -->
+<div class="slide normal">
+<header><h1>Links to other talks</h1></header>
+<section class="content">
+	<ul>
+    	<li><a href="../CSS-Workshop/">CSS Workshop</a>
+        	<ul>
+    			<li><a href="../CSS-Workshop/part_12_features.html">Other CSS Features</a></li>
+            </ul>
+        </li>
+    	<li><a href="../html5mobile/">HTML5 Mobile</a>
+        	<ul>
+    			<li><a href="../html5mobile/part_12_features.html">Other CSS Features</a></li>
+            </ul>
+        </li>
+
+    	<li><a href="../html5training/">HTML5 Fast Track</a>
+        	<ul>
+    			<li><a href="../html5training/css_animation.html">CSS Section</a></li>
+    			<li><a href="../html5training/canvas.html">Canvas</a></li>
+            </ul>
+        </li>
+    </ul>
+</section>
+</div>
+
+
+
+  </div>
+  <script src="static/prefixfree.js"></script>
+
+<script>
+function vendorPrefix(prefix, id){
+	  var prefixTxt = 'cat';
+		switch (prefix){
+			case 'w':
+				prefixTxt = '-webkit-';
+			break;
+			case 'm':
+				prefixTxt = '-moz-';
+			break;
+			case 'ms':
+				prefixTxt = '-ms-';
+			break;
+			case 'o':
+				prefixTxt = '-o-';
+			break;
+			case 'r':
+			case  '':
+				prefixTxt = '';
+			break;
+		};
+	  var spans = document.getElementById(id).querySelectorAll('u');
+	  for(var i = 0, j = spans.length; i < j; i++ ){
+	  	spans[i].innerHTML = prefixTxt;
+	  }
+
+	}
+
+(function() {
+	var doc = document,
+	    disableBuilds = true,
+		ctr = 0,
+		spaces = /\s+/,
+		a1 = [''],
+	    toArray = function(list) {
+  		return Array.prototype.slice.call(list || [], 0);
+	},
+		byId = function(id) {
+		if (typeof id == 'string') { return doc.getElementById(id); }
+		return id;
+	},
+
+	query = function(query, root) {
+	  if (!query) { return []; }
+		if (typeof query != 'string') { return toArray(query); }
+		if (typeof root == 'string') {
+		  root = byId(root);
+		  if(!root){ return []; }
+    	}
+        root = root || document;
+  		var rootIsDoc = (root.nodeType == 9);
+  		var doc = rootIsDoc ? root : (root.ownerDocument || document);
+
+		// rewrite the query to be ID rooted
+		if (!rootIsDoc || ('>~+'.indexOf(query.charAt(0)) >= 0)) {
+			root.id = root.id || ('qUnique' + (ctr++));
+			query = '#' + root.id + ' ' + query;
+		}
+
+		// don't choke on something like ".yada.yada >"
+		if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
+		return toArray(doc.querySelectorAll(query));
+	},
+
+	strToArray = function(s) {
+		if (typeof s == 'string' || s instanceof String) {
+			if (s.indexOf(' ') < 0) {
+				a1[0] = s;
+				return a1;
+			}
+			else {
+					return s.split(spaces);
+			}
+		}
+		return s;
+	  },
+
+    addClass = function(node, classStr) {
+	  classStr = strToArray(classStr);
+	  var cls = ' ' + node.className + ' ';
+	  for (var i = 0, len = classStr.length, c; i < len; ++i) {
+		c = classStr[i];
+		if (c && cls.indexOf(' ' + c + ' ') < 0) {
+		  cls += c + ' ';
+		}
+	  }
+	  node.className = cls.trim();
+	},
+
+	removeClass = function(node, classStr) {
+		  var cls;
+		  if (classStr !== undefined) {
+			classStr = strToArray(classStr);
+			cls = ' ' + node.className + ' ';
+			for (var i = 0, len = classStr.length; i < len; ++i) {
+			  cls = cls.replace(' ' + classStr[i] + ' ', ' ');
+			}
+			  cls = cls.trim();
+		  } else {
+			cls = '';
+		  }
+
+		  if (node.className != cls) {
+			node.className = cls;
+		  }
+
+	  },
+
+	  toggleClass = function(node, classStr) {
+		  var cls = ' ' + node.className + ' ';
+		  if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
+			removeClass(node, classStr);
+		  } else {
+			addClass(node, classStr);
+		  }
+	  },
+
+
+
+  		ua = navigator.userAgent,
+		isFF = parseFloat(ua.split('Firefox/')[1]) || undefined,
+		isWK = parseFloat(ua.split('WebKit/')[1]) || undefined,
+		isOpera = parseFloat(ua.split('Opera/')[1]) || undefined,
+
+
+
+  	 	canTransition = (function() {
+		  var ver = parseFloat(ua.split('Version/')[1]) || undefined;
+		  // test to determine if this browser can handle CSS transitions.
+		  var cachedCanTransition =
+
+			(isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
+		  return function() { return cachedCanTransition; }
+
+  		}
+  )();
+
+
+//-----------------------------------------------------------------//
+
+var Slide = function(node, idx) {
+  this._node = node;
+  if (idx >= 0) {
+    this._count = idx + 1;
+  }
+  if (this._node) {
+    addClass(this._node, 'slide distant-slide');
+  }
+  this._makeCounter();
+  this._makeBuildList();
+};
+
+
+
+Slide.prototype = {
+    _node: null,
+    _count: 0,
+    _buildList: [],
+    _visited: false,
+    _currentState: '',
+    _states: [ 'distant-slide', 'far-past',
+               'past', 'current', 'future',
+               'far-future', 'distant-slide' ],
+    setState: function(state) {
+    if (typeof state != 'string') {
+      state = this._states[state];
+    }
+
+    if (state == 'current' && !this._visited) {
+      this._visited = true;
+      this._makeBuildList();
+    }
+
+    removeClass(this._node, this._states);
+    addClass(this._node, state);
+    this._currentState = state;
+
+
+
+  var _t = this;
+    setTimeout(function(){ _t._runAutos(); } , 400);
+  },
+
+    _makeCounter: function() {
+    if(!this._count || !this._node) { return; }
+
+      var c = doc.createElement('span');
+    c.innerHTML = this._count;
+    c.className = 'counter';
+    this._node.appendChild(c);
+  },
+
+    _makeBuildList: function() {
+    this._buildList = [];
+    if (disableBuilds) { return; }
+
+      if (this._node) {
+      this._buildList = query('[data-build] > *', this._node);
+    }
+
+      this._buildList.forEach(function(el) {
+      addClass(el, 'to-build');
+    });
+  },
+
+    _runAutos: function() {
+    if (this._currentState != 'current') {
+      return;
+    }
+
+      // find the next auto, slice it out of the list, and run it
+
+      var idx = -1;
+    this._buildList.some(function(n, i) {
+      if (n.hasAttribute('data-auto')) {
+        idx = i;
+        return true;
+      }
+
+        return false;
+    });
+    if (idx >= 0) {
+      var elem = this._buildList.splice(idx, 1)[0];
+      var transitionEnd = isWK ? 'webkitTransitionEnd' : (isFF ? 'mozTransitionEnd' : 'oTransitionEnd');
+      var _t = this;
+      if (canTransition()) {
+        var l = function(evt) {
+          elem.parentNode.removeEventListener(transitionEnd, l, false);
+          _t._runAutos();
+        };
+        elem.parentNode.addEventListener(transitionEnd, l, false);
+        removeClass(elem, 'to-build');
+      } else {
+        setTimeout(function() {
+          removeClass(elem, 'to-build');
+          _t._runAutos();
+        }, 400);
+      }
+
+      }
+
+    },
+
+    buildNext: function() {
+    if (!this._buildList.length) {
+      return false;
+    }
+
+      removeClass(this._buildList.shift(), 'to-build');
+    return true;
+  },
+
+  };
+
+
+
+  //
+  // SlideShow class
+  //
+
+  var SlideShow = function(slides) {
+  this._slides = (slides || []).map(function(el, idx) {
+    return new Slide(el, idx);
+  });
+
+
+
+  var h = window.location.hash;
+  try {
+    this.current = parseInt(h.split('#slide')[1], 10);
+  } catch (e) { /* squeltch */ }
+
+  this.current = isNaN(this.current) ? 1 : this.current;
+  var _t = this;
+  doc.addEventListener('keydown', function(e) { _t.handleKeys(e); }, false);
+  doc.addEventListener('mousewheel', function(e) { _t.handleWheel(e); }, false);
+  doc.addEventListener('DOMMouseScroll', function(e) { _t.handleWheel(e); }, false);
+  doc.addEventListener('touchstart',  function(e) { _t.handleTouchStart(e); }, false);
+  doc.addEventListener('touchend', function(e) { _t.handleTouchEnd(e); }, false);
+  window.addEventListener('popstate', function(e) { _t.go(e.state); }, false);
+  doc.getElementById('back').addEventListener('click', function(e) {_t.prev();}, false);
+  doc.getElementById('next').addEventListener('click', function(e) {_t.next();}, false);
+  this._update();
+};
+
+
+
+SlideShow.prototype = {
+  _slides: [],
+
+    _update: function(dontPush) {
+		document.querySelector('#presentation-counter').innerText = this.current;
+		if (history.pushState) {
+		  if (!dontPush) {
+			history.pushState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+		    }
+		} else {
+		  window.location.hash = 'flopslide' + this.current;
+		}
+	    for (var x = this.current-1; x < this.current + 7; x++) {
+		    if (this._slides[x-4]) {
+				this._slides[x-4].setState(Math.max(0, x-this.current));
+		    }
+		  }
+    },
+
+    current: 0,
+
+    next: function() {
+		if (!this._slides[this.current-1].buildNext()) {
+		  this.current = Math.min(this.current + 1, this._slides.length);
+		  this._update();
+		}
+	 },
+	prev: function() {
+	this.current = Math.max(this.current-1, 1);
+	this._update();
+  },
+
+   go: function(num) {
+	  if (!num) return;
+	  if (history.pushState && this.current != num) {
+	    history.replaceState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+	  }
+	  this.current = num;
+	  this._update(true);
+    },
+
+
+
+  _notesOn: false,
+
+ showNotes: function() {
+    var isOn = this._notesOn = !this._notesOn;
+    query('.notes').forEach(function(el) {
+      el.style.display = (isOn) ? '' : 'none';
+    });
+  },
+
+
+    handleWheel: function(e) {
+    var delta = 0;
+    if (e.wheelDelta) {
+      delta = e.wheelDelta/120;
+      if (isOpera) {
+			delta = -delta;
+		  }
+      }
+	  else if (e.detail) {
+        delta = -e.detail/3;
+      }
+
+      if (delta > 0 ) {
+		  this.prev();
+		  return;
+		}
+      if (delta < 0 ) {
+		  this.next();
+		  return;
+		}
+    },
+
+	addNotes: function(){
+		if(document.querySelector('.current textarea.mynotes')) {
+			document.querySelector('.current textarea.mynotes').classList.toggle('temphidden');
+			return;
+		}
+		var ta = document.createElement('textarea'),
+		     currentSlide = document.querySelector('.current section'),
+			 path = window.location.pathname,
+			 A = path.lastIndexOf('/') + 1,
+			 B = path.lastIndexOf('.'),
+			 firstPartOfKey, key;
+		if(B && B > A){
+		    firstPartOfKey = path.substring(A, B);
+		} else {
+		    firstPartOfKey = path.substring(1, path.length-1) || 'home';
+		}
+		//console.log(firstPartOfKey);
+		key = firstPartOfKey +  window.location.hash;
+		ta.value = window.localStorage.getItem(key) || '';
+		ta.className = 'mynotes';
+
+		ta.addEventListener('keyup', function(){
+			//console.log(key + ' ' + ta.value)
+		    window.localStorage.setItem(key,ta.value);
+		});
+		currentSlide.appendChild(ta);
+	},
+
+
+	removeHidingClass: function(){
+		var paragraphToShow = document.querySelector('.current .temphidden');
+		if(paragraphToShow) {paragraphToShow.classList.remove('temphidden');}
+
+	},
+
+    handleKeys: function(e) {
+      // disable keys for these elements
+      if (/^(input|textarea|pre|object)$/i.test(e.target.nodeName)) return;
+
+
+      switch (e.keyCode) {
+		  case 37: // left arrow
+		  case 33: // left clicker
+			 this.prev(); break;
+		  case 39: // right arrow
+		  case 32: // space
+		  case 34: // clicker right
+			 this.next(); break;
+		  case 50: // 2
+		  case 190: // 2
+			 this.showNotes();
+			 this.removeHidingClass();
+			 break;
+	      case 52: // 4 (for taking notes with local storage (students)
+		     this.addNotes(); break;
+		     break;
+    	}
+    },
+
+    _touchStartX: 0,
+    handleTouchStart: function(e) {
+    this._touchStartX = e.touches[0].pageX;
+  },
+
+    handleTouchEnd: function(e) {
+    var delta = this._touchStartX - e.changedTouches[0].pageX;
+    var SWIPE_SIZE = 150;
+    if (delta > SWIPE_SIZE) {
+      this.next();
+    } else if (delta< -SWIPE_SIZE) {
+       this.prev();
+     }
+    },
+  };
+
+  // Initialize
+  var slideshow = new SlideShow(query('.slide'));
+})();
+
+  </script>
+  <!--[if lt IE 9]>
+  <script
+
+  src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({ mode: "overlay" });</script>
+  <![endif]-->
+
+  </body>
+
+</html>
+

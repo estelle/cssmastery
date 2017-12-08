@@ -1,0 +1,90 @@
+
+@keyframes writingInCircles {
+
+  100% {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+@keyframes writing {
+  0% {
+      left: 0;
+    }
+
+    100% {
+      left: 100%;
+    }
+}
+
+@keyframes writingDangerously {
+0% {
+      left: 0;
+    }
+
+    10% {
+      left: 45%;
+    }
+
+    90% {
+      left: 55%;
+    }
+
+    100% {
+      left: 100%;
+    }
+}
+
+
+@keyframes W {
+
+   0% {
+      left: 0;
+    top: 0;
+          }
+
+    25% {
+      top: 400px;
+    }
+
+    50% {
+      top: 50px;
+    }
+
+    75% {
+      top: 400px;
+    }
+
+    100% {
+      left: 80%;
+      top: 0;
+    }
+}
+
+
+
+@keyframes gettingThePencil {
+  0%{
+    transform:
+      translate3d(0, 0, 0) rotate(0deg) scale(0.5, 0.5);
+  }
+
+  100% {
+    transform:
+      translate3d(600px, 400px, 0) rotate(80deg) scale(1.2, 1.2);
+  }
+}
+
+
+@keyframes drawALine {
+  0%{
+    width:0;
+    color:green;
+  }
+
+  100% {
+    width: 100%;
+    color:blue;
+  }
+}

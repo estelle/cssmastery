@@ -1,0 +1,43 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="../static/css/files.css">
+<style>
+
+li {font-size: 30px; font-family: arial, helvetica, san-serif; position: relative; line-height: 40px; display: block;}
+.box span {
+position: absolute;
+left: 0;
+top: 20px;
+width: 50px;
+height: 50px;
+background-color: red;
+-webkit-animation: showme 5s linear 5s 1;
+color: white;
+text-align: center;
+}
+</style>
+
+<style contenteditable id="editme">
+.box span {animation: showme 5s linear 5s 1;}
+@keyframes showme {
+  0% {left: 200px; background-color:blue;transform: scale(1) rotate(45deg);}
+  50% {background-color:green;}
+  100% {left: 600px; background-color: yellow;transform: scale(2) rotate(315deg);}
+}</style>
+<title>Try it out</title>
+</head>
+
+<body>
+  <ul>
+  <li class="box">animation-fill-mode: none; <span style="animation-fill-mode: none;">1</span></li>
+  <li class="box">animation-fill-mode: forwards;<span style="animation-fill-mode: forwards">2</span></li>
+  <li class="box">animation-fill-mode: backwards;<span style="animation-fill-mode: backwards">3</span></li>
+    <li class="box">animation-fill-mode: both;<span
+      style="animation-fill-mode: both;">4</span></li>
+  </li>
+</body>
+</html>
+
+

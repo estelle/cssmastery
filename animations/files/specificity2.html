@@ -1,0 +1,57 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Specificity in Animations</title>
+<link rel="stylesheet" href="../static/css/files.css">
+<style>
+
+div {
+  padding: 20px;
+  border: 5px black solid !important;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 2rem;
+}
+
+@keyframes red {
+  from, 30%{
+    background-color: #f00;
+  }
+  to {
+    background-color: #f33;
+  }
+}
+
+@keyframes green {
+  from, 30%{
+    background-color: #030;
+  }
+  to {
+    background-color: #393;
+  }
+}
+
+@keyframes blue {
+  from, 30%{
+    background-color: #0000ff;
+  }
+  to {
+    background-color: #33f;
+  }
+}
+</style>
+
+<style contenteditable id="editme">div {
+  animation: infinite 3s alternate;
+  animation-name: red, green, blue;
+}</style>
+</head>
+
+<body>
+<div id="blue"><p>Whichever is the last animation is the color I should be</p></div>
+</body>
+</html>
+

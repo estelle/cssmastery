@@ -1,0 +1,39 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/files.css">
+<style>
+div {
+  padding: 20px; margin: 20px;
+  color: white;
+  font-family: sans-serif;
+}
+</style>
+
+<style contenteditable id="editme">
+div {
+  animation: test infinite 10s alternate;
+  background-color: red;  border: 1px black solid;
+}
+
+@keyframes test {
+  45% { background-color: green; border-width: 10px;}
+  55% { background-color: blue; border-width: 20px;}
+}
+</style>
+<title></title>
+</head>
+
+<body>
+<div id="blue">as if written:
+<pre> @keyframes test {
+  0% { background-color: red; border-width: 1px;}
+  45% { background-color: green; border-width: 10px; }
+  55% { background-color: blue;  border-width: 20px;}
+  100% { background-color: red; border-width: 1px;}
+}</pre></div>
+</body>
+</html>
+

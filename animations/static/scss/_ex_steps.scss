@@ -1,0 +1,44 @@
+
+.stepsexplain {
+  list-style-type: none;
+}
+.stepsexplain div {
+  border: 2px solid black;
+  margin: 2px;
+  margin-left: 360px;
+  position: relative;
+  width: 360px;
+  height: 92px; display: inline-block;
+  vertical-align: middle;
+}
+.stepsexplain div:before {
+  content: '';
+  height: 92px;
+  width: 360px;
+  position: absolute;
+  background-image: url(../img/bike.png);
+  background-repeat: no-repeat;
+  border: 1px solid #666;
+  }
+.stepsexplain li:nth-of-type(2) div:before {
+  left: -90px;
+}
+.stepsexplain li:nth-of-type(3) div:before {
+  left: -180px;
+}
+.stepsexplain li:nth-of-type(4) div:before {
+  left: -270px;
+}
+.stepsexplain li:nth-of-type(5) div:before {
+  left: -360px;
+}
+
+  .stepsexplain div:after {
+  content:"";
+border: $splashcolor solid 2px;
+position: absolute;
+ left: 0px;
+ top: 0px;
+ bottom:0px;
+ width: 90px;
+}

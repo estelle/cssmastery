@@ -1,0 +1,56 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+
+<link rel="stylesheet" href="../static/css/files.css">
+<style>
+div {
+  margin-bottom: 20px;
+  color: white;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+article {height: 10px;
+  background: red;
+  background: linear-gradient(to right, black 10%, white 10%);
+  background-size: 50px 10px;
+  margin: 20px 0;
+  position: relative;
+}
+article:after {
+  content: '';
+  height: 10px;
+  width: 5px;
+  position: absolute;
+  left: 498px;
+  background-color: red;
+}
+
+#grey, #black {height: 50px;}
+</style>
+
+<style contenteditable id="editme">@keyframes width  {
+  0% {width: 0px;}
+  100% {width: 500px;}
+}
+#grey { 
+  background: #aaa;
+  animation: width 10s steps(10, start) 5s both;
+}
+#black { 
+  background: #000;
+  animation: width 10s linear 5s both;
+}
+</style>
+<title></title>
+</head>
+
+<body>
+<article></article>
+<div id="grey"></div>
+<div id="black"></div>
+</body>
+</html>
+

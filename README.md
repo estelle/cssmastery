@@ -66,5 +66,38 @@
 	1. Size & Shape
 	1. Radial Gradients: color-stops & color-hints
 	1. Repeating Radial Gradient
+1. Transforms
+	1. Overview
+	1. 2D Transform Functions
+	1. Order of functions
+	1. Transform Origin
+	1. 3D Transform Funtions
+	1. 3D Transform related properties
+		1. Perspective
+		1. Perspective-origin
+		1. transform-origin
+		1. transform-style
+		1. transform-box
+1. Transitions 
+	1. Overview
+	1. Transition Properties
+	1. Properties that can be animated
+	1. Need to knows
+	1. Events
+1. Animations
+	1. Overview
+	2. @keyframes
+	3. Animation Properties
+	2. Specificity
+	1. Timing functions
+		1. steps
+	1. Iteration count
+	1. Delays
+	1. direction
+	1. shorthand
+	1. animation-fill-mode
+	1. stopping animations
+	1. Events 
+
 	
 

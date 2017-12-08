@@ -377,49 +377,6 @@ Screens are flat. 3D requires perspective.
 
 
 
-<!-- Perspective -->
-<div class="slide divider">
-  <header><h1>transform-style</h1></header>
-  <section class="content">
-  </section>
-</div>
-
-<!--  -->
-<div class="slide">
-  <header><h1>transform-style</h1></header>
-  <section class="content">
-    <dl>
-    <dt>transform-style: flat | preserve-3d</dt>
-    <dd>How to handle nested elements are rendered in 3D space.</dd>
-  </dl>
-  <ul>
-      <li>Default is flat</li>
-      <li>Set on parent element</li>
-      <li>Only works if the following are set to their default values:
-        <ul><li>overflow</li>
-          <li>clip</li>
-          <li>clip-path</li>
-          <li>filter</li>
-          <li>mask-border-source</li>
-          <li>mask-image</li>
-          <li>mix-blend-mode</li>
-        </ul>
-      </li>
-    </ul>
-  </section>
-</div>
-
-
-<div class="slide object">
-  <header><h1><code>transform-style</code> Property</h1></header>
-  <object data="files/transforms/tStyle1.html"></object>
-  <a href="files/transforms/tStyle1.html" target="play" title="open resource in reused window">➹</a>
-    </section>
-</div>
-
-
-
-
 
 <!-- Perspective -->
 <div class="slide divider">
@@ -471,8 +428,8 @@ Screens are flat. 3D requires perspective.
     <section class="content">
       <b class="letters letters_07b">RSVP</b>
      <section class="content">
-     <pre>transform: <span contenteditable onmouseout="setTempStyle('letters_07b', this.innerHTML, 'transform')">perspective(40px) rotateX(10deg)</span>;
-transform-origin: <span contenteditable onmouseout="setTempStyle('letters_07b', this.innerHTML, 'transform-origin')"> top left</span>;</pre>
+     <pre>transform:<span contenteditable onmouseout="setTempStyle('letters_07b', this.innerHTML, 'transform')"> perspective(40px) rotateX(10deg);
+transform-origin: top left;</span></pre>
 
 <p style="font-size: 2rem">Specifies the x and y position of the origin, relative to the transform object.</p>
 </section>
@@ -493,11 +450,68 @@ transform-origin:  top left</span>;</pre>
     </section>
 </div>
 
+
+
+
+
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>transform-style</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>transform-style</h1></header>
+  <section class="content">
+    <dl>
+    <dt>transform-style: flat | preserve-3d</dt>
+    <dd>How to handle nested elements are rendered in 3D space.</dd>
+  </dl>
+  <ul>
+      <li>Default is flat</li>
+      <li>Set on parent element</li>
+      <li>Only works if the following are set to their default values:
+        <ul><li>overflow</li>
+          <li>clip</li>
+          <li>clip-path</li>
+          <li>filter</li>
+          <li>mask-border-source</li>
+          <li>mask-image</li>
+          <li>mix-blend-mode</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1><code>transform-style</code> Property</h1></header>
+  <object data="files/transforms/tStyle1.html"></object>
+  <a href="files/transforms/tStyle1.html" target="play" title="open resource in reused window">➹</a>
+    </section>
+</div>
+
+
+
 <div class="slide object">
   <header><h1>transform-style Property</h1></header>
     <object data="files/transforms/tStyle.html"></object>
 <a href="files/transforms/tStyle.html" target="play" class="objectlink">➹</a>
 </div>
+
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>backface-visibility</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
 
 <div class="slide object">
   <header><h1>backface-visibility Property</h1></header>
@@ -524,11 +538,19 @@ transform-origin:  top left</span>;</pre>
 
 
 <!-- NEXT -->
-<div class="slide intro">
+<div class="slide divider">
      <header><h1>Transitions &amp; Animation</h1></header>
-    <h1><a href="animation.html">Next ➹</a></h1>
-</div>
+    <h1><a href="../animations/">Next ➹</a></h1>
+    </div>
 
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
+</div>
 
   </div>
 

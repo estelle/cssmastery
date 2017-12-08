@@ -1,0 +1,45 @@
+
+.slide nav {
+  float: left; 
+  width: 100%; 
+  margin: 20px -40px;
+  padding: 0 40px;
+  background-color: $splashcolor;
+  border: 1px solid #fff;
+
+	ul,
+	ul li  {
+	 	margin: 0; 
+	 	padding: 0;
+	 }
+    + pre {
+		clear: both; 
+		margin-top: 100px;
+	}
+	ul li {
+		list-style-type: none; 
+		background-color: $splashcolor; 
+		color: white; 
+		margin:0; 
+		padding: 3px 5px; 
+		border: 1px solid #fff;
+	}
+	> ul > li {
+		display: inline-block; 
+		position:relative; 
+		float: left; 
+		min-width: 120px;
+		border-width: 0 1px;
+	}
+	 ul ul {
+	  transform: scale(1,0);
+	  transform-origin: top center;
+	  transition:0.2s linear 50ms;
+	  position: absolute;
+	  top: 100%; left: 0;
+	  min-width: 100%;
+	}
+	li:hover ul {
+	  transform: scale(1,1);
+	}
+}

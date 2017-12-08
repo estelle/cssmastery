@@ -1,0 +1,33 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Repeating Keyframes</title>
+  <link rel="stylesheet" href="../static/css/files.css">
+  <style>
+    div {
+      padding: 20px; margin: 20px;
+      border: 5px black solid !important;
+      color: white;
+      font-family: sans-serif;
+    }
+    </style>
+
+<style contenteditable id="editme">div {
+  animation: duplicate infinite 20s alternate;
+  background-color: red; opacity: 1;
+}
+@keyframes duplicate {
+  45% { background-color: green; }
+  45% { opacity: .3;}
+  55% { background-color: blue; }
+  55% { opacity: .7;}
+  }</style>
+
+</head>
+<body>
+<div id="blue">In prefixed version, opacity overrides background-color. In unprefixed, CSS cascades.</div>
+</body>
+</html>
+

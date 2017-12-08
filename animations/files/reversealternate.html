@@ -1,0 +1,66 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+head, style {display: block;}
+[contenteditable] {-webkit-user-modify: read-write-plaintext-only;}
+style:first-of-type {visibility:hidden;}
+#editme {padding: 20px; font-size: 1.5em; white-space: pre; font-family: monospace; white-space:pre; border-radius: 10px; border: 3px solid #aaa; background-color:#dedede; margin: 20px auto; width: 65%; font-family:"Courier New", Courier, monospace;}
+body {font-family:Verdana, Geneva, sans-serif; font-size:1.2em}
+
+.ball {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+
+.ball {
+        -webkit-animation-name: bouncing;
+        -webkit-animation-duration: 400ms;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate-reverse;
+        -webkit-animation-timing-function: ease-out;
+
+        animation-name: bouncing;
+        animation-duration: 400ms;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+        animation-timing-function: ease-out;
+    }
+@-webkit-keyframes  bouncing {
+        from {
+          background-color: blue;
+            transform: translateY(200px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    @keyframes bouncing {
+        from {
+            transforms: translateY(0);
+        }
+        to {
+            transforms: translateY(200px);
+        }
+    }
+</style>
+
+<style contenteditable id="editme">
+.ball {
+  -webkit-animation-direction: alternate-reverse;
+  -webkit-animation-timing-function: ease-out;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-out;
+}</style>
+<title></title>
+</head>
+
+<body>
+<div class="ball"></div>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+.pencil {
+  color: $splashcolor;
+  height: 140px;
+  width: 140px;
+  margin:10px auto;
+  font-size: 140px;
+}
+
+.pencil, 
+.pencil2 {
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+  line-height: 140px;
+  position: absolute;
+  top: 0; left: 0;
+  transform-origin: 100px 123px;
+}
+.pencil2 {
+  transition: all 1s ease-in 50ms;
+}
+
+.pencil_01 {
+    animation: writing 3s infinite 1s;
+  }
+.pencil_03 {
+    animation: writingDangerously 3s infinite linear;
+  }
+.pencil_04 {
+    animation: W 3s infinite linear;
+  }
+.pencil_05 {
+    animation: gettingThePencil 3s infinite;
+
+  }
+
+.pencil_01,
+.pencil_03,
+.pencil_04,
+.pencil_05,
+.pencilanim_01 {
+      animation-play-state:paused;
+}
+
+.slide:hover .pencil_01,
+.slide:hover .pencil_03,
+.slide:hover .pencil_04,
+.slide:hover .pencil_05,
+.slide:hover .pencil_06,
+.slide:hover .pencil_07,
+.slide:hover .pencilanim_01 {
+ animation-play-state:running;
+}
+ .pencil_pausing {
+  left: 350px;
+  transform-origin: center 300px;
+  animation: writingInCircles 3s linear infinite;
+
+ }
+  .pencil_pausing:hover {
+  animation-play-state:paused;
+
+ }
+.pencilanim {
+   width:100px;
+   border-bottom: 10px solid;
+   overflow: hidden;
+   position: relative;
+}
+.pencilanim::after {
+  content: '✎';
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+}
+.pencilanim_01 {
+  transform-origin: left 300px;
+  animation-name: drawALine;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 3;
+}

@@ -1,0 +1,1338 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+    <title>Animations Deep Dive</title>
+<!--
+
+Author: Estelle Weyl
+Contact: firstName @ lastName dot ORG
+Twitter: @estellevw
+
+-->
+     <link href='https://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet'>
+   <link rel="stylesheet" href="static/css/style.css" media="projection, screen"/>
+   <style>
+
+</style>
+
+  </head>
+  <body> <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+  <div id="presentation">
+
+   <div id="presentation-counter"></div>
+
+   <div id="slides">
+
+
+
+<!-- Title Slide -->
+<div class="slide intro">
+     <header>
+     	<h1>Animation</h1>
+     </header>
+
+      <h2><a href="http://estelle.github.io/cssmastery/animations">estelle.github.io/cssmastery/animations/</a></h2>
+      <div class="homepencil">✎</div>
+</div>
+
+<!-- Overview -->
+<div class="slide divider">
+  <header><h1>Transitions Overview</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- Simplest Transition -->
+<div class="slide normal">
+     <header><h1>Simplest Transition</h1></header>
+     <section class="content">
+
+     <pre style="font-size:140%;">a {
+  color: green;
+}
+a:hover {
+  color: orange;
+}</pre>
+     <p class="hoverme h1">Hover Over Me</p>
+     </section>
+ </div>
+
+
+<!-- CSS3 Transition -->
+ <div class="slide normal">
+     <header><h1>CSS3 Transition</h1></header>
+     <section class="content">
+     <pre style="font-size:140%;">a {
+  color: green;
+  transition: 1s;
+}
+a:hover {
+  color: orange;
+}</pre>
+     <p class="hoverme h1 simptrans">Hover Over Me</p>
+     </section>
+ </div>
+
+
+<!-- Properties -->
+<div class="slide divider">
+  <header><h1>Transitions Properties</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+ <!-- property overview -->
+<div class="slide">
+<header><h1>transitions</h1></header>
+<section class="content">
+<p>Enables the transition of properties from one state to the next over a defined length of time</p>
+<ul>
+<li><em>transition-property:</em> properties (or 'all') that transition</li>
+<li><em>transition-duration:</em> s or ms it takes to transition</li>
+<li><em>transition-timing-function:</em> bezier curve of transition</li>
+<li><em>transition-delay:</em> s or ms before transition starts</li>
+<li><em>transition:</em> shorthand for 4  transition properties</li>
+</ul>
+</section>
+</div>
+
+<!-- font transition example -->
+<div class="slide">
+<header><h1>transitions</h1></header>
+<section class="content">
+<pre contenteditable class="code">code {
+   color: black;
+   font-size: 85%;
+   background-color: rgba(255,255,255,0.9);
+   transition: all 2s ease-in 50ms;
+}
+code:hover {
+   color: red;
+   font-size: 120%;
+   background-color: rgba(255,255,255,0.8);
+}
+</pre>
+<pre contenteditable>code {
+   transition:
+      color, font-size, background-color 2s ease-in 50ms;
+}</pre>
+</section>
+</div>
+
+
+<!-- font transition example -->
+<div class="slide">
+<header><h1>transitions</h1></header>
+<section class="content">
+<pre contenteditable class="code code2">code {
+   color: black;
+   font-size: 85%;
+   background-color: rgba(255,255,255,0.9);
+   transition: all 2s ease-in 50ms;
+}
+code:hover {
+   color: red;
+   transform: scale(1.4);
+   transform-origin: 0 0;
+   background-color: rgba(255,255,255,0.8);
+}
+</pre>
+<pre contenteditable>code {
+   transition:
+      transform 2s ease-in 50ms;
+}</pre>
+</section>
+</div>
+
+<!-- divider -->
+<div class="slide divider">
+  <header><h1>Animatable Properties</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- what can be transitioned? -->
+<div class="slide normal">
+     <header><h1>What can be transitioned?</h1></header>
+     <section class="content">
+     <p>Anything that has intermediate values</p>
+     <pre style="width: 40%; float:left;" class="yes">code {
+  opacity: 1;
+}
+code:halfway {
+  opacity: 0.5;
+}
+code:hover {
+  opacity: 0;
+}</pre>
+     <pre style="width: 40%; float:right;" class="no">code {
+  display: block;
+}
+code:halfway {
+  display: ???
+}
+code:hover {
+  display: none;
+}</pre>
+
+
+     </section>
+ </div>
+
+
+
+
+<!-- what can be transitioned2? -->
+ <div class="slide normal">
+     <header><h1>What can be transitioned?</h1></header>
+     <section class="content">
+     <p>2 values that have REAL intermediary values</p>
+     <pre style="width: 40%; float:left;" class="yes">code {
+  font-size: 100%;
+}
+code:halfway {
+  font-size: 110%;
+}
+code:hover {
+  font-size: 120%;
+}</pre>
+     <pre style="width: 40%; float:right;" class="no">code {
+  height: auto;
+}
+code:halfway {
+  height: ???
+}
+code:hover {
+  height: 1000px;
+}</pre>
+
+     </section>
+ </div>
+
+<!-- list of tranisitionable properties -->
+ <div class="slide normal">
+     <header><h1>Transitionable Properties</h1></header>
+     <section class="content">
+     <ul class="columns">
+        <li>background-color</li>
+        <li>background-position</li>
+        <li>border-color</li>
+        <li>border-width</li>
+        <li>border-spacing</li>
+        <li>bottom</li>
+        <li>clip</li>
+        <li>color</li>
+        <li>crop</li>
+        <li>font-size</li>
+        <li>font-weight</li>
+        <li>height</li>
+        <li>left</li>
+        <li>letter-spacing</li>
+        <li>line-height</li>
+        <li>margin</li>
+        <li>max-height</li>
+        <li>max-width</li>
+        <li>min-height</li>
+        <li>min-width</li>
+        <li>opacity</li>
+        <li>outline-color</li>
+        <li>outline-offset</li>
+        <li>outline-width</li>
+        <li>padding</li>
+        <li>right</li>
+        <li>text-indent</li>
+        <li>text-shadow</li>
+        <li>top</li>
+        <li>vertical-align</li>
+        <li>visibility</li>
+        <li>width</li>
+        <li>word-spacing</li>
+        <li>z-index</li>
+     </ul>
+     </section>
+ </div>
+
+
+<!-- Properties -->
+<div class="slide divider">
+  <header><h1>Tips &amp; Tricks</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<!-- transitioning placement -->
+<div class="slide object">
+  <header><h1>Transition placement</h1></header>
+    <object data="files/transitionplacement.html"></object>
+<a href="files/transitionplacement.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+
+
+<!-- Tranform Features (or Limitations) -->
+  <div class="slide normal">
+     <header><h1>Transition Features (or Limitations)</h1></header>
+     <section class="content">
+<ul>
+  <li>Single Iteration</li>
+    <li>Reverse goes to initial state</li>
+    <li>No granular control</li>
+    <li>Limited methods of initiation</li>
+    <li>Can't force them to finish</li>
+</ul>
+     </section>
+ </div>
+
+<!-- divider -->
+<div class="slide">
+  <header><h1>Events</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<!-- Tranform Features (or Limitations) -->
+  <div class="slide normal">
+     <header><h1><code>transitionend</code> event</h1></header>
+     <section class="content">
+<ul>
+  <li>Event thrown only when transition completes</li>
+    <li><code>transitionend</code> for EVERY property</li>
+    <li><code>transitionend</code> for each long-hand property within a shorthand</li>
+</ul>
+
+<pre contenteditable>table {
+  border: 1px black solid;
+  transition: border 1s linear 50ms;
+}
+table:hover {
+  border: 5px red solid;
+}</pre>
+
+<ul style="column-count: 2;">
+  <li>border-top-color</li>
+  <li>border-right-color</li>
+  <li>border-bottom-color</li>
+  <li>border-left-color</li>
+
+  <li>border-top-width</li>
+  <li>border-right-width</li>
+  <li>border-bottom-width</li>
+  <li>border-left-width</li>
+</ul>
+</section>
+ </div>
+
+
+
+<!-- Properties -->
+<div class="slide divider">
+  <header><h1>Examples</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- Useful example -->
+<div class="slide normal">
+     <header><h1>Putting it together in the Real World</h1></header>
+     <section class="content" style="min-height: 400px;">
+
+<nav>
+  <ul>
+      <li>About
+        <ul>
+            <li>Me</li>
+            <li>You</li>
+            <li>Them</li>
+            <li>Nobody</li>
+       </ul>
+        </li>
+        <li>Posts
+        <ul>
+            <li>Door Post</li>
+            <li>Wall hanging</li>
+            <li>Stair Banister</li>
+            <li>Washington</li>
+       </ul></li>
+        <li>Topics
+        <ul>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>HTML5</li>
+            <li>SEO</li>
+       </ul></li>
+        <li>Events
+        <ul>
+            <li>Party</li>
+            <li>Dinner</li>
+            <li>Hike</li>
+            <li>Foo Camp</li>
+       </ul></li>
+   </ul>
+</nav>
+ <pre contenteditable>nav ul li {
+  list-style-type: none;
+}
+nav > ul > li {
+  display: inline-block;
+  position:relative;
+}
+nav ul ul {
+  transform: scale(1,0);
+  transform-origin: top center;
+  transition:0.2s linear 50ms;
+  position:absolute;
+  top: 100%;
+}
+nav li:hover ul {
+  transform: scale(1,1);
+}</pre>
+     </section>
+ </div>
+
+
+ <!-- card flip --> 
+ <div class="slide normal">
+<header><h1>Pick a card</h1></header>
+<section class="content">
+    <div class="card">
+        <div class="front"></div>
+        <div class="back">♥</div>
+    </div>
+    <div class="card">
+        <div class="front"></div>
+        <div class="back" style="color: black">♣</div>
+    </div>
+    <div class="card">
+        <div class="front"></div>
+        <div class="back">♦</div>
+    </div>
+    <pre contenteditable style="height:500px; overflow:scroll; float: right;">.card {
+  position: absolute;
+  perspective: 600px;
+}
+.card:hover {
+  transition: 1s ease;
+}
+.card .front {
+  transform: rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: all .4s ease-in-out;
+}
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+.card .back {
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: all .4s ease-in-out;
+}
+.card:hover .back {
+  transform: rotateY(0);
+}
+.card:first-of-type {
+  transform: rotate(-5deg);
+}
+.card:nth-of-type(2):hover {
+  transform: rotate(0) translatex(120px);
+}
+.card:last-of-type {
+  transform: rotate(5deg);
+}
+.card:first-of-type:hover {
+  transform: rotate(10deg) translatey(180px);
+}
+</pre>
+</section>
+</div>
+
+
+
+
+
+ <div class="slide intro">
+     <header><h1>Animations</h1></header>
+     <section class="content">
+     </section>
+ </div>
+
+
+
+
+ <div class="slide normal">
+     <header><h1>Animation Features (or limitations)</h1></header>
+     <section class="content">
+ <ul>
+	<li>Single, many or infinite iterations</li>
+	<li>Single or bi-directional</li>
+    <li>Granular control</li>
+    <li>Can be initiated on page load</li>
+    <li>Has more robust JS Hooks</li>
+    <li>Can be paused</li>
+    <li>Lowest priority in UI Thread</li>
+</ul>
+     </section>
+ </div>
+
+
+ <div class="slide normal">
+ <header>
+    <h1>Animation Essentials</h1>
+ </header>
+ <section class="content">
+     <ul class="imp">
+        <li>@keyframes</li>
+        <li>animation-name</li>
+        <li>animation-duration</li>
+        <li>animation-timing-function</li>
+        <li>animation-iteration-count</li>
+        <li>animation-direction</li>
+        <li>animation-play-state</li>
+        <li>animation-delay</li>
+        <li>animation-fill-mode</li>
+        <li>animation (shorthand)</li>
+      </ul>
+ </section>
+</div>
+
+
+
+<!-- Keyframes -->
+<div class="slide divider">
+  <header><h1>Keyframes</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+
+ <div class="slide intro">
+     <header><h1>@Keyframes</h1></header>
+     <section class="content">
+      <pre contenteditable><b>@keyframes</b> ...
+
+<b>@-webkit-keyframes</b> ....</pre>
+     </section>
+ </div>
+
+<div class="slide">
+  <header><h1>Name your keyframe animation</h1></header>
+    <section class="content">
+    <pre contenteditable>@keyframes <b>clever_name_here</b> ...
+
+@-webkit-keyframes <b>clever_name_here</b> ...</pre>
+      <ul>
+        <li>Identifier
+        <li>Unquoted
+        <li>Characters [a-zA-Z0-9], -, _ and ISO 10646 characters U+00A0 and higher
+        <li>ISO 10646 = Universal Character Set = Unicode standard
+        <li>[-_a-zA-Z0-9\u00A0-\u10FFFF]
+        <li>Can't start [0-9], -- , or hyphen+digit
+        <li>Can contain escaped: <br/>Q&A! may be written as Q\&A\! or Q\26 A\21
+      </ul>
+<p>Don't use keyterms!</p>
+    </section>
+</div>
+
+<div class="slide object">
+  <header><h1>What's in a name?</h1></header>
+    <object data="files/name.html"></object>
+<a href="files/name.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+
+ <div class="slide">
+     <header><h1>at-rule</h1></header>
+     <section class="content">
+      <pre contenteditable>@keyframes slides <b>{</b>
+
+<b>}</b>
+
+@-webkit-keyframes slides <b>{</b>
+
+<b>}</b></pre>
+     </section>
+ </div>
+
+<div class="slide">
+     <header><h1>Keyframes</h1></header>
+     <section class="content">
+     <b class="pencil pencil_01">✎</b>
+     <pre contenteditable>@keyframes writing {
+
+    <b>from</b> {
+      <i>left: 0;</i>
+    }
+
+    <b>to</b> {
+      <i>left: 100%;</i>
+    }
+}</pre>
+</section>
+</div>
+
+
+
+
+
+<div class="slide">
+    <header><h1>Keyframes</h1></header>
+    <section class="content">
+     <b class="pencil pencil_01">✎</b>
+    <pre contenteditable>@keyframes writing {
+    <b>0%</b> {
+      left: 0;
+    }
+
+    <b>100%</b> {
+      left: 100%;
+    }
+}</pre>
+
+	<p>Don't forget the <b class="imp" style="border-bottom:double 3px;">%</b></p>
+    <p>Don't quote the animation name</p>
+     </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1>0% and 100%</h1></header>
+    <object data="files/no0or100.html"></object>
+<a href="files/no0or100.html" target="play" class="objectlink">Try it out!</a>
+</div>
+<!-- writing while tired -->
+<div class="slide">
+    <header>
+    	<h1>Granular animation control</h1>
+    </header>
+    <section class="content">
+     <b class="pencil pencil_03">✎</b>
+    <pre contenteditable>@keyframes writingWhileTired {
+    <b>0%</b> {
+      left: 0;
+    }
+
+    <b>10%</b> {
+      left: 45%;
+    }
+
+    <b>90%</b> {
+      left: 55%;
+    }
+
+    <b>100%</b> {
+      left: 100%;
+    }
+}
+</pre>
+</section>
+</div>
+
+
+
+
+
+
+<div class="slide object">
+  <header><h1>!important it isn't</h1></header>
+    <object data="files/important.html"></object>
+<a href="files/important.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+
+<!-- making a W -->
+<div class="slide">
+     <header>
+     	<h1>Animating multiple properties</h1>
+     </header>
+     <section class="content">
+     <b class="pencil pencil_04">✎</b>
+     <pre contenteditable>@keyframes <b>W</b> {
+    0% {
+      <b>left:</b> 0;
+      <b>top:</b> 0;
+    }
+    25%, 75% {
+      <b>top:</b> 400px;
+    }
+    50% {
+      <b>top:</b> 50px;
+    }
+    100% {
+      <b>left:</b> 80%;
+      <b>top:</b> 0;
+    }
+}</pre>
+     </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1>Duplicated Keyframes?</h1></header>
+    <object data="files/repeated_keyframe.html"></object>
+<a href="files/repeated_keyframe.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+<!-- 3d transofmr
+<div class="slide" id="acsst">
+    <header>
+    	<h1>Animating CSS Transforms</h1>
+    </header>
+    <section class="content">
+     <b class="pencil pencil_05">✎</b>
+    <pre contenteditable>@<u></u>keyframes gettingThePencil {
+  0%{
+    <u></u>transform:
+      translate3d(0, 0, 0)
+      rotate(0deg)
+      scale(0.5, 0.5);
+  }
+
+  100% {
+    <u></u>transform:
+      translate3d(600px, 400px, 0)
+      rotate(80deg)
+      scale(1.2, 1.2);
+  }
+}
+</pre>
+<p style="text-align:center"><span onClick="vendorPrefix('w', 'acsst')">-webkit-</span> | <span onClick="vendorPrefix('r', 'acsst')"> reset </p>
+
+</section>
+</div>
+
+
+
+
+<!-- HEADING SLIDE -->
+ <div class="slide intro">
+     <header style="margin-top: 25%; box-shadow: -1px -1px 1px rgba(0,0,0,0.2), 1px 1px 1px rgba(0,0,0,0.2)"><h1>But nothing is <br>
+animated yet!</h1></header>
+ </div>
+
+
+
+<!-- base CSS -->
+ <div class="slide normal">
+     <header><h1>Base CSS</h1></header>
+     <section class="content"><div class="pencilanim pencil" style="position: absolute;"></div>
+     <pre contenteditable style="line-height: 1.1"><b>   .pencil {
+     width:100px;
+     text-align: right;
+     border-bottom: 10px solid;
+   }
+   .pencil::after {
+	content: '✎';
+	position: absolute;
+	bottom: -20px;
+	right: -10px;
+   }
+</b></pre>
+<pre contenteditable>@keyframes drawALine {
+  0%{
+    width:0;
+    color:green;
+  }
+  100% {
+    width: 100%;
+    color:blue;
+  }
+}</pre>
+
+     </section>
+ </div>
+
+
+
+
+
+
+<!-- Name and duration -->
+ <div class="slide" id="animdur">
+
+	<header>
+     	<h1>animation name and duration</h1>
+    </header>
+    <section class="content"><div id="animationduration" class="pencil pencilanim"></div>
+	<pre contenteditable>.pencil { <input type="range" value="3" min="1" max="15" step="1" id="speedrange"/>
+   <b><u></u>animation-name: drawALine;
+<u></u>animation-duration: <span class="changer">3</span>s;</b>
+  }</pre>
+</section>
+<script defer>
+ function changeDuration(){
+   var speed = document.getElementById('speedrange').value;
+   var el = document.getElementById('animationduration');
+   el.style.animation =  'drawALine ' + speed + 's';
+   var seconds = document.querySelectorAll("#animdur span.changer");
+   for(var i = 0, j = seconds.length; i < j; i++){
+     seconds[i].innerHTML = speed;
+   }
+ }
+ document.getElementById('speedrange').addEventListener('change', function() {
+    changeDuration();
+    setTimeout(function(){
+        document.getElementById('animationduration').setAttribute('style', '');
+      },
+      document.getElementById('speedrange').value*1000);
+  });
+</script>
+</div>
+
+
+<div class="slide object">
+  <header><h1>Order of Precedence</h1></header>
+    <object data="files/specificity2.html"></object>
+<a href="files/specificity2.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+
+
+<div class="slide object">
+  <header><h1>Specificity</h1></header>
+    <object data="files/specificity.html"></object>
+<a href="files/specificity.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+
+<div class="slide object">
+  <header><h1>!important it isn't</h1></header>
+    <object data="files/important.html"></object>
+<a href="files/important.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+
+ <!-- timing function -->
+ <div class="slide" id="animtf">
+    <header style="position:absolute; width: 100%;">
+    	<h1>&lsquo;animation-timing-function&rsquo;</h1>
+    </header>
+    <section class="content">
+    <b id="animationtimingfunc" class="pencil pencilanim"></b>
+    <pre contenteditable>.pencil { 
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 5s;
+  <b><u></u>animation-timing-function: <span class="changer">ease-in-out</span>;</b>
+}</pre><select id="tfselect">
+    <option value="linear">linear</option>
+    <option value="ease">ease</option>
+    <option value="ease-in">ease-in</option>
+    <option value="ease-out">ease-out</option>
+    <option value="ease-in-out" selected>ease-in-out</option>
+    <option value="step-start">step-start</option>
+    <option value="step-end">step-end</option>
+    <option value="steps(5, start)">steps(5, start)</option>
+    <option value="steps(5, end)">steps(5, end)</option>
+    </select>
+
+<pre contenteditable><strong>ease</strong>           linear
+ease-in        ease-out
+ease-in-out    cubic-bezier(x1, y1, x2, y2)
+step-start <span class="notes">/* same as steps(1, start) */</span>
+step-end <span class="notes">/* same as steps(1, end) */</span>
+steps( X, start|<strong>end</strong>) <span class="notes">/* X = # of steps + when change of value occurs */</span>
+</pre>
+</section>
+
+<script defer>
+ function changeTimingFunction(event){
+	 var speed = event.target.value;
+	 console.log(speed)
+	 var seconds = document.querySelectorAll("#animtf span.changer");
+	 for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+	 }
+	 var el = document.getElementById('animationtimingfunc');
+		el.style.animation = 'drawALine 5s ' + speed;
+ }
+
+  document.getElementById('tfselect').addEventListener('change', function(e) {
+    changeTimingFunction(e);
+    setTimeout(function(){
+        document.getElementById('animationtimingfunc').setAttribute('style', '');
+      },
+      6000);
+  });
+</script>
+    </div>
+
+
+<div class="slide object">
+  <header><h1>Cubic Bezier</h1></header>
+    <object data="files/cubicbezier.html"></object>
+<a href="files/cubicbezier.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+<div class="slide object">
+  <header><h1>Cubic Bezier</h1></header>
+    <object data="files/cubicbezierprint.html"></object>
+<a href="files/cubicbezierprint.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+
+
+
+<div class="slide object">
+  <header><h1>Steps()</h1></header>
+    <object data="files/steps.html"></object>
+<a href="files/steps.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+<div class="slide object">
+  <header><h1>Steps()</h1></header>
+    <object data="files/file_steps.html"></object>
+<a href="files/file_steps.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+
+<div class="slide">
+  <header><h1>steps(4, end)</h1></header>
+    <section class="content">
+<ul class="stepsexplain">
+    <li><div></div>0%   </li>
+    <li><div></div>25%  </li>
+    <li><div></div>50%  </li>
+    <li><div></div>75%  </li>
+    <li><div></div>100% </li>
+</ul>
+    </section>
+</div>
+
+
+<div class="slide object">
+  <header><h1>Steps(4, end)</h1></header>
+    <object data="files/bike.html"></object>
+<a href="files/bike.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+ <!-- count -->
+ <div class="slide" id="animic">
+
+    <header style="position:absolute; width: 100%;">
+    	<h1>&lsquo;animation-iteration-count&rsquo;</h1>
+    </header>
+    <section class="content">
+
+  	<div class="pencil pencilanim pencilanim_01"></div>
+    <pre contenteditable>
+.pencil {
+  ...
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 3s;
+  <u></u>animation-timing-function: ease-in-out;
+  <b><u></u>animation-iteration-count: 3;</b>
+}</pre>
+<p>&lsquo;infinite&rsquo; or number. Default is &lsquo;1&rsquo;.</p>
+<pre contenteditable><b>-webkit-animation-iteration-count: 3;</b></pre>
+
+</section>
+</div>
+
+<div class="slide object">
+  <header><h1>Partial Iteration?</h1></header>
+    <object data="files/odditeration.html"></object>
+<a href="files/odditeration.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+<div class="slide object">
+  <header><h1>No Iteration?</h1></header>
+    <object data="files/nointerations.html"></object>
+<a href="files/nointerations.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+<!-- animation delay -->
+ <div class="slide" id="animdelay">
+    <header style="position:absolute; width:100%;">
+    	<h1>&lsquo;animation-delay&rsquo;</h1>
+    </header>
+    <section class="content">  <b id="animationdelayi" class="pencil pencilanim"></b>
+    <pre contenteditable>.pencil { <input type="range" value="2" min="-10" max="10" step="0.5" id="delayrange" onChange="changeTime()" /><input type="button" onClick="changeDelay();" value="Start">
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 8s;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: 2;
+  <b><u></u>animation-delay: <span class="changer">2</span>s;</b>
+}</pre>
+
+</section><script defer>
+ function changeTime(){
+	 var speed = (document.getElementById('delayrange').value * 1).toFixed(1);
+	 var seconds = document.querySelectorAll("#animdelay span.changer");
+	  for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+     var el = document.getElementById('animationdelayi');
+     el.setAttribute('style', '');
+	 }
+ }
+ function changeDelay(){
+	 var speed = (document.getElementById('delayrange').value * 1).toFixed(1);
+	 var el = document.getElementById('animationdelayi');
+		el.style.animation  = "drawALine 8s ease-in-out " + speed + 's 2';
+	 var seconds = document.querySelectorAll("#animdelay span.changer");
+	 for(var i = 0, j = seconds.length; i < j; i++){
+		 seconds[i].innerHTML = speed;
+	 }
+ }
+</script>
+</div>
+
+
+
+
+
+<!-- animation direction -->
+<div class="slide" id="animdir"> <i></i>
+
+    <header>
+    	<h1>&lsquo;animation-direction&rsquo;</h1>
+    </header>
+    <section class="content">
+    <b id="animationdir" class="pencil pencilanim"></b>
+    <pre contenteditable>.pencil {
+  ...
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 5s;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: 5;
+  <b><u></u>animation-direction: <span id="dir_direction" class="linky">normal</span></b>
+}</pre>
+<p>values: <span data-dir="normal" class="directionChanger">normal</span> | <span class="directionChanger" data-dir="alternate">alternate</span> | <span class="directionChanger" data-dir="reverse">reverse</span> | <span class="directionChanger" data-dir="alternate-reverse">alternate-reverse</span>;</p>
+<pre contenteditable><b><u></u>animation-direction: <span  class="linky directionChanger">alternate</span>;</b></pre>
+
+</section>
+<script>
+
+var _directionChangers = document.querySelectorAll('.directionChanger');
+var _direction;
+for (var q = 0; q < _directionChangers.length; q++){
+  _directionChangers[q].addEventListener('click', function(e){
+
+  var el = document.getElementById('animationdir');
+  _direction = e.target.getAttribute('data-dir');
+  document.getElementById('dir_direction').text = _direction;
+
+  el.style.webkitAnimation = el.style.animation = 'none';
+
+  setTimeout(function() {
+    var text = "drawALine 5s ease-in-out 0.1s 5 "+ _direction;
+    el.style.webkitAnimation = el.style.animation = text;
+    console.log(text);
+  }, 100);
+
+  })
+}
+</script>
+</div>
+
+
+
+
+
+<!-- shorthand -->
+<div class="slide" id="animsh">
+    <header>
+    	<h1>&lsquo;animation&rsquo; (shorthand)</h1>
+    </header>
+    <section class="content">
+   <pre contenteditable>.pencil {
+  <u></u>animation-name: drawALine;
+  <u></u>animation-duration: 5s;
+  <u></u>animation-delay: 100ms;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: 5;
+  <del><u></u>animation-direction: normal;</del>
+}</pre>
+<p>. . . can also be written as . . .</p>
+<pre contenteditable>
+.pencil {
+  <b><u></u>animation: drawALine 5s ease-in-out 100ms 5</b>;
+}</pre>
+
+
+</section>
+</div>
+
+
+
+
+ <!-- card flip -->
+ <div class="slide normal">
+<header><h1>Pick a card </h1></header>
+<section class="content">
+    <div class="carda">
+        <div class="front"></div>
+        <div class="back">♥</div>
+    </div>
+    <div class="carda">
+        <div class="front"></div>
+        <div class="back" style="color: black">♣</div>
+    </div>
+    <div class="carda">
+        <div class="front"></div>
+        <div class="back">♦</div>
+    </div>
+<select onChange="changeOrigin(this.value,'.carda .front, .carda .back')">
+      <option value="0 50%">Top left</option>
+      <option value="50% 50%">center</option>
+      <option value="100% 50%">bottom right</option>
+    </select>
+    <pre contenteditable style="height:500px; overflow:scroll; float: right;">.carda.flipped .front,
+.carda.unflipped .back {
+  animation: flipme 1s linear forwards;
+}
+.carda.unflipped .front,
+.carda.flipped .back {
+  animation: unflipme 1s linear both;
+}
+.card.flipped:nth-of-type(2){
+  transform:
+    rotate(0)
+    translatex(120px);
+}
+.carda.flipped:first-of-type{
+  transform:
+    rotate(-5deg)
+    translate(240px, 25px);
+}
+@keyframes flipme {
+  0% {transform: rotatey(0deg)}
+  100% {transform: rotateY(-180deg);}
+}
+@keyframes unflipme {
+  0% {transform: rotatey(180deg)}
+  100% {transform: rotateY(0deg);}
+}</pre>
+</section>
+</div>
+<script defer>
+  var cardas = document.querySelectorAll('.carda');
+  for (var q=0; q<cardas.length; q++){
+	cardas[q].addEventListener('click', function(){
+		if(this.classList.contains('flipped')){
+			this.classList.remove('flipped');
+			this.classList.add('unflipped');
+		} else {
+			this.classList.remove('unflipped');
+			this.classList.add('flipped');
+		}
+     });
+  }
+
+  var changeOrigin = function(origin, els){
+	  var elements = document.querySelectorAll(els);
+	  console.dir(elements)
+	  for(var i = 0; i < elements.length; i++){
+		elements[i].style.webkitTransformOrigin =
+		elements[i].style.msTransformOrigin =
+		elements[i].style.transformOrigin  = origin;
+	  }
+
+
+  }
+</script>
+
+
+
+
+
+
+
+
+<div class="slide" id="animfm">
+<header  style="position:absolute; width:100%;"><h1>&lsquo;animation-fill-mode&rsquo;</h1></header>
+<b id="animationfm" class="pencil pencilanim"></b>
+<section class="content">
+<pre contenteditable onMouseDown="document.getElementById('animationfm').style.webkitAnimation = 'none';">values: <span onClick="changeFillMode(this.innerHTML)">none</span> | <span onClick="changeFillMode(this.innerHTML)">forwards</span> | <span onClick="changeFillMode(this.innerHTML)">backwards</span> | <span onClick="changeFillMode(this.innerHTML)">both</span></pre>
+<pre contenteditable>.pencil {
+  <u></u>animation-name: gettingThePencil;
+  <u></u>animation-duration: 3s;
+  <u></u>animation-timing-function: ease-in-out;
+  <u></u>animation-iteration-count: <span contenteditable id="fmitcount" onchange="document.getElementById('fmitcountres').innerHTML = this.innerHTML" style="background-color:#eee;">1</span>;
+  <u></u>animation-delay: 2s;
+ <b><u></u>animation-fill-mode: none;</b>
+}</pre>
+<pre contenteditable>
+.pencil {
+  animation: gettingThePencil 3s ease-in-out 1s <b id="fmitcountres"></b> <b id="fmsh">forwards</b>;
+}</pre>
+
+</section>
+<script>
+	function changeFillMode(fillMode){
+		var iteration = document.getElementById('fmitcount').innerHTML;
+		console.log(iteration);
+		document.getElementById('fmsh').innerHTML = fillMode;
+
+		var el = document.getElementById('animationfm');
+		el.style.webkitAnimation =
+		el.style.animation = "drawALine 5s ease-in-out 2s " + iteration + "  "+ fillMode;
+	}
+
+</script>
+</div>
+
+
+
+<div class="slide" id="animfillmodeall4" onClick="this.classList.toggle('animationon');">
+<header><h1>Animation Fill Mode (again)</h1></header>
+<section class="content">
+	<div class="box">animation-fill-mode: none; <span class="afmnone"></span></div>
+	<div class="box">animation-fill-mode: forwards;<span class="afmforwards"></span></div>
+	<div class="box">animation-fill-mode: backwards;<span class="afmbackwards"></span></div>
+    <div class="box">animation-fill-mode: both;<span class="afmboth"></span></div>
+    <pre>.box { animation: showme 5s linear 5s 1;}
+@keyframes showme {
+	0% {left: 200px; background-color:blue;}
+	50% {background-color:green;}
+	100% {left: 600px; background-color: yellow;}
+}</pre>
+<p><a href="file_fillmode.html">Test page</a></p>
+</section>
+</div>
+
+
+<div class="slide object">
+  <header><h1>Animation Fill Mode</h1></header>
+    <object data="file_fillmode.html"></object>
+<a href="file_fillmode.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+ <div class="slide">
+<header><h1>Can you stop an animation?</h1></header>
+<section class="content">
+
+</section>
+</div>
+
+
+
+
+
+<div class="slide" id="animps">
+<header><h1>&lsquo;animation-play-state&rsquo;</h1></header>
+<section class="content">
+<b class="pencil pencil_pausing">✎</b>
+
+<pre contenteditable><u></u>animation-play-state: paused | running</pre>
+<pre contenteditable>.pencil {
+	<u></u>transform-origin: center 300px;
+	<u></u>animation: writingInCircles 3s linear infinite;
+ }
+.pencil:hover {
+	<u></u>animation-play-state:paused;
+ }</pre>
+
+<pre contenteditable>@<u></u>keyframes writingInCircles {
+  100% {
+    <u></u>transform:
+      rotate(360deg);
+  }
+}</pre>
+
+</section>
+</div>
+
+
+<div class="slide">
+<header><h1>&lsquo;animation-play-state&rsquo;</h1></header>
+<section class="content">
+<b class="pencil pencil_pausing outlined">✎</b>
+<pre contenteditable>animation-play-state: paused | running</pre>
+<pre contenteditable>.pencil<b>:hover</b> {
+  <b>animation-play-state: paused;</b>
+  }</pre>
+</section>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<header><h1>What happens at animation end?</h1></header>
+<section class="content">
+<ul>
+	<li>animationstart</li>
+	<li>animationend</li>
+	<li>animationiteration</li>
+</ul>
+<pre contenteditable>
+el.addEventListener( <b>'animationend'</b>,
+    function( event ) {
+        console.log('Animation Ended');
+    }, false );
+</pre>
+
+</section>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<header><h1>Starting next animation at end of previous</h1></header>
+<section class="content">
+
+<pre contenteditable>el.addEventListener( <b>'animationend'</b>,
+    function( event ) {
+        el.removeClassName('newClass');
+        setTimeout("el.addClassName('newClass')", 100ms)
+    },
+    false );
+</pre>
+
+<pre contenteditable>
+webkitAnimationEnd
+animationend
+</pre>
+</section>
+</div>
+
+
+<div class="slide object">
+  <header><h1>Events: start, lots 'o iterations, end</h1></header>
+    <object data="files/events.html"></object>
+<a href="files/events.html" target="play" class="objectlink">Try it out!</a>
+</div>
+
+
+<!-- NEXT -->
+<div class="slide divider">
+     <header><h1></h1></header>
+    <a href="">Next ➹</a>
+    </div>
+
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
+</div>
+
+
+
+  </div>
+<script src="static/js/slides.js"></script>
+  </body>
+
+</html>
+

@@ -1,0 +1,32 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/files.css">
+<style>
+input {
+  font-size: 2em;
+}
+</style>
+
+<style contenteditable id="editme">
+input:valid {
+    background-color: green;
+}
+input:invalid {
+    background-color: red;
+    transition: 3s steps(3, end);
+}
+input:focus {   
+    background-color: yellow;
+}</style>
+<title></title>
+</head>
+
+<body>
+<div><label>Number: <input type=number min=0 max=10 step=2></label></div>
+<pre>&lt;input type=number min=0 max=10 step=2></pre>
+</body>
+</html>
+

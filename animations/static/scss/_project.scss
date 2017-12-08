@@ -1,0 +1,87 @@
+@import "variables";
+@import "yesno";
+@import "ex_navigation";
+@import "ex_simpletrans";
+@import "ex_animations";
+@import "ex_pencils";
+@import "ex_steps";
+@import "ex_cards";
+
+
+table.icons td {width: 20%;text-align: center; border: none; font-size: 0.6rem;}
+table.icons * {margin:0;}
+
+
+.columns {
+
+  -webkit-column-count:3;
+  -webkit-column-gap: 0.1em;
+  -moz-column-count:3;
+  -moz-column-gap: 0.1em;
+  column-count:3;
+  column-gap: 0.1em;
+}
+.spinbox {
+  position: relative;
+  font-size: 100px;
+  color: $splashcolor;
+  display:block;
+  height: 140px;
+  width: 140px;
+  margin:10px auto;
+  font-size: 140px;
+  text-align:center;
+}
+
+.outlined:hover {outline: 5px solid green;}
+.spinbox .dot {
+  position: absolute;
+  top: 123px;
+  left: 100px;
+  height:5px; width: 5px;
+  border-radius: 0.5em}
+.spinbox:hover .dot {
+  background-color:green;
+}
+.spin:hover {
+  transform: rotate(360deg) scale(2);
+}
+
+.to {
+    -webkit-transform-origin: left 300px;
+    transform-origin: left 300px;
+  }
+
+pre u {text-decoration:none; font-weight:bold;}
+
+.box {
+  padding:20px 50px;
+  position:relative;
+}
+.box span {
+  position: absolute;
+  left: 0;
+  top:20px;
+  width: 50px;
+  height:50px;
+  background-color: $splashcolor;
+  animation: showme 5s linear 5s 1;
+  animation-play-state:paused;
+  transform-origin: 50% 100%;
+}
+.current:hover .box span {
+  animation-play-state: running;
+}
+span.afmforwards {
+  animation-fill-mode:forwards;
+}
+span.afmbackwards {
+  animation-fill-mode:backwards;
+}
+span.afmboth {
+  animation-fill-mode:both;
+}
+
+#animfillmodeall4.animationon .box span {
+  animation: none;
+}

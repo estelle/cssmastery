@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>CSS is Awesome</title>
+<link rel="stylesheet" href="../static/css/files.css">
+<style>.biker {
+  height: 92px;
+  width: 90px;
+  background-image: url(../static/img/bike.png);
+  background-repeat: no-repeat;
+  }</style>
+<style contenteditable id="editme">.biker {
+  height: 92px;
+  width: 90px;
+  background-image: url(../static/img/bike.png);
+  background-repeat: no-repeat;
+  animation: pedal 400ms steps(4, end) infinite; 
+}
+@keyframes pedal { 
+    100% {background-position: -360px 0;}
+}</style>
+</head>
+
+<body>
+
+<div class="biker"></div>
+
+
+</body>
+</html>
+

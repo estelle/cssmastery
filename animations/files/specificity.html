@@ -1,0 +1,42 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Specificity in Animations</title>
+<link rel="stylesheet" href="../static/css/files.css">
+<style>
+div {
+  float: right;
+  width: 20%;
+  margin-right: 20px; 
+  padding: 20px;} #editme {width: 62%; float: left;}
+</style>
+
+<style contenteditable id="editme">#blue {
+  background-color: #9999ff;
+}
+div {
+  border: 5px black solid !important;
+  background-color: black !important;
+  animation: grey infinite 3s alternate;
+}
+
+@keyframes grey {
+  from {
+    background-color: #999;
+    border: 5px red dashed;
+  }
+  to {
+    background-color: #ccc;
+    border: 5px yellow dashed;
+  }
+}</style>
+</head>
+
+<body>
+<div id="blue"><p>Based on ID, I should be black, but because an animation is attached, I am grey.</p>
+<p>based on !important my border should be black, but some browsers override !important (currrently erroneously, but spec is likely changing).</div>
+</body>
+</html>
+

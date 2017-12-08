@@ -1,0 +1,80 @@
+/* ############################
+
+    BROWSER SUPPORT & ICONS
+
+   ############################ */
+
+
+
+.icons li, .icons .browser {
+      width: 68px; height: 14px; display: inline-block;
+      background-image:url(../img/browser_logos-64.png);
+      border-radius: 32px;
+      font-size: 10px;
+      padding-top: 60px;
+      text-align:center;
+      position: relative;
+      background-repeat: no-repeat;
+    }
+    .icons .firefox {background-position:-80px 0}
+    .icons .ie {background-position:-280px 0}
+    .icons .safari {background-position:-210px 0}
+    .icons .chrome {background-position:0 0 }
+    .icons .opera {background-position:-140px 0}
+    .icons .new:after {
+      content: "";
+      width: 40px;
+      height: 28px;
+      display:block;
+      position:absolute;
+      top: -8px;
+      right:-10px;
+      background-image:url(../img/new.gif);
+    }
+    .icons .no {opacity: 0.25;}
+    .icons .bad,
+    .icons .iffy {opacity: 0.60;}
+    .icons .bad {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .icons .bad:after {
+      position:absolute;
+      top: -10px;
+      left:-15px;
+      content: "";
+      box-sizing: padding-box;
+      background:
+        linear-gradient(-135deg,
+          transparent 45%,
+          red 45%,
+          red 55%,
+          transparent 55%);
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 10px solid red;
+      display:block;
+    }
+
+    .icons .half:after {
+      position:absolute;
+      top: 0;
+      right:0;
+      content: "";
+      background-color: #DCe7f3;
+      width: 33px;
+      border-radius: 0 0 50% 0;
+      height: 65px;
+      display:block;
+    }
+    .icons .half.new:after {
+      background-repeat: no-repeat;
+      background-color:transparent;
+      background-image:url(../img/new.gif) ,
+      linear-gradient(90deg, transparent 30%, #DCe7f3 30%)        ;
+      width: 40px;
+
+    }
+    .icons .txt {background-image: none; width: auto; font-size: 18px;}
+

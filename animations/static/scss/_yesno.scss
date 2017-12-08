@@ -1,0 +1,16 @@
+.yes, .no {
+  position: relative;
+}
+.yes:after, .no:after {
+  content: '✓';
+  color: green;
+  font-size: 60px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.no:after {
+  content: 'X';
+  color: red;
+  font-family: "Comic Sans MS", cursive;
+}
