@@ -12,22 +12,12 @@ div {margin:auto;}
 
 <style contenteditable>#psy {width: 225px; height: 400px;
   background-image: url(sprite.png);
-  -webkit-animation: gangham 4s steps(23,start) infinite,
-             movearound 15s alternate infinite  steps(23,start) 45ms;
   animation: gangham 4s steps(23,start) infinite,
              movearound 15s alternate infinite steps(23,start) 45ms;
-}
-@-webkit-keyframes gangham {
-  0% {background-position: 0 0}
-  100% {;background-position: -5175px 0}
 }
 @keyframes gangham {
   0% {background-position: 0 0}
   100% {;background-position: -5175px 0}
-}
-@-webkit-keyframes movearound {
-  0% {-webkit-transform: translatex(-300px);}
-  100% {-webkit-transform: translatex(300px);}
 }
 @keyframes movearound {
   0% {transform: translatex(-300px);}

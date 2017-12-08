@@ -523,9 +523,7 @@ nav li:hover ul {
  <div class="slide intro">
      <header><h1>@Keyframes</h1></header>
      <section class="content">
-      <pre contenteditable><b>@keyframes</b> ...
-
-<b>@-webkit-keyframes</b> ....</pre>
+      <pre contenteditable><b>@keyframes</b> ...</pre>
      </section>
  </div>
 
@@ -533,8 +531,7 @@ nav li:hover ul {
   <header><h1>Name your keyframe animation</h1></header>
     <section class="content">
     <pre contenteditable>@keyframes <b>clever_name_here</b> ...
-
-@-webkit-keyframes <b>clever_name_here</b> ...</pre>
+</pre>
       <ul>
         <li>Identifier
         <li>Unquoted
@@ -559,10 +556,6 @@ nav li:hover ul {
      <header><h1>at-rule</h1></header>
      <section class="content">
       <pre contenteditable>@keyframes slides <b>{</b>
-
-<b>}</b>
-
-@-webkit-keyframes slides <b>{</b>
 
 <b>}</b></pre>
      </section>
@@ -687,7 +680,7 @@ nav li:hover ul {
 <a href="files/repeated_keyframe.html" target="play" class="objectlink">Try it out!</a>
 </div>
 
-<!-- 3d transofmr
+<!-- 3d transofmr -->
 <div class="slide" id="acsst">
     <header>
     	<h1>Animating CSS Transforms</h1>
@@ -710,7 +703,7 @@ nav li:hover ul {
   }
 }
 </pre>
-<p style="text-align:center"><span onClick="vendorPrefix('w', 'acsst')">-webkit-</span> | <span onClick="vendorPrefix('r', 'acsst')"> reset </p>
+
 
 </section>
 </div>
@@ -937,7 +930,7 @@ steps( X, start|<strong>end</strong>) <span class="notes">/* X = # of steps + wh
   <b><u></u>animation-iteration-count: 3;</b>
 }</pre>
 <p>&lsquo;infinite&rsquo; or number. Default is &lsquo;1&rsquo;.</p>
-<pre contenteditable><b>-webkit-animation-iteration-count: 3;</b></pre>
+
 
 </section>
 </div>
@@ -1025,11 +1018,11 @@ for (var q = 0; q < _directionChangers.length; q++){
   _direction = e.target.getAttribute('data-dir');
   document.getElementById('dir_direction').text = _direction;
 
-  el.style.webkitAnimation = el.style.animation = 'none';
+  el.style.animation = 'none';
 
   setTimeout(function() {
     var text = "drawALine 5s ease-in-out 0.1s 5 "+ _direction;
-    el.style.webkitAnimation = el.style.animation = text;
+    el.style.animation = text;
     console.log(text);
   }, 100);
 
@@ -1136,8 +1129,7 @@ for (var q = 0; q < _directionChangers.length; q++){
 	  var elements = document.querySelectorAll(els);
 	  console.dir(elements)
 	  for(var i = 0; i < elements.length; i++){
-		elements[i].style.webkitTransformOrigin =
-		elements[i].style.msTransformOrigin =
+		
 		elements[i].style.transformOrigin  = origin;
 	  }
 
@@ -1156,7 +1148,7 @@ for (var q = 0; q < _directionChangers.length; q++){
 <header  style="position:absolute; width:100%;"><h1>&lsquo;animation-fill-mode&rsquo;</h1></header>
 <b id="animationfm" class="pencil pencilanim"></b>
 <section class="content">
-<pre contenteditable onMouseDown="document.getElementById('animationfm').style.webkitAnimation = 'none';">values: <span onClick="changeFillMode(this.innerHTML)">none</span> | <span onClick="changeFillMode(this.innerHTML)">forwards</span> | <span onClick="changeFillMode(this.innerHTML)">backwards</span> | <span onClick="changeFillMode(this.innerHTML)">both</span></pre>
+<pre contenteditable onMouseDown="document.getElementById('animationfm').style.animation = 'none';">values: <span onClick="changeFillMode(this.innerHTML)">none</span> | <span onClick="changeFillMode(this.innerHTML)">forwards</span> | <span onClick="changeFillMode(this.innerHTML)">backwards</span> | <span onClick="changeFillMode(this.innerHTML)">both</span></pre>
 <pre contenteditable>.pencil {
   <u></u>animation-name: gettingThePencil;
   <u></u>animation-duration: 3s;
@@ -1178,7 +1170,7 @@ for (var q = 0; q < _directionChangers.length; q++){
 		document.getElementById('fmsh').innerHTML = fillMode;
 
 		var el = document.getElementById('animationfm');
-		el.style.webkitAnimation =
+		
 		el.style.animation = "drawALine 5s ease-in-out 2s " + iteration + "  "+ fillMode;
 	}
 
@@ -1299,7 +1291,6 @@ el.addEventListener( <b>'animationend'</b>,
 </pre>
 
 <pre contenteditable>
-webkitAnimationEnd
 animationend
 </pre>
 </section>
@@ -1315,8 +1306,8 @@ animationend
 
 <!-- NEXT -->
 <div class="slide divider">
-     <header><h1></h1></header>
-    <a href="">Next ➹</a>
+     <header><h1>Other Stuff</h1></header>
+    <a href="../other/">Next ➹</a>
     </div>
 
 <!-- TOC -->

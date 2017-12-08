@@ -17,15 +17,6 @@ div {
   font-size: 2rem;
 }
 
-
-@-webkit-keyframes red {
-  from, 30%{
-    background-color: #f00;
-  }
-  to {
-    background-color: #f33;
-  }
-}
 @keyframes red {
   from, 30%{
     background-color: #f00;
@@ -35,14 +26,7 @@ div {
   }
 }
 
-  @-webkit-keyframes green {
-  from, 30%{
-    background-color: #030;
-  }
-  to {
-    background-color: #393;
-  }
-}
+
 @keyframes green {
   from, 30%{
     background-color: #030;
@@ -52,14 +36,7 @@ div {
   }
 }
 
-  @-webkit-keyframes blue {
-  from, 30%{
-    background-color: #0000ff;
-  }
-  to {
-    background-color: #3333ff;
-  }
-}
+
 @keyframes blue {
   from, 30%{
     background-color: #0000ff;
@@ -71,10 +48,6 @@ div {
 </style>
 
 <style contenteditable id="editme">div {
-  -webkit-animation-name: red, green, blue;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 0;
-  -webkit-animation-delay: 10s;
   animation-name: red, green, blue;
   animation-fill-mode: forwards;
   animation-iteration-count: 0;
@@ -88,16 +61,6 @@ div {
 <script>
   var foo = document.getElementById('blue');
   console.log('foo');
-  foo.addEventListener( 'webkitAnimationEnd',
-    function( event ) {
-        console.log('animation end');
-    },
-    false );
-  foo.addEventListener( 'webkitAnimationStart',
-    function( event ) {
-        console.log('animation start');
-    },
-    false );
     foo.addEventListener( 'animationend',
     function( event ) {
         console.log('animation end');

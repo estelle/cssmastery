@@ -18,15 +18,6 @@ div {
   font-size: 2rem;
 }
 
-
-@-webkit-keyframes red {
-  from, 30%{
-    background-color: #f00;
-  }
-  to {
-    background-color: #f33;
-  }
-}
 @keyframes red {
   from, 30%{
     background-color: #f00;
@@ -36,14 +27,6 @@ div {
   }
 }
 
-  @-webkit-keyframes green {
-  from, 30%{
-    background-color: #030;
-  }
-  to {
-    background-color: #393;
-  }
-}
 @keyframes green {
   from, 30%{
     background-color: #030;
@@ -53,14 +36,7 @@ div {
   }
 }
 
-  @-webkit-keyframes blue {
-  from, 30%{
-    background-color: #0000ff;
-  }
-  to {
-    background-color: #3333ff;
-  }
-}
+
 @keyframes blue {
   from, 30%{
     background-color: #0000ff;
@@ -73,8 +49,6 @@ div {
 
 <style contenteditable id="editme">
 div {
-  -webkit-animation-name: red, green, blue;
-  -webkit-animation-fill-mode: both;
   animation-name: red, green, blue;
   animation-fill-mode: both;
 }

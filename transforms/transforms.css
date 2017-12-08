@@ -149,10 +149,8 @@ section {padding-top: 20px;}
     content: "";
     position: absolute; }
   #transformorder:before {
-    -webkit-transform: rotate(135deg) translateX(200px);
     transform: rotate(135deg) translateX(200px); }
   #transformorder:after {
-    -webkit-transform: translateX(200px) rotate(135deg);
     transform: translateX(200px) rotate(135deg);
     border-color: teal; }
   #transformorder .line1, #transformorder .line2 {
@@ -163,7 +161,6 @@ section {padding-top: 20px;}
     left: -150px;
     border-bottom: 1px solid; }
   #transformorder .line2 {
-    -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
     left: -230px;
     top: 130px; }

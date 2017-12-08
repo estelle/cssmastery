@@ -13,11 +13,6 @@ table.icons * {margin:0;}
 
 
 .columns {
-
-  -webkit-column-count:3;
-  -webkit-column-gap: 0.1em;
-  -moz-column-count:3;
-  -moz-column-gap: 0.1em;
   column-count:3;
   column-gap: 0.1em;
 }
@@ -48,7 +43,6 @@ table.icons * {margin:0;}
 }
 
 .to {
-    -webkit-transform-origin: left 300px;
     transform-origin: left 300px;
   }
 

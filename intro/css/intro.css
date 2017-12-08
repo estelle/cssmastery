@@ -19,29 +19,17 @@ body {
 }
 
 #presentation, #lineargradient1 {
-  background-image:
-  	-webkit-gradient(linear,  0% 0%, 0% 100%, from(#3A67AB), to(#E8F6FF));
-  background-image:
-  	-webkit-linear-gradient(270deg, #3A67AB, #E8F6FF 100%);
-  background-image:
+background-image:
   	linear-gradient(#3A67AB, #E8F6FF 100%);
 }
 
 
 .columns2, .columns3 {
-	-webkit-column-count: 2;
-	-webkit-column-rule: 1px solid #bbb;
-	-webkit-column-gap: 2em;
-	-moz-column-count: 2;
-	-moz-column-rule: 1px solid #bbb;
-	-moz-column-gap: 2em;
 	column-count: 2;
 	column-rule: 1px solid #bbb;
 	column-gap: 2em;
 }
 .columns3 {
-	-webkit-column-count: 3;
-	-moz-column-count: 3;
 	column-count: 3;
 }
 
@@ -110,8 +98,6 @@ li.future {color: #360;}
 	bottom: 1px;
 	border: 1px solid #000000;
 	border-width: 3px 3px 0 0;
-	-webkit-transform: rotate(135deg);
-	-ms-transform: rotate(135deg);
 	transform: rotate(135deg);
 }
 
@@ -125,22 +111,6 @@ li.future {color: #360;}
 
 	/* General Styling of the snowflakes */
 	 i, .snowflakedemo {
-		background-image:
-				-webkit-gradient(linear, 0% 0%, 100% 0, color-stop(0.4, rgba(255,255,255,0)), color-stop(0.42, #fff), color-stop(0.58, #fff),
-				color-stop(0.6, rgba(255,255,255,0))),
-				-webkit-gradient(linear, 0% 0%, 0 100%, color-stop(0.4, rgba(255,255,255,0)), color-stop(0.42, #fff), color-stop(0.58, #fff),
-				color-stop(0.6, rgba(255,255,255,0))),
-				-webkit-gradient(linear, 0% 100%, 100% 0, color-stop(0.4, rgba(255,255,255,0)), color-stop(0.42, #fff), color-stop(0.58, #fff),
-				color-stop(0.6, rgba(255,255,255,0))),
-				-webkit-gradient(linear, 0% 50%, 50% 100%, color-stop(0.35, rgba(255,255,255,0)), color-stop(0.38, #fff), color-stop(0.63, #fff),
-				color-stop(0.65, rgba(255,255,255,0)));
-
-		background-image:
-				-webkit-linear-gradient(180deg, rgba(255,255,255,0) 40%, #fff 40%, #fff 60%, rgba(255,255,255,0) 60%),
-				-webkit-linear-gradient(90deg,  rgba(255,255,255,0) 40%, #fff 40%, #fff 60%, rgba(255,255,255,0) 60%),
-				-webkit-linear-gradient(45deg,  rgba(255,255,255,0) 43%, #fff 43%, #fff 57%, rgba(255,255,255,0) 57%),
-				-webkit-linear-gradient(135deg,  rgba(255,255,255,0) 43%, #fff 43%, #fff 57%, rgba(255,255,255,0) 57%);
-
 		background-image:
 				linear-gradient(180deg, rgba(255,255,255,0) 40%, #fff 40%, #fff 60%, rgba(255,255,255,0) 60%),
 				linear-gradient(90deg,  rgba(255,255,255,0) 40%, #fff 40%, #fff 60%, rgba(255,255,255,0) 60%),
@@ -158,15 +128,15 @@ li.future {color: #360;}
 		border-radius: 50%;
   }
   #flakes i {
-		-webkit-transform-origin: left -20px;
-		-webkit-animation-name: falling;
-		-webkit-animation-duration: 3s;
-		-webkit-animation-direction:normal;
-		-webkit-animation-iteration-count: 20;
-		-webkit-animation-timing-function: linear;
-		-webkit-animation-delay: 2s;
-		-webkit-animation-fill-mode: none;
-		-webkit-animation-play-state:running;
+		transform-origin: left -20px;
+		animation-name: falling;
+		animation-duration: 3s;
+		animation-direction:normal;
+		animation-iteration-count: 20;
+		animation-timing-function: linear;
+		animation-delay: 2s;
+		animation-fill-mode: none;
+		animation-play-state:running;
 		/* or */
 		animation: falling 3s linear 2s 20;
 	}
@@ -181,7 +151,6 @@ li.future {color: #360;}
 		margin: 10px 20px 0 0;
 	}
 	.opacity div i {
-		-webkit-animation: none;
 		animation: none;
 		position: static;
 		float:left;
@@ -202,25 +171,6 @@ li.future {color: #360;}
 		border: 2px solid #E2007A;
 		background-size: 30px 30px;
 		background-repeat:repeat;
-		background-image: /* Safari 5 and earlier */
-				-webkit-gradient(linear, 100% 100%, 0 0,
-					color-stop(.25, rgba(255, 255, 255, 1)),
-					color-stop(.25, rgba(255, 255, 255, 0)),
-					color-stop(.5, rgba(255, 255, 255, 0)),
-					color-stop(.5, rgba(255, 255, 255, 1)),
-					color-stop(.75, rgba(255, 255, 255, 1)),
-					color-stop(.75, rgba(255, 255, 255, 0)),
-					color-stop(1, rgba(255, 255, 255, 0)));
-		background-image:	/* Chrome and Webkit Nightly build */
-			-webkit-linear-gradient(135deg,
-					rgba(255, 255, 255, 1) 25%,
-					rgba(255, 255, 255, 0) 25%,
-					rgba(255, 255, 255, 0) 50%,
-					rgba(255, 255, 255, 1) 50%,
-					rgba(255, 255, 255, 1) 75%,
-					rgba(255, 255, 255, 0) 75%,
-					rgba(255, 255, 255, 0) 100%
-	  				);
 
 			background-image:
 			linear-gradient(-135deg,
@@ -245,8 +195,6 @@ li.future {color: #360;}
 .transform b {float: right;}
 .transform b:after {
 	content: "";
-	-webkit-transform: translate(-80px, 200px) rotate(-15deg) scale(2, 1.5) skewX(8deg);
-	-ms-transform: translate(-80px, 200px) rotate(-15deg) scale(2, 1.5) skewX(8deg);
 	transform: translate(-80px, 200px) rotate(-15deg) scale(2, 1.5) skewX(8deg);float: right;}
 .transform pre {display:inline-block;}
 /* font-face */
@@ -287,11 +235,8 @@ li.future {color: #360;}
 	color: #000000;
 	font-size: 100%;
     background-color: rgba(255,255,255,0.4);
-    -webkit-transition: all 0.5s ease-in 50ms;
-    -ms-transition: all 0.5s ease-in 50ms;
     transition: all 0.5s ease-in 50ms;
-    -webkit-transition: color font-size 0.5s ease-in 50ms;
-}
+ }
 .fakelink:hover {
 	color: #E2007A;
     font-size: 120%;
@@ -299,20 +244,6 @@ li.future {color: #360;}
 }
 
 /* animation used for ALL snowflakes */
-	@-webkit-keyframes falling {
-		0% {
-			-webkit-transform:
-					translate3d(0,0,0)
-					rotate(0deg)
-					scale(0.9,0.9);
-		}
-		100% {
-			-webkit-transform:
-					translate3d(30px,1000px,0)
-					rotate(360deg)
-					scale(1.1,1.1);
-		}
-	}
 
 	@keyframes falling {
 		0% {
@@ -333,43 +264,31 @@ li.future {color: #360;}
 	#flakes i:nth-of-type(4n) {
 		height:30px;
 		width:30px;
-		-webkit-transform-origin: right -30px;
 		transform-origin: right -30px;
 	}
 	#flakes i:nth-of-type(4n+1) {
 		height:24px;
 		width:24px;
-		-webkit-transform-origin: left -30px;
 		transform-origin: left -30px;
 	}
 	#flakes i:nth-of-type(4n+2){
 		height:10px;
 		width:10px;
-		-webkit-transform-origin: -30px 0;
 		transform-origin: -30px 0;
 	}
 
 	/* different speeds, with iteration counts to equal 3minutes approx. */
 	#flakes i:nth-of-type(4n) {
-		-webkit-animation-duration: 5.3s;
-		-webkit-animation-iteration-count: 12;
-		-webkit-transform-origin: -10px -20px;
 		animation-duration: 5.3s;
 		animation-iteration-count: 12;
 		transform-origin: -10px -20px;
 	}
 	#flakes i:nth-of-type(4n+1){
-		-webkit-animation-duration: 3.1s;
-		-webkit-animation-iteration-count: 20;
-		-webkit-transform-origin: 10px -20px;
 		animation-duration: 3.1s;
 		animation-iteration-count: 20;
 		transform-origin: 10px -20px;
 		}
 	#flakes i:nth-of-type(4n+2) {
-		-webkit-animation-duration: 1.7s;
-		-webkit-animation-iteration-count: 35;
-		-webkit-transform-origin: right -20px;
 		animation-duration: 1.7s;
 		animation-iteration-count: 35;
 		transform-origin: right -20px;
@@ -377,25 +296,16 @@ li.future {color: #360;}
 
 	/* different delays so they don't all start at the same time */
 	#flakes i:nth-of-type(3n) {
-		-webkit-animation-delay: 2.3s;
 		animation-delay: 2.3s;
 		}
 	#flakes i:nth-of-type(3n+1) {
-		-webkit-animation-delay: 1.5s;
 		animation-delay: 1.5s;
 		}
 	#flakes i:nth-of-type(3n+2) {
-		-webkit-animation-delay: 3.4s;
 		animation-delay: 3.4s;
 		}
 
 	/* playing with timing functions to make it a teeny bit more random like */
-	#flakes i:nth-of-type(5n)   {-webkit-animation-timing-function:ease-in-out;}
-	#flakes i:nth-of-type(5n+1) {-webkit-animation-timing-function:ease-out;}
-	#flakes i:nth-of-type(5n+2) {-webkit-animation-timing-function:ease;}
-	#flakes i:nth-of-type(5n+3) {-webkit-animation-timing-function:ease-in;}
-	#flakes i:nth-of-type(5n+4) {-webkit-animation-timing-function:linear;}
-	#flakes i:nth-of-type(11n) {-webkit-animation-timing-function:cubic-bezier(0.2, 0.3, 0.8, 0.9);}
 
 	#flakes i:nth-of-type(5n)   {animation-timing-function:ease-in-out;}
 	#flakes i:nth-of-type(5n+1) {animation-timing-function:ease-out;}
@@ -409,8 +319,6 @@ li.future {color: #360;}
 	#flakes i:nth-of-type(7n+2) {opacity: 0.3}
 	#flakes i:nth-of-type(7n+4) {opacity: 0.7}
 	#flakes i:nth-of-type(7n+6){opacity: 0.6;
-		-webkit-animation-timing-function:ease-in;
-		-webkit-transform-origin: left 10px;
 		animation-timing-function:ease-in;
 		transform-origin: left 10px;}
 	#flakes i:nth-of-type(7n+1){opacity: 0.8}
@@ -463,10 +371,6 @@ li.future {color: #360;}
 	display: block;
 	overflow: hidden;
 	background-image:
-  	-webkit-gradient(linear,  0% 0%, 0% 100%, from(#3A67AB), to(#E8F6FF));
-	background-image:
-  	-webkit-linear-gradient(#3A67AB, #E8F6FF 100%);
-	background-image:
   	linear-gradient(#3A67AB, #E8F6FF 100.0%);
 }
 
@@ -479,13 +383,9 @@ li.future {color: #360;}
   top: 0;
   position: absolute;
   display: block;
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  -ms-transition: -o-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
+ transition: transform 1s ease-in-out;
 
   /* so it's visible in the iframe. */
-  -webkit-transform: scale(0.8);
-  -ms-transform: scale(0.8);
   transform: scale(0.8);
 }
 
@@ -500,11 +400,7 @@ li.future {color: #360;}
   background-color: rgba(255,255,255,0.5);
   border-radius: 60px;
   margin-top: -350px;
-  -webkit-transition: all 0.25s ease-in-out;
-  -ms-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
   padding-left: 20px;
   padding-top: 10px;
@@ -609,8 +505,6 @@ li.future {color: #360;}
 }
 
 body.three-d div.slides {
-  -webkit-transform: translateX(50px) scale(0.8) rotateY(10deg);
-  -ms-transform: translateX(50px) scale(0.8) rotateY(10deg);
   transform: translateX(50px) scale(0.8) rotateY(10deg);
 }
 
@@ -660,10 +554,8 @@ b.imp{
  	transition: all 0.2s ease-in;
 }
 .imp li:hover, b.imp:hover{
-	-webkit-transform:scale(1.2);
 	transform:scale(1.2);
 	color: #E2007A;
-	-webkit-transform-origin: left;
 	transform-origin: left;
 }
 
@@ -686,7 +578,6 @@ pre b {
   display:inline-block;
 }
 pre b:hover {
-	-webkit-transform:scale(1.2);
 	transform:scale(1.2);
 	color: #E2007A;
 }
@@ -724,12 +615,10 @@ video {
 }
 
 div:not(.current).reduced {
-  -webkit-transform: scale(0.8);
   transform: scale(0.8);
 }
 
 .no-transitions {
-  -webkit-transition: none;
   transition: none;
 }
 
@@ -784,14 +673,8 @@ div:not(.current).reduced {
 			top: -10px;
 			left:-15px;
 			content: "";
-			-moz-box-sizing: padding-box;
 			box-sizing: padding-box;
-			background:
-				-webkit-linear-gradient(135deg,
-					transparent 45%,
-					red 45%,
-					red 55%,
-					transparent 55%);
+			
 				background:
 				linear-gradient(-135deg,
 					transparent 45%,
@@ -820,7 +703,6 @@ div:not(.current).reduced {
 			background-repeat: no-repeat;
 			background-color:transparent;
 			background-image:url(../forms/icons/new.gif),
-			-webkit-linear-gradient(0deg, transparent 30%, #DCe7f3 30%) ;
 			background-image:url(../forms/icons/new.gif),
 			linear-gradient(0deg, transparent 30%, #DCe7f3 30%) ;
 			width: 40px;
@@ -863,9 +745,6 @@ div:not(.current).reduced {
  #gradients-linear-example {
               border: 0;
               height: 100px;
-
-background-image: -webkit-linear-gradient(90deg, #E468E8, #E169FF 33%,#4FBFF7 66%,#2C4299 100%);
-
 background-image: linear-gradient(-90deg, #E468E8, #E169FF 33%,#4FBFF7 66%,#2C4299 100%)
             }
             #rdialgradientsample {
@@ -875,28 +754,7 @@ background-image: linear-gradient(-90deg, #E468E8, #E169FF 33%,#4FBFF7 66%,#2C42
               background: -webkit-radial-gradient(4% 12%, circle farthest-side,  #2C4299, #4FBFF7, #C344C7 100%);
               background: radial-gradient(circle at 4% 12%,  #2C4299, #4FBFF7, #C344C7 100%);         }
 			.grad {width: 250px; height:180px;  margin: 0 20px 20px 0px;float: left; border-radius: 150px; background-repeat:repeat;}
-		.inverse1 {background-image:
-		-webkit-gradient(radial, 8 8,0, 8 8, 7,
-			color-stop(0.7, rgba(0,0,0,0)),
-			color-stop(0.8, #000000)),
-		-webkit-gradient(radial, 8 8,0, 8 8, 7,
-			color-stop(0.5, rgba(0,0,220,0)),
-			color-stop(0.7, rgba(0,0,220, 0.4))),
-		-webkit-gradient(radial, 64 64, 1000, 100 44, 40,
-			from(#FF0080), color-stop(.6,#ECB7FC), to(#f09));
-
-
-		background-image:
-	  -webkit-radial-gradient(circle,
-			rgba(0,0,0,0) 60%,
-			#000000 61%),
-		-webkit-radial-gradient(circle,
-			rgba(0,0,220,0) 55%,
-			rgba(0,0,220,0.4) 56%),
-	  	-webkit-radial-gradient(circle,
-			#FF0080 0%,
-			#ECB7FC 60%,
-			#f09 100%);
+		.inverse1 {
 		background-image:
 	  	radial-gradient(circle,
 			rgba(0,0,0,0) 60%,
@@ -909,32 +767,13 @@ background-image: linear-gradient(-90deg, #E468E8, #E169FF 33%,#4FBFF7 66%,#2C42
 			#ECB7FC 60%,
 			#f09 100%);
 
-		-webkit-background-size: 15px 15px, 15px 15px,100%, 100%; /* safari 4 */
 		background-size: 15px 15px,15px 15px, 100%, 100%; /* FF 3.6 */
 		background-size: 15px 15px, 15px 15px,160%, 160%;
 		background-position: 0 0, 0 3px, 00;
 }
 .metal {
 
-    background-image:
-		-webkit-gradient(radial, 15 15, 0, 15 15, 14.6,
-			color-stop(0.8, rgba(0, 0, 0, 0)),
-			color-stop(0.85, rgba(0, 0, 0, 1)),
-			color-stop(1.00, rgba(0, 0, 0, 1))
-		),
-
-		-webkit-gradient(radial, 15 15, 0, 15 15, 14.6,
-			color-stop(0.8, rgba(0, 0, 0, 0)),
-			color-stop(0.85, rgba(0, 0, 0, 1)),
-			color-stop(1.00, rgba(0, 0, 0, 1))
-		);
-    background-image:
-		-webkit-radial-gradient(circle closest-side,
-			transparent 70%,
-			#000000 100%),
-		-webkit-radial-gradient(circle closest-side,
-			transparent 70%,
-			#000000 100%);
+   
 	   background-image:
 		radial-gradient(circle closest-side,
 			transparent 70%,
@@ -944,15 +783,10 @@ background-image: linear-gradient(-90deg, #E468E8, #E169FF 33%,#4FBFF7 66%,#2C42
 			#000000 100%);
 
     background-color: #AAAAAA;
-    -webkit-background-size: 30px 30px, 30px 30px;
     background-size: 30px 30px, 30px 30px;
     background-position: 0 0pt, 15px 15px;
 }
 .retro67, .circlestripes {
-
-    background-image:
-		-webkit-radial-gradient(circle closest-side, transparent 96%, rgba(0, 0, 0, 0.3) 100%),
-		-webkit-radial-gradient(circle closest-side, transparent 96%, rgba(0, 0, 0, 0.3) 100%);
 background-image:
 		radial-gradient(circle closest-side, transparent 96%, rgba(0, 0, 0, 0.3) 100%),
 		radial-gradient(circle closest-side, transparent 96%, rgba(0, 0, 0, 0.3) 100%);
@@ -971,8 +805,6 @@ background-image:
 			color-stop(1.00, rgba(0, 0, 0, 0.3))
 		);
     background-position: 0 0pt, 15px 15px;
-    -webkit-background-size: 30px 10px, 30px 8px;
-    -moz-background-size: 30px 10px, 30px 8px;
     background-size: 30px 10px, 30px 8px;
 }
 .retro67 {
@@ -989,47 +821,10 @@ background-image:
 			color-stop(1.00, rgba(0, 0, 0, 0.3))
 		);
     background-position: 15px 0pt, 15px 15px;
-    -webkit-background-size: 30px 15px, 30px 30px;
-    -moz-background-size: 30px 15px, 30px 30px;
     background-size: 30px 15px, 30px 30px;
     background-color: #993300;
 }
 .bradybunch {
-	background-image:
-		-webkit-radial-gradient(circle closest-side,
-			transparent 0%,
-			transparent 75%,
-			rgba(255, 255, 255, 0.3) 76%,
-			rgba(255, 255, 255, 0.3) 85%,
-			rgba(255, 255, 255, 0.9) 86%,
-			rgba(255, 255, 255, 0.9) 94%,
-			#FFFFFF 95%,
-			#FFFFFF 103%,
-			rgba(255, 255, 255, 0.5) 104%,
-			rgba(255, 255, 255, 0.5) 112%,
-			rgba(0, 0, 0, 0.2) 113%,
-			rgba(0, 0, 0, 0.2) 121%,
-			#FFFFFF 122%,
-			#FFFFFF 130%,
-			rgba(255, 255, 255, 0.4) 131%,
-			rgba(255, 255, 255, 0.4) 140%),
-		-webkit-radial-gradient(circle closest-side,
-			transparent 0%,
-			transparent 75%,
-			rgba(255, 255, 255, 0.3) 76%,
-			rgba(255, 255, 255, 0.3) 85%,
-			rgba(255, 255, 255, 0.9) 86%,
-			rgba(255, 255, 255, 0.9) 94%,
-			#FFFFFF 95%,
-			#FFFFFF 103%,
-			rgba(255, 255, 255, 0.5) 104%,
-			rgba(255, 255, 255, 0.5) 112%,
-			rgba(0, 0, 0, 0.2) 113%,
-			rgba(0, 0, 0, 0.2) 121%,
-			#FFFFFF 122%,
-			#FFFFFF 130%,
-			rgba(255, 255, 255, 0.4) 131%,
-			rgba(255, 255, 255, 0.4) 140%);
 
 
 	background-image:
@@ -1067,7 +862,6 @@ background-image:
 			#FFFFFF 130%,
 			rgba(255, 255, 255, 0.4) 131%,
 			rgba(255, 255, 255, 0.4) 140%);
-	-moz-background-size: 80px 80px;
 	background-size: 80px 80px;
 	background-color: #384F89;
 	background-position: 0 0, 40px 40px;
@@ -1092,10 +886,8 @@ background-image:
 	#hslas, #hslal, #hslaa, #hslah {width: 361px; height: 20px; display: inline-block;}
 	#hslah {width: auto;}
 	#hslah i {display:inline-block; width:1px; height:20px; position:static;
-	-webkit-animation:none;
 	animation:none;
 	border-radius: 0;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;}
 	#hslah i.big {width: 100px; border:1px solid #000;}
 	/* BOX SIZING */
@@ -1110,24 +902,16 @@ background-image:
 		margin:20px;
 		text-align:center;
 		background-color: rgba(255,255,255,0.5);
-		-moz-box-sizing: content-box;
 		box-sizing: content-box;
 		white-space:nowrap;
 		}
 	.boxsizing div.bb {
-		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
 
 	/* COLUMNS*/
 
 	#columnsslide {
-            -webkit-column-count: 2;
-            -webkit-column-rule: 1px solid #bbb;
-            -webkit-column-gap: 2em;
-            -moz-column-count: 2;
-            -moz-column-rule: 1px solid #bbb;
-            -moz-column-gap: 2em;
             column-count: 2;
             column-rule: 1px solid #bbb;
             column-gap: 2em;
@@ -1208,10 +992,6 @@ background-image:
 	margin-left: 20px;
 	border-width: 10px;
 	float:left;
-	-webkit-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
-	-moz-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
-	-ms-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
-	-o-border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
 	border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
 }
 
@@ -1260,22 +1040,7 @@ input.button{
 	font-size: 12px !important;
 	color: #ffffff;
 	padding: 5px 20px;
-	background: -moz-linear-gradient(
-		top,
-		#ffbdf5 0%,
-		#ff82ec 25%,
-		#e2007a);
-	background: -webkit-gradient(
-		linear, left top, left bottom,
-		from(#ffbdf5),
-		color-stop(0.25, #ff82ec),
-		to(#e2007a));
-	background: -webkit-linear-gradient(
-		top,
-		#ffbdf5 0%,
-		#ff82ec 25%,
-		#e2007a);
-		background: linear-gradient(
+	background: linear-gradient(
 		to bottom,
 		#ffbdf5 0%,
 		#ff82ec 25%,
@@ -1289,16 +1054,7 @@ input.button{
 }
 input.button:hover {
 
-	background: -webkit-gradient(
-		linear, left bottom, left top,
-		from(#ffbdf5),
-		color-stop(0.25, #ff82ec),
-		to(#e2007a));
-	background: -webkit-linear-gradient(
-		bottom,
-		#ffbdf5 0%,
-		#ff82ec 25%,
-		#e2007a);
+
 	background:linear-gradient(
 		to top,
 		#ffbdf5 0%,
@@ -1438,15 +1194,7 @@ figure.styled figcaption{
     position:absolute; right:0; bottom:0;
     width: 400px;
     height: 400px;
-    background:
-       -webkit-linear-gradient(115deg, transparent 48%, brown, #960, brown, transparent 52%),
-       -webkit-linear-gradient(60deg, transparent 48%, brown, #960, brown, transparent 52%),
-        -webkit-radial-gradient(50% 50%, circle closest-corner, #333 30%, #999 50%, transparent 50%),
-        -webkit-radial-gradient(50% 50%, circle closest-corner, #333 30%, #999 50%, transparent 50%),
-        -webkit-radial-gradient(50% 50%, circle closest-corner, #fff 30%, #eee 50%, transparent 50%),
-        -webkit-radial-gradient(50% 50%, circle closest-corner, #fff 30%, #eee 50%, transparent 50%),
-        -webkit-radial-gradient(50% 50%, circle closest-corner, #fff 30%, #eee 50%, transparent 50%)
-        ;
+
  background-image: 	linear-gradient(115deg, transparent 48%, brown, #960, brown, transparent 52%),
     								linear-gradient(60deg, transparent 48%, brown, #960, brown, transparent 52%),
         						radial-gradient(circle 10px at 50% 50%, #333 30%, #999 50%, transparent 50%),
@@ -1470,13 +1218,7 @@ figure.styled figcaption{
 }
 .box {padding:20px 50px; position:relative;}
 .animationon .box span {position: absolute; left: 0; top:20px; width: 50px; height:50px; background-color:purple;
--webkit-animation: showme 5s linear 5s 1;
 animation: showme 5s linear 5s 1;
-}
-@-webkit-keyframes showme {
-	0% {left: 200px; background-color:blue;}
-	50% {background-color:green;}
-	100% {left: 600px; background-color: yellow;}
 }
 
 
@@ -1486,14 +1228,11 @@ animation: showme 5s linear 5s 1;
 	100% {left: 600px; background-color: yellow;}
 }
 .animationon span.afmforwards {
-	-webkit-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 }
 .animationon span.afmbackwards {
-	-webkit-animation-fill-mode: backwards;
 	animation-fill-mode:backwards;
 }
 .animationon span.afmboth {
-	-webkit-animation-fill-mode:both;
 	animation-fill-mode:both;
 }

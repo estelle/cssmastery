@@ -18,14 +18,6 @@ div {
 }
 
 
-@-webkit-keyframes red {
-  from, 30%{
-    background-color: red;
-  }
-  to {
-    background-color: pink;
-  }
-}
 @keyframes red {
   from, 30%{
     background-color: #f00;
@@ -35,14 +27,6 @@ div {
   }
 }
 
-  @-webkit-keyframes green {
-  from, 30%{
-    background-color: green;
-  }
-  to {
-    background-color: yellow;
-  }
-}
 @keyframes green {
   from, 30%{
     background-color: green;
@@ -52,14 +36,7 @@ div {
   }
 }
 
-  @-webkit-keyframes blue {
-  from, 30%{
-    background-color: blue;
-  }
-  to {
-    background-color: black;
-  }
-}
+
 @keyframes blue {
   from, 30%{
     background-color: blue;
@@ -71,12 +48,8 @@ div {
 </style>
 
 <style contenteditable id="editme">div {
-  -webkit-animation-name: red, green, blue;
-  // -webkit-animation-fill-mode: forwards;
-  -webkit-animation-duration: 5s;
-  -webkit-animation-delay: 5s;
   animation-name: red, green, blue;
-  // -webkit-animation-fill-mode: forwards;
+  // animation-fill-mode: forwards;
   animation-duration: 5s;
   animation-delay: 5s;
 }</style>
@@ -87,16 +60,6 @@ div {
 <div id="blue"><p>Does the animation even happen?</p></div>
 <script>
   var foo = document.getElementById('blue');
-  foo.addEventListener( 'webkitAnimationEnd',
-    function( event ) {
-        console.log('animation end');
-    },
-    false );
-  foo.addEventListener( 'webkitAnimationStart',
-    function( event ) {
-        console.log('animation start');
-    },
-    false );
     foo.addEventListener( 'webkitAnimationIteration',
     function( event ) {
         console.log('animation iteration');

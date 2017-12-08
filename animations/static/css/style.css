@@ -261,8 +261,6 @@ pre {
   font-size: 120%; }
 
 .code2:hover {
-  -webkit-transform: scale(1.4);
-  -webkit-transform-origin: top left;
   transform: scale(1.4);
   transform-origin: top left; }
 
@@ -699,7 +697,6 @@ i.origin {
 
 .card:hover,
 .carda {
-  -webkit-transition: 1s ease;
   transition: 1s ease; }
 
 .card .front,
@@ -726,7 +723,6 @@ i.origin {
 
 .card:hover .front {
   z-index: 900;
-  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); }
 
@@ -777,7 +773,6 @@ i.origin {
 
 .carda.unflipped .front,
 .carda.flipped .back {
-  -webkit-animation: unflipme 1s linear both;
   animation: unflipme 1s linear both; }
 
 @keyframes flipme {
@@ -833,10 +828,6 @@ table.icons * {
   margin: 0; }
 
 .columns {
-  -webkit-column-count: 3;
-  -webkit-column-gap: 0.1em;
-  -moz-column-count: 3;
-  -moz-column-gap: 0.1em;
   column-count: 3;
   column-gap: 0.1em; }
 
@@ -869,7 +860,6 @@ table.icons * {
   transform: rotate(360deg) scale(2); }
 
 .to {
-  -webkit-transform-origin: left 300px;
   transform-origin: left 300px; }
 
 pre u {
