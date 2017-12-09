@@ -43,6 +43,11 @@
 	1. Opacity v. Alphatransparency
 	1. appearance
 	1. additional pseudo elements
+1. Tables
+	1. When to use
+	1. Semantics
+	1. Caption
+	1. Border padding & spacing
 7. [Flexbox](flexbox/)
 	1. Purpose and goal of flexbox
 	1. browser support and specification
@@ -51,6 +56,21 @@
 	1. Flex container properties
 	1. Flex item properties
 	1. Flexibility
+8. [Grid](grid/)
+9. [Backgrounds and Borders](borders/)
+	1. Overview 
+	1. Background properties
+	1. background-color
+	1. Old background shorthand for single image
+	1. Overview of added properties
+		1. background-image'
+		1. background-repeat
+		1. background-attachment
+		1. background-position
+		1. background-clip
+		1. background-origin
+		1. background-size
+		1. background shorthand
 11. [Gradients](gradients/)
 	1. Overview
 	1. Syntax
