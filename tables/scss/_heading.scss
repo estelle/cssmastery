@@ -1,0 +1,34 @@
+/* Content */
+.slide header {
+  background-color: $header_bg;
+  margin: -20px;
+  padding: 10px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	h1 {
+	  margin-bottom: 0px;
+	  font-family: 'sanchez', georgia, sans-serif;
+	  font-weight: bold;
+	  color: $splashcolor;
+	  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	}
+
+	h2 {
+	  font-size: 90%;
+	}
+	h1:first-child {
+	  margin-top: 0;
+	}
+}
+
+.intro p, header {
+  text-align: center;
+}
+.intro header {
+  font-size: 2.2rem;
+}
+.intro h2 {
+  text-align: center;
+  padding: 100px;
+  font-size: 1.8rem;
+  font-family: 'sanchez', georgia, sans-serif;
+}

@@ -1,0 +1,24 @@
+pre {
+  text-align: left;
+  font-size: 80%;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border: 1px solid $splashcolor;
+  b {
+    font-weight: bold;
+    color: $splashcolor;
+    display:inline-block;
+  }
+  b:hover {
+    transform:scale(1.2);
+    color: $splashcolor;
+  }
+
+  em {
+    font-weight: normal;
+    font-style: normal;
+    color: $splashcolor;
+    text-shadow: currentColor 0 0 1px;
+  }
+}

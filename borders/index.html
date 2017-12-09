@@ -1,0 +1,887 @@
+<!doctype html>
+<html>
+  <head>
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]-->
+    <meta charset="utf-8" />
+    <title>CSS Mastery: Backgrounds &amp; Borders: </title>
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="style.css"/>
+   <link rel="stylesheet" href="borders.css"/>
+  </head>
+  <body>
+
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
+    <span class="key">2</span> for comments. <a href="http://estelle.github.com/cssmastery">estelle.github.com/cssmastery</a>
+    </p>
+  </div>
+
+  <div id="presentation">
+
+   <div id="presentation-counter"></div>
+
+   <div id="slides">
+
+
+<div class="slide intro">
+    <header>
+    	<h1>CSS Mastery</h1>
+    </header>
+     <section class="content">
+     <p> ◈ Estelle Weyl</p>
+  <p> ◈ <a href="http://www.twitter.com/estellevw">@estellevw</a></p><p> ◈ <a href="http://www.standardista.com">www.standardista.com</a></p>
+     </section>
+    </div>
+
+
+
+<div class="slide intro">
+     <header><h1>Backgrounds &amp; Borders</h1></header>
+     <p><a href="https://estelle.github.io/cssmastery/borders">https://estelle.github.io/cssmastery/borders</a></p>
+</div>
+
+
+
+
+
+<div class="slide">
+    <header><h1>Backgrounds and Borders</h1></header>
+    <section class="content">
+         <ul style="float: left; width:45%;">
+    <li>Background properties
+      <ul>
+        <li>background-color</li>
+        <li>background-image'</li>
+        <li>background-repeat</li>
+        <li>background-attachment</li>
+        <li>background-position</li>
+        <li>background-clip</li>
+        <li>background-origin</li>
+        <li>background-size</li>
+        <li>background shorthand</li>
+      </ul>
+    </li>
+    </ul>
+
+         <ul style="float: left; overflow:hidden; width: 45%;">
+    <li>Border properties
+      <ul>
+        <li>border-color</li>
+        <li>border-style</li>
+        <li>border-width</li>
+        <li>border shorthand</li>
+        <li>border-radius </li>
+      </ul>
+    </li>
+    <li>Border Images
+      <ul>
+        <li>border-image-source</li>
+        <li>border-image-slice</li>
+        <li>border-image-width</li>
+        <li>border-image-outset</li>
+        <li>border-image-repeat</li>
+        <li>border-image shorthand</li>
+      </ul>
+    </li>
+  </ul>
+    </section>
+</div>
+
+
+<!-- SECTION: Background -->
+<div class="slide intro">
+    <header><h1>Background properties</h1></header>
+</div>
+
+
+
+<!--  -->
+<div class="slide divider">
+  <header><h1><code>background-color</code> property</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<!--background-color -->
+<div class="slide">
+     <header><h1>background-color</h1></header>
+     <section class="content">
+ <ul>
+ 	<li>Use any of the color types</li>
+    <li>Always declare when declaring background images</li>
+    <li>Declare only once in a shorthand declaration.</li>
+    <li>Nothing really new here</li>
+ </ul>
+ <pre contenteditable>  background-color: white;
+  background-color: #fff;
+  background-color: #FFFFFF;
+  background-color: #FFFFFFFF;
+  background-color: rgb(255,255,255);
+  background-color: rgb(100%,100%,100%);
+  background-color: rgba(255,255,255,1);
+  background-color: rgba(100%,100%,100%, 1);
+  background-color: hsl(0, 100%, 100%);
+  background-color: hsla(0, 100%, 100%, 1);
+  background-color: <span class="imp">transparent</span>;
+  background-color: currentColor;</pre>
+  <p>Confused? See <a href="../colors/">Colors &amp; Transparency</a></p>
+     </section>
+ </div>
+
+<!--  -->
+<div class="slide divider">
+  <header><h1><code>background-image</code> property</h1></header>
+  <section class="content">
+  </section>
+</div>
+ <!-- bacgkround image -->
+ <div class="slide">
+     <header><h1>Old School: background-image</h1></header>
+     <section class="content">
+ <pre contenteditable>background-image: <em>none | &lt;uri&gt; | inherit</em> </pre>
+
+ </pre><pre style="line-height:2;">background-image: url(path/aSingleImage.jpg);</pre>
+ <p>Often part of <code>background</code> shorthand with:</p>
+ <ul>
+ <li>background-repeat</li>
+ <li>background-attachment</li>
+ <li>background-position</li>
+ <li>background-color</li>
+ </ul>
+ <p>Don't use  <code>background</code> shorthand for risk of setting any of 8 properties to default values</p>
+ </section>
+ </div>
+
+ <!--background-image -->
+<div class="slide">
+     <header><h1>background image tips</h1></header>
+     <section class="content">
+      <ul>
+        <li>Make sure there's enough contrast with text
+          <ul><li>add drop shadow</li></ul></li>
+        <li>Include a background color</li>
+        <li>Doesn't print by default</li>
+        <li>Not accessible</li>
+     </ul>
+        
+     </section>
+ </div>
+<!--background-image -->
+<div class="slide">
+     <header><h1>multiple background-image</h1></header>
+     <section class="content">
+ <pre contenteditable><em>none | [&lt;image&gt;]# | inherit</em> </pre>
+
+<pre>&lt;image> = &lt;url> | &lt;image()> | &lt;image-set()> | 
+          &lt;element()> | &lt;cross-fade()> | &lt;gradient></pre>
+     <pre contenteditable>background-image: url(green.gif), url(blue.gif);</pre>
+     <div class="multiplebg"></div>
+     <ul>
+      <li>Comma separated</li>
+        <li>layered front to back</li>
+        <li>Include background-color</li>
+     </ul>
+        
+     </section>
+ </div>
+
+<script>
+function loadCIU(term, object, that){
+  var obj = document.getElementById(object);
+  obj.setAttribute('data', 'http://caniuse.com/#search=' + term);
+  that.style.display = 'none';
+  return false;
+}
+</script>
+<!-- cross fade -->
+<div class="slide object">
+  <header><h1>cross-fade()</h1><button onclick="loadCIU('cross-fade', 'crossFade', this)">load</button></header>
+  <object id="crossFade"></object>
+</div>
+
+
+
+<!-- image set -->
+<div class="slide object">
+  <header><h1>image-set()</h1><button onclick="loadCIU('image-set', 'imageSet', this)">load</button></header>
+  <object id="imageSet"></object>
+</div>
+
+
+
+ <!-- bacgkround image -->
+ <div class="slide">
+     <header><h1>background-image value types</h1></header>
+     <section class="content">
+ <pre contenteditable><em>none | &lt;url&gt;  | &lt;gradient> | </em>
+  <i>&lt;image()></i> | <i>&lt;element()></i> | <i>&lt;image-set()></i>  | <i>&lt;cross-fade()></i> </pre><pre style="line-height:1.5;">none
+
+url(singleImage.png)
+url(firstImage.jpg), url(secondImage.jpg)
+url(data:image/gif;base64,fOulrS123hEAAa517sdfQfda...)
+url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'&gt;&lt;circle cx='55' cy='190' r='25' fill='#FFF' /&gt;&lt;/svg&gt;&quot;);
+
+linear-gradient(to bottom, green, blue)
+radial-gradient(circle, green, blue)</pre><pre style="line-height:1.5;"><i>image('ico_sprite.jpg#xywh=32,64,16,16')
+image("try1.svg", 'try2.png' , "try3.gif")
+
+element('#someID')</i></pre>
+<p>See <a href="https://www.w3.org/TR/css3-images/#image-notation">image() notation</a></p>
+ </section>
+ </div>
+
+
+
+<div class="slide">
+     <header><h1>url() values</h1></header>
+     <section class="content">
+<pre style="line-height:1; white-space:pre-wrap; word-break:break-all">url(singleImage.png)
+
+url(multipleImages.gif), url(otherGif.gif)
+
+url(SVGImages.<strong>svg</strong>);
+
+url(sprite.png<strong>#xywh=40,0,20,20</strong>)
+image(sprite.png<strong>#xywh=40,0,20,20</strong>);
+
+url(<strong>data:</strong>image/gif;<strong>base64</strong>,fOulrS123hEAAa517sdfQfdafsPFRjuy187xxRM221...)
+
+url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'>&lt;circle cx='55' cy='190' r='25' fill='#FFF' />^lt;path d='M160 213h-34a82 82 0 0 0 -82 -82v-34a116 116 0 0 1 116 116z' fill='#666'/>&lt;path d='M184 213A140 140 0 0 0 44 73 V 38a175 175 0 0 1 175 175z' fill='#666'/>&lt;/svg>"); <a href="http://jsfiddle.net/estelle/sTd62/embedded/result/" target="play">SVG Example</a>
+</pre>
+<p>Media fragment will not break backwards... hash will be ignored</p>
+ </section>
+ </div>
+
+
+<!-- media fragments -->
+<div class="slide object">
+  <header><h1>media fragments</h1><button onclick="loadCIU('Media%20fragment', 'mediaFrag', this)">load</button></header>
+  <object id="mediaFrag"></object>
+</div>
+
+
+<div class="slide">
+     <header><h1>Other background-image syntax</h1></header>
+       <section class="content">
+<p>Allows the use of any element, including &lt;canvas&gt; where images can be used.</p>
+
+<ul class="icons" style="float:right;"><li class="firefox">Firefox 4</li>
+</ul><pre contenteditable>background-image: -moz-element('#someID');
+background-image: element('#someID')</pre>
+<p>Define which portion of the image to show:</p>
+<ul class="icons" style="float:right;">
+         <li class="firefox">Firefox 4</li>
+</ul><pre contenteditable>background-image:
+    -moz-image-rect(url(ico_sprite.jpg), 32, 64, 16, 16);
+background-image: image('ico_sprite.jpg#xywh=32,64,16,16')</pre>
+</section></div>
+
+
+
+ <div class="slide">
+     <header><h1>Unsupported Syntax (future!!)</h1></header>
+     <section class="content">
+<p>Fallback in case your images doesn't load:</p>
+
+<pre contenteditable>background-image:
+     image("try1.svg", "try2.png", "try3.gif", blue)</pre>
+<p>Flip the image if the direction is rtl.</p>
+<pre contenteditable>background-image: image("arrow.png" rtl)</pre>
+     </section>
+ </div>
+
+
+
+
+ <!--background-image -->
+<div class="slide">
+     <header><h1>background-image</h1></header>
+     <section class="content">
+     <pre contenteditable style="overflow: auto;"><strong>background-image:</strong> url(myGif.gif), url(otherGif.gif);
+
+<strong>background-image:</strong> none;
+
+<strong>background-image:</strong> linear-gradient(top, red, blue);
+
+<strong>background-image: </strong>url(data:image/gif;base64,fOulrShEAAQ...);
+
+<strong>background-image:</strong>
+  url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'&gt;&lt;circle cx='55' cy='190' r='25' fill='#FFF' /&gt;&lt;/svg&gt;&quot;);</pre>
+
+<pre><strong>background-image:</strong> element('#myID');
+
+<strong>background-image:</strong> image('ico_sprite.jpg#xywh=32,64,16,16');
+
+<strong>background-image:</strong> image("try1.svg", 'try2.png' , "try3.gif");</pre>
+</pre>
+
+     </section>
+ </div>
+
+
+
+<!--  -->
+<div class="slide divider">
+  <header><h1><code>background-repeat</code> property</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+ <!-- background-repeat-->
+<div class="slide bgimage" id="bgrepeat">
+     <header><h1>background-repeat</h1></header>
+     <section class="content">
+     <pre contenteditable>background-repeat:
+  <span class="imp">repeat</span> | repeat-x | repeat-y | no-repeat | space | round;</pre>
+     <dl class="deprecated listed">
+  <dt>repeat</dt>
+  <dd>Tiled as often as needed to cover background</dd>
+  <dt>no-repeat</dt>
+  <dd>Placed once, not tiled or repeated</dd>
+  <dt>repeat-x</dt>
+  <dd>Tiled along X axis only (Equivalent to <code>repeat no-repeat</code>)</dd>
+  <dt>repeat-y</dt>
+  <dd>Tiled along Y axis only (Equivalent to <code>no-repeat repeat</code>)</dd>
+  <dt>space</dt>
+  <dd>Repeated as often as will fit without being clipped, spaced out evenly</dd>
+  <dt>round</dt>
+  <dd>Repeated as often as will fit without being clipped then scaled so no space in between</dd>
+</dl>
+<pre contenteditable>background-repeat: <b><span id="txt_bgrepeat">no-repeat</span></b>; <select id="cmd_bgrepeat" onChange="fnc_bgrepeat(this);">
+	<option>no-repeat</option>
+    <option>repeat</option>
+    <option>repeat-x</option>
+    <option>repeat-y</option>
+    <option>space</option>
+    <option>round</option>
+</select></pre>
+  <p style="font-size: 90%;">Should accept 2 values (H &amp; V)<br>
+Tip: Include <code>background-repeat: no-repeat;</code> in your reset CSS</p>
+
+<script defer>
+  function fnc_bgrepeat(event) {
+			  var backsize = event.value;
+			  var slide = document.getElementById('bgrepeat');
+              slide.style.backgroundRepeat = event.value;
+			  document.getElementById('txt_bgrepeat').innerHTML = event.value;
+
+            }
+	</script>
+
+     </section>
+ </div>
+
+
+
+<!--  -->
+<div class="slide divider">
+  <header><h1><code>background-attachment</code> property</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+ <!-- background-attachment -->
+<div class="slide">
+     <header><h1>background-attachment</h1></header>
+     <section class="content">
+     <pre contenteditable>background-attachment: fixed | local | <span class="imp">scroll</span></pre>
+
+
+     <pre contenteditable>background-attachment: <b><span id="txt_bgattachment">scroll</span></b></pre>
+     <div class="bgimage" id="bgattachment">
+     <p>Filet mignon kielbasa pork chop short ribs short loin shank hamburger. Bresaola hamburger venison shankle pork andouille. Pastrami venison andouille pancetta sausage chicken biltong. Tri-tip jerky short loin tenderloin pork chop. Shoulder frankfurter turkey ribeye, jowl tail leberkase brisket sausage boudin ham hock shankle ground round short loin.
+   </div>
+<div  style="position:absolute;top:10px; right:10px;"><select id="cmd_bgattachment" onChange="fnc_bgattachment(this);">
+    <option>scroll</option>
+    <option>fixed</option>
+    <option>local</option>
+</select>
+<select onChange="document.getElementById('bgattachment').style.position = this.value;">
+	<option value="static">Default</option>
+    <option value="absolute">Move Me</option>
+    </select>
+     </div></section>
+     <script defer>
+  function fnc_bgattachment(event) {
+			  var attachment = event.value;
+			  var slide = document.getElementById('bgattachment');
+              slide.style.backgroundAttachment = event.value;
+			  document.getElementById('txt_bgattachment').innerHTML = event.value;
+
+            }
+	</script>
+ </div>
+
+
+
+<!--  -->
+<div class="slide divider">
+  <header><h1><code>background-position</code> property</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+
+ <!--background-position -->
+ <div class="slide object">
+   <header><h1>% based background-position (old )</h1></header>
+<object data="files/80_bgposition.html"></object>
+<a href="files/80_bgposition.html" target="play" class="objectlink">Try it out</a>
+ </div>
+
+ <!--background-position -->
+<div class="slide bgimage" style="background-position: right 150px bottom 50px;">
+     <header><h1>background-position</h1></header>
+     <section class="content">
+     <p>Positioning relative to any corner</p>
+     <pre contenteditable>background-position: right 50px bottom 50px;</pre>
+      </ul>
+
+     </section>
+ </div>
+
+
+<div class="slide object">
+<header><h1>4-value background-position</h1></header>
+<object data="files/81_bgposition.html"></object>
+<a href="files/81_bgposition.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+<!--  -->
+<div class="slide divider">
+  <header><h1><code>background-clip &amp; background-origin</code> property</h1></header>
+  <section class="content">
+  </section>
+</div>
+<!--background-clip -->
+<div class="slide" id="bgclip">
+	<header><h1>background-clip</h1></header>
+    <section class="content">
+    <pre contenteditable><b><u></u>background-clip</b>: <span class="imp">border-box</span> | padding-box | content-box</pre>
+
+    <div style="background-clip: content-box;" class="backgroundclip bgimage">content-box</div>
+    <div style="background-clip: padding-box;" class="backgroundclip bgimage">padding-box</div>
+    <div style="background-clip: border-box;" class="backgroundclip bgimage">border-box</div>
+    </section>
+ </div>
+
+ <!--background-origin -->
+<div class="slide" id="bgorigin">
+	<header><h1>background-origin</h1></header>
+    <section class="content">
+
+    <pre contenteditable><b><u></u>background-origin</b>: border-box | <span class="imp">padding-box</span> | content-box</pre>
+    <div style="background-origin: content-box;" class="backgroundclip bgimage">content-box</div>
+    <div style="background-origin: padding-box;" class="backgroundclip bgimage">padding-box</div>
+    <div style="background-origin: border-box;" class="backgroundclip bgimage">border-box</div>
+     
+    </section>
+</div>
+
+ <div class="slide object">
+<header><h1>background-clip / background-origin</h1></header>
+<object data="files/81b_bgposition.html"></object>
+<a href="files/81b_bgposition.html" target="play" class="objectlink">Try it out</a>
+</div>
+ <!--background-size -->
+<div class="slide" id="bgsize">
+	<header><h1>background-size</h1></header>
+    <section class="content">
+    <pre contenteditable><b><u></u>background-size</b>: <span class="imp">auto</span> | contain | cover | <span id="actualsize">&lt;length&gt;</span></pre>
+    <div id="bcksizeexample" class="bgimage bgimagebk">
+    <input type="range" min="50" max="150" step="5" value="70" id="bcksizechange" onChange="changeBackSide(this)" style="position:relative; top: -30px;"/>
+    </div><ul>
+    	<li>Use for creating gradients backgrounds</li>
+        <li>Needed for hiDPI images</li>
+        <li>&lsquo;contain&rsquo; grows/shrinks to fully fit</li>
+        <li>&lsquo;cover&rsquo; grows to min size that covers 100% of height &amp; width</li>
+    </ul>
+
+    </section>
+    <script defer>
+    function changeBackSide(event) {
+			  var backsize = event.value;
+			  var image = document.getElementById('bcksizeexample');
+              image.style.backgroundSize = backsize + "px " + backsize + "px"   ;
+			  document.getElementById('actualsize').innerHTML = "<b>"+ backsize +"px " +  backsize +"px</b>;";
+
+            }
+	</script>
+</div>
+
+
+
+<!--  -->
+<div class="slide divider">
+  <header><h1><code>background-size </h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+
+<!--background-size -->
+<div class="slide" id="bgsize">
+  <header><h1>background-size</h1></header>
+    <section class="content">
+    <pre contenteditable><b><u></u>background-size</b>: <span onClick="changeBackSide2('auto')">auto</span> | <span onClick="changeBackSide2('contain')">contain</span> | <span onClick="changeBackSide2('cover')">cover</span> | <span onClick="changeBackSide2('100px 200px')">100px 200px</span></pre>
+    <div id="bcksizeexample2" class="bgimage2">
+    </div>
+
+    <dl class="deprecated listed">
+      <dt>auto</dt>
+      <dd>image is actual size</dd>
+      <dt>cover</dt>
+      <dd>image maintains aspect ratio, covering entire element even if that means part of the image is cut off.</dd>
+      <dt>contain</dt>
+      <dd>image maintains aspect ratio, fitting the entire image into the element even if that means part of the background is showing or the image repeats.</dd>
+      <dt>length</dt>
+      <dd>image maintains aspect ratio, growing or shrinking so that the width is the length defined</dd>
+      <dt>auto length</dt>
+      <dd>image maintains aspect ratio, growing or shrinking so that the height is the length defined</dd>
+
+      <dt>length length</dt>
+      <dd>image DOES NOT NECESSARILY maintain its aspect ratio, height and width both grow or shrink to the  length defined</dd>
+    </section>
+    <script defer>
+    function changeBackSide2(backsize) {
+       console.log('hit');
+        var image = document.getElementById('bcksizeexample2');
+              image.style.backgroundSize = backsize;
+
+            }
+  </script>
+</div>
+
+
+
+
+<!--  -->
+<div class="slide divider">
+  <header><h1><code>background</code> shorthand property</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+
+
+ <!-- background shorthand-->
+<div class="slide">
+  <header><h1>background shorthand</h1></header>
+    <section class="content">
+
+    <pre contenteditable>background:
+ img position / size repeat attachment origin clip,
+ img position / size repeat attachment box{1,2} bgcolor;    </pre>
+<pre contenteditable>background:
+ url(topImg.jpg) 0 0 / 30px 30px repeat scroll border-box content-box,
+ url(botImg.jpg) 15px 15px / 30px 30px fixed border-box #609;</pre>
+ <h1>DO NOT USE BACKGROUND SHORTHAND!!!</h1>
+ <ul>
+    <li><a href="http://www.standardista.com/css3/css3-background-properties">Border properties &amp; browser support</a></li>
+
+   <li class="notes">If one &lsquo;box&rsquo; value is present then it sets both 'background-origin' and 'background-clip' to that value. If two values are present, then the first sets 'background-origin' and the second 'background-clip'</li>
+   </ul>
+    </section>
+    </div>
+
+
+
+<div class="slide object">
+<header><h1>Play with background properties</h1></header>
+<object data="files/84_backgroundsize.html"></object>
+<a href="files/84_backgroundsize.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+
+<!--Border properties -->
+<div class="slide intro">
+     <header><h1>Border properties</h1></header>
+ </div>
+
+ <!--border-color -->
+<div class="slide">
+     <header><h1>border-color</h1></header>
+     <section class="content">
+ <ul>
+ 	<li>Use any of the color types</li>
+    <li>Nothing really new here</li>
+ </ul>
+ <pre contenteditable>  border-color: white;
+  border-color: #fff;
+  border-color: #FFFFFF;
+  border-color: #FFFFFFFF;
+  border-color: rgb(255,255,255);
+  border-color: rgb(100%,100%,100%);
+  border-color: rgba(255,255,255,1);
+  border-color: rgba(100%,100%,100%, 1);
+  border-color: hsl(0, 100%, 100%);
+  border-color: hsla(0, 100%, 100%, 1);
+  border-color: transparent;
+  border-color: <span class="imp">currentColor</span>; /* default */</pre>
+     </section>
+ </div>
+
+ <!--border-style -->
+<div class="slide borderstyle">
+     <header><h1>border-style</h1></header>
+     <section class="content">
+     <dl class="deprecated">
+  <dt style="border-style:none;" class="imp">none</dt>
+  <dd style="width: 50%">No border. As if border-width: 0; except with border-image</dd>
+  <dt style="border-style: hidden;">hidden</dt>
+  <dd style="width: 50%">Same as none, but relevant in border-collapsed tables</dd>
+  <dt style="border-style:dotted;">dotted</dt>
+  <dd> Round dots.</dd>
+  <dt style="border-style:dashed;">dashed</dt>
+  <dd>Square-ended dashes.</dd>
+  <dt style="border-style:solid;">solid</dt>
+  <dd>a single solid line.</dd>
+  <dt style="border-style:double;">double</dt>
+  <dd>Two parallel solid lines. Only relevant if border-width &gt;= 3px. line + space + line = border-width value. </dd>
+  <dt style="border-style:groove;">groove</dt>
+  <dd>Shadow effect using  two colors on each side, with a slightly lighter and darker than the border-color value. Top / left half of each side darker.</dd>
+  <dt style="border-style:ridge;">ridge</dt>
+  <dd>Looks as if it were coming out of the canvas.  Bottom / Right darker</dd>
+  <dt style="border-style:inset;">inset</dt>
+  <dd>Looks sunken into page. Top and left border are made darker, bottom and right are lighter.. Treated as ridge in border-collapsed tables.</dd>
+  <dt style="border-style:outset;">outset</dt>
+  <dd>Looks as if popping out of page. Bottom and right are darker. Top and left border are lighter.. Treated as groove in border-collapsed tables. </dd>
+</dl>
+     </section>
+ </div>
+
+ <!-- border-width-->
+<div class="slide">
+     <header><h1>border-width</h1></header>
+     <section class="content">
+     <pre contenteditable>border-width: (length) | thin | <span class="imp">medium</span> | thick | inherit {1,4};</pre>
+     <ul>
+     <li>Up to 4 values (TRouBLe)</li>
+     <li>Nothing new here</li>
+     </ul>
+     </section>
+ </div>
+
+ <!-- border shorthand-->
+<div class="slide">
+     <header><h1>border shorthand</h1></header>
+     <section class="content">
+     <pre contenteditable>border: width style color;</pre>
+     <pre contenteditable>border-left: width style color;</pre>
+     <pre contenteditable>border-top: 5px dashed rgba(217,68,11, 0.8);</pre>
+     <ul>
+     <li>style is REQUIRED.</li>
+     <li>width defaults to <span class="imp">medium</span></li>
+     <li>color defaults to <span class="imp">currentColor</span></li>
+     </ul>
+     </section>
+ </div>
+
+
+
+<!--Border properties -->
+<div class="slide intro">
+     <header><h1>border-radius</h1></header>
+ </div>
+
+
+
+
+
+ <!--border-radius -->
+<div class="slide">
+<header><h1>border-radius</h1></header>
+<section class="content">
+<div class="radius">
+	<div><pre contenteditable>border-radius: 0;</pre> <b></b>
+    </div>
+    <div><pre contenteditable>border-radius: 20px;</pre><b style="border-radius: 20px"></b>
+    </div>
+    <div><pre contenteditable>border-radius: 50%;</pre><b style="border-radius: 50%"></b>
+    </div>
+</div>
+  <pre contenteditable style="float: left; margin-right: 40px;">border-top-left-radius
+border-top-right-radius
+border-bottom-right-radius
+border-bottom-left-radius</pre>
+
+<p style="clear:both;">DO NOT PREFIX</p>
+</section>
+</div>
+
+
+ <!--border-radius -->
+<div class="slide">
+<header><h1>border-radius</h1></header>
+<section class="content">
+<div class="radius">
+	<div><pre contenteditable>.circle {border-radius: 50%;}</pre> <b style="border-radius: 50%;"></b></div>
+	<div><pre contenteditable>.oval { border-radius: 50%;}</pre> <b style="border-radius: 50%; width: 100px;"></b></div>
+	<div><pre contenteditable>.different { border-radius: 10px 30px;}</pre> <b style="border-radius: 10px 30px; "></b></div>
+	<div><pre contenteditable>.elliptical { border-radius: 10px / 30px;}</pre> <b style="border-radius: 10px / 30px;"></b></div>
+	<div><pre contenteditable>.uglier {
+  border-radius: 10px 35px 20px 15px /
+                 30px 35px 5px 5px;}</pre> <b style="border-radius: 10px 35px 20px 15px / 30px 35px 5px 5px; width: 75px; height: 75px;"></b></div>
+ </div>
+
+</section>
+</div>
+
+
+<div class="slide object">
+<header><h1>Play with border-radius</h1></header>
+<object data="files/82_borderradius.html"></object>
+<a href="files/82_borderradius.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+<!-- Border Images-->
+<div class="slide intro">
+     <header><h1>Border Images</h1></header>
+ </div>
+
+
+<!-- what is -->
+<div class="slide">
+     <header><h1>What is Border Image</h1></header>
+     <section class="content">
+
+     <div class="whatisborderimage">
+
+     </div>
+     </section>
+ </div>
+
+
+
+<!-- CanIUse Border Image-->
+<div class="slide object">
+  <header><h1>border-image</h1><button onclick="loadCIU('border-image', 'borderImage', this)">load</button></header>
+  <object id="borderImage"></object>
+</div>
+
+
+
+
+
+ <!-- -->
+ <div class="slide">
+	<header><h1>border-image</h1></header>
+    <section class="content">
+<pre contenteditable><b>border-image</b>: source || slice / width / outset  || repeat;</pre>
+
+    <h1 style="text-align:left">Underlying Properties</h1>
+    <ul style="float:right">
+    <li>Syntax for non-prefixed differs</li>
+    <li>Must also declare <code>border-style</code></li>
+    <li><a href="http://border-image.com/">Border image tool</a></li>
+    <li><a href="http://www.sitepoint.com/css3-border-image/">border-image tutorial</a></li>
+    <li><a href="http://www.standardista.com/css3/css3-border-properties">border-image browser support</a></li>
+    </ul>
+      <ul>
+        <li>border-image-source</li>
+        <li>border-image-slice</li>
+        <li>border-image-width</li>
+        <li>border-image-outset</li>
+        <li>border-image-repeat</li>
+        <li class="imp">border-image</li>
+      </ul>
+     </section>
+ </div>
+
+
+ <div class="slide">
+	<header><h1>border-image</h1></header>
+    <section class="content">
+<pre contenteditable>
+<b>border-image-source</b>: <strong>none</strong> | url() | &lt;image>
+
+<b>border-image-slice</b>: &lt;number> | XX% {1,4} &amp;&amp; fill
+
+<b>border-image-width</b>: &lt;length> | XX% | &lt;number> | <strong>1</strong> | auto {1,4}
+
+<b>border-image-outset</b>: &lt;length> | &lt;number> {1,4}
+
+<b>border-image-repeat</b>: <strong>stretch</strong> | repeat | round {1,2}
+
+</pre>
+<pre contenteditable style="float:right; margin-bottom:40px;">
+S = <input type="range" id="slice" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
+W = <input type="range" id="width" min="0" max="50" value="34" step="1" onChange="changeBorderImage();">
+<select id="repeat" onChange="changeBorderImage();"><option value="stretch" selected>stretch</option><option value="repeat">repeat</option><option value="round">round</option></select> </pre>
+
+<div id="boderimage"></div>
+
+
+<pre contenteditable style="clear:both;">border-image: url(gradient.png) <b id="sliceval">34</b> / <b id="widthval">34</b><b>px</b> <b id="repeatval">stretch</b>;</pre>
+</section>
+<script defer="">
+  function changeBorderImage(){
+    var slice = document.getElementById('slice').value;
+    var width = document.getElementById('width').value;
+    var repeat = document.getElementById('repeat');
+    repeat = repeat.options[repeat.selectedIndex].text;
+    document.getElementById('boderimage').style.webkitBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
+    document.getElementById('boderimage').style.mozBorderImage = "url(http://standardista.com/articles/gradient.png) " + slice + "/" + width + "px " + repeat;
+    document.getElementById('sliceval').innerHTML = slice;
+    document.getElementById('widthval').innerHTML = width;
+
+    document.getElementById('repeatval').innerHTML = repeat;
+  }
+</script>
+</div>
+
+ <div class="slide object">
+<header><h1>Play with border-image</h1></header>
+<object data="files/83_longcat.html"></object>
+<a href="files/83_longcat.html" target="play" class="objectlink">Try it out</a>
+</div>
+
+
+<div class="slide intro">
+     <header><h1>Gradients</h1></header>
+    <h1><a href="../gradients/">Next ➹</a></h1>
+</div>
+
+
+<!-- links -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+  <section class="content">
+    <ul>
+      <li>
+        <a href="https://drafts.csswg.org/css-backgrounds/">W3C Background and Borders Specification</a>
+      </li>
+      <li><a href="https://www.w3.org/TR/css3-images/#image-notation">image() notation</a></li>
+    </ul>
+  </section>
+</div>
+
+
+
+  </div>
+  <script src="slides.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+@import "pre";
+@import "code";
+.content {
+  font-size: 140%;
+}
+.content input, button {
+  font-size: 140%;
+}
+.content td {
+   border: 1px solid black;
+}
+section, footer {
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+  margin: 20px 30px 0;
+  display: block;
+  overflow: hidden;
+}
+footer {
+  font-size: 100%;
+  margin: 20px 0 0 30px;
+}
+a, em {
+  color: $splashcolor;
+  text-decoration: none;
+  font-style:normal;
+}
+.imp li,
+b.imp{
+  transition: all 0.2s ease-in;
+}
+.imp li:hover, b.imp:hover{
+  transform:scale(1.2);
+  color: $splashcolor;
+  transform-origin: left;
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<meta charset="utf-8" />
+    <title>HTML Tables and CSS</title>
+<link rel="stylesheet" href="style.css"/>
+</head> 
+
+<body> 
+
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->  
+<div id="info">
+    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> to advance, <span class="key">2</span> for comments, <span class="key">4</span> to read/write notes.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+   
+    <div class="slide intro">
+     <header>
+      <h1>HTML Tables &amp; CSS</h1>
+     </header>
+    </div> 
+    
+<!--  -->
+<div class="slide">
+  <header><h1>Table Purpose</h1></header>
+  <section class="content">
+    <p>Presentation of Data</p>
+    <ul>
+      <li>Presenting</li>
+      <li>Comparing</li>
+      <li>Sorting</li>
+      <li>Calculating</li>
+      <li>Cross Referencing</li>
+    </ul>
+    <p>NOT for presentation</p>
+  </section>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>Structure of a Table</h1></header>
+  <section class="content">
+    <pre contenteditable><strong>&lt;table></strong>
+  <strong>&lt;caption></strong>&lt;/caption>
+  <strong>&lt;colgroup></strong>
+    <strong>&lt;col/></strong>
+  &lt;/colgroup>
+  <strong>&lt;thead></strong>
+    &lt;tr>
+      &lt;th>&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  <strong>&lt;tbody></strong>
+    &lt;tr>
+      &lt;td>&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+  <strong>&lt;tfoot></strong>
+    &lt;tr>
+      &lt;th>&lt;/th>
+    &lt;/tr>
+  &lt;/tfoot>
+&lt;/table></pre>
+  </section>
+</div>
+
+<div class="slide">
+  <header><h1>Structure of a Table</h1></header>
+  <section class="content">
+    <pre contenteditable>&lt;table>
+  &lt;caption>Table Caption&lt;/caption>
+  &lt;colgroup>
+    &lt;col/>
+  &lt;/colgroup>
+  &lt;thead>&lt;/thead>
+  &lt;tbody>&lt;/tbody>
+  &lt;tfoot>&lt;/tfoot>
+&lt;/table></pre>
+  </section>
+</div>
+
+<!-- Table Caption -->
+<div class="slide">
+  <header><h1>Caption</h1></header>
+  <section class="content">
+    <ul>
+      <li>Specifies the title of table</li>
+      <li>Always the first child of a &lt;table></li>
+      <li>Can be positioned on top or bottom with <code>caption-side</code></li>In FF, can be top, bottom, left or right of table</li>
+      <li>Can be styled</li>
+      <li>CSS: Inherits from <code>table</code></li>
+    </ul>
+  </section>
+</div>
+
+<!-- cpation side -->
+<div class="slide">
+  <header><h1><code>caption-side</code> property</h1></header>
+  <section class="content" style="overflow-y: scroll; max-height: 80vh">
+<p>Put on the <code>&lt;table></code>, not the <code>&lt;caption></code>.</p>
+<p>supported</p><pre>caption-side: top; 
+caption-side: bottom;</pre> 
+<p>Experimental</p>
+<pre>caption-side: left; 
+caption-side: right; 
+caption-side: top-outside; 
+caption-side: bottom-outside;</pre>
+<p>In the specification</p>
+<pre>caption-side: inline-start;
+caption-side: inline-end;</pre>
+<p>deprecated:</p>
+<pre>&lt;table align="left | top | right | bottom"></pre>
+  </section>
+</div>
+
+<!-- caption side -->
+<div class="slide object">
+  <header><h1><code>caption-side</code> property</h1></header>
+  <object data="files/captionside.html"></object>
+</div>
+
+<!-- style the caption -->
+<div class="slide object">
+  <header><h1><code>&lt;caption></code>  styling</h1></header>
+  <object data="files/caption.html"></object>
+</div>
+
+<!-- border spacing -->
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!-- border-collapse -->
+<div class="slide">
+  <header><h1>border-collapse</h1></header>
+  <section class="content">
+    <pre>border-collapse: <em>separate</em> | collapse | inherit</pre>
+    <p>When the borders are collapsed <code>border-spacing</code> is relevant.</p>  
+  </section>
+</div>
+
+<!-- border-spacing -->
+<div class="slide">
+  <header><h1>border-spacing</h1></header>
+  <section class="content">
+    <pre>border-spacing: &lt;length> &lt;length>?;</pre>
+    <p>The look you want is probably:</p>
+    <pre>table, td, th {border: none;}
+table {border-spacing: 5px 10px;}</pre>
+<ul>
+  <li>one length: vertical and horizontal padding are the same.</li>
+  <li>two lengths: first is horizontal, second is vertical</li>
+  <li>Note: not TRouBLe</li>
+  <li>Irrelevant if <code>border-collapse: collapse</code></li>
+</ul>
+  </section>
+</div>
+
+<!-- style the caption -->
+<div class="slide object">
+  <header><h1>table borders</h1></header>
+  <object data="files/padding.html"></object>
+</div>
+
+
+
+<!--  -->
+<div class="slide">
+  <header><h1></h1></header>
+  <section class="content">
+  </section>
+</div>
+    <div class="slide"> 
+<header><h1></h1></header> 
+<section class="content"> 
+<pre contenteditable></pre>
+</section>
+</div> 
+ 
+  
+<div class="slide"> 
+<header><h1>Viewers can take notes</h1></header> 
+<section class="content"> 
+<pre contenteditable>Click on the #4 to show some notes stored with local storage</pre>
+</section>
+</div> 
+ 
+  
+<div class="slide"> 
+<header><h1>You can show lines of text over time</h1></header> 
+<section class="content"> 
+<pre contenteditable>Click on the #2 to show more text</pre>
+<p class="temphidden">This used to be hidden</p>
+<p class="temphidden">This was also hidden</p>
+<p class="temphidden">This too</p>
+<p class="temphidden">and so was this</p>
+</section>
+</div> 
+ 
+  
+
+    
+
+   
+
+   </div>
+   
+<header>
+    <nav>
+        <button class="cancel" id="back">Back</button><button class="done" id="next">Next</button>
+    </nav>
+</header>
+</div>
+<script src="slides.js"></script>
+</body> 
+</html>
+

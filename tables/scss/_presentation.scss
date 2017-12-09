@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* Screen CSS */
+
+@import "variables";
+
+html {
+  font-size: 18px;
+}
+body {
+  line-height: 1.5;
+  font-family: helvetica, sans-serif;    
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px; top: 0px;
+  color: $text;
+}
+#presentation {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  display: block;
+  overflow: hidden;
+  background-color: $dark_bg;
+}
+#info {
+  font-size: small;
+  position: absolute;
+  bottom: 0px;
+  left: 40%;
+  z-index: 500;
+}
+
+#topinfo {
+  font-size: small;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 500;
+  display: none;
+}
+
+.notes {display: none;}
+
+.slides {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: block;
+  transition: transform 1s ease-in-out;
+  transform: scale(0.8);
+}
+
+.counter {
+  color: $splashcolor;
+  font-size: 70%;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  width: 1vw;
+  text-align: center;
+}
+  

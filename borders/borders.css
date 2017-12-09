@@ -1,0 +1,89 @@
+ .multiplebg {
+	background-image: linear-gradient(#71c6aa, #71c6aa), linear-gradient(#58ADE3,#58ADE3);
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+	background-position: 0 0, 20px 20px;
+	height:120px;
+	width: 120px;
+	float: right;
+	margin: 20px;
+ }
+ .bgimage {
+	background-image: radial-gradient(50px, transparent 70%, #58ADE3 70%,#58ADE3 85%,transparent  85% );
+	background-size: 95px 95px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+
+
+ }
+ .bgimagebk {
+	background-image: radial-gradient(50px, transparent 70%, #58ADE3 70%,#58ADE3 85%,transparent  85% ), linear-gradient(#58ADE3, transparent);
+}	
+ #bgattachment {width:300px; height:300px; overflow:scroll; border: 1px solid #58ADE3; float:right; top:0; left:0;}
+ .backgroundclip {
+	width: 150px;
+	height: 150px;
+	border: 20px dotted rgba(128, 128, 128, 0.8);
+	padding: 20px; margin: 20px;
+	background-color: #58ADE3;
+	float:left;
+	text-align:center;
+}
+#bcksizeexample, #bcksizeexample2 {
+	background-repeat:repeat;
+	float: right;
+	box-shadow: inset 5px 5px 5px rgba(0,0,0,0.4),inset -5px -5px 5px rgba(0,0,0,0.4) ;
+	width: 200px;
+	height:400px;
+	text-align:center;
+	margin-left: 20px;
+}
+#bcksizeexample2 {
+  background-repeat: no-repeat;
+  width: 100px;
+  height:200px;
+  background-image:url(img/shark.gif);
+  background-position: 50%;
+  background-color: white;
+}
+.borderstyle dt {
+	border: 9px solid #71c6aa;
+	margin-bottom:0; margin-top:0.2em;
+	display:block; width: 30%; padding-left: 7px;
+}
+.radius pre {float: left; width:70%;}
+.radius b {
+	display: inline-block;
+	height:50px;
+	width: 50px;
+	border: 10px inset #71c6aa;
+	float:left;
+	margin-left: 10px;
+}
+
+.whatisborderimage {
+	margin: auto;
+	height: 400px;
+	width: 400px;
+	
+	background-image:
+		linear-gradient(#71c6aa 5px, transparent 5px, transparent 245px, #71c6aa 245px),
+		linear-gradient(left, #71c6aa 5px, transparent 5px, transparent 245px, #71c6aa 245px),
+		linear-gradient(#58ADE3, #71c6aa, #58ADE3);
+	background-size: 400px 250px, 250px 400px, 350px 350px;
+	background-position: center;
+	background-position: no-repeat;
+}
+/* Border-image */
+#boderimage {
+	background-repeat:repeat;
+	width: 400px;
+	height:100px;
+	text-align:center;
+	margin-left: 20px;
+	border-width: 10px;
+	float:left;
+	border-image: url(http://standardista.com/articles/gradient.png) 34 /  34px stretch;
+} [title="prefix"] {white-space:nowrap; display: block;}
+tr {height: 2em;}
+th {text-align: right; padding-right: 10px;}

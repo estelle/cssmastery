@@ -1,0 +1,29 @@
+.slide {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  width: 900px;
+  height: 700px;
+  margin-top: -350px;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 3px;
+  transition: all 0.25s ease-in-out;
+  transform: scale(1);
+  padding-left: 20px;
+  padding-top: 10px;
+  background-color: $light_bg;
+
+  li {
+    margin-bottom: 10px;
+  }
+  img {
+    max-height: 90%;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+  }
+  p, textarea {
+    font-size: 120%;
+  }
+}

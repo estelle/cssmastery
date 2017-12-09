@@ -1,0 +1,27 @@
+nav button {
+	z-index: 1000; 
+	position: absolute; 
+	top:0; 
+	padding: 10px 20px;
+	color: $invertedtext;
+	background-color: $colorpop;
+	border: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+#next {
+   right: 0;
+   padding: 10px 0 40px 50px;
+   background: linear-gradient(to bottom left, $colorpop 48%, transparent 48%);
+   &:hover, &:focus {
+   	background: linear-gradient(to bottom left, $colorpop 48%, $invertedtext 48%, 52%, $dark_bg 52%, 54%, transparent 54%);
+   }
+
+}
+#back {
+	left:0;   
+	padding: 10px 50px 40px 0px;
+   background: linear-gradient(to bottom right, $colorpop 48%, transparent 48%);
+   &:hover, &:focus {
+   	background: linear-gradient(to bottom right, $colorpop 48%, $invertedtext 48%, 52%, $dark_bg 52%, 54%, transparent 54%);}
+}
