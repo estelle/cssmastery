@@ -43,11 +43,6 @@
 	1. Opacity v. Alphatransparency
 	1. appearance
 	1. additional pseudo elements
-1. Tables
-	1. When to use
-	1. Semantics
-	1. Caption
-	1. Border padding & spacing
 7. [Flexbox](flexbox/)
 	1. Purpose and goal of flexbox
 	1. browser support and specification
@@ -56,6 +51,14 @@
 	1. Flex container properties
 	1. Flex item properties
 	1. Flexibility
+1. Tables
+	1. When to use
+	1. Semantics
+	1. Caption
+	1. Border padding & spacing
+	1. Other table properties
+	1. styling columns
+	1. Good UI
 8. [Grid](grid/)
 9. [Backgrounds and Borders](borders/)
 	1. Overview 

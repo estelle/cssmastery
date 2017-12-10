@@ -84,6 +84,14 @@
   </section>
 </div>
 
+
+
+<!-- caption -->
+<div class="slide intro">
+  <header><h1>Captions</h1></header>
+  <section class="content">
+  </section>
+</div>
 <!-- Table Caption -->
 <div class="slide">
   <header><h1>Caption</h1></header>
@@ -131,8 +139,8 @@ caption-side: inline-end;</pre>
 </div>
 
 <!-- border spacing -->
-<div class="slide">
-  <header><h1></h1></header>
+<div class="slide intro">
+  <header><h1>Borders &amp; Spacing</h1></header>
   <section class="content">
   </section>
 </div>
@@ -159,50 +167,224 @@ table {border-spacing: 5px 10px;}</pre>
   <li>two lengths: first is horizontal, second is vertical</li>
   <li>Note: not TRouBLe</li>
   <li>Irrelevant if <code>border-collapse: collapse</code></li>
+  <li>Empty space is part of the table, not the column, tbody, row or cell.</li>
 </ul>
   </section>
 </div>
 
 <!-- style the caption -->
 <div class="slide object">
-  <header><h1>table borders</h1></header>
+  <header><h1>table spacing</h1></header>
   <object data="files/padding.html"></object>
 </div>
 
 
-
-<!--  -->
-<div class="slide">
-  <header><h1></h1></header>
+<!-- other -->
+<div class="slide intro">
+  <header><h1>Other Table Properties</h1></header>
   <section class="content">
   </section>
 </div>
-    <div class="slide"> 
-<header><h1></h1></header> 
-<section class="content"> 
-<pre contenteditable></pre>
-</section>
-</div> 
- 
+<!--  -->
+<div class="slide">
+  <header><h1>Empty Cells</h1></header>
+  <section class="content">
+    <pre>empty-cell: show | hide</pre>
+    <p>Similar to:</p>
+
+<pre contenteditable>td:empty, th:empty {
+  visibility: none;
+  }</pre>
+<ul>
+  <li>ignored if <code>border-collapse: separate</code></li>
+  <li>applies to elements with diplay of <code>table-cell</code></li>
+  <li>property of <code>table</code> or the cells themselves
+</ul>
+  </section>
+</div>
+
+
+
+<!-- style the caption -->
+<div class="slide object">
+  <header><h1>empty-cells</h1></header>
+  <object data="files/empty.html"></object>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>table-layout</h1></header>
+  <section class="content">
+    <pre contenteditable>table-layout: <em>auto</em> | fixed</pre>
+    <ul>
+      <li>fixed renders faster</li>
+    </ul>
+  </section>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>Vertical Align</h1></header>
+  <section class="content">
+    <pre contenteditable>vertical-align: baseline | sub | super | text-top | 
+                text-bottom | middle | top | bottom | 
+                &lt;percentage> | &lt;length></pre>
+    <dl class="deprecated">
+ <dt><code>baseline</code></dt>
+ <dd>Aligns the baseline of the cell with the baseline of all other cells in the row that are baseline-aligned.</dd>
+ <dt><code>top</code></dt>
+ <dd>Aligns the top padding edge of the cell with the top of the row.</dd>
+ <dt><code>middle</code></dt>
+ <dd>Centers the padding box of the cell within the row.</dd>
+ <dt><code>bottom</code></dt>
+ <dd>Aligns the bottom padding edge of the cell with the bottom of the row.</dd>
+</dl>
+<ul>
+  <li>applied to thead, tfoot, tbody, tr, td, th, but not table.</li>
+  <li>negative values are ok</li>
+  <li>additional values (sub, super, text-top, text-bottom, &lt;length>, and &lt;percentage>) equal <code>baseline</code>
+  </li>
+</ul>
+  </section>
+</div>
+
+
+
+<!-- style the caption -->
+<div class="slide object">
+  <header><h1>vertical-align</h1></header>
+  <object data="files/vertical.html"></object>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1><code>display</code> property</h1></header>
+  <section class="content">
+    <pre>display: table | table-cell</pre>
+    <pre>display: table;
+display: table-row-group;
+display: table-header-group;
+display: table-footer-group;
+display: table-row;
+display: table-cell;
+display: table-column-group;
+display: table-column;
+display: table-caption;</pre>
+<pre>.parent {
+  display: table;
+}
+.child {
+  display: table-cell;
+  vertical-align: baseline;
+}</pre>
+  </section>
+</div>
+
+<!-- divider -->
+<div class="slide intro">
+  <header><h1>columns</h1></header>
+  <section class="content">
+    </section>
+  </div>
   
-<div class="slide"> 
-<header><h1>Viewers can take notes</h1></header> 
-<section class="content"> 
-<pre contenteditable>Click on the #4 to show some notes stored with local storage</pre>
-</section>
-</div> 
- 
-  
-<div class="slide"> 
-<header><h1>You can show lines of text over time</h1></header> 
-<section class="content"> 
-<pre contenteditable>Click on the #2 to show more text</pre>
-<p class="temphidden">This used to be hidden</p>
-<p class="temphidden">This was also hidden</p>
-<p class="temphidden">This too</p>
-<p class="temphidden">and so was this</p>
-</section>
-</div> 
+  <!--  -->
+  <div class="slide">
+    <header><h1>&lt;col> Syntax</h1></header>
+    
+  <section class="content">
+<pre contenteditable>&lt;table>
+  &lt;caption>
+    2017–18 Primera División: Player of the week
+  &lt;/caption>
+  <em>&lt;colgroup>
+    &lt;col class="week"/>
+    &lt;col class="player"/>
+    &lt;col class="club"/>
+    &lt;col class="stat"/>
+  &lt;/colgroup></em>
+&lt;thead>....</pre>
+  </section>
+</div>
+
+
+
+
+
+<!-- style the caption -->
+<div class="slide object">
+  <header><h1>styling columns</h1></header>
+  <object data="files/colstyle.html"></object>
+</div>
+
+
+<!-- Style a Table -->
+<div class="slide">
+  <header><h1><a href="files/play.html">Try it out!</a></h1></header>
+  <section class="content">
+    <pre>display:
+caption-side:
+border-collapse:
+border-spacing:
+empty-cell:
+table-layout:
+vertical-align:</pre>
+<pre>table
+colgroup
+colspan
+thead
+tbody
+tfoot
+tr
+th
+td
+</pre><p><a href="files/play.html">Try it out!</a></p>
+  </section>
+</div>
+
+<!--NEXT-->
+<div class="slide">
+     <header><h1>Grid</h1></header>
+     <section class="content">
+    <h1><a href="../grid/">Next ➹</a></h1></section>
+</div>
+
+<div class="slide dots">
+  <header><h1>Table of Content</h1></header>
+  <section>
+    <ol class="column2">
+    <li><a href="../intro">Introduction</a></li>
+    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors">Specificity</a></li>
+    <li><a href="../generated">Generated Content</a></li>
+    <li><a href="../media">Media Queries</a></li>
+    <li><a href="../sass">Best Practices</a></li>
+    <li><a href="../debugging">Debugging</a></li>
+    <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../flexbox">Flexbox</a></li>
+    
+    <li><a href="../tables">Tables</a></li>
+
+    <li><a href="../grids">Grids</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
+    <li><a href="../gradients">Gradients</a></li>
+    <li><a href="../transforms">Transforms</a></li>
+    <li><a href="../animations">Transitions &amp; Animation</a></li>
+  <li><a href="../other">Other Features</a></li>
+</ol>
+  </section>
+</div>
+
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
+</div>
  
   
 
