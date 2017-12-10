@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<meta charset="utf-8" />
+    <title>CSS Mastery: Grids</title>
+<link rel="stylesheet" href="style.css"/>
+</head> 
+
+<body> 
+
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->  
+<div id="info">
+    <p><a href="http://standardista.com">Estelle Weyl</a> | <a href="http://twitter.com/estellevw">@estellevw</a> | <a href="http://github.com/estelle">Github</a> | Press <span class="key">&rarr;</span> to advance, <span class="key">2</span> for comments, <span class="key">4</span> to read/write notes.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+   
+    <div class="slide intro">
+     <header>
+      <h1>Grids</h1>
+     </header>
+    </div> 
+    
+
+<!-- Flexbox -->
+<div class="slide object">
+  <header><h1>Flexbox</h1></header>
+  <object data="files/flex.html"></object>
+</div>
+
+<!-- Flexbox -->
+<div class="slide object">
+  <header><h1>Grid</h1></header>
+  <object data="files/grid.html"></object>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Grid</h1></header>
+  <object data="files/grid2.html"></object>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Grid</h1></header>
+  <object data="files/grid100.html"></object>
+</div>
+
+
+<!-- Terminology -->
+<div class="slide">
+  <header><h1>Terminology</h1></header>
+  <section class="content">
+    <dl class="listed">
+<dt>Grid lines</dt>
+<dd>The vertical and horizontal lines that divide the grid and separate the columns and rows. Start counting at 1, not 0.</dd>
+<dt>Grid cell</dt>
+<dd>A single child or unit of a CSS grid.</dd>
+<dt>Grid area</dt>
+<dd>Any rectangular space surrounded by four grid lines. Can contain any number of grid cells.</dd>
+<dt>Grid track</dt>
+<dd>The space between two grid lines. This space can be horizontal or vertical</dd>
+<dt>Grid row</dt>
+<dd>A horizontal grid track.</dd>
+<dt>Grid column</dt>
+<dd>A vertical grid track.</dd>
+<dt>Gutter</dt>
+<dd>Space between two rows and two columns.</dd>
+</dl>
+</section>
+</div>
+
+<!-- can i use -->
+<div class="slide object">
+  <header><h1>Is it ready?</h1><button onclick="loadCIU('css-grid', 'cssGrid', this)">load</button></header>
+  <object id="cssGrid"></object>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>Properties Seen</h1></header>
+  <section class="content">
+<p>On the parent</p>
+    <pre>display:
+grid-template-columns: 
+grid-gap:</pre>
+<p>On the child</p>
+<pre>grid-columns:
+grid-row: </pre>
+<p>New values</p>
+<pre>repeat()
+fr</pre>
+  </section>
+</div>
+
+
+<!-- Parent Properties -->
+<div class="slide intro">
+  <header><h1>Setting up the Grid</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>Properties declared on the parent</h1></header>
+  <section class="content">
+    <pre>display
+grid-template-columns
+grid-template-rows
+grid-template-areas
+grid-template (shorthand)
+grid-column-gap
+grid-row-gap
+grid-gap</pre>
+<pre>
+justify-items
+align-items
+justify-content
+align-content
+grid-auto-columns
+grid-auto-rows
+grid-auto-flow
+grid</pre>
+  </section>
+</div>
+
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>display:</h1></header>
+  <section class="content">
+    <p><code>
+          <strong><em>display:</em></strong> inline | block | list-item | inline-list-item | inline-block | flex | inline-flex| <strong><em>grid | inline-grid</em></strong>  | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-cell | table-column-group | table-column | table-caption | ruby | ruby-base | ruby-text | ruby-base-container | ruby-text-container | contents | none | flow | flow-root</code></p>
+  </section>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Display</h1></header>
+  <object data="files/display2.html"></object>
+</div>
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Display</h1></header>
+  <object data="files/display.html"></object>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>Columns and Rows</h1></header>
+  <section class="content">
+<p>Defines the columns and rows of the grid with a space-separated list of values representing the track size</p>
+    <pre>grid-template-columns: none | &lt;track-list> | &lt;auto-track-list>
+grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
+
+<ul>
+<li><code>&lt;track-list> = &lt;line-name>? [ &lt;track-size> | &lt;track-repeat> ]</code>
+<li>&lt;track-size> - can be a length, a percentage, or a fraction of the free space (fr) in the grid </li>
+<li>&lt;line-name> - ident or string</li>
+</ul>
+<pre>grid-template-columns: 200px 1fr max-content minmax(min-content, 1fr);</pre>
+
+  </section>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>grid-template-columns &amp; rows</h1></header>
+  <section class="content">
+    <pre>grid-template-columns: 
+  150px 150px 150px;
+  repeat(3, 150px);
+  275px repeat(2, 150px);
+  100px repeat(2, 1fr) 2fr;</pre>
+
+    <pre>grid-template-rows: 
+  150px 150px 150px;
+  repeat(3, 150px);
+  275px repeat(2, 150px);
+  100px 1fr 2fr;</pre>
+  </section>
+</div>
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Rows &amp; Columns: Try it out</h1></header>
+  <object data="files/rowcol.html"></object>
+</div>
+
+
+<!-- FR -->
+<div class="slide">
+  <header><h1>fr and repeat()</h1></header>
+  <section class="content">
+    
+    <p><strong>fr</strong><br/>
+      Fraction Unit<br/>describes a fraction of the <strong>available</strong> space</p>
+
+    <p><strong>repeat()</strong><br/>repeat notation: <br/><code>repeat(# of repeats, length)</code></p>
+  </section>
+</div>
+
+<!-- Grid Gap -->
+<div class="slide">
+  <header><h1>Adding gutters</h1></header>
+  <section class="content">
+<p>Gutter size: Spacing between grid items with:</p>
+<dl>
+  <dt>grid-column-gap</dt>
+  <dd>vertical space between columns</dd>
+  <dt>grid-row-gap</dt>
+  <dd>horizontal space between rows</dd>
+  <dt>grid-gap</dt>
+  <dd>Shorthand for grid-row-gap and grid-column-gap, in that order. Can take one or two lengths or percents.</dd>
+</dl>
+<p>Only a single size for each axis</p>
+<pre>    grid-column-gap: 20px;
+    grid-row-gap: 1em;
+    grid-gap: 1em 20px;</pre>
+  </section>
+</div>
+
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Gutters: Try it out</h1></header>
+  <object data="files/gap.html"></object>
+</div>
+
+
+
+<!-- steps -->
+<div class="slide">
+  <header><h1>Grid Steps: <a href="files/doit1.html" target="_new">Try it out ➹</a></h1></header>
+  <section class="content">
+
+    <ol>
+      <li>Create grid container with the <code>display</code> property</li>
+      <li>Optional: Create columns and rows with either:
+        <ol>
+          <li><code>grid-template-columns</code>, and </li>
+          <li><code>grid-template-rows</code></li>
+          </ol>
+          or </li>
+      <li>Optional: add a gutter with <code>grid gap</code> or  <code>grid-column-gap</code> and
+<code>grid-row-gap</code></li>
+</ol>
+<a href="files/doit1.html" target="_new">Try it out ➹</a>
+  </section>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>Grid Item Properties</h1></header>
+  <section class="content">
+    <pre>grid-column-start
+grid-column-end
+grid-column
+grid-row-start
+grid-row-end
+grid-row
+grid-area
+justify-self
+align-self</pre>
+  </section>
+</div>
+
+
+
+
+<!--NEXT-->
+<div class="slide">
+     <header><h1>Background &amp; Borders</h1></header>
+     <section class="content">
+    <h1><a href="../borders/">Next ➹</a></h1></section>
+</div>
+
+<div class="slide dots">
+  <header><h1>Table of Content</h1></header>
+  <section>
+    <ol class="column2">
+    <li><a href="../intro">Introduction</a></li>
+    <li><a href="../selectors">Selectors</a></li>
+    <li><a href="../selectors">Specificity</a></li>
+    <li><a href="../generated">Generated Content</a></li>
+    <li><a href="../media">Media Queries</a></li>
+    <li><a href="../sass">Best Practices</a></li>
+    <li><a href="../debugging">Debugging</a></li>
+    <li><a href="../colors">Colors &amp; Transparency </a></li>
+    <li><a href="../flexbox">Flexbox</a></li>
+    
+    <li><a href="../tables">Tables</a></li>
+
+    <li><a href="../grids">Grids</a></li>
+    <li><a href="../borders">Backgrounds &amp; Borders </a></li>
+    <li><a href="../gradients">Gradients</a></li>
+    <li><a href="../transforms">Transforms</a></li>
+    <li><a href="../animations">Transitions &amp; Animation</a></li>
+  <li><a href="../other">Other Features</a></li>
+</ol>
+  </section>
+</div>
+
+<!-- TOC -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+    <section class="content">
+      <ul>
+      </ul>
+    </section>
+</div>
+ 
+  
+
+    
+
+   
+
+   </div>
+   
+<header>
+    <nav>
+        <button class="cancel" id="back">Back</button><button class="done" id="next">Next</button>
+    </nav>
+</header>
+</div>
+<script src="slides.js"></script>
+</body> 
+</html>
+

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grid</title>
+	<link rel="stylesheet" href="../files.css">
+<style>ol {
+	list-style-type: none; display: grid; grid-gap: 10px;
+}
+li {line-height: 50px; border: 1px solid; background-color: #ccc;
+	counter-increment: count;
+	text-align: center;
+}
+li:before {
+	content: counter(count);
+}
+.test { background-color: pink;}
+.test:before {content: 'TEST';}
+#editme {line-height: 1.5;}
+</style>
+
+<style contenteditable id="editme">ol { 
+  grid-template-columns: repeat(12, 1fr);
+}
+.test {
+  grid-column: 2 / 8;
+  grid-row: 3 / 5;  /*change values */
+}</style>
+<title>Simple Grid</title>
+</head>
+
+<body>
+<ol>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li class="test"></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li><li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li><li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ol>
+	
+</body>
+</html>

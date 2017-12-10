@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grid: gutter sizes</title>
+	<link rel="stylesheet" href="../files.css">
+<style>ol {
+	list-style-type: none; display: grid; 
+}
+li {line-height: 50px; border: 1px solid; background-color: #ccc;
+	counter-increment: count;
+	text-align: center;
+}
+li:before {
+	content: counter(count);
+}
+#editme {line-height: 1.5;}
+</style>
+
+<style contenteditable id="editme">ol { 
+  grid-template-columns: repeat(2, 2fr) repeat(3, 1fr) 3fr;
+  grid-template-rows: 2fr 125px repeat(2, 4em);
+  _grid-row-gap: 10px;
+  _grid-column-gap: 20px;
+  _grid-gap: 10px 20px;
+  _grid-gap: 1em;
+}</style>
+<title>Simple Grid</title>
+</head>
+
+<body>
+<ol>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li><li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li><li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ol>
+	
+</body>
+</html>

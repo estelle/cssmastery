@@ -1,15 +1,16 @@
 #presentation {
-  background: linear-gradient(to bottom, lime, green)
+  background: linear-gradient(to bottom, #9de89d, #3b6c3b)
 }
-pre b, strong, code {
-  color: green;
-  text-shadow: lime 0 0 1px;
+pre b, strong {
+  color: #3b6c3b;
+  text-shadow: #9de89d 0 0 1px;
   font-weight: bold;
 }
+code {color: inherit;}
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 .textmask, h1, a {
-    background: linear-gradient(to bottom, lime, green);
+    background: linear-gradient(to bottom, #9de89d, #3b6c3b);
     -webkit-background-clip: text;
     background-clip: text;
-    color: darkgreen;
+    color: #3b6c3b;
   }
