@@ -1,7 +1,7 @@
 # cssmastery
 
 1. [Intro](intro/)
-2. [Selectors](selectors/)
+1. [Selectors](selectors/)
 	1. overview
 	1. Specificity intro
 	1. Relational selectors & Combinators
@@ -14,7 +14,7 @@
 	1. Link, location & user action pseudo-classes
 	1. Additional Pseudo Classes
 	1. Specificity Revisited
-3. [Pseudo-Elements](selectors/index.html#slide79)
+1. [Pseudo-Elements](selectors/index.html#slide79)
 	1. first letter
 	1. first line
 	1. selection
@@ -22,7 +22,7 @@
 	1. selection
 	1. additional pseudo elements
 	1. browser specific pseudo elements
-4. [Generated Content](generated/)
+1. [Generated Content](generated/)
 	1. How before and after work
 	1. How generated content works
 	1. Generated content: quotes
@@ -33,17 +33,17 @@
 	1. Special Characters
 	1. Accessibility
 	1. Design Elements
-5. [Media Queries](media/)
+1. [Media Queries](media/)
 	1. Media Type, Screen Size, Resolution
     1. Browser Capability @supports
     1. viewport
     1. use cases: Hyphenations, columns, svg
-6. [Colors & Appearance](colors/)
+1. [Colors & Appearance](colors/)
 	1. colors
 	1. Opacity v. Alphatransparency
 	1. appearance
 	1. additional pseudo elements
-7. [Flexbox](flexbox/)
+1. [Flexbox](flexbox/)
 	1. Purpose and goal of flexbox
 	1. browser support and specification
 	1. Overview
@@ -59,8 +59,16 @@
 	1. Other table properties
 	1. styling columns
 	1. Good UI
-8. [Grid](grid/)
-9. [Backgrounds and Borders](borders/)
+1. [Grid](grid/)
+	1. Overview (flex v grid)
+	1. Basic Grid
+		1. Display property
+		1. Defining columns and rows
+		1. fr unit and repeat() notation
+		1. Adding gutters
+		1. Try it out
+	1. Positioning Items
+1. [Backgrounds and Borders](borders/)
 	1. Overview 
 	1. Background properties
 	1. background-color
@@ -74,14 +82,14 @@
 		1. background-origin
 		1. background-size
 		1. background shorthand
-11. [Gradients](gradients/)
+1. [Gradients](gradients/)
 	1. Overview
 	1. Syntax
 	1. Color Stops
 	1. Color Hints
 	1. Directions
 	   1. Keyterms
-	   2. Angles
+	   1. Angles
 	1. Examples & exercise
 	1. Repeating Linear Gradients
 	1. Radial Gradients
