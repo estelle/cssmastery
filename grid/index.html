@@ -63,7 +63,7 @@
 <dt>Grid area</dt>
 <dd>Any rectangular space surrounded by four grid lines. Can contain any number of grid cells.</dd>
 <dt>Grid track</dt>
-<dd>The space between two grid lines. This space can be horizontal or vertical</dd>
+<dd>The space between two grid lines. This space can be horizontal or vertical: a grid row or grid column</dd>
 <dt>Grid row</dt>
 <dd>A horizontal grid track.</dd>
 <dt>Grid column</dt>
@@ -189,6 +189,18 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
   </section>
 </div>
 
+<!--  -->
+<div class="slide">
+  <header><h1>Naming Grid Lines</h1></header>
+  <section class="content">
+    <p>You can name grid lines:</p>
+    <pre>grid-template-columns: 
+  [start] 150px 150px 150px [end];</pre>
+  <ul>
+    <li>You can name none, some or all of the lines</li>
+    <li>To name, put brackets around the ident</li>
+    </section>
+</div>
 
 <!-- grid example -->
 <div class="slide object">
@@ -566,7 +578,7 @@ align-self</pre>
     
     <li><a href="../tables">Tables</a></li>
 
-    <li><a href="../grids">Grids</a></li>
+    <li><a href="../grid">Grids</a></li>
     <li><a href="../borders">Backgrounds &amp; Borders </a></li>
     <li><a href="../gradients">Gradients</a></li>
     <li><a href="../transforms">Transforms</a></li>
