@@ -67,7 +67,10 @@
 		1. fr unit and repeat() notation
 		1. Adding gutters
 		1. Try it out
-	1. Positioning Items
+	1. Positioning grid items
+	1. Container properities
+		1. Align and justify items
+		1. Align and justify content
 1. [Backgrounds and Borders](borders/)
 	1. Overview 
 	1. Background properties
