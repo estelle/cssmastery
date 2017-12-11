@@ -20,13 +20,13 @@
 	}
 }
 
-.intro p, header {
+.intro p, header, .divider p {
   text-align: center;
 }
-.intro header {
+.intro header, .divider header {
   font-size: 2.2rem;
 }
-.intro h2 {
+.intro h2{
   text-align: center;
   padding: 100px;
   font-size: 1.8rem;

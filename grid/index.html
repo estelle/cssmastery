@@ -185,6 +185,7 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
   repeat(3, 150px);
   275px repeat(2, 150px);
   100px 1fr 2fr;</pre>
+  <p>Mix units!!!<br/>That's the power of grid! Or,at least one of the powers.</p>
   </section>
 </div>
 
@@ -212,7 +213,7 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
 <div class="slide">
   <header><h1>Adding gutters</h1></header>
   <section class="content">
-<p>Gutter size: Spacing between grid items with:</p>
+<p>Gutter size: global spacing between grid items with:</p>
 <dl>
   <dt>grid-column-gap</dt>
   <dd>vertical space between columns</dd>
@@ -221,10 +222,11 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
   <dt>grid-gap</dt>
   <dd>Shorthand for grid-row-gap and grid-column-gap, in that order. Can take one or two lengths or percents.</dd>
 </dl>
-<p>Only a single size for each axis</p>
+<p>Only a single size for each axis.</p>
 <pre>    grid-column-gap: 20px;
     grid-row-gap: 1em;
     grid-gap: 1em 20px;</pre>
+<p>Margin works! Feature or bug?</p>
   </section>
 </div>
 
@@ -255,6 +257,270 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
 <code>grid-row-gap</code></li>
 </ol>
 <a href="files/doit1.html" target="_new">Try it out ➹</a>
+  </section>
+</div>
+
+
+<!-- --------------------------------------- -->
+
+<!--  -->
+<div class="slide divider">
+  <header><h1>Placement</h1></header>
+  <section class="content">
+    <p>Positioning Grid Items</p>
+  </section>
+</div>
+
+
+<!-- grid lines -->
+<div class="slide">
+  <header><h1>Understanding Grid Lines</h1></header>
+  <section class="content gridlines">
+
+    <div><i>1</i><i>2</i><i>3</i><i>4</i></div>
+    <article>
+    <div><i>1</i><i>2</i><i>3</i><i>4</i></div>
+    <table>
+      <tr><td><div></div></td><td><div></div></td><td><div></div></td></tr>
+      <tr><td><div></div></td><td><div></div></td><td><div></div></td></tr>
+      <tr><td><div></div></td><td><div></div></td><td><div></div></td></tr>
+    </table></article>
+  </section>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>item positioning properties</h1></header>
+  <section class="content">
+      <pre>.myItem {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }</pre>
+    
+  <pre>
+  .myItem {
+    grid-row: 2 / 4;
+    grid-column: 2 / 5;
+  }</pre>
+  </section>
+</div>
+
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Placing an item</h1></header>
+  <object data="files/placeitem.html"></object>
+</div>
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Holy Grail Layout</h1></header>
+  <object data="files/pagelayout.html"></object>
+</div>
+
+<!-- Magic layout -->
+<div class="slide object">
+  <header><h1>Try it out!  ➹</h1></header>
+  <object data="files/pagelayoutplay.html"></object>
+    <a href="files/pagelayoutplay.html" class="objectlink">Try it out ➹</a>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>Template Areas</h1></header>
+  <section class="content">
+    <p>Our magic layout:</p>
+    <pre>
+body {
+  grid-template-areas:
+      "header header header"
+      "nav article aside"
+      "footer footer footer";
+}</pre>
+<pre>header {
+  grid-area: header;
+}
+nav {
+  grid-area: nav;
+}
+article {
+  grid-area: article;
+}
+aside {
+  grid-area: aside;
+}
+footer {
+  grid-area: footer;</pre>
+  </section>
+</div>
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Paste the code </h1></header>
+  <object data="files/pagelayout2.html"></object>
+</div>
+<!-- --------------------------------------- -->
+
+<!--  -->
+<div class="slide intro">
+  <header><h1>Alignment</h1></header>
+  <section class="content">
+    
+  </section>
+</div><!--  -->
+<div class="slide">
+  <header><h1>Alignment</h1></header>
+  <section class="content">
+    <p>Container Properties</p>
+    <pre>justify-items
+align-items
+justify-content
+align-content
+grid-auto-columns
+grid-auto-rows
+grid-auto-flow
+grid</pre>
+<p>Item properties</p>
+<pre>justify-self
+align-self</pre>
+  </section>
+</div>
+
+
+<!-- justify-items -->
+<div class="slide">
+  <header><h1>Row alignment: <code>justify-items</code> property</h1></header>
+  <section class="content"><p>
+    <pre><xmp>justify-items: normal | stretch | 
+   <baseline-position> | [ <overflow-position>? <self-position> ] |
+  [ legacy || [ left | right | center ] ]</xmp></pre>
+    <p>Aligns items in the inline direction (horizontal)</p>
+    <pre><strong><em>justify-items</em></strong>: 
+  normal | stretch | baseline | start |  end |
+  center | flex-end | flex-start | <strong><em>legacy</em></strong> | 
+  safe | unsafe | left | right | center |
+  self-end | self-start | start | stretch | unset</pre>
+  <pre>&lt;baseline-position> = baseline | first baseline (start) | last baseline (end)</pre>
+  <pre>&lt;overflow-position>? &lt;self-position> = [safe | unsafe]? [right | center | left |
+   start | flex-start | flex-end | end | self-start]</pre>
+  </section>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>justify-items</h1></header>
+  <object data="files/parentproperties.html"></object>
+</div>
+
+<!--  -->
+<div class="slide">
+  <header><h1>New terms</h1></header>
+  <section class="content">
+    <pre>&lt;overflow-position&gt; = unsafe | safe</pre>
+<p><code><b>safe</b></code><br/>
+If it overflows the alignment container, it aligns as if the alignment mode were <code>start</code>.</p>
+<p><code><b>unsafe</b></code><br/>
+No matter the relative sizes overflowing, the alignment value is honored.</p>
+<pre>legacy || left | center | right</pre>
+
+<p><code><b>legacy</b></code><br/>Value inherits into descendants. Computes to <code>inherit</code> (if declared) or <code>normal</code> (if defaulting) if <code>left | center | right</code> not present. </p>
+  </section>
+</div>
+
+
+<!-- align-items -->
+<div class="slide">
+  <header><h1>Column alignment: <code>align-items</code> property</h1></header>
+  <section class="content">
+    <p>Aligns items in the block direction (vertical)</p>
+    <pre><strong><em>align-items</em></strong>: 
+  baseline | center | 
+  end | flex-end | flex-start | left |  
+  normal | right | safe | self-end | self-start | 
+  start | stretch | unsafe </pre>
+  </section>
+</div>
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>align-items</h1></header>
+  <object data="files/parentproperties2.html"></object>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>Do both: <code>place-items</code> property</h1></header>
+  <section class="content">
+    <pre>place-items: &lt;align-items>  &lt;justify-items</pre>
+    <ul><li>shorthand for align-items and justify items</li>
+    <li>Order matters! align items is first.</li>
+    <li>If only one value is declared, will be applied to both.</li>
+    </ul> 
+  </section>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>place-items</h1></header>
+  <object data="files/parentproperties3.html"></object>
+</div>
+
+
+<!-- aligning the grid -->
+<div class="slide">
+  <header><h1>Aligning the Grid</h1></header>
+  <section class="content">
+    <p>Defines how the items are aligned with respect to the grid if the grid content's edges are not the same as the container’s edges.</p> 
+    <pre><b>justify-content</b>: baseline | center | end | flex-end | flex-start | 
+   left | normal | right | space-around | space-between | space-evenly | start | 
+   stretch | safe | unsafe</pre>
+<pre><b>align-content</b>: baseline | center | end | flex-end | flex-start | 
+  left | normal | right | space-between | space-evenly | start | 
+  stretch | safe | unsafe</pre>
+  </section>
+</div>
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>justify &amp; align content</h1></header>
+  <object data="files/content.html"></object>
+</div>
+
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1><code>justify-content</code></h1></header>
+  <object data="files/content2.html"></object>
+</div>
+
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1><code>align-content</code></h1></header>
+  <object data="files/content3.html"></object>
+</div>
+
+
+<!-- implicit track sizing -->
+<div class="slide">
+  <header><h1>Implicit track sizing </h1></header>
+  <section class="content">
+<p>When items are placed outside of the tracks defined by <code>grid-template-rows</code>, <code>grid-template-columns</code>, and <code>grid-template-areas</code>, implicit grid tracks by added. These properties size those tracks</p>
+<pre>grid-auto-columns: 
+grid-auto-rows
+grid-auto-flow</pre>
   </section>
 </div>
 

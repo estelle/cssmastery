@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grid</title>
+	<link rel="stylesheet" href="../files.css">
+<style>
+.parent {
+	display: grid;
+    min-height: 400px; 
+    border: 1px solid;
+    background-color: #efefee;
+}
+div {border: 1px solid; background-color: #ccc;
+	counter-increment: count;
+	text-align: center;
+}
+div:before {
+	content: counter(count);
+}
+#editme {line-height: 1.5;}
+div:nth-of-type(4n) {font-size: 2em;}
+</style>
+
+<style contenteditable id="editme">.parent { 
+  grid-template-columns: repeat(5, 150px);
+  grid-template-rows: auto;
+  _place-items: flex-end end;
+  _align-content: space-evenly;
+  _justify-content: space-evenly;
+} 
+</style>
+<title>Simple Grid</title>
+</head>
+
+<body>
+<article class="parent">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div class="test"></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</ol>
+	
+</body>
+</html>
