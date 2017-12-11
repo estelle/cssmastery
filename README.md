@@ -51,7 +51,7 @@
 	1. Flex container properties
 	1. Flex item properties
 	1. Flexibility
-1. Tables
+1. [Tables](tables/)
 	1. When to use
 	1. Semantics
 	1. Caption
@@ -100,7 +100,7 @@
 	1. Size & Shape
 	1. Radial Gradients: color-stops & color-hints
 	1. Repeating Radial Gradient
-1. Transforms
+1. [Transforms](transforms/)
 	1. Overview
 	1. 2D Transform Functions
 	1. Order of functions
@@ -112,13 +112,13 @@
 		1. transform-origin
 		1. transform-style
 		1. transform-box
-1. Transitions 
+1. [Transitions](animations/)
 	1. Overview
 	1. Transition Properties
 	1. Properties that can be animated
 	1. Need to knows
 	1. Events
-1. Animations
+1. [Animations](animations/)
 	1. Overview
 	2. @keyframes
 	3. Animation Properties
