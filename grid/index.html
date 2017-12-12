@@ -347,6 +347,10 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
     grid-row: 2 / 4;
     grid-column: 2 / 5;
   }</pre>
+
+  <pre>.myItem {
+    grid-area: 2 / 2 / 4 / 5;
+  }</pre>
   </section>
 </div>
 
@@ -359,11 +363,67 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
 </div>
 
 
+<!--  -->
+<div class="slide">
+  <header><h1>The <code>grid-area</code> shorthand</h1></header>
+  <section class="content">
+<pre>grid-area: a / b / c / d
+grid-row-start / grid-column-start / grid-row-end / grid-column-end</pre>
+
+<pre>grid-area: a / b / c;</pre>
+<small>grid-column-end</code> was omitted <br>
+d = named <code>grid-column-start</code> || <code>auto</code></small>
+
+<pre>grid-area: a / b; </pre>
+<small><code>grid-row-end</code> and <code>grid-column-end</code> omitted <br/>
+c = named <code>grid-row-start</code> || <code>auto</code><br/>
+d = named <code>grid-column-start</code> || <code>auto</code></small>
+
+
+<pre>grid-area: a;</pre>
+<small>Only <code>grid-row-start</code> is declared<br/>
+if <code>grid-row-start</code> is named, all four longhands are set to that value. Otherwise, set to <code>auto</code></small>
+
+
+  </section>
+</div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>Grid Item Properties</h1></header>
+  <section class="content">
+    <pre>grid-column-start
+grid-column-end
+grid-column
+
+grid-row-start
+grid-row-end
+grid-row
+
+grid-area
+</pre><pre>
+justify-self
+align-self</pre>
+  </section>
+</div>
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>Placing an item again</h1></header>
+  <object data="files/placeitem.html"></object>
+</div>
+
+
 <!-- grid example -->
 <div class="slide object">
   <header><h1>Holy Grail Layout</h1></header>
   <object data="files/pagelayout.html"></object>
 </div>
+
+
+
+
 
 <!-- Magic layout -->
 <div class="slide object">
@@ -590,21 +650,6 @@ grid-auto-flow:</pre>
 </div>
 
 
-<!--  -->
-<div class="slide">
-  <header><h1>Grid Item Properties</h1></header>
-  <section class="content">
-    <pre>grid-column-start
-grid-column-end
-grid-column
-grid-row-start
-grid-row-end
-grid-row
-grid-area
-justify-self
-align-self</pre>
-  </section>
-</div>
 
 
 
