@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>CSS is Awesome</title>
+  <link rel="stylesheet" href="files.css">
+  <style>body {padding-left: 40px;}</style>
+  <style contenteditable class="editme">body { 
+  counter-reset: pagecount; 
+}</style><style contenteditable class="editme">p {
+  counter-increment: pagecount;
+} 
+p:after { color: #ff5500;
+  content: ' ' counter(pagecount);
+}</style>
+</head>
+
+<body>
+<p>Paragraph</p> 
+<p>Paragraph</p> 
+<p>Paragraph</p> 
+<p>Paragraph</p> 
+<p>Paragraph</p> 
+
+
+</body>
+</html>
+

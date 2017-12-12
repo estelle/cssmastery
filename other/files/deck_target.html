@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>CSS-only slide deck</title>
+  <link rel="stylesheet" href="files.css">
+  <style contenteditable class="editme">
+ .slide {
+  transform: translate(100%, 0) scale(0.1) rotate(180deg);
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  top: 0; left: 0;
+  transition: all 0.25s ease-in;
+  background-color: #333;
+}
+// current
+.slide:target {
+  transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+// next
+.slide:target + a + .slide{
+  transform: translate(45%, -50%) scale(0.2) rotate(-90deg);
+}
+.slide ~ a:after {
+  content: '<< back';
+  position:absolute; bottom: 20px; left: 20px;
+  width: 5em;
+  background-color: #333;
+  transform: translatez(0);
+  cursor: pointer;
+
+}
+.slide:target ~ a:after {
+  display: none;
+}
+#slides > a span {display: none;}
+.slide:target ~ a {display: none;}
+.slide:target + a + .slide + a {
+  display: block;
+  visibility: visible;
+  position:absolute; bottom: 20px; right: 20px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: groupbox;
+  appearance: none;
+  color: #ccc;
+  background-color: #333;
+  border: none;
+  font-size: 1rem;
+  width: 5em;
+}
+.slide:target + a + .slide + a:after {content: 'next >>'; display: block;}
+}
+
+
+
+
+
+
+</style>
+<title>CSS-only slide deck</title>
+</head>
+
+<body>
+
+
+</body>
+</html>
+

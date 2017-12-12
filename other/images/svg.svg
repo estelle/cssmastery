@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="500" height="500">
+<style>
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+
+#rays > path {
+  fill: green;
+}
+
+#rays > path:nth-child(1) {
+-webkit-animation: opac 1s linear .05s infinite;
+animation: opac 1s linear .05s infinite;
+}
+#rays > path:nth-child(3) {
+-webkit-animation: opac 1s linear .15s infinite;
+animation: opac 1s linear .15s infinite;
+}
+#rays > path:nth-child(5) {
+-webkit-animation: opac 1s linear .25s infinite;
+animation: opac 1s linear .25s infinite; }
+#rays > path:nth-child(7) {
+-webkit-animation: opac 1s linear .35s infinite;
+animation: opac 1s linear .35s infinite; }
+#rays > path:nth-child(9) {
+-webkit-animation: opac 1s linear .45s infinite;
+animation: opac 1s linear .45s infinite; }
+#rays > path:nth-child(11) {
+-webkit-animation: opac 1s linear .55s infinite;
+animation: opac 1s linear .55s infinite; }
+#rays > path:nth-child(13) {
+-webkit-animation: opac 1s linear .65s infinite;
+animation: opac 1s linear .65s infinite; }
+#rays > path:nth-child(15) {
+-webkit-animation: opac 1s linear .75s infinite;
+animation: opac 1s linear .75s infinite; }
+#rays > path:nth-child(17) {
+-webkit-animation: opac 1s linear .85s infinite;
+animation: opac 1s linear .85s infinite; }
+#rays > path:nth-child(19) {
+-webkit-animation: opac 1s linear .95s infinite;
+animation: opac 1s linear .95s infinite; }
+
+@-webkit-keyframes opac {
+  100% { opacity: 0; }
+}
+keyframes opac {
+  100% { opacity: 0; }
+}
+
+#rays > path:nth-child(even) {
+  fill: hsl(300, 75%, 35%);
+  animation: fillcol 1s steps(4) infinite alternate;
+}
+
+@-webkit-keyframes fillcol {
+ 100% { fill: hsl(170, 75%, 35%); }
+}
+@keyframes fillcol {
+ 100% { fill: hsl(170, 75%, 35%); }
+}</style>
+  <clipPath id="clip">
+    <text x="5" y="43" textLength="90" lengthAdjust="spacing" font-family="Source Code Pro" font-size="50" font-weight="bold">OMG</text>
+    <text x="5" y="55" textLength="90" lengthAdjust="spacing" font-family="Source Code Pro" font-size="16" font-weight="bold">ANIMATED</text>
+    <text x="5" y="89" textLength="90" lengthAdjust="spacing" font-family="Source Code Pro" font-size="50" font-weight="bold">SVG</text>
+  </clipPath>
+  <g clip-path="url(#clip)" id="rays">
+    <path id="ray01" d="M50 0V100H45L55 0z"/>
+    <path id="ray02" d="M40 100L60 0H65L35 100z"/>
+    <path id="ray03" d="M70 0L30 100H25L75 0z"/>
+    <path id="ray04" d="M80 0L20 100H15L85 0z"/>
+    <path id="ray05" d="M90 0L10 100H5L95 0z"/>
+    <path id="ray06" d="M100 0L0 100V95L100 5z"/>
+    <path id="ray07" d="M100 10L0 90V85L100 15z"/>
+    <path id="ray08" d="M100 20L0 80V75L100 25z"/>
+    <path id="ray09" d="M0 70L100 30V35L0 65z"/>
+    <path id="ray10" d="M0 60L100 40V45L0 55z"/>
+    <path id="ray11" d="M0 50H100V55L0 45z"/>
+    <path id="ray12" d="M100 65L0 35V40L100 60z"/>
+    <path id="ray13" d="M0 25L100 75V70L0 30z"/>
+    <path id="ray14" d="M0 20L100 80V85L0 15z"/>
+    <path id="ray15" d="M0 10L100 90V95L0 5z"/>
+    <path id="ray16" d="M0 0L100 100H95L5 0z"/>
+    <path id="ray17" d="M10 0L90 100H85L15 0z"/>
+    <path id="ray18" d="M20 0L80 100H75L25 0z"/>
+    <path id="ray19" d="M30 0L70 100H65L35 0z"/>
+    <path id="ray20" d="M60 100L40 0H45L55 100z"/>
+  </g>
+</svg>

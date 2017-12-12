@@ -1,0 +1,667 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+    <title>Other Features</title>
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="../selectors/selectors.css" media="projection, screen"/>
+ <style>
+ .cursors li {
+	width: 170px; height: 70px; line-height:70px;
+	float: left; margin: 0 15px 15px 0;
+	border-radius: 15px; text-align:center;
+	background: linear-gradient(hsl(171, 27%, 80%), hsl(171, 15%, 80%));
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.3), inset 1px 1px #fff;
+	list-style-type: none;
+ }
+ .cursors ul:last-of-type li {
+
+	background: linear-gradient(hsl(171, 47%, 80%), hsl(171, 35%, 80%));
+ }
+ div.example {
+display: block;
+padding: 0 10px;
+background: rgba(255, 255, 255, 0.4);
+-moz-border-radius: 8px;
+border-radius: 8px;
+font-size:14px;
+border: 1px solid rgba(0, 0, 0, 0.2);
+column-rule: 1px solid #bbb;
+margin-bottom: -15px;
+}
+.boxsizing div {
+width: 200px;
+height: 100px;
+padding: 20px;
+border: 5px dashed #C7573A;
+margin: 20px;
+text-align: center;
+background-color: rgba(255, 255, 255, 0.5);
+-webkit-box-sizing: content-box;
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+white-space: nowrap;
+}.boxsizing:first-of-type {
+margin: 0 10px 0 0;
+}
+.boxsizing {
+float: left;
+border: 1px solid #C7573A;
+margin: 20px 0 20px 20px;
+}
+.boxsizing div.bb {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+#box-orient-example {
+height: 220px;
+display: -webkit-box;
+-webkit-box-orient: horizontal;
+display: -moz-box;
+-moz-box-orient: horizontal;
+}
+	/* COLUMNS*/
+
+	#columnsslide {
+            column-count: 2;
+            column-rule: 1px solid #bbb;
+            column-gap: 2em;
+          }
+          #columnsslide p {
+            font-size: 15px;
+			font-family:Arial, Helvetica, sans-serif;
+          }
+/* Flexible Box Model */
+#box-orient-example {
+  height: 220px;
+  display: -webkit-box; -webkit-box-orient: horizontal;
+  display: -moz-box; -moz-box-orient: horizontal;
+}
+#box-orient-example div:nth-child(1) {
+  background: white; padding: 10px; -webkit-box-flex: 1;
+  -moz-box-flex: 1; text-align: center;
+}
+#box-orient-example div:nth-child(2) {
+  background: #ddd; padding: 10px; -webkit-box-flex: 1;
+  -moz-box-flex: 1; text-align: center;
+}
+#box-orient-example div:nth-child(3) {
+  background: white; padding: 10px; -webkit-box-flex: 3;
+  -moz-box-flex: 3; text-align: center;
+}
+
+ #box-orient-example-2 {
+	height: 200px;
+	display: -moz-box;
+	-moz-box-pack: center;
+	-moz-box-align: center;
+	-moz-box-orient: horizontal;
+
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	-webkit-box-orient: horizontal;
+
+	display: -ms-box;
+	-ms-box-pack: center;
+	-ms-box-align: center;
+	-ms-box-orient: horizontal;
+}
+#box-orient-example-2 div, #box-orient-example-2 textarea {
+	background: #ddd;
+	padding: 10px;
+	width: 200px;
+	font-size: 14px;
+}
+
+            .textwrap{width: 94%; height: 1.1em;
+ height: 1.1em; overflow: hidden; line-height: 1.1em; margin:0.2em 0}
+
+ #origin {
+    -webkit-flow-into: name_of_my_flow;
+    /* style of content */
+    font-size: 0.8rem;
+
+}
+.destination {
+    -webkit-flow-from: name_of_my_flow;
+    /* style of the boxes */
+    width: 50%;
+    border: 1px solid red;
+    box-sizing: border-box;
+    padding: 5px;
+    height: 120px;
+    float: left;
+}
+.codelike.codelike.codelike {
+  font-size: 1.5rem;
+}
+
+.object > a {position: absolute; top: 10px; right: 10px;}
+ </style>
+  </head>
+  <body>
+
+  <div id="topinfo">
+
+  </div>
+
+  <div id="info">
+    <p>
+    <span class="key">&rarr;</span> and <span class="key">&rarr;</span> to change slides.
+    <span class="key">2</span> for comments. <a href="http://estelle.github.com/cssmastery">estelle.github.com/cssmastery</a>
+    </p>
+  </div>
+
+  <div id="presentation">
+
+   <div id="presentation-counter"></div>
+
+   <div id="slides">
+
+
+<div class="slide intro">
+    <header>
+    	<h1>CSS Mastery: Other Features</h1>
+    </header>
+     </section>
+    </div>
+
+
+
+
+ <div class="slide" id="columnpage">
+          <header> <h1>Columns</h1></header>
+          <section class="content" style="margin-top:0">
+          <pre contenteditable>
+<u></u>column-count: <span id="colcnt">1</span>;      <input id="columncounts" type="range" min="1" max="6" value="2" onChange="changeColumnNoSlider(event)">
+<u></u>column-width: <span id="colwidth">10</span>em;   <input id="columnwidth" type="range" min="5" max="40" step="1" value="10" onChange="changeColumnNoSlider(event)">
+<u></u>column-rule: 1px solid #bbb;
+<u></u>column-gap: <span id="colgap">2</span>em;      <input id="columngaps" type="range" min="0" max="10" step="0.1" value="2" onChange="changeColumnNoSlider(event)"></pre>
+
+            <div id="columnsslide" class="example">
+              <p>Adipisicing rump nostrud exercitation turkey, bresaola deserunt ullamco beef ribs pork loin ball tip pig pork belly nisi. Cillum sunt officia deserunt, beef aliqua ham ut t-bone sed ut consequat shoulder. Nostrud excepteur biltong non, fatback salami incididunt beef cupidatat occaecat. </p>
+              <p>Reprehenderit ham hock labore tri-tip chuck, excepteur ut. Meatball sint enim beef ribs, mollit laborum flank commodo fatback pariatur tail rump eiusmod spare ribs dolore. Ut minim qui, tongue eu short ribs pancetta excepteur incididunt culpa consequat pastrami magna chuck. Flank sunt sint, occaecat ut adipisicing labore turkey laboris in magna.</p>
+
+<p>Chicken bacon meatloaf minim meatball salami sunt spare ribs.</p><p> Bacon sed tail, pork loin pariatur meatloaf hamburger exercitation corned beef shank ex esse sirloin qui beef ribs. Consectetur anim corned beef, cupidatat ex enim tempor. Pariatur consectetur ad, enim ut quis consequat aliquip exercitation jowl tenderloin ham dolore. </p><p>Fugiat excepteur aliqua, cow dolor swine shoulder elit tri-tip shankle. Irure consectetur cow labore, cupidatat exercitation ea jerky ham officia dolore tongue eu aliqua. Ham hock irure beef ribs non, flank sausage eiusmod ham short loin nostrud.
+</p>
+            </div>
+          </section>
+
+          <script defer="">
+            function changeColumnNoSlider(event) {
+			  var columngaps = roundNumber(document.getElementById('columngaps').value, 1);
+			  var columnwidth = document.getElementById('columnwidth').value;
+              var count =  document.getElementById('columncounts').value;
+              document.getElementById('colgap').textContent = columngaps;
+              document.getElementById('colwidth').textContent = columnwidth;
+              document.getElementById('colcnt').textContent = count;
+              var example = document.getElementById('columnsslide');
+              example.style.webkitColumnCount = count;
+              example.style.MozColumnCount = count;
+              example.style.webkitColumnGap = columngaps + "em";
+              example.style.MozColumnGap = columngaps + "em";
+              example.style.webkitColumnWidth = columnwidth + "em";
+              example.style.MozColumnWidth = columnwidth + "em";
+            }
+			function roundNumber(num, dec) {
+				var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
+				return result;
+			}
+          </script>
+</div>
+
+<!-- columns -->
+<div class="slide">
+  <header><h1>Multi Column Layout Properties</h1></header>
+  <section class="content">
+<pre>column-count:
+column-width:
+columns: &lt;min-column-width> &lt;max-column-cound></pre>
+<pre>column-fill: auto | balance;
+column-gap: normal | length;
+column-span: none | all;</pre>
+<pre>column-rule-color:
+column-rule-style: &lt;border-style>
+column-rule-width:
+column-rule:</pre>
+<pre>break-after
+break-before
+break-inside</pre>
+<pre>orphans
+widows</pre>
+  </section>
+</div>
+
+
+
+<!-- columns -->
+<div class="slide object">
+  <header><h1>columns</h1></header>
+  <object data="files/columns.html"></object>
+</div>
+
+
+
+<div class="slide">
+	<header><h1>box-sizing</h1></header>
+    <section class="content">
+    <pre contenteditable>box-sizing: content-box | border-box</pre>
+    <div class="boxsizing"><div>content-box</div></div>
+    <div class="boxsizing"><div class="bb">border-box</div></div>
+<pre contenteditable style="float:left; margin-top:0;">div {
+width: 200px;
+height:100px;
+padding: 20px;
+margin:20px;
+border-width: 5px;
+}
+</pre>
+
+    <div class="boxsizing"><div class="bb">border-box</div></div>
+<p style="clear: both">border-box replicates the old IE box model</p>
+    </section>
+</div>
+
+
+
+<!--  -->
+<div class="slide intro">
+  <header><h1>Art Direction</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+
+<div class="slide object">
+<header><h1>Shaders</h1></header>
+<object data="http://html5-demos.appspot.com/static/css/filters/index.html"></object>
+<a href="http://html5-demos.appspot.com/static/css/filters/index.html" target="play" class="objectlink">Visit Site</a>
+</div>
+
+<div class="slide object">
+<header><h1>background-blend-mode</h1></header>
+<object data="files/blendmode.html"></object>
+  <a href="files/blendmode.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+ <div class="slide object">
+     <header><h1>CSS Shapes</h1></header>
+
+    <object data="files/shapes_all.html"></object>
+  <a href="files/shapes_all.html" target="play" title="open code example in new window">↪</a>
+  <small>Photo: <a href="https://www.flickr.com/photos/kristinausk/4121781145">kristinausk</a></small>
+ </div>
+
+
+
+<div class="slide object">
+     <header><h1>CSS Shapes 2</h1></header>
+
+     <object data="files/shapes_all2.html"></object>
+  <a href="files/shapes_all2.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+<div class="slide object">
+  <header><h1>CSS Shapes with SVG Masking</h1></header>
+    <object data="files/shapes_heart.html"></object>
+  <a href="files/shapes_heart.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+ <div class="slide object">
+     <header><h1>CSS Shape Editor</h1></header>
+
+     <object data="files/shapes_poly.html"></object>
+  <a href="files/shapes_poly2.html" target="play" title="open code example in new window">↪</a>
+ </div>
+
+
+<!--  -->
+<div class="slide intro">
+  <header><h1>Fonts</h1></header>
+  <section class="content">
+  </section>
+</div>
+
+<div class="slide object">
+  <header>
+    <h1>Material Design Icons</h1>
+  </header>
+  <section class="content">
+  <object data="files/icons_list.html"></object>
+  <a href="files/icons_list.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+
+
+<div class="slide object">
+  <header>
+    <h1>Icon Fonts</h1>
+  </header>
+  <section class="content">
+  <object data="files/icons.html"></object>
+  <a href="files/icons.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+
+<div class="slide object">
+  <header>
+    <h1>Icon Fonts</h1>
+  </header>
+  <section class="content">
+  <object data="files/icons2.html"></object>
+  <a href="files/icons2.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+
+
+<div class="slide object">
+  <header>
+    <h1>Font Squirrel</h1>
+  </header>
+  <section class="content">
+  <object data="http://www.fontsquirrel.com/tools/webfont-generator"></object>
+  <a href="http://www.fontsquirrel.com/tools/webfont-generator" target="play" title="open font squirrel in new window">↪</a>
+</div>
+
+
+
+<div class="slide object">
+  <header>
+    <h1>Subsets of Google Fonts</h1>
+  </header>
+  <section class="content">
+  <object data="files/subset.html"></object>
+  <a href="files/subset.html" target="play" title="open code example in new window">↪</a>
+</div>
+
+
+
+
+
+<div class="slide object">
+<object data="http://estelle.github.io/input-masking/indexcss.html"></object>
+<a href="http://estelle.github.io/input-masking/indexcss.html" class="pagelink">Github Repo</a>
+</div>
+
+
+
+
+
+
+<div class="slide">
+<pre>&lt;input id="zip" type="tel" name="zipcode" class="masked" 
+  placeholder="XXXXX" pattern="\d{5}" title="5-digit zip code"&gt;</pre>
+  <p>progressively enhanced with JS to: </p>
+<pre>&lt;label for="zip">Zip Code&lt;/label>
+  &lt;span class="shell">
+    &lt;span aria-hidden="true" id="zipMask">&lt;i>123&lt;/i>XX&lt;/span>
+    &lt;input id="zip" type="tel" name="zipcode" pattern="\d{5}" 
+    class="masked" title="5-digit zip code" maxlength="5" data-placeholder="XXXXX">
+  &lt;/span></pre>
+<a href="http://estelle.github.io/input-masking/indexcss.html" class="pagelink">Github Repo</a>
+
+</div>
+
+
+
+<div class="slide object">
+<object data="http://estelle.github.io/merry-go-round/"></object>
+<a href="http://estelle.github.io/merry-go-round/" class="pagelink">Github Repo</a>
+</div>
+
+
+
+<div class="slide">
+<pre style="overflow: scroll; height: 80vh;"><!--&lt;form action="index.html">
+--><b>&lt;fieldset</b> class="mgr" id="address"&gt;
+<b>&lt;legend&gt;Select an address to edit:&lt;/legend&gt;</b>
+&lt;div&gt;
+  &lt;a class="backward" data-move="backward" data-mgr="shipping-addresses" hidden&gt;&lt;/a&gt;
+  &lt;ul class="mgr-labels left0"&gt;
+    &lt;li&gt;
+      <b>&lt;label for="address1"&gt;</b>
+      Instart Logic&lt;br/&gt;
+      US Headquarters&lt;br/&gt;
+      450 Lambert Avenue&lt;br/&gt;
+      Palo Alto, CA 94306
+      &lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;label for="address2"&gt;
+      Instart Logic&lt;br/&gt;
+      India Office&lt;br/&gt;
+      6th Floor , HM Vibha Towers&lt;br/&gt;
+      Hosur Rd, Adugodi&lt;br/&gt;
+      Bengaluru — 560029
+      &lt;/label&gt;
+    &lt;/li&gt;...
+  &lt;/ul&gt;
+  &lt;a class="forward" data-move="forward" data-mgr="shipping-addresses" hidden&gt;&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;ul id="addressradios" class="mgr-radios"&gt;
+    &lt;li&gt;
+      <b>&lt;input type="radio" name="shipping-addresses" data-value="0" id="address1" checked&gt;&lt;span&gt;&lt;/span&gt;</b>
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type="radio" name="shipping-addresses" data-value="1" id="address2"&gt;&lt;span&gt;&lt;/span&gt;
+    &lt;/li&gt;...
+  &lt;/ul&gt;
+  &lt;/fieldset&gt;
+</pre></div>
+
+
+<div class="slide normal cursors" style="padding: 0">
+     <header><h1>Cursors</h1></header>
+     <section class="content">
+			<ul>
+				<li style="cursor:crosshair">crosshair</li>
+				<li  style="cursor:default">default</li>
+				<li  style="cursor:help">help</li>
+				<li  style="cursor:move">move</li>
+				<li  style="cursor:e-resize">e-resize</li>
+				<li  style="cursor:ne-resize">ne-resize</li>
+				<li  style="cursor:nw-resize">nw-resize</li>
+				<li  style="cursor:n-resize">n-resize</li>
+				<li  style="cursor:se-resize">se-resize</li>
+				<li  style="cursor:sw-resize">sw-resize</li>
+				<li  style="cursor:s-resize">s-resize</li>
+				<li  style="cursor:w-resize">w-resize</li>
+				<li  style="cursor:text">text</li>
+				<li  style="cursor:wait">wait</li>
+				<li  style="cursor:progress">progress</li>
+			</ul>
+			<ul>
+				<li  style="cursor:none">none</li>
+				<li  style="cursor:context-menu">context-menu</li>
+				<li  style="cursor:cell">cell</li>
+				<li  style="cursor:vertical-text">vertical-text</li>
+				<li  style="cursor:alias">alias</li>
+				<li  style="cursor:copy">copy</li>
+				<li  style="cursor:no-drop">no-drop</li>
+				<li  style="cursor:not-allowed">not-allowed</li>
+				<li  style="cursor:col-resize">col-resize</li>
+				<li  style="cursor:row-resize">row-resize</li>
+				<li  style="cursor:all-scroll">all-scroll</li>
+				<li  style="cursor:zoom-in">zoom-in</li>
+				<li  style="cursor:zoom-out">zoom-out</li>
+			</ul>
+     </section>
+ </div>
+
+
+
+
+
+
+<div class="slide">
+	<header><h1>text-overflow: ellipsis</h1></header>
+    <section class="content">
+          <section>
+            <pre contenteditable>p {
+  text-overflow: ellipsis; <input type="range" min="0" max="100" value="94" onChange="changeWrapping(event)" style="float:right">
+  white-space: nowrap;
+  overflow: hidden;
+}</pre>
+
+            <div id="textwraps">
+              <p class="textwrap codelike">
+                overflow-hidden only: Play with the slider to see what happens at the end of the line
+              </p>
+              <p style=" white-space:nowrap" class="textwrap codelike">
+                white-space: nowrap, overflow: hidden: Play with the slider to see what happens at the end of the line
+              </p>
+              <p style="text-overflow: ellipsis;  white-space: nowrap; " class="textwrap codelike">
+                text-overflow: ellipsis;  white-space: nowrap; and overflow: hidden: Play with the slider to see what happens at the end of the line
+              </p>
+            </div>
+            <p class="notes">Needs nowrap and overflow:hidden (anything other than visible) to work.</p>
+
+          </section>
+
+          <script defer="">
+            function changeWrapping(event) {
+              document.getElementById('textwraps').style.width = event.target.value + '%';
+            }
+          </script>
+    </section>
+</div>
+
+<div class="slide">
+	<header><h1>word-wrap: breakword</h1></header>
+    <section class="content">
+    <pre contenteditable>word-wrap:  normal | break-word</pre>
+    <div style="width: 10em; word-wrap:break-word;" class="codelike">
+    Despite the old adage, smiles is not longer than supercalifragilisticexpialidocious.
+    </div>
+
+    </section>
+</div>
+
+
+<div class="slide">
+	<header><h1>calc()</h1></header>
+    <section class="content">
+<pre contenteditable>.colA {
+  width:50%;
+  margin-right: 1em;
+}
+.colB {
+  width: calc(50% - 1em);
+}</pre>
+     <small>+, -, *, /, mod, min, and max operators.</small>
+     	
+    </section>
+</div>
+
+<div class="slide">
+	<header><h1>rem</h1></header>
+    <section class="content">
+    <pre contenteditable>html {
+    font-size: 62.5%;
+}
+p {
+    font-size: 13px;
+    font-size: 1.3rem;
+}
+small {
+    font-size: 11px;
+    font-size: 1.1rem;
+}</pre>
+    </section>
+</div>
+
+
+<div class="slide">
+  <header><h1>viewport width</h1></header>
+    <section class="content">
+<p>vw | vh | vmin | vmax</p>
+    <pre contenteditable>
+5vw = 5% of the width of the viewport
+7vh = 7% of the height of the viewport
+4vmin = 4% of the viewport height or width, whichever is smaller
+8vmax = 8% of the viewport height or width, whichever is larger</pre>
+
+<p>under consideration</p>
+<pre><code>vi</code>
+1% of containing block, in the direction of the root 
+element’s inline axis.
+
+<code>vb</code> 
+1% of the containing block, in the direction of the root 
+element’s block axis.</pre>
+    </section>
+</div>
+
+
+
+
+ <div class="slide normal">
+     <header><h1>pointer-events: none;</h1></header>
+     <section class="content">
+     <p>Can the element be clicked?!?!</p>
+     <pre class="contenteditable" style="font-size: 140%">.animatedElement {
+  pointer-events: none;
+}</pre>
+<p>Did you note that you could change the transforms examples even when the example was covering the code?</p>
+     </section>
+ </div>
+
+
+
+
+  <div class="slide normal">
+     <header><h1>-webkit-user-modify</h1></header>
+     <section class="content">
+<p>Related to <em>contentEditable</em>: Determines whether content of an element is editable.
+
+<pre contenteditable>
+-webkit-user-modify: read-only | read-write | read-write-plaintext-only;
+-moz-user-modify: read-only | read-write | write-only;</pre>
+<dl>
+<dt>read-only</dt>
+<dd>The content is read-only.</dd>
+
+<dt>read-write</dt>
+<dd>The content can be read and written.</dd>
+<dt>write-only (moz only)</dt>
+<dd>The user is able to edit the content, but not to read it.</dd>
+
+<dt>read-write-plaintext-only (webkit)</dt>
+<dd>The content can be read and written, but any rich formatting of pasted text is lost.</dd>
+</dl>
+
+     </section>
+ </div>
+
+
+<!--  -->
+<div class="slide">
+  <header><h1>Links</h1></header>
+  <section class="content">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter">MDN: CSS Filters</a>
+  </section>
+</div>
+
+<div class="slide intro">
+     <header><h1>The End</h1></header>
+    <h1><a href="../index.html">Home ➹</a></h1>
+</div>
+
+
+
+
+
+  </div>
+  <script src="../animations/static/js/slides.js"></script>
+  </body>
+</html>

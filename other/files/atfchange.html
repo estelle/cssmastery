@@ -1,0 +1,236 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Understanding Animation Timing Functions</title>
+  <link rel="stylesheet" href="files.css">
+<style>
+body div {
+  border: 2px #c8cf2d solid;
+  color: white;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  margin-bottom: 1px;
+  height: 3px;
+  width: 95%; }
+
+article {
+  height: 10px;
+  background: #f50;
+  background: linear-gradient(to right, white 10%, transparent 10%);
+  background-size: 50px 10px;
+  margin: 20px 0;
+  position: relative; }
+
+article:after {
+  content: '';
+  height: 10px;
+  width: 5px;
+  position: absolute;
+  left: 498px;
+  background-color: red; }
+
+div:nth-of-type(1) {
+  border-color: #f50; }
+
+div:nth-of-type(1) {
+  animation-iteration-count: 0.0000001; }
+
+div:nth-of-type(2) {
+  animation-iteration-count: 0.025; }
+
+div:nth-of-type(3) {
+  animation-iteration-count: 0.05; }
+
+div:nth-of-type(4) {
+  animation-iteration-count: 0.075; }
+
+div:nth-of-type(5) {
+  animation-iteration-count: 0.1; }
+
+div:nth-of-type(6) {
+  animation-iteration-count: 0.125; }
+
+div:nth-of-type(7) {
+  animation-iteration-count: 0.15; }
+
+div:nth-of-type(8) {
+  animation-iteration-count: 0.175; }
+
+div:nth-of-type(9) {
+  animation-iteration-count: 0.2; }
+
+div:nth-of-type(10) {
+  animation-iteration-count: 0.225; }
+
+div:nth-of-type(11) {
+  animation-iteration-count: 0.25; }
+
+div:nth-of-type(12) {
+  animation-iteration-count: 0.275; }
+
+div:nth-of-type(13) {
+  animation-iteration-count: 0.3; }
+
+div:nth-of-type(14) {
+  animation-iteration-count: 0.325; }
+
+div:nth-of-type(15) {
+  animation-iteration-count: 0.35; }
+
+div:nth-of-type(16) {
+  animation-iteration-count: 0.375; }
+
+div:nth-of-type(17) {
+  animation-iteration-count: 0.4; }
+
+div:nth-of-type(18) {
+  animation-iteration-count: 0.425; }
+
+div:nth-of-type(19) {
+  animation-iteration-count: 0.45; }
+
+div:nth-of-type(20) {
+  animation-iteration-count: 0.475; }
+div:nth-of-type(21) {
+  animation-iteration-count: 0.5; }
+
+div:nth-of-type(22) {
+  animation-iteration-count: 0.525; }
+
+div:nth-of-type(23) {
+  animation-iteration-count: 0.55; }
+
+div:nth-of-type(24) {
+  animation-iteration-count: 0.575; }
+
+div:nth-of-type(25) {
+  animation-iteration-count: 0.6; }
+
+div:nth-of-type(26) {
+  animation-iteration-count: 0.625; }
+
+div:nth-of-type(27) {
+  animation-iteration-count: 0.65; }
+
+div:nth-of-type(28) {
+  animation-iteration-count: 0.675; }
+
+div:nth-of-type(29) {
+  animation-iteration-count: 0.7; }
+
+div:nth-of-type(30) {
+  animation-iteration-count: 0.725; }
+
+div:nth-of-type(31) {
+  animation-iteration-count: 0.75; }
+
+div:nth-of-type(32) {
+  animation-iteration-count: 0.775; }
+
+div:nth-of-type(33) {
+  animation-iteration-count: 0.8; }
+
+div:nth-of-type(34) {
+  animation-iteration-count: 0.825; }
+
+div:nth-of-type(35) {
+  animation-iteration-count: 0.85; }
+
+div:nth-of-type(36) {
+  animation-iteration-count: 0.875; }
+
+div:nth-of-type(37) {
+  animation-iteration-count: 0.9; }
+
+div:nth-of-type(38) {
+  animation-iteration-count: 0.925; }
+
+div:nth-of-type(39) {
+  animation-iteration-count: 0.95; }
+
+div:nth-of-type(40) {
+  animation-iteration-count: 0.975; }
+
+div:nth-of-type(41) {
+  animation-iteration-count: 1;
+  border-color: #f50; }
+
+div:nth-of-type(n+42) {
+  display: none; }
+
+article:after, article:before {
+  height: 300px !important;
+  opacity: 0.5;
+  content: ""; }
+
+article:before {
+  position: absolute;
+  left: 100px;
+  width: 5px;
+  background-color: #f50; }
+</style>
+
+<style contenteditable class="editme">div { animation: width 5s linear both; }
+@keyframes width  {
+  0% {width: 500px;}
+  25% {width: 400px;}
+  50% {width: 300px; border-color: #f50; animation-timing-function: steps(4,end);}
+  75% {width: 200px;}
+  100% {width: 100px;}
+}</style>
+<title>Understanding Cubic Bezier</title>
+</head>
+
+<body>
+<article></article>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>
+

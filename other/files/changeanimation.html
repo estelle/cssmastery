@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Change animations on the fly</title>
+  <style contenteditable class="editme" style="position: absolute; pointer-events: none; top: 1em">#ball {
+  height: 100px;
+  width: 100px;
+  background-color: #f50;
+  border-radius: 50%;
+  animation: bounce 5s infinite linear alternate;
+}
+@keyframes bounce {
+  0%  {transform: translate(0vw, 0vh);}
+  10% {transform: translate(0vw, 5vh);}
+  20% {transform: translate(0vw, 10vh);}
+  30% {transform: translate(0vw, 15vh);}
+  40% {transform: translate(0vw, 20vh);}
+  50% {transform: translate(0vw, 25vh);}
+  60% {transform: translate(0vw, 30vh);}
+  70% {transform: translate(0vw, 35vh);}
+  80% {transform: translate(0vw, 40vh);}
+  90% {transform: translate(0vw, 45vh);}
+  100% {transform: translate(0vw, 50vh);}
+}</style>
+  <style contenteditable class="editme"></style>
+  <link rel="stylesheet" href="files.css">
+</head>
+
+<body><div id="ball"></div>
+<article style="position: absolute; top: 0; right: 0;">
+<input type="button" id="button" value="Change the path" style="background-color: #f50" class="btn">
+<input type="button" value="reattach animation" id="reattach"  class="btn"/>
+</article>
+<script>
+console.log(document.styleSheets[0]);
+  var pathChanger = {
+  anim : document.styleSheets[0].cssRules[1],
+  
+  init : function () {
+    pathChanger.events();
+        if(document.styleSheets[0].cssRules[1].insertRule) {
+          pathChanger.anim.appendRule = pathChanger.anim.insertRule;
+          console.log('polyfill');
+        }
+  },
+  
+  events  : function () {
+    var button = document.getElementById('button');
+    var reattach = document.getElementById('reattach');
+    
+    button.addEventListener('click', function() {
+      pathChanger.changePath();
+    }, false);
+    
+    reattach.addEventListener('click', function(e) {
+      pathChanger.removeAndAddAnimation(e);
+    }, false);
+    
+  },
+  
+  removeAndAddAnimation : function () {
+    var ball = document.getElementById('ball');
+    ball.removeAttribute('id');
+      setTimeout(function(){
+        document.getElementsByTagName('div')[0].setAttribute('id', 'ball');
+      }, 500);
+  },
+  
+  changePath : function () {
+    var selectorToRemove = pathChanger.findAKeyframe(),
+        selectorToAdd =  pathChanger.getAPercent();
+    pathChanger.removeKeyframe(selectorToRemove);
+    pathChanger.addKeyframeValue(selectorToAdd);
+  },
+   
+  getAPercent : function () {
+    return Math.floor(Math.random() * 90.9999999);
+  },
+  
+  findAKeyframe : function (exists) {
+    var randomNumber, rule;
+    
+    do {
+        randomNumber = pathChanger.getAPercent(); 
+        rule = pathChanger.doesKeyframeExist(randomNumber)
+    } while (!rule);
+    
+    return randomNumber;
+  },
+  
+  doesKeyframeExist : function (number) {
+    var anim = pathChanger.anim,
+        exists = anim.findRule(number + '%');
+    return exists || false;
+  },
+  
+  addKeyframeValue : function (selector) {
+    var anim = document.styleSheets[0].cssRules[1],
+        left = pathChanger.getAPercent(),
+        top = pathChanger.getAPercent();
+    anim.appendRule(selector + '% { transform: translate(' + 
+                    left + 'vw, ' + top/1.5 + 
+                    'vh); animation-timing-function: ease-in-out}');
+  },
+  
+  removeKeyframe : function (selector) {
+    var anim = pathChanger.anim;
+    anim.deleteRule(selector + "%");
+  }
+  
+}
+
+pathChanger.init();
+</script>
+</body>
+</html>
+

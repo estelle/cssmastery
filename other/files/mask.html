@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Masking Example</title>
+<link rel="stylesheet" href="../css/files.css"/>
+<style>
+div {
+  width: 402px;
+  height: 734px;
+  position:relative;
+  background-image: url(http://placekitten.com/200/200/);
+  background-position: 0 0;
+  transition: 1s;
+}
+div:hover {
+  background-position: center;
+}
+
+table.mask {text-align: center;}
+table.mask td {
+  font-size: 2rem;
+  font-family: arial;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+</style>
+<style contenteditable class="editme">
+div {
+  background-image: linear-gradient(red,orange,yellow,green,blue,purple);
+  background-image: url(../images/kittenjaw.jpg);
+}
+div:after { content: ''; position: absolute;
+  top:0; bottom: 0; left: 0; right: 0;
+  background-image:  url(images/phone.jpg);
+  -webkit-mask: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1));
+  -webkit-mask:  url(images/mask.png);
+}</style>
+</head>
+<body>
+<div style="float: left; margin-right: 40px;"></div>
+
+<table class="mask">
+  <tr><td>JPEG</td><td rowspan=2>+</td><td>MASK</td><td rowspan=2>&lt;</td><td>PNG</td></tr>
+  <tr>
+    <td>20.8KB</td><td>0.3KB</td><td>133KB</td></tr></table>
+<p style="float: right;"><a href="iphone_mask_large.jpg" target="foo">JPG</a> | <a href="iphone_mask_mask.png" target="foo">Mask PNG</a></p>
+</body>
+</html>

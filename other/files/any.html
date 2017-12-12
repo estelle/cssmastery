@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>!important</title>
+  <link rel="stylesheet" href="files.css">
+  <style contenteditable class="editme">#baz, #bar {
+  .class { 
+    color: red;
+  }
+}
+</style><style contenteditable class="editme">:-webkit-any(#baz, #bar) .class { 
+  color: #f50;
+}
+</style>
+</head>
+<body>
+<ul>
+  <li id="foo" class="li"> id="foo" <em class="class">class="li"</em></span></li>
+  <li id="bar" class="li"> id="bar" <strong class="class">class="li"</strong></li>
+  <li id="baz" class="foo"> id="baz" <span class="class">class="foo"</span></li>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<link rel="stylesheet" href="files.css">
+<style>
+
+div {border: 3px solid #226DAA; padding: 3px; line-height: 2rem; text-align: center; width: 80vw; }
+.a {background-color: #999;}
+.b {background-color: #ddd;}
+.c {background-color: #bbb;}
+</style>
+
+<style contenteditable class="editme">
+body > div {
+  display: flex;
+  justify-content: space-between;
+}
+.a, .b, .c {
+  flex: 0 0 100px;
+  }</style>
+<title>Flexbox</title>
+</head>
+
+<body>
+	<div id="container">
+		<div class="box a">A</div>
+		<div class="box b">B</div>
+		<div class="box c">C</div>
+	</div>
+  <code>flex-start | flex-end | center | space-between | space-around | space-evenly</code>
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>CSS-only slide deck</title>
+  <link rel="stylesheet" href="files.css">
+  <style contenteditable class="editme">
+.slide {
+  transform: translate(100%, 0) scale(0.1) rotate(180deg);
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: all 0.25s ease-in; 
+}
+
+input:checked + label + .slide {
+  transform: translate(0, 0) scale(1) rotate(0deg); 
+}
+
+input:checked + label + .slide + input:not(:checked) + label + .slide {
+  transform: translate(45%, -50%) scale(0.2) rotate(-90deg); 
+}
+
+input:checked + label:after {
+  content: '« back';
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 5em;
+  transform: translatez(0);
+  z-index: 5000;
+  cursor: pointer; 
+}
+
+input:checked + label + .slide + input:not(:checked) {
+  visibility: visible;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: groupbox;
+  appearance: none;
+  border: none;
+  font-size: 1rem;
+  width: 5em; 
+}
+  input:checked + label + .slide + input:not(:checked):after {
+    content: 'next »';
+    padding: 0 8px 4px;
+    color: #fffffe;
+    border-radius: 4px;
+    background-color: #ff5500;
+    line-height: 2;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 2px 1px; 
+}
+
+
+
+
+
+
+
+</style>
+<title>CSS-only slide deck</title>
+</head>
+
+<body>
+
+
+</body>
+</html>
+

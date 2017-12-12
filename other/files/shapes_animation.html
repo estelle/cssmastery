@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>CSS Shapes</title>
+  <link rel="stylesheet" href="files.css">
+  <style>
+  div {
+  background: url(../images/kittenjaw.jpg) no-repeat white;
+  width: 600px; height: 400px; 
+  background-position: center;float: left;
+}
+body {
+  padding-left: 100px;
+}
+</style>
+    <style contenteditable class="editme">div {
+  clip-path: polygon(
+    0 20%, 80% 20%, 80% 80%, 0 80%);
+  //animation: 1s alternate infinite polygon;  
+}  </style>
+<style contenteditable class="editme">@keyframes polygon {
+  100% {
+    clip-path: polygon(
+      20% 0, 60% 0, 100% 90%, 20% 90%);
+  }
+}</style>
+</head>
+<body>
+  <div></div>
+
+</body>
+</html>
