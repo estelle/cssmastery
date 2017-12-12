@@ -4,8 +4,8 @@
 
     <meta charset="utf-8" />
     <title>Other Features</title>
-     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-   <link rel="stylesheet" href="../selectors/selectors.css" media="projection, screen"/>
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet'>
+   <link rel="stylesheet" href="../tables/style.css"/>
  <style>
  .cursors li {
 	width: 170px; height: 70px; line-height:70px;
@@ -145,7 +145,12 @@ display: -moz-box;
   <body>
 
   <div id="topinfo">
-
+<nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
   </div>
 
   <div id="info">
@@ -332,7 +337,6 @@ border-width: 5px;
   <header>
     <h1>Material Design Icons</h1>
   </header>
-  <section class="content">
   <object data="files/icons_list.html"></object>
   <a href="files/icons_list.html" target="play" title="open code example in new window">↪</a>
 </div>
@@ -344,7 +348,6 @@ border-width: 5px;
   <header>
     <h1>Icon Fonts</h1>
   </header>
-  <section class="content">
   <object data="files/icons.html"></object>
   <a href="files/icons.html" target="play" title="open code example in new window">↪</a>
 </div>
@@ -355,7 +358,6 @@ border-width: 5px;
   <header>
     <h1>Icon Fonts</h1>
   </header>
-  <section class="content">
   <object data="files/icons2.html"></object>
   <a href="files/icons2.html" target="play" title="open code example in new window">↪</a>
 </div>
@@ -367,23 +369,40 @@ border-width: 5px;
   <header>
     <h1>Font Squirrel</h1>
   </header>
-  <section class="content">
   <object data="http://www.fontsquirrel.com/tools/webfont-generator"></object>
   <a href="http://www.fontsquirrel.com/tools/webfont-generator" target="play" title="open font squirrel in new window">↪</a>
 </div>
 
-
+<!--  -->
+<div class="slide">
+  <header><h1>Unicode Subset</h1></header>
+  <section class="content">
+    <pre>@font-face {
+    font-family: 'myFont';
+    src: url('myfont-webfont.woff2') format('woff2'),
+         url('myfont-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+26;
+}</pre>
+  </section>
+</div>
 
 <div class="slide object">
   <header>
     <h1>Subsets of Google Fonts</h1>
   </header>
-  <section class="content">
   <object data="files/subset.html"></object>
   <a href="files/subset.html" target="play" title="open code example in new window">↪</a>
 </div>
 
 
+<!--  -->
+<div class="slide intro">
+  <header><h1>CSS as the Solution</h1></header>
+  <section class="content">
+  </section>
+</div>
 
 
 
@@ -391,7 +410,6 @@ border-width: 5px;
 <object data="http://estelle.github.io/input-masking/indexcss.html"></object>
 <a href="http://estelle.github.io/input-masking/indexcss.html" class="pagelink">Github Repo</a>
 </div>
-
 
 
 
@@ -648,7 +666,10 @@ element’s block axis.</pre>
   <header><h1>Links</h1></header>
   <section class="content">
     <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter">MDN: CSS Filters</a>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter">MDN: CSS Filters</a></li>
+      <li><a href="https://css-tricks.com/almanac/properties/b/background-blend-mode/">CSS-Tricks: background-blend-mode</a></li>
+      <li>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside">shape-outside</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path">clip-path</li>
+    </ul>
   </section>
 </div>
 
