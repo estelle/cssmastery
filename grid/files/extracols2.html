@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grid</title>
+	<link rel="stylesheet" href="../files.css">
+<style>
+div div {line-height: 100px; border: 1px solid; background-color: #ccc;
+	}
+#editme {line-height: 1.5;}
+</style>
+<title>Simple Grid</title>
+</head>
+
+<body>
+<style contenteditable id="editme">
+  #grid {
+    display: grid;
+    grid-auto-columns: 200px;
+    grid-auto-rows: 200px;
+  }
+  #a { grid-column: 1; grid-row: 1; }
+  #b { grid-column: 1; grid-row: 3; }
+  #c { grid-column: 1; grid-row: 5;}
+  #d { grid-column: 3; grid-row: 1; }
+  #e { grid-column: 3; grid-row: 3; }
+  #f { grid-column: 3; grid-row: 5; }
+  #g { grid-column: 5; grid-row: 1; }
+  #h { grid-column: 5; grid-row: 3; }
+  #i { grid-column: 5; grid-row: 5;}
+  #j { grid-column: 2; grid-row: 2; }
+  #k { grid-column: 2; grid-row: 4; }
+  #l { grid-column: 4; grid-row: 2;}
+  #m { grid-column: 4; grid-row: 4; }
+</style>
+
+<div id="grid">
+  <div id="a">A</div>
+  <div id="b">B</div>
+  <div id="c">C</div>
+  <div id="d">D</div>
+  <div id="e">E</div>
+  <div id="f">F</div>
+  <div id="g">G</div>
+  <div id="h">H</div>
+  <div id="i">I</div>
+  <div id="j">J</div>
+  <div id="k">K</div>
+  <div id="l">L</div>
+  <div id="m">M</div>
+</div>
+<pre><xmp><div id="grid">
+  <div id="a">A</div>
+  <div id="b">B</div>
+  <div id="c">C</div>
+  <div id="d">D</div>
+  <div id="e">E</div>
+  <div id="f">F</div>
+  <div id="g">G</div>
+  <div id="h">H</div>
+  <div id="i">I</div>
+  <div id="j">J</div>
+  <div id="k">K</div>
+  <div id="l">L</div>
+  <div id="m">M</div>
+</div></xmp></pre>
+	
+</body>
+</html>

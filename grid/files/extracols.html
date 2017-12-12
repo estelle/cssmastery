@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grid</title>
+	<link rel="stylesheet" href="../files.css">
+<style>
+div div {line-height: 100px; border: 1px solid; background-color: #ccc;
+	}
+#editme {line-height: 1.5;}
+</style>
+<title>Simple Grid</title>
+</head>
+
+<body>
+<style contenteditable id="editme">
+  #grid {
+    display: grid;
+    grid-template-columns: 100px;
+    grid-auto-columns: 200px;
+    grid-template-rows: 100px;
+    grid-auto-rows: 200px;
+  }
+  #A { grid-column: 1; grid-row: 1; }
+  #B { grid-column: 2; grid-row: 1; }
+  #C { grid-column: 1; grid-row: 2; }
+  #D { grid-column: 2; grid-row: 2; }
+</style>
+
+<div id="grid">
+  <div id="A">A</div>
+  <div id="B">B</div>
+  <div id="C">C</div>
+  <div id="D">D</div>
+  <div id="E">E</div>
+  <div id="F">F</div>
+  <div id="G">G</div>
+  <div id="H">H</div>
+</div>
+<pre><xmp><div id="grid">
+  <div id="A">A</div>
+  <div id="B">B</div>
+  <div id="C">C</div>
+  <div id="D">D</div>
+  <div id="E">E</div>
+  <div id="F">F</div>
+  <div id="G">G</div>
+  <div id="H">H</div>
+</div></xmp></pre>
+	
+</body>
+</html>

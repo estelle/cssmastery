@@ -221,6 +221,36 @@ grid-template-rows: none | &lt;track-list> | &lt;auto-track-list></pre>
   </section>
 </div>
 
+
+<!--  -->
+<div class="slide">
+  <header><h1>Values</h1></header>
+  <section class="content">
+<dl>
+  <dt>length or percentage</dt>
+<dd>% are relative to the inline size of the grid container in column grid tracks, and the block size of the grid container in row grid tracks. If size of container depends on the size of its tracks, the % is treated as auto.</dd>
+
+<dt>flex: fr</dt>
+<dd>Positive fr value specifying the track’s flex factor. Each fr'ed track takes a share of the remaining space in proportion to its flex factor.</dd>
+
+<dt>max-content</dt>
+<dd>Equal to the largest of the max-contents in the grid track.</dd>
+<dt>min-content</dt>
+<dd>Equal to the largest of the min-contents in the grid track.</dd>
+
+<dt>minmax(min, max)</dt>
+<dd>A size between min and less. If max < min, then max is ignored and minmax(min,max) is treated as min.</dd>
+
+<dt>auto</dt>
+<dd>As a maximum, identical to max-content. As a minimum, represents the largest minimum size (as specified by min-width/min-height) of the grid items occupying the grid track.
+</dd>
+
+<dt>fit-content(length or percent)</dt>
+<dd>Represents the formula min(max-content, max(auto, argument)), which is calculated similar to auto (i.e. minmax(auto, max-content)), except that the track size is clamped at argument if it is greater than the auto minimum.</dd>
+  </section>
+</div>
+
+
 <!-- Grid Gap -->
 <div class="slide">
   <header><h1>Adding gutters</h1></header>
@@ -409,19 +439,20 @@ align-self</pre>
 <!-- justify-items -->
 <div class="slide">
   <header><h1>Row alignment: <code>justify-items</code> property</h1></header>
-  <section class="content"><p>
-    <pre><xmp>justify-items: normal | stretch | 
+  <section class="content">
+   <pre><strong><em>justify-items</em></strong>: 
+  normal | stretch | baseline | start |  end | center | flex-end | 
+  flex-start | <strong><em>legacy</em></strong> | safe | unsafe | left | right | 
+  center | self-end | self-start | start | stretch | unset</pre> 
+    <p>Aligns items in the inline direction (horizontal)</p>
+    
+  <pre><xmp>justify-items: normal | stretch | 
    <baseline-position> | [ <overflow-position>? <self-position> ] |
   [ legacy || [ left | right | center ] ]</xmp></pre>
-    <p>Aligns items in the inline direction (horizontal)</p>
-    <pre><strong><em>justify-items</em></strong>: 
-  normal | stretch | baseline | start |  end |
-  center | flex-end | flex-start | <strong><em>legacy</em></strong> | 
-  safe | unsafe | left | right | center |
-  self-end | self-start | start | stretch | unset</pre>
   <pre>&lt;baseline-position> = baseline | first baseline (start) | last baseline (end)</pre>
   <pre>&lt;overflow-position>? &lt;self-position> = [safe | unsafe]? [right | center | left |
    start | flex-start | flex-end | end | self-start]</pre>
+   <small>aligning all the content within each cell</small>
   </section>
 </div>
 
@@ -457,6 +488,9 @@ No matter the relative sizes overflowing, the alignment value is honored.</p>
   end | flex-end | flex-start | left |  
   normal | right | safe | self-end | self-start | 
   start | stretch | unsafe </pre>
+  <ul>
+    <li>aligns content of all the grid cells to the content within each cell</li>
+    <li>individual grid cell content alignment can be overwritten with <code>align-self</code> and <code>justify-self</code>.</li></ul>
   </section>
 </div>
 
@@ -491,13 +525,16 @@ No matter the relative sizes overflowing, the alignment value is honored.</p>
 <div class="slide">
   <header><h1>Aligning the Grid</h1></header>
   <section class="content">
-    <p>Defines how the items are aligned with respect to the grid if the grid content's edges are not the same as the container’s edges.</p> 
+    <p>Defines how the items are aligned with respect to the grid if the size of all the items combined is not the same size as the container.</p> 
     <pre><b>justify-content</b>: baseline | center | end | flex-end | flex-start | 
    left | normal | right | space-around | space-between | space-evenly | start | 
    stretch | safe | unsafe</pre>
 <pre><b>align-content</b>: baseline | center | end | flex-end | flex-start | 
   left | normal | right | space-between | space-evenly | start | 
   stretch | safe | unsafe</pre>
+
+
+    <p>Tip: <code>auto</code> track sizes (and only <code>auto</code> track sizes) can be stretched by the <code>align-content</code> and <code>justify-content</code> properties</p>
   </section>
 </div>
 
@@ -525,16 +562,33 @@ No matter the relative sizes overflowing, the alignment value is honored.</p>
 </div>
 
 
+
 <!-- implicit track sizing -->
 <div class="slide">
   <header><h1>Implicit track sizing </h1></header>
   <section class="content">
 <p>When items are placed outside of the tracks defined by <code>grid-template-rows</code>, <code>grid-template-columns</code>, and <code>grid-template-areas</code>, implicit grid tracks by added. These properties size those tracks</p>
 <pre>grid-auto-columns: 
-grid-auto-rows
-grid-auto-flow</pre>
+grid-auto-rows:
+grid-auto-flow:</pre>
   </section>
 </div>
+
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>automatic flow</h1></header>
+  <object data="files/extracols.html"></object>
+</div>
+
+
+<!-- grid example -->
+<div class="slide object">
+  <header><h1>White Space</h1></header>
+  <object data="files/extracols2.html"></object>
+</div>
+
 
 <!--  -->
 <div class="slide">
